@@ -1,5 +1,7 @@
 import './App.css';
 
+// https://progate.com/dashboard
+
 /* Diff btw JS & JSX:
 Js is written above return while JSX is written
 inside return
