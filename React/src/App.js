@@ -2,7 +2,11 @@ import './App.css';
 
 // https://progate.com/dashboard
 
-/* Diff btw JS & JSX:
+// #Progate @progateEN @dev_careers #dev_careers
+
+/* 
+React I:
+Diff btw JS & JSX:
 Js is written above return while JSX is written
 inside return
 
@@ -28,6 +32,42 @@ using class component
 this.state = {
 	name: 'Ken the Ninja'
 }
+*/ 
+
+
+/*
+React II:
+The JSX written in App.js is eventually converted to HTML 
+and displayed in the browser. In order to display code in 
+React in the browser, the files index.js and index.html 
+are needed in addition to App.js.
+App.js -> Index.js -> Index.html
+
+ReactDOM.render( <App />, document.getElementById('root'));
+
+By writing ReactDOM.render(<App />, ... within index.js, 
+the JSX in App.js will get converted to HTML.
+
+Also, by writing ..., document.getElementById('id-name'));, 
+the converted HTML in index.js gets inserted into the element 
+with id="id-name" in index.html. Below, we use "root" for 
+the id name. Finally, the content of index.html is displayed 
+in the browser.
+
+So if you load CSS with index.html, you can apply CSS 
+to the inserted JSX.
+
+
+The data that you pass from App.js(componts) are called props.
+
+The props that were passed to a component can be accessed 
+with this.props, which is an object in the form of 
+{propName: value}.
+
+<Language 
+	name = {languageItem.name}
+	image ={languageItem.image}
+/>
 
 */ 
 
