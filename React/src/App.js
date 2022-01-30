@@ -71,6 +71,38 @@ with this.props, which is an object in the form of
 
 */ 
 
+
+/*
+React III:
+
+Props passed to the Lesson component can be accessed 
+using this.props.propName.
+
+Notice the {} after map and return keyword
+{
+	lessonList.map((lessonItem) => {
+		return (
+			<Lesson 
+				name={lessonItem.name}
+				image={lessonItem.image}
+			/>
+		)
+	})
+}
+
+
+// Declare the constructor
+constructor(props) {
+	super(props);
+
+	// Declare the initial value of state
+	this.state = {
+		isModalOpen: false
+	}
+}
+
+*/ 
+
 function App() {
 	// JS
 
