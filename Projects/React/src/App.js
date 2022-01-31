@@ -86,7 +86,7 @@ Notice the {} after map and return keyword
 				name={lessonItem.name}
 				image={lessonItem.image}
 			/>
-		)``
+		)
 	})
 }
 
@@ -167,114 +167,7 @@ handleClickLesson() {
       </div>
     );
   }
-*/
-
-
-/*
-REACT IV:
-The <input> tag is used to create the send button. 
-We can do this by specifying type='submit'. Also, 
-value='button text' is specified in order to change 
-the text displayed on the button.
-
-The entire form must be enclosed in <form> tags.
-Write the <form> tags so that they surround both 
-the form input fields and the send button.
-
-
-import React from 'react';
-
-class ContactForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isSubmitted: false,
-      email: '',
-      hasEmailError: false,
-    };
-  }
-
-  handleEmailChange(event) {
-    const inputValue = event.target.value;
-    // Declare the constant isEmpty and assign the result of the input check 
-    const isEmpty = inputValue === ''
-    
-    // Update hasEmailError 
-    this.setState({
-      email: inputValue,
-      hasEmailError: isEmpty
-    });
-    // this.setState({hasEmailError: isEmpty})
-    
-  }
-
-  handleSubmit() {
-    this.setState({isSubmitted: true});
-  }
-
-  render() {
-    let emailErrorText;
-    if (this.state.hasEmailError) {
-      emailErrorText = (
-        <p className='contact-message-error'>
-          Please enter your email address
-        </p>
-      );
-    }
-
-    let contactForm;
-    if (this.state.isSubmitted) {
-      contactForm = (
-        <div className='contact-submit-message'>
-          Sent Successfully
-        </div>
-      );
-    } else {
-      contactForm = (
-        <form onSubmit={() => {this.handleSubmit()}}>
-          <p>Email Address (required)</p>
-          <input
-            value={this.state.email}
-            onChange={(event) => {this.handleEmailChange(event)}}
-          />
-          {emailErrorText}
-          <p>Message (required)</p>
-          <textarea />
-          <input
-            type='submit'
-            value='Send'
-          />
-        </form>
-      );
-    }
-
-    return (
-      <div className='contact-form'>
-        {contactForm}
-      </div>
-    );
-  }
-}
-
-export default ContactForm;
-
-
-
-In order to run the code when the form is submitted, 
-we need to set the onSubmit event in the <form> tag.
-
-it is necessary to connect the input value to the state. 
-We'll add an email state, which manages the input 
-value of the email address. Also, we need to assign 
-the value of the state to the value attribute of 
-the <input> tag.
-
-
-
-*/
-
-
-
+*/ 
 
 function App() {
 	// JS
@@ -290,29 +183,3 @@ function App() {
 }
 
 export default App;
-
-
-/*
-const lessonList = [
-      {
-        name: 'HTML & CSS',
-        image: 'https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/react/html.svg',
-        introduction: "How a website looks is created using languages such as HTML and CSS. Let's study these languages while actually creating a website!",
-      },
-      {
-        name: 'Sass',
-        image: 'https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/react/sass.svg',
-        introduction: 'Sass is a language for making CSS more convenient and efficient.',
-      },
-      {
-        name: 'JavaScript',
-        image: 'https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/react/es6.svg',
-        introduction: 'JavaScript is a versatile language used anywhere from interactive websites to backend servers.',
-      },
-      {
-        name: 'React',
-        image: 'https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/react/react.svg',
-        introduction: 'React is a JavaScript library used to make the appearance of a website like HTML.',
-      },
-    ];
-*/ 
