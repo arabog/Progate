@@ -70,17 +70,17 @@ in the WHERE condition
 
 The LIKE opertor:
 When you want to get all rows that contain some specific 
-characters, you can use the LIKE operator. As shown in 
-the image below, you can make a condition to get "rows 
-that contain some string" for a specific column.
+characters, you can use the LIKE operator. You can make 
+a condition to get "rows that contain some string" for 
+a specific column.
 
 Wildcards:
 In order to use the LIKE operator, you'll need to also learn 
 about wildcards. In the programming world, "wildcard" 
 means a symbol that matches any string. The LIKE operator 
 treats the % symbol as a wildcard, so you can use the % 
-symbol to get all rows that contain "pudding" from the 
-specified column
+symbol to get all rows that contain 4 e.g "pudding" from 
+the specified column:
 
 SELECT * 
 FROM purchases
@@ -88,13 +88,11 @@ WHERE name LIKE '%pudding%';
 
 
 Prefix Search: Start with 'a particular word'
-You can use wildcards at the start and end of a string. "pudding%" 
-will allow you to search for any values that start with "pudding",
- followed by any string. This kind of search is known as prefix search.
+You can use wildcards at the start and end of a string. 
+"pudding%" will allow you to search for any values that 
+start with "pudding", followed by any string. This kind 
+of search is known as prefix search.
 
- Use LIKE to get all rows for which the value of the:
-name column starts with pudding
-column starts with:
 SELECT *
 FROM purchases
 WHERE name LIKE "pudding%";
@@ -102,33 +100,125 @@ WHERE name LIKE "pudding%";
 
 Postfix Search: End with a 'particular word
 You can also search for values that end with some specific string, 
-like "%pudding" in the example below. All values that end with 
-the string "pudding" will be found. This is known as postfix search.
+like "%pudding" for example. All values that end with the string 
+"pudding" will be found. This is known as postfix search.
 
-we'll use a wildcard to do a postfix search: 
 SELECT *
 FROM purchases
 WHERE name LIKE "%pudding";
 
 
+NOT: The NOT Operator
+By placing NOT in front of the operators we've learned so 
+far, we can retrieve rows that doesn't satisfy the condition.
+
+SELECT *
+FROM purchases
+WHERE NOT price > 10;
+
+SELECT *
+FROM purchases
+WHERE NOT name LIKE "%pudding%";
 
 
+IS NULL & IS NOT NULL :
+when the database cannot recognize a value or when it 
+does not know there is one, it is called "NULL". For 
+instance, when no data is stored, that is considered NULL.
+In order to select rows that contain a NULL value for 
+certain columns, we can use IS NULL
+
+SELECT *
+FROM purchases
+WHERE price IS NULL;
+
+Getting Rows without NULL Values:
+If we want to get rows where the value for certain 
+columns are not NULL, we can use IS NOT NULL.
+
+SELECT *
+FROM purchases
+WHERE price IS NOT NULL;
+
+About Comparing Values with NULL:
+When you want to get rows where a certain column 
+is or isn't NULL, note that you can't use the = operator. 
+So, be careful to avoid making this mistake
+
+SELECT *
+FROM purchases
+WHERE price = NULL;
+
+The AND Operator:
+If you use the AND operator, you can put multiple conditions 
+in a WHERE clause. Using the structure WHERE condition1 
+AND condition2, you can search for only rows that are true 
+for both conditions.
+
+SELECT *
+FROM purchases
+WHERE character_name = "Master Wooly"
+AND category = "food";
+
+The OR Operator:
+the OR operator can be used to make SQL statements 
+with multiple conditions. Using the structure WHERE 
+condition1 OR condition2, you can search for rows 
+that meet either one of the conditions or both.
+
+SELECT *
+FROM purchases
+WHERE character_name = "Master Wooly"
+OR character_name = "Ken the Ninja";
+
+ORDER BY:
+To put rows in order, you can use ORDER BY in SQL. 
+You can also choose a specific column to order the rows by, 
+You must also specify how the rows should be ordered at the end.
+
+e,g: ORDER BY column_name order_method;
+
+Ascending & Descending Order:
+ORDER BY requires a method for ordering, either "ascending" 
+or "descending". In SQL, ascending is written as ASC which 
+puts the smallest values first, and descending is written as DESC 
+which puts the largest values first.
+
+ASC(ascending): 1, 2, 3 ...100
+DESC(descending): 100 ... 3, 2, 1
+
+By putting ORDER BY at the end of an SQL statement, the 
+results can be put neatly in order:
+
+SELECT *
+FROM purchases
+ORDER BY price DESC;
+
+Since ORDER BY is used at the end of an SQL statement, it can 
+be used in combination with a WHERE clause
+
+SELECT *
+FROM purchases
+WHERE condition
+ORDER BY price ASC;
+
+LIMIT:
+You can set a maximum number of results by using SQL LIMIT
+
+LIMIT number_of_rows;
 
 
+SELECT *
+FROM purchases
+LIMIT 5;
 
+LIMIT can be used in combination with a WHERE clause, 
+just as with ORDER BY.
 
-
-
-
-
-
-
-
-
-
-
-
-
+SELECT *
+FROM purchases
+WHERE condition
+LIMIT 5;
 
 
 
