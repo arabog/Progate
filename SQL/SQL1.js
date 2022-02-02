@@ -220,6 +220,30 @@ FROM purchases
 WHERE condition
 LIMIT 5;
 
+This:
+SELECT *
+FROM purchases
+LIMIT 5;
+
+Means: Get a maximum of 5 rows.
+
+SELECT *
+FROM purchases
+WHERE character_name = "Ken the Ninja"
+LIMIT 10;
+
+Combining ORDER BY with LIMIT:
+Both ORDER BY and LIMIT come at the end of an SQL statement, 
+but it's possible to use them together in the same statement. 
+However, when using them in combination, LIMIT must come 
+at the very end. Below is an example demonstrating how to get 
+only the 5 highest prices.
+
+SELECT *
+FROM purchases
+ORDER BY price DESC
+LIMIT 10;
+
 
 
 
