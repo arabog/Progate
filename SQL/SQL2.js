@@ -268,7 +268,46 @@ WHERE character_name = "Ken the Ninja"
 GROUP BY purchased_at;
 
 HAVING: Narrowing Down Grouped Data
+You can get specific groups from the groups created 
+with GROUP BY in SQL by using a HAVING clause.
 
+If you want to narrow down the data grouped using 
+GROUP BY even further, you can use HAVING. 
+
+GROUP BY column_name 
+HAVING condition;
+
+WHERE & HAVING:
+To narrow down the data after grouping, HAVING 
+should be used rather than WHERE because of 
+the particular order in which SQL commands are 
+performed. WHERE is executed first, followed by 
+GROUP BY and the function, and then HAVING.
+
+Descending order:
+Search: WHERE
+Grouping: GROUP BY
+Function: COUNT, SUM, AVG, MAX, MIN
+HAVING: HAVING
+
+Differences Between WHERE and HAVING:
+WHERE: searches d entire table 
+HAVING: only searches grped rows
+
+Depending on the order, WHERE and HAVING 
+search for different targets. WHERE searches 
+the whole table before grouping, whereas 
+HAVING searches the data grouped by GROUP BY
+
+Note About HAVING:
+Since HAVING searches from the table after grouping, 
+columns used in conditional statements always use 
+columns of grouped tables
+
+SELECT SUM(price), purchsed_at, character_name
+FROM purchases
+GROUP BY purchsed_at, character_name
+HAVING SUM(price) > 10;
 
 
 
