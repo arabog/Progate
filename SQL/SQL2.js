@@ -228,6 +228,48 @@ effective than using them on results with no grouping.
 
 
 Grouping by Precise Conditions:
+WHERE & GROUP BY:
+GROUP BY can also be used with a WHERE clause. 
+To do this, it should come after the WHERE in the SQL 
+statement. These functions come in an order: 
+WHERE comes first, then GROUP BY, and then 
+aggregate functions.
+
+SELECT aggregate_fxn
+FROM table_name
+WHERE condition
+GROUP BY column1, column2;
+
+The Order for Using WHERE and GROUP BY:
+To get the total amount of money spent on food for 
+each purchase date and character name, the order 
+of operations is: 
+① Find rows with the category "food" in WHERE, 
+② Group them by purchased_at and character_name, and 
+③ Aggregate them using the aggregate function.
+
+SELECT SUM(price), purchsed_at, character_name
+FROM purchases
+WHERE category = "food"
+GROUP BY purchsed_at, character_name;
+
+QUE:
+Select the total of the price column and get 
+the rows from the purchased_at column.
+Use WHERE to aggregate rows where the 
+character_name column is Ken the Ninja
+Use GROUP BY to group the rows by the 
+total of the price and purchased_at columns.
+
+SOLN:
+SELECT SUM(price), purchased_at
+FROM purchases
+WHERE character_name = "Ken the Ninja"
+GROUP BY purchased_at;
+
+HAVING: Narrowing Down Grouped Data
+
+
 
 
 #Progate @progateEN @dev_careers #dev_careers
