@@ -223,9 +223,11 @@ FROM purchases
 GROUP BY purchased_at, character_name;
 
 Results of Using GROUP BY with Multiple Columns:
+Using aggregate functions on specific groups are more 
+effective than using them on results with no grouping. 
 
 
-
+Grouping by Precise Conditions:
 
 
 #Progate @progateEN @dev_careers #dev_careers
