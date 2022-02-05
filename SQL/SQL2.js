@@ -95,7 +95,7 @@ By simply counting the total number of rows stored in the
 purchases table, you can determine the number of times 
 an item was bought.
 
-COUNTCOUNT(column_name)
+COUNT(column_name)
 
 e.g:
 SELECT COUNT(name)
@@ -130,6 +130,101 @@ WHERE character_name = "Ken the Ninja";
 
 
 Finding Maximum and Minimum:
+MAX & MIN:
+With the MAX function in SQL, you can get the maximum 
+value from the rows of the specific column. Likewise, by 
+using the MIN function, the minimum value can be 
+retrieved.
+
+MAX(column_name)
+MIN(column_name)
+
+Just as with other aggregate functions, MAX and MIN 
+can be used after SELECT. By specifying the price 
+column, you can get the item with the highest price 
+of all the rows.
+
+SELECT MAX(price)
+FROM purchases;
+
+Combining WHERE with MAX-MIN:
+SELECT MAX(price)
+FROM purchases
+WHERE character_name = "Ken the Ninja";
+
+
+GROUPING ROWS:
+GROUP BY:
+For instance, applying aggregate functions to rows 
+with the same date is referred to as grouping. 
+
+GROUP BY column_name
+
+With GROUP BY you can put rows into groups. 
+For example, using the syntax GROUP BY column_name, 
+rows with exactly the same values will be put in a group 
+for the specified column.
+
+
+Grouping & Aggregating:
+To use grouping with aggregated data, you can add 
+GROUP BY column_name to the end of an SQL 
+statement that uses any of the aggregate functions 
+we've learned in this lesson. This will apply the 
+aggregate function for the rows in each group.
+
+SELECT SUM(price)
+FROM purchases
+GROUP BY purchased_at;
+
+A Note About GROUP BY:
+When GROUP BY is used, only the column name 
+specified in GROUP BY and the aggregate function 
+can be used in SELECT:
+
+CORRECT: i.e selecting both price & purchased_at columns
+SELECT SUM(price), purchased_at
+FROM purchases
+GROUP BY purchased_at;
+
+WRONG:
+SELECT price, purchased_at
+FROM purchases
+GROUP BY purchased_at;
+
+E.g:
+In this exercise, we'll use GROUP BY to determine 
+the purchase totals according to their purchased 
+dates.
+
+Select the total of the price column using the SUM 
+function also select the purchased_at column.
+
+Use GROUP BY to group the rows by the purchased_at column.
+
+SELECT COUNT(price), purchased_at
+FROM purchases
+GROUP BY purchased_at
+;
+
+Grouping Results with Multiple Columns:
+For example, you can group the result of the total 
+price spent by each character by the purchase date
+
+How to Use GROUP BY with Multiple Columns:
+You can use GROUP BY with multiple columns by 
+listing multiple column names and separating them 
+with comma.
+
+GROUP BY column1, column2,
+
+SELECT SUM(price), purchased_at, character_name
+FROM purchases
+GROUP BY purchased_at, character_name;
+
+Results of Using GROUP BY with Multiple Columns:
+
+
 
 
 
