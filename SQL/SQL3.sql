@@ -43,12 +43,42 @@ Let's get the names of the players with goals that are greater
 than the average number of goals.
 
 ANS:
-SELECT name,goals
+SELECT name, goals
 FROM players
 WHERE goals > (
           SELECT AVG(goals)
           FROM players
 );
+
+
+Making the Data Easier to Read:
+Using AS:
+By using AS, you can create temporary labels for column  
+names and tables. To do this, use the syntax: column_name  
+AS "New Name". This will display the column column_name 
+as New Name
+
+SELECT goals AS "Will's Goals"
+FROM players
+WHERE name = "Will";
+
+QUE:
+Now let's use AS and get a total of goals scored for the whole team.
+
+ANS:
+SELECT SUM(goals) AS "total team score"
+FROM players;
+
+Combining Tables:
+
+
+
+
+
+
+
+
+
 
 
 #Progate @progateEN @dev_careers #dev_careers
