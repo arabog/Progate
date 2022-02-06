@@ -87,12 +87,61 @@ Benefits of Connecting Tables:
 Combining two tables has various advantages over combining 
 columns. One advantage is that it makes managing data easier.
 
+QUE:
+Use the combined table to get total goals 
+for each country in this lesson.
+
+SELECT SUM(goals), country_id
+FROM players
+GROUP BY country_id;
+
+
 JOIN:
+JOIN is used to combine multiple tables into one. 
+Conditions for a join are specified with ON. You can 
+then get data from the resulting table just as you would 
+with a single table.
+
+SELECT *
+FROM table_a
+JOIN table_b
+ON condition;
+
+Join Conditions:
+To write a join condition, use the syntax: 
+ON table_a.column_name = table_b.column_name.
+
+SELECT *
+FROM table_a
+JOIN table_b
+ON players.country_id = countries.id;
+
+Order of Execution for JOIN:
+When an SQL statement contains a JOIN clause, the JOIN 
+is performed first. Next, the SELECT is performed on the 
+joined table.
+
+SELECT *                                                      (2)
+
+FROM table_a                                               (1)
+JOIN table_b                                                 (1)
+ON players.country_id = countries.id;         (1)
 
 
+QUE:
+Using JOIN, combine the countries table to the players table. 
+sing ON, associate  country_id of the players table with 
+id of the countries table.
 
+SOLN:
+SELECT *
+FROM players
 
+-- Add the table name after the JOIN to combine the table 
+JOIN countries
 
+-- Add a join condition
+ON players.country_id = countries.id;
 
 
 #Progate @progateEN @dev_careers #dev_careers
