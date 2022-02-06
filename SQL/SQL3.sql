@@ -70,10 +70,24 @@ SELECT SUM(goals) AS "total team score"
 FROM players;
 
 Combining Tables:
+To use the tables together, we must add two columns known 
+as a foreign key and a primary key. Since there is already 
+a primary key in the countries table which is the id 
+column, we must simply add a foreign key named 
+country_id to the players table.
 
+Rows are connected where the foreign key is equal to the primary key!
 
+How Tables Are Connected:
+In SQL, we use foreign keys and primary keys to connect tables. 
+By specifying a primary key in another table as a foreign key, 
+you can connect the tables together.
 
+Benefits of Connecting Tables:
+Combining two tables has various advantages over combining 
+columns. One advantage is that it makes managing data easier.
 
+JOIN:
 
 
 
