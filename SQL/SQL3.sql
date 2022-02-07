@@ -238,6 +238,29 @@ LEFT JOIN teams
 ON players.previous_team_id = teams_id;
 
 Combining Three or More Tables:
+JOIN with Multiple Tables:
+JOIN can be used multiple times in a single SQL 
+statement, and even if you use JOIN multiple times, 
+you only need to write FROM once.
+
+SELECT *
+FROM players
+JOIN countries
+ON players.country_id = countries.id
+LEFT JOIN teams
+ON players.previous_team_id = teams_id;
+
+QUE:
+In this exercise we're going to use JOIN to combine three tables!
+
+ANS:
+SELECT *
+FROM players
+JOIN countries
+ON players.country_id = countries.id
+LEFT JOIN teams
+ON players.previous_team_id = teams.id;
+
 
 
 
