@@ -262,7 +262,36 @@ LEFT JOIN teams
 ON players.previous_team_id = teams.id;
 
 
+QUE:
+Using JOIN, combine the countries table to the players table.
+・Using ON, associate country_id of the players table with 
+id of the countries table and get rows with the following conditions:
+① Players from the country Japan
+② Players with at least 180cm tall
 
+ANS:
+SELECT *
+FROM players
+JOIN countries
+ON players.country_id = countries.id
+WHERE countries.name = "Japan" 
+AND players.height >= 180;
 
-#Progate @progateEN @dev_careers #dev_careers
+QUE:
+Select the name column from country table as country name
+and the average number of goals of each country as 
+average score
+・Using JOIN, combine the countries table to the players table.
+・Using ON, associate country_id of the players table with country.id
+・Use GROUP BY to group the rows by the country name.
+
+ANS:
+SELECT countries.name AS "country name", AVG(goals) AS "average score" 
+FROM players
+JOIN countries
+ON players.country_id = countries.id
+GROUP BY countries.name;
+
+NB: AVG(goals) AS "average score"  or AVG(players.goals) AS "average score" 
+
 */
