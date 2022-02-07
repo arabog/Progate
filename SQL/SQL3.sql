@@ -223,11 +223,21 @@ JOIN teams
 ON players.previous_team_id = teams_id;
 
 Including Results with NULL Values:
+It is possible to display rows in which the foreign key 
+is NULL in the executed results by using LEFT JOIN.
 
+LEFT JOIN:
+Using LEFT JOIN, you can get all the records of the 
+table specified in the FROM clause. All rows with a 
+NULL foreign key value will also be displayed in 
+the executed results as NULL.
 
+SELECT *
+FROM players
+LEFT JOIN teams
+ON players.previous_team_id = teams_id;
 
-
-
+Combining Three or More Tables:
 
 
 
