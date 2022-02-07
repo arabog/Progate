@@ -144,5 +144,82 @@ JOIN countries
 ON players.country_id = countries.id;
 
 
+Getting Data with JOIN: 
+Specifying Columns with Multiple Tables:
+If the same column name exists in more than one table, 
+it must be specified like so: table_name.column_name.
+
+SELECT players.name, countries.name
+FROM players
+JOIN countries
+ON players.country_id = countries.id;
+
+The syntax table_name.column_name can also be used 
+in a WHERE clause. When dealing with multiple tables, 
+it's important to remember that the same column name 
+may exist in different tables
+
+SELECT *
+FROM players
+JOIN countries
+ON players.country_id = countries.id
+WHERE  players.name = "Will";
+
+Overall Order of Execution:
+Let's check the overall order in which the various SQL 
+statement parts will be performed. Note that FROM and 
+JOIN are performed first because the table must be 
+constructed before SQL searches can be performed.
+
+
+Specified Table:              FROM
+
+Combining:                    ON, JOIN       
+
+Conditions:                   WHERE
+
+Grouping:                     GROUP BY
+
+Functions:                    COUNT, SUM, AVG, MIN
+
+HAVING:                       HAVING
+
+Searching:                    SELECT, DISTINCT
+
+Ordering:                     ORDER BY
+
+LIMIT:                        LIMIT
+
+QUE:
+let's try to get data from a specific column in the table created with JOIN.
+Select the name column of both the players and countries tables.
+
+ANS:
+SELECT players.name, countries.name
+FROM players
+JOIN countries
+ON players.country_id = countries.id;
+
+QUE:
+Next, let's get the total number of goals for each country.
+Select the name column from the countries table and the sum of 
+goals column.
+
+ANS:
+SELECT countries.name, SUM(players.goals)
+FROM players
+JOIN countries
+ON players.country_id = countries.id
+GROUP BY countries.name;
+
+
+
+
+
+
+
+
+
+
 #Progate @progateEN @dev_careers #dev_careers
 */
