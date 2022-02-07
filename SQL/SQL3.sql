@@ -212,7 +212,17 @@ JOIN countries
 ON players.country_id = countries.id
 GROUP BY countries.name;
 
+Execution Results When Containing NULL Value:
+When using JOIN, the operation is executed based on the table 
+specified with FROM. However, rows with a NULL foreign key 
+value, won't be displayed in the executed results.
 
+SELECT *
+FROM players
+JOIN teams
+ON players.previous_team_id = teams_id;
+
+Including Results with NULL Values:
 
 
 
