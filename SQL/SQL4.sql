@@ -92,10 +92,35 @@ ORDER BY price - cost DESC
 LIMIT 5; 
 
 
-Q4:
+Q4: 
+Select the name and price columns of products from the items
+table where the price is higher than the item grey hoodie
 
+SELECT name, price
+FROM items
+WHERE price > (
+          SELECT price
+          FROM items
+          WHERE name = "grey hoodie"
+);
 
-Q5:
+Select the name column and the profit of products wc price 
+is less than or equal to 70 and the profit is higher than the 
+grey hoodie
+
+SELECT name, price - cost
+FROM items
+WHERE price <= 70 AND price - cost > (
+          SELECT price-cost
+          FROM items
+          WHERE name = "grey hoodie"
+);
+
+Q5: Analyzing Sales Records
+For each item, get the following data from the 
+sales_record table:
+・Product ID (item_id)
+・Number of units sold
 
 
 Q6:
