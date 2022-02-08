@@ -67,6 +67,12 @@ can be combined with the four arithmetic operators
 SELECT AVG(price - cost)
 FROM items;
 
+ORDER BY & Arithmetic Operators:
+SELECT name, price - cost
+FROM items
+ORDER BY price - cost DESC;
+
+
 
 Q4:
 
