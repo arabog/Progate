@@ -122,6 +122,22 @@ sales_record table:
 ・Product ID (item_id)
 ・Number of units sold
 
+SELECT item_id, COUNT(item_id)
+FROM sales_records
+GROUP BY item_id;
+
+For the top 5 most-sold items, get the following data 
+for each item and order it by descending order by the 
+number of units sold:
+・Product ID (item_id)
+・Number of units sold
+
+SELECT item_id, COUNT(item_id)
+FROM sales_records
+GROUP BY item_id
+ORDER BY COUNT(item_id) DESC
+LIMIT 5;
+
 
 Q6:
 
