@@ -58,7 +58,14 @@ FROM items
 WHERE name LIKE "%shirt%";
 
 
-Q3:
+Q3: Calculating Profit Per Item
+SELECT name, price - cost
+FROM items;
+
+Aggregate functions like MAX, MIN, SUM, and AVG 
+can be combined with the four arithmetic operators
+SELECT AVG(price - cost)
+FROM items;
 
 
 Q4:
