@@ -139,7 +139,22 @@ ORDER BY COUNT(item_id) DESC
 LIMIT 5;
 
 
-Q6:
+Q6: Analysis with Combined Tables
+For the top 5 most sold products, get the following data:
+・Product id
+・Product name
+・Number of units sold
+Also, the results should be in descending order by the number 
+of units sold.
+
+
+
+Get the following data for the entire site's sales history:
+・Total sales (the sum of the prices of all products)
+・Total profit (the sum of all profit values)
+Use AS to label the results total sales and total profit
+.
+
 
 
 Q7:
