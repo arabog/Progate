@@ -72,6 +72,24 @@ SELECT name, price - cost
 FROM items
 ORDER BY price - cost DESC;
 
+Select the name, price and profit columns of all 
+products from the items table.
+
+SELECT name, price, price - cost AS "profit"
+FROM items;
+
+Get the average profit value for all products.
+SELECT AVG(price - cost)
+FROM items;
+
+
+Select the name column and profit of the 
+top 5 products with the highest profit.
+
+SELECT name, price - cost
+FROM items
+ORDER BY price - cost DESC
+LIMIT 5; 
 
 
 Q4:
