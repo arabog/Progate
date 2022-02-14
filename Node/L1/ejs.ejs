@@ -11,6 +11,24 @@
           e.g:
            <% const item = {id: 4, name: 'tomatoes'} %;
 
-          <%= {item.id} %>
-          <%= {item.name} %>
+          <%= item.id %>
+          <%= item.name %>
+
+          
+          Using Arrays in Views:
+          Advantages of EJS
+          With EJS, you will be able to use the forEach method, which 
+          will make the code much simpler and easier to manage than 
+          plain HTML.
+
+          <% items.forEach(item => { %>
+                    <li>
+                              <span><%= item.id %> </span>
+                              <span><%= item.name %> </span>
+                    </li>
+          <%}) %>
+
+
+          "/" This URL is called the root URL.
+          It is very common to set the root URL to the first page that the users visit.
  -->
