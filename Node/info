@@ -41,8 +41,14 @@ The listen Method
 To start the server, we need to add the listen method to app.js, then run it in the terminal using the following command: node file_name.
 
 
+Routing: 
+Determining how the app responds to a request to a particular URL is called routing.
 
+req and res:
+Each route can handle a request with a function, known as a route handler, that has req (request) and res (response) as parameters. These two parameters will hold information about the request and response.
 
+Displaying a View File
+You can specify which view file to show on the browser using the res.render function.
 
 
 #Progate @progateEN @dev_careers #dev_careers
