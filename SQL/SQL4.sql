@@ -147,6 +147,13 @@ For the top 5 most sold products, get the following data:
 Also, the results should be in descending order by the number 
 of units sold.
 
+SELECT items.id, items.name, COUNT(*)
+FROM sales_records
+JOIN items
+ON sales_records.item_id = items.id
+GROUP BY items.id, items.name
+ORDER BY COUNT(*) DESC
+LIMIT 5;
 
 
 Get the following data for the entire site's sales history:
@@ -154,10 +161,28 @@ Get the following data for the entire site's sales history:
 ・Total profit (the sum of all profit values)
 Use AS to label the results total sales and total profit
 .
-
+SELECT SUM(items.price) AS "total sales", SUM(items.price - items.cost) AS "total profit"
+FROM sales_records
+JOIN items
+ON sales_records.item_id = items.id;
 
 
 Q7:
+Next, do an analysis of the daily sales by calculating the number 
+of items sold each day.
+
+Group the results by the date and get the following data, while also 
+sorting the date in ascending order:
+・Date purchased
+・Number sold per day
+Also, add the label sales to the "items sold" results.
+
+Group the results by the date and get the following data, while also 
+sorting the date in ascending order:
+・Date purchased
+・The total sales for that date
+Also, label the results total sales
+.
 
 
 Q8:

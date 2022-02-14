@@ -1,0 +1,19 @@
+1. What is the Web?
+The URL indicates the "server's location" as well as the "location of the 
+information within the server"
+
+
+          server locatn/  locatn of d info within d server
+https://prog-8.com/about
+
+
+2. Client and Server
+A web page's HTML is stored in the server. The client that 
+displays the HTML is called a browser.
+
+
+
+Understanding More about Web Applications:
+A website that is made purely with HTML is static, and will 
+always show the same content unless the developer updates it.
+
