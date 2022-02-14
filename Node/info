@@ -17,3 +17,33 @@ Understanding More about Web Applications:
 A website that is made purely with HTML is static, and will 
 always show the same content unless the developer updates it.
 
+A website with interactive functionalities is known as a Web Application.
+
+Applications that are used by many in the world, are web applications that are integrated with servers and databases.
+
+A web application is an application that utilizes the mechanisms of the web. It's slightly different from your applications on iOS and Android.
+From here, let's remember that a web application is something you use from a browser!
+
+3. The Web Application Mechanism
+How does a web application function?
+A database in terms of web applications is a tool that allows the storage of text and number data.
+
+
+Express:
+is a framework for Node.js dt provides efficient
+tools for developing web apps
+
+With Node.js, there are many useful tools that you can use called packages. Express is one of them.
+
+There is a system called npm (Node Package Manager) that lets you use packages. With npm, you can share and download packages. 
+
+The listen Method
+To start the server, we need to add the listen method to app.js, then run it in the terminal using the following command: node file_name.
+
+
+
+
+
+
+#Progate @progateEN @dev_careers #dev_careers
+
