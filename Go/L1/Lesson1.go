@@ -1,21 +1,22 @@
-// package main
+/*
+package main
 
-// func main() {		
-// 	println("Hello World")
+func main() {		
+	println("Hello World")
 	
-// }
+}
 
-// package main
+package main
 
-// func main() {
-// 	s1 := "Hi, "
-// 	s2 := "world"
+func main() {
+	s1 := "Hi, "
+	s2 := "world"
 	
-// 	s1 = "Hello, "
+	s1 = "Hello, "
 
-// 	println(s1, s2)
+	println(s1, s2)
 
-// }
+}
 
 package main
 
@@ -26,4 +27,16 @@ func main() {
 	// n += 20
 	
 	println(n)	//30
+}
+
+*/
+
+package main
+
+func main() {
+	score := 100
+
+	if score > 80 {
+		println("Great job!")
+	}
 }

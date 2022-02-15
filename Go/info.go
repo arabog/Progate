@@ -368,17 +368,79 @@ n = n - 1 --> n -= 1 --> n--
 
 
 
-#Progate @progateEN @dev_careers #dev_careers
+Using if Statements
+The if statements allow you to create a control flow that means 
+"if X, do Y". An if statement can be written as shown in the image 
+below, where an if is followed by a conditional statement, and 
+when the conditional statement is met or true, the items in { } 
+will be executed. 
 
 package main
 
 func main() {
-	n := 10
-	n =  n + 20
-	
-	// n += 20
-	
-	println(n)	//30
-	
+	score := 100
+
+	if score > 80 {
+		println("Great job!")
+	}
 }
+
+if Statement Conditions
+Symbols used to compare values are known as comparison operators. 
+E.g < and >, >= and <= in Go. if statements are written as 
+if conditionalStatement { }.
+
+
+Boolean Values
+Let's take a closer look at the conditional statement part of the if 
+statement. If we try to print the conditional statement part of the 
+if statement, we get true as the output 
+
+package main
+
+func main() {
+	score := 100
+
+	println(score > 80)
+}
+
+What are Boolean Values?
+The data type for boolean values is commonly known as boolean type 
+and it has only two possible values, true or false. A conditional 
+statement using the comparison operator will have the value true 
+if it's true, and false if it's not.
+
+if Statements and Booleans
+In an if statement, if the conditional statement is true, the 
+process is executed; if it's false, the process isn't executed.
+
+package main
+
+func main() {
+	score := 100
+
+	if score > 80 {	//executed
+		println("Great job!")
+	}
+}
+
+
+package main
+
+func main() {
+	score := 50
+
+	if score > 80 { 	//not executed
+		println("Great job!")
+	}
+}
+
+
+#Progate @progateEN @dev_careers #dev_careers
+
+
+
+
+
+
 */ 

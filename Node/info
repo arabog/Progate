@@ -51,5 +51,13 @@ Displaying a View File
 You can specify which view file to show on the browser using the res.render function.
 
 
+else
+By using the else statement, you can create a control flow "if X, then Y, but if not then Z". You do this by adding some code you want to run when the condition of the if statement is false.
+
+else if
+If you want to add alternative conditions when the condition of an if statement is false, use else if. The control flow, "if A then B, if X then Y, if neither then Z" can be created using else if!
+
+
+
 #Progate @progateEN @dev_careers #dev_careers
 
