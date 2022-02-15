@@ -1,7 +1,73 @@
-#Progate @progateEN @dev_careers #dev_careers
 
 MySQL is one of d systems for managing databases
 
 Using MySQL
 To use MySQL with Node.js, you need to connect them. 
 
+Installing the mysql Package
+To connect MySQL to Node.js, you'll need to use the mysql package. 
+This is the same as when we installed a package to set up Express in Study I.
+
+npm install mysql
+
+Connecting to MySQL
+We'll import the mysql package and then use the createConnection method. We'll store the required information in a constant called connection. This will complete the MySQL connection process.
+
+How to Run Queries
+To run a query to the database from Node.js, you can write connection.query(A, B), where A is the query and B is a function that runs after the query is completed (a callback).
+
+const connection = mysql.createConnection(...);
+
+connection.query(
+          'SELECT * FROM items',        //query
+          () => {
+                    <!-- display d list page -->
+          }
+)
+
+Query Callback
+The query callback can take two arguments. The first is error which will contain error information if the query fails and the second is results which will contain the result of the query.
+
+connection.query(
+          'SELECT * FROM items',        //query
+          (error, results) => {
+                    <!-- display d list page -->
+                    console.log(results)
+                    res.render('index.ejs)
+          }
+)
+
+query results r displayed in an array
+
+
+Passing Values to EJS
+With EJS, you can access values through the render method. By writing {property: value} in the second argument of the render method, you can pass values to the EJS side.
+
+app.js
+connection.query(
+          'SELECT * FROM items',        //query
+          (error, results) => {
+                    res.render('index.ejs, {items: results})
+          }
+)
+
+index.ejs
+<% items.forEach(item) { %>
+
+Set Up the Routing for Creating Items
+p until now, we've used app.get, but this time we'll use app.post. These methods called GET and POST refer to the types of requests. 
+
+What are GET and POST?
+When you make a request to the server, there are rules for specifying what kind of process you're requesting.
+
+Setting Up the Form
+For creating the form, we'll use the HTML <form> tag. Based on the routing, we'll set the action attribute to the destination URL and the method to post or get.
+
+
+
+
+
+
+
+
+#Progate @progateEN @dev_careers #dev_careers
