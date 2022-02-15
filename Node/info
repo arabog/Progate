@@ -95,5 +95,26 @@ func main() {
 
 }
 
+
+The switch Statement
+In addition to an if statement, there's also another control flow known as a switch statement. When the conditional value matches the case value, the code for that case will be executed. Don't forget to put colon : after each case.
+
+switch conditionalValue {
+          case1: 
+                    run this code
+
+          case2: 
+                    run this code
+
+          default: 
+                    run this code
+}
+
+
+if Statements and switch Statements
+Let's compare switch statements to if statements. The if statement adds flow based on conditions, whereas the switch statement adds flow based on values. switch statements are better for when there are a lot of conditions based on values.
+
+
+
 #Progate @progateEN @dev_careers #dev_careers
 
