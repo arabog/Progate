@@ -185,15 +185,78 @@ by including a \n character inside the string. This prints
 all the text after the \n on the next line.
 
 
+Repeating Code with Loops
+Loops are a set of instructions that will automatically repeat 
+based on some condition. 
 
-#Progate @progateEN @dev_careers #dev_careers
+for Loops
+In Go, for is used to create loops. In the for statement, you 
+can repeat the process in { } by specifying 3 steps: 
+initialization of variable, loop condition, and updating 
+the variable. Each step is separated by semicolon ; but 
+be sure to note that there isn't a semicolon after the 
+last variable.
 
-*/ 
 package main
 
 import "fmt"
 
 func main() {
-	fmt.Printf("Hello, %s\n", "Ken")
-	fmt.Printf("Hello, %s\n", "Master Wooly")
+	for i := 1; i < 5; i++ {
+		fmt.Printf("Hello \n")
+	}
 }
+
+
+Loops Flow
+In the example below, the variable i is assigned 1 
+as an initial value and will be updated using i++ 
+for each iteration until condition i <= 5 is no 
+longer valid. When the condition of i <= 5 is not 
+met, the loop will end automatically. 
+
+package main
+
+import "fmt"
+
+func main() {
+	for i := 1; i <= 5; i++ {
+		fmt.Printf("Hello \n")
+	}
+}
+
+Adding Code in Loops
+You can put multiple lines of code inside a for loop. All 
+the code written inside the { } of the loop will be repeated 
+in the order you put them.
+
+
+Declaring Variables in for Statements
+You can't use var in a for initializer. You can only declare 
+a variable with :=. Using var will cause an error.
+
+e.g:
+You can practice using loops in this exercise. Use a for 
+loop to print every integer from 1 to 100.
+
+package main
+
+import "fmt"
+
+func main() {
+	for i := 1; i <= 100; i++ {
+		fmt.Printf("%d\n", i)
+	}
+}
+
+func main() {
+	for i := 1; i <= 100; i++ {
+		fmt.Println(i)
+	}
+}
+
+
+#Progate @progateEN @dev_careers #dev_careers
+
+*/ 
+
