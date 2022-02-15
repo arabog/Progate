@@ -160,17 +160,40 @@ func main() {
 	fmt.Printf("The date today is %d/%d", month, day)
 }
 
+Difference Between Printf and Println
+Unlike fmt.Println,fmt.Printf won't start on a new line after 
+the output string. As you can see below, even though a second 
+fmt.Printf was used, the second output string continues right 
+after the end of the first output with no line-break.
+
+func main() {
+	fmt.Printf("Hello, %s\n", "Ken")
+	fmt.Printf("Hello, %s\n", "Master Wooly")
+}
+// Ken, Master Wooly
+
+
+The \n Character
+By putting \n in a string, you can add a line-break. The \n 
+character itself won't appear in the text.
+
+
+The \n Character (2)
+The \n character can be used anywhere in a string. For 
+example, you can start a new line in the middle of a string 
+by including a \n character inside the string. This prints 
+all the text after the \n on the next line.
+
+
+
 #Progate @progateEN @dev_careers #dev_careers
 
 */ 
-
 package main
 
 import "fmt"
 
 func main() {
-	age := 18
-	
-	fmt.Printf("%d years old", age)
-
+	fmt.Printf("Hello, %s\n", "Ken")
+	fmt.Printf("Hello, %s\n", "Master Wooly")
 }
