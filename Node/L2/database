@@ -63,9 +63,76 @@ When you make a request to the server, there are rules for specifying what kind 
 Setting Up the Form
 For creating the form, we'll use the HTML <form> tag. Based on the routing, we'll set the action attribute to the destination URL and the method to post or get.
 
+Getting the Input Value (1)
+By setting the name attribute of the input element, you can send information in the form of an object to the server. Then on the server-side, you can get the form value using req.body.nameValue
+
+<input type="text" name="itemName">
+
+Getting the Input Value (1)
+To get values from forms, you need to add the source code below in app.js.
+
+<!-- required configuration to access form values -->
+app.use(express.urlencoded({extended: false}))
+
+<!-- route -->
+app.post("/create", (req, res) => {
+          console.log(req.body.itemName) // get d form value
+})
 
 
+Adding Data
+We can use the query method just as we did with SELECT to run INSERT. The id of the items table has AUTO INCREMENT set, so we don't have to worry about setting the id.
 
+Adding a List Item
+To use the value from the form in the query, we need to give a ? to VALUES. Next, we need to pass an array containing the values we want into the second argument of connection.query(). The elements of this array will go into the ? and the query will be run.
+
+add a query that inserts the form value into the name column of the items table. For adding to the name column use ?.
+
+app.post('/create', (req, res) => {
+          // Write a query to add data to the database
+          connection.query(
+                    "INSERT INTO items (name) VALUES(?)",
+                    [req.body.itemName],
+                    (error, results) => {
+                              connection.query(
+                                        'SELECT * FROM items',
+                                        (error, results) => {
+                                                  res.render('index.ejs', {items: results});
+                                        }
+                              );
+                    }
+          )
+  
+});
+
+
+What is a Redirect?
+The server can return a response saying "next make a request to this URL." When the browser receives this, it will automatically make a request to the specified URL. This process of making another request to a different URL is called a redirect.
+
+Reloading After a Redirect
+By using a redirect, we can make a request to /index after an item is created and display the list page. By doing this, reloading the page after creating a list item won't restart the creation process and list items won't be added.
+
+How to Use a Redirect
+After adding a list item let's redirect to the list page (/index). For making a redirect, use the res.redirect method and pass the URL as the argument.
+
+app.post('/create', (req, res) => {
+          // Write a query to add data to the database
+          connection.query(
+                    "INSERT INTO items (name) VALUES(?)",
+                    [req.body.itemName],
+                    (error, results) => {
+                              
+                              res.redirect('/index);
+                    }
+          )
+  
+});
+
+
+Using Redirect
+There are multiple situations where a redirect is useful, especially like here when we make a request using the post method. In cases like this, instead of using res.render we use res.redirect and redirect to a get route.
+
+For POST use a Redirect
 
 
 
