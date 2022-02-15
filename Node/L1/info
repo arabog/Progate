@@ -114,6 +114,33 @@ switch conditionalValue {
 if Statements and switch Statements
 Let's compare switch statements to if statements. The if statement adds flow based on conditions, whereas the switch statement adds flow based on values. switch statements are better for when there are a lot of conditions based on values.
 
+Designating Multiple Values
+Multiple values can be specified using commas , after the word case. When multiple values are used, the code for a case will run if the condition value of the switch matches either one of them. This is similar to using multiple conditions with the logical operator OR ||.
+
+year := 1896
+
+if year == 1896 || year == 2004 {
+          println("the Olympics were held in Athens")
+}else if year == 1900 {
+          println("the Olympics were held in Paris")
+}
+
+
+switch year {
+          case 1896, 2004:
+                    println("the Olympics were held in Athens")
+
+          case 1990:
+                    println("the Olympics were held in Paris")
+
+          default:
+                    println("No Olympics held")
+}
+
+
+default
+In switch statements, you can set a default case for when none of the cases match. It functions similarly to an else in if statements.
+
 
 
 #Progate @progateEN @dev_careers #dev_careers
