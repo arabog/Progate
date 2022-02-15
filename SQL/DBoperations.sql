@@ -35,3 +35,60 @@ INSERT INTO items(name, price, category) VALUES ('Milk', 120, 'Drinks');
 
 Let's check if the items have been successfully inserted.
 SELECT * FROM items;
+
+2. Let's Add a Column
+Let's Look at the Steps to Add a Column
+Check the target table
+Add the new column
+Check the target table again after adding the column
+
+Checking the Target Table
+Before we add the new column, let's double-check the data in the current table.
+SELECT * FROM items;
+
+Adding the New Column
+Let's add the new column.
+As stock numbers should be a whole number, we are going to set the column 
+data type as INT.
+
+ALTER TABLE items ADD COLUMN stock INT
+
+NULL is shown for values in the stock as the stock numbers are currently not defined.
+We use the UPDATE query to set the actual data. Let's update the stock of the item 
+with the id 1 to 100.
+UPDATE items SET stock = 100 WHERE id = 1;
+
+3. Let's Change a Column
+Let's Look at the Steps to Change a Column Name
+Check the target table
+Check the data type of the column to change
+Change the column name
+Check the target table again after changing the column name
+
+Checking the Data Type of the Column to Change:
+When changing the column name, the data type of the column 
+needs to be provided. Let's check the data type of the price 
+column.
+
+DESCRIBE items;
+
+Changing the Column Name
+After knowing the data type, let's change the name of the price column into cost.
+ALTER TABLE items CHANGE COLUMN price cost INT;
+
+
+4. Let's Drop a Column
+Let's Look at the Steps to Drop a Column
+Check the target table        //SELECT * FROM items;
+Drop the target column
+Check the target table again after dropping the column
+
+Dropping the Target Column:
+ALTER TABLE items DROP COLUMN category;
+
+5. What to Check for When There Are Problems
+If you are unable to successfully perform the various column operations, 
+please check on the following.
+The code specified in the article has not been run
+Misspellings in the entered file name, source code, etc.
+The command run in the terminal is being run in a different location
