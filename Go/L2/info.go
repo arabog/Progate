@@ -256,7 +256,92 @@ func main() {
 }
 
 
+Random Numbers
+Programs have many parts that need to be predictable and 
+decided beforehand, but there are times we might want to 
+get a random result. In Go, there's a package called 
+math/rand that's perfect for the job.
+
+import "math/rand"
+
+Generating Random Numbers
+To generate random numbers, you first need to import the 
+math/rand package by writing import "math/rand". Then 
+you can generate random numbers from 0 to 9 by writing 
+rand.Intn(10) (note that 10 is not included). Note that the 
+I in Intn(10) is the uppercase letter of i.
+
+package main
+import "fmt"
+import "math/rand"
+
+func main() {
+	fmt.Println(rand.Intn(10))
+	fmt.Println(rand.Intn(10))
+}
+
+
+E.g: Print 5 random integers.
+
+package main
+
+import "fmt"
+
+import "math/rand"
+
+func main() {
+
+	for i := 1; i <= 5; i++ {
+		// Generate and print a random integer from 0 to 9
+		fmt.Println(rand.Intn(10))
+	}
+}
+
+Cautionary Point for Random Numbers
+Simply using rand.intn(10) will generate the same random 
+numbers and order every time we run it.
+
+Random Seed
+For completely random numbers, a random seed must be set. 
+You can do this by writing rand.Seed(value). When the value 
+changes, so does the random number. Below, the time package 
+is imported and rand.Seed(time.Now().Unix()) is used. 
+
+package main
+
+import "fmt"
+
+import "math/rand"
+
+import "time"
+
+func main() {
+
+	rand.Seed(time.Now().Unix())
+
+	for i := 1; i <= 5; i++ {
+		fmt.Println(rand.Intn(10))
+	}
+}
+
 #Progate @progateEN @dev_careers #dev_careers
 
 */ 
 
+package main
+
+import "fmt"
+
+import "math/rand"
+
+import "time"
+
+func main() {
+
+	rand.Seed(time.Now().Unix())
+
+	for i := 1; i <= 5; i++ {
+		// Generate and print a random integer from 0 to 9
+		fmt.Println(rand.Intn(10))
+	}
+}
