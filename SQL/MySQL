@@ -1,0 +1,43 @@
+1. Creating a Database
+sudo mysql
+
+mysql --user=root --password
+
+To display the list of existing databases, we will use the SHOW command. 
+Please run the following query: SHOW databases;
+
+*Don't forget to place a semicolon ( ; ) at the end of the query. 
+
+When creating a database, the CREATE DATABASE statement is used.
+CREATE DATABASE progate;
+
+2. Selecting the Database
+First, let's use the following command to choose the database where you 
+would like to create a table in. (We will use progate here).
+USE progate;
+
+*Without specifying the database, we cannot create a table, so make 
+sure to complete this step.
+
+Once you have selected the database, let's take a look at the list of tables that already exist. Run the following command to do so.
+SHOW tables;
+
+Creating a Table
+Now using the command CREATE TABLE, let's create a table titled users. Please run the following query:
+CREATE TABLE users (          //users specify d name of d table created
+          `id` int auto_increment,      <!--specify d column name, data type & option, respectively -->
+          `name` text, 
+          primary key (id));  //specify d id column s d pry key
+
+This is the basic syntax used for creating a table. Details such as the column name, data type, and the options you want to add to the columns will differ depending on your purpose.
+
+Using the DESCRIBE statement, which is used to display table structures, let's check that the table has been created correctly.
+DESCRIBE users;
+
+
+3. Primary Key
+In this section we will explain the role of a primary key, which was set on the id column when creating the users table.
+A primary key is a constraint placed on a database table column to uniquely identify a record, and duplicated values cannot be placed in the set column.
+For example, if the value "1" already exists in the primary key id column, you will not be able to place the same value of "1" in the newly inserted record.
+Just like in the users table, by setting AUTO_INCREMENT on the id column and defining the id column as the primary key, a unique value will be generated automatically without you having to manually enter the data.
+
