@@ -41,3 +41,32 @@ A primary key is a constraint placed on a database table column to uniquely iden
 For example, if the value "1" already exists in the primary key id column, you will not be able to place the same value of "1" in the newly inserted record.
 Just like in the users table, by setting AUTO_INCREMENT on the id column and defining the id column as the primary key, a unique value will be generated automatically without you having to manually enter the data.
 
+4. Operational Testing of the Table
+Now, let's try inserting and retrieving data from the created table.
+Please run the following query in the same order:
+Retrieving (Confirmation before inserting data)
+SELECT * FROM users;
+
+Inserting
+INSERT INTO users(`name`) VALUES ('Ken the Ninja');
+
+Retrieving
+SELECT * FROM users;
+
+5. Deleting the Created Database and Table
+Lastly, in this section we will introduce how to delete databases and tables.
+Keep in mind that this execution cannot be undone, and therefore you should proceed with caution.
+
+Deleting the Table
+First, let's run the following query to check the existing tables within the database.
+SHOW tables;
+
+Next, let's specify the table and delete it. (The users table in this case).
+DROP TABLE users;
+
+Deleting the Database
+Let's run the following query to check the database:
+SHOW databases;
+
+Make sure that you do not accidentally delete the four databases that were created during the installation process (mysql, sys, information_schema, performance_schema).
+DROP DATABASE progate;
