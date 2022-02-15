@@ -55,9 +55,45 @@ else
 By using the else statement, you can create a control flow "if X, then Y, but if not then Z". You do this by adding some code you want to run when the condition of the if statement is false.
 
 else if
-If you want to add alternative conditions when the condition of an if statement is false, use else if. The control flow, "if A then B, if X then Y, if neither then Z" can be created using else if!
+If you want to add alternative conditions when the condition of an if statement is false, use else if. The control flow, "if A then B, if X then Y, if neither then Z" can be created using else if! else if statements can be used any number of times, but they will run in order from the top down. This means that only the code that returns true first will be executed.
 
 
+Combining Conditional Statements
+&& (AND)
+Let's learn how to combine multiple conditional statements. && is used to express AND. The conditional if condition1 and condition2 are true is written as condition1 && condition2 using &&. When combining multiple conditional statements with &&, the statement will only become true when both condition1 and condition2 are true. It will return false if either condition1 or condition2 is false.
+
+|| (OR)
+|| is used for OR, which combines conditions. The conditional statement if condition1 or condition2 is true can be written as condition1 || condition2 using the || operator.
+condition1 || condition2 will return true if either condition1 or condition2 returns true.
+
+! (NOT)
+! is used for NOT, which negates a condition. Negating a condition gives it the opposite result. Therefore, the code !(conditionalStatement) will become false if the conditionalStatement is true, and true when the conditionalStatement is false.
+
+package main
+
+func main() {
+          x := 20
+          // When x is greater or equal to 10 and less than or equal 30,
+          // print the message "x is at least 10 and at most 30"
+          if x >= 10 && x <= 30 {
+                    println("x is at least 10 and at most 30")
+          }
+          
+          y := 60
+          // When y is less than 10 or greater than 30,
+          // print the message "y is less than 10 or greater than 30"
+          if y < 10 || y > 30 {
+                    println("y is less than 10 or greater than 30")
+          }
+
+          z := 55
+          // When z is not equal to 77,
+          // print the message "z is not equal to 77"
+          if z != 77 {
+                    println("z is not equal to 77")
+          }
+
+}
 
 #Progate @progateEN @dev_careers #dev_careers
 
