@@ -66,4 +66,57 @@ app.get("/edit/:id", (req, res) => {
 })
 
 
+Getting the Value
+Using the passed item id let's get the item we want to edit.
+app.get("/edit/:id", (req, res) => {
+          connection.query(
+                    "SELECT * FROM items WHERE id=?",
+                    [req.params.id],
+                    (error, results) => {
+                              res.render("edit.ejs");
+                    }
+          )
+})
+
+
+Passing the Results to EJS
+The result of a query will be an array regardless of the number of results. We'll get the first element of the results array and pass it as the item property to edit.ejs.
+app.get("/edit/:id", (req, res) => {
+          connection.query(
+                    "SELECT * FROM items WHERE id = ?",
+                    [req.params.id],
+                    (error, results) => {
+                              <!-- results[0]: 1st elemt of d results -->
+                              res.render("edit.ejs", {item: results[0]});
+                    }
+          )
+})
+
+Displaying the Value in the Form
+By specifying the value attribute, you can display an initial value for the form. Let's specify the value of the item for the form's value attribute.
+
+<form>
+          <input value="<%=item.name%>" type="text" >
+
+          <input type="submit" value="Update">
+</form>
+
+
+Let's display the value of the selected item in the form.
+Information Required for Updating an Item
+For updating, we'll use the UPDATE query. For updating a list item, we'll need the value from the form and the item id. We'll work on passing both of these.
+
+Let's Use a Route Parameter
+First, we'll pass the id using a route parameter. Let's set up the route for updating. The destination URL will include the item id that we had passed to edit.ejs. Also, we'll redirect to the list page after submitting the form.
+
+<form action="/update/<%=item.name%>" method="post">
+          <input value="<%=item.name%>" type="text" >
+
+          <input type="submit" value="Update">
+</form>
+
+app.post("/update/:id", (req, res) => {
+          res.redirect("/index");
+})
+
 #Progate @progateEN @dev_careers #dev_careers
