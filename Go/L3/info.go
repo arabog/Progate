@@ -111,9 +111,54 @@ func main() {
 	ask("cat")
 }
 
-func ask(question string) {	//question = parameter name, string = data type
-	// code
+Using Arguments
+The passed value can be used by making use of the received variable 
+(parameter). 
+
+//question = parameter name, string = data type
+func ask(question string) {	
+	fmt.Printf("Please input the following: %s\n", question)
 }
+
+Pass Variable as an Argument
+You can also pass a value of a variable to a function as an argument.
+
+func main() {
+	text := "cat"
+	ask(text)
+}
+
+func ask(question string) {	
+	fmt.Printf("Please input the following: %s\n", question)
+}
+
+
+E.g:
+We'll be asking the question 3 times. Let's add a parameter 
+to the ask function and actually change the question.
+
+package main
+
+import "fmt"
+
+func main() {
+	// Call the ask function 3 times with an argument
+	ask("dog")
+	ask("cat")
+	ask("fish")
+	
+}
+
+// Edit the method to accept an argument
+func ask(question string) {
+	var input string
+	// Change the following code to use fmt.Printf
+	fmt.Printf("Please input the following word: %s\n", question)
+	fmt.Scan(&input)
+	fmt.Printf("%s was input\n", input)
+}
+
+
 
 
 #Progate @progateEN @dev_careers #dev_careers
