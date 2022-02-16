@@ -320,9 +320,121 @@ func ask(number int, question string) int {
 	
 }
 
+How to Judge Correct or Incorrect Answers
+A control flow to determine the correct and incorrect answer is 
+shown below. It's judged by whether the input value is the same 
+as the question.
+
+func ask(number int, question string) int {
+	var input string
+	fmt.Printf("[Question %d] Please input the following word: %s\n", number, question)
+	
+	fmt.Scan(&input)
+	if question == input {
+		fmt.Println("Correct")
+	}else {
+		fmt.Println("Incorrect")
+	}
+	
+	fmt.Printf("%s was input\n", input)
+    
+	return 10
+	
+}
+
+
+Send Back the Return Value
+Let's use a variable to receive the return value. When
+ the answer is correct, return 10 and if it's incorrect, 
+ return 0. Then we add the returned value to the 
+ totalScore variable in the main function
+
+func ask(number int, question string) int {
+	var input string
+	fmt.Printf("[Question %d] Please input the following word: %s\n", number, question)
+	
+	fmt.Scan(&input)
+	if question == input {
+		fmt.Println("Correct")
+		return 10
+	}else {
+		fmt.Println("Incorrect")
+		return 0
+	}
+	
+	fmt.Printf("%s was input\n", input)
+    
+	return 10
+	
+}
+
+
+Use the control flow to determine the score depending 
+on the correct and incorrect answer.
+
+package main
+
+import "fmt"
+
+func main() {
+	totalScore := ask(1, "dog")
+	totalScore += ask(2, "cat")
+	totalScore += ask(3, "fish")
+
+	fmt.Println("Score", totalScore)
+}
+
+func ask(number int, question string) int {
+	var input string
+	fmt.Printf("[Question %d] Please input the following word: %s\n", number, question)
+	fmt.Scan(&input)
+
+	if question == input {
+		// Add the process where the word in the question matches the input value
+		fmt.Println("Correct!")
+		
+		return 10
+	} else {
+		// Add the process where the word in the question doesn't match the input value
+		fmt.Println("Incorrect!")
+		
+		return 0
+	}
+}
 
 
 
+Scope:
+Calculation of the Score (2)
+if you try to use the totalScore variable defined in the main function 
+within the ask function without using the return value, it'll cause 
+an error.
+
+func main() {
+	totalScore := 0
+
+	ask(1, "dog")
+	ask(2, "cat")
+	ask(3, "fish")
+
+	fmt.Println("Score", totalScore)
+}
+
+func ask(number int, question string) {
+
+	if question == input {
+		fmt.Println("Correct")
+		totalScore += 10 	//ds will return an undefined error
+	}else {
+		fmt.Println("Incorrect!")
+	}
+}
+
+Scope of the Variable:
+The error occurs because the totalScore variable defined in the 
+main function can only be used in the main function. Variables 
+have a range of use, and this range is known as the scope of 
+the variable.
 
 
 
@@ -330,3 +442,5 @@ func ask(number int, question string) int {
 #Progate @progateEN @dev_careers #dev_careers
 
 */ 
+
+ 
