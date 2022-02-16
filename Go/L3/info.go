@@ -182,6 +182,149 @@ func main() {
 pass d questn numbers and questions in order
 func ask(number int, question string) {}
 
+Cautionary Point for Arguments
+Pay attention also to the data types of the arguments.
+
+Let's add one more argument to the ask function to 
+print the question number.
+
+package main
+
+import "fmt"
+
+func main() {
+	// Pass 1 as a new argument
+	ask(1, "dog")
+	
+	// Pass 2 as a new argument
+	ask(2, "cat")
+	
+	// Pass 3 as a new argument
+	ask(3, "fish")
+}
+
+// Edit the method to accept number as an argument
+func ask(number int, question string) {
+	var input string
+	// Remove the 1 line below and paste the given code
+	fmt.Printf("[Question %d] Please input the following word: %s\n", number, question)
+	
+	fmt.Scan(&input)
+	fmt.Printf("%s was input\n", input)
+}
+
+Return Values
+You can return a value to the caller by using return values. 
+
+Defining a Function
+with a Return Value
+The ask function returns 10 at the end of the process. 
+You can return a value by using return returnValue.
+
+func functionName (parameterName dataType) returnType {
+	// code to be executed
+}
+
+func ask(number int, question string) int {
+	fmt.Printf("[Question %d] Please input the following word: %s\n", number, question)
+
+	return 10		//return value of ask fxn
+}
+
+Receiving Return Values
+A return value can be received by assigning it to a variable.
+
+func main() {
+	totalScore := ask(1, "dog")
+
+	fmt.Println("Score", totalScore)
+}
+
+func ask(number int, question string) int {
+	fmt.Printf("[Question %d] Please input the following word: %s\n", number, question)
+
+	return 10		//return value of ask fxn
+}
+
+
+Let's add a return value to the ask function so that we can 
+print the total of the scores.
+First, let's make sure that the ask function can return a 
+return value.
+
+package main
+
+import "fmt"
+
+func main() {
+	// Assign the return value to totalScore
+	totalScore := ask(1, "dog")
+
+	// Paste the given code specified in the instruction
+	fmt.Println("Score", totalScore)
+	
+}
+
+// Set the type of the return value
+func ask(number int, question string) int {
+	var input string
+	fmt.Printf("[Question %d] Please input the following word: %s\n", number, question)
+	fmt.Scan(&input)
+	fmt.Printf("%s was input\n", input)
+	// Return 10 as the return value
+	return 10
+	
+}
+
+Calculation of the Score
+As you solve the problem, the score should be added and the total 
+score should be printed at the end. The score will be calculated 
+based on the correct and incorrect answer. 
+
+Calculate the Return Value
+You can add the return value of the ask function by using +=
+
+func main() {
+	// Assign the return value to totalScore
+	totalScore := ask(1, "dog")
+	totalScore += ask(2, "cat")
+	totalScore += ask(3, "fish")
+
+	fmt.Println("Score", totalScore)
+	
+}
+
+Let's use the return value to calculate the score.
+
+package main
+
+import "fmt"
+
+func main() {
+	totalScore := ask(1, "dog")
+	// Add the return value from the ask function to the totalScore
+	totalScore += ask(2, "cat")
+	totalScore += ask(3, "fish")
+	
+	fmt.Println("Score", totalScore)
+	
+}
+
+func ask(number int, question string) int {
+	var input string
+	fmt.Printf("[Question %d] Please input the following word: %s\n", number, question)
+	fmt.Scan(&input)
+	fmt.Printf("%s was input\n", input)
+    
+	return 10
+	
+}
+
+
+
+
+
+
 
 
 #Progate @progateEN @dev_careers #dev_careers
