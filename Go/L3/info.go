@@ -435,8 +435,65 @@ The error occurs because the totalScore variable defined in the
 main function can only be used in the main function. Variables 
 have a range of use, and this range is known as the scope of 
 the variable.
+So we can't use totalScore in another function because the scope 
+is different.
+
+Passing Score as an Argument:
+Let's see what will happen when we write ask(1, "dog", totalScore) 
+and try to add 10 to the totalScore parameter. As a result, no error 
+occurs, but the score isn't added even though the correct answer 
+is given. Let's understand why this doesn't work.
+
+Variable with the Same Name
+Actually, the totalScore variable used in the main function and the 
+totalScore variable used in the ask function have the same name, 
+but they're different variables because of their different scopes.
+
+Copying Values
+It might look like we're passing a variable from the main function 
+to the ask function, but we're actually copying the value of the 
+totalScore variable and passing it to the ask function. So, even 
+if you add the value to the ask function's totalScore variable, 
+the original value will not change, i.e 0.
 
 
+Let's try to see if passing a variable as an argument to a function 
+with a different scope allows us to use that variable.
+
+Note: Codes are slightly changed for the exercise to check the 
+scope of the variables.
+
+package main
+
+import "fmt"
+
+func main() {
+	totalScore := 0
+	
+	ask(1, "dog", totalScore)
+	ask(2, "cat", totalScore)
+	ask(3, "fish", totalScore)
+
+	fmt.Println("Score", totalScore)
+}
+
+// Add totalScore of type int as the third parameter
+func ask(number int, question string, totalScore int) int {
+	var input string
+	
+	fmt.Printf("[Question %d] Please input the following word: %s\n", number, question)
+	
+	fmt.Scan(&input)
+
+	if question == input {
+		fmt.Println("Correct!")
+		totalScore += 10
+	} else {
+		fmt.Println("Incorrect!")
+	}
+	
+	return totalScore
+}
 
 
 #Progate @progateEN @dev_careers #dev_careers
