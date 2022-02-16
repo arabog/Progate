@@ -55,7 +55,15 @@ app.post("/delete/:id", (req, res) => {
 
 Using the passed id, let's delete the selected item. 
 
+EDIT:
+Creating the Route
+We'll create the edit button on the list page, and include the item id in the URL of the link. We'll use a route parameter and pass the list item id. We'll use the id when we get the information from the list item.
 
+<a href="/edit/<%=item.id%>">Edit </>
+
+app.get("/edit/:id", (req, res) => {
+          res.render("edit.ejs");
+})
 
 
 #Progate @progateEN @dev_careers #dev_careers
