@@ -152,12 +152,35 @@ func main() {
 // Edit the method to accept an argument
 func ask(question string) {
 	var input string
-	// Change the following code to use fmt.Printf
 	fmt.Printf("Please input the following word: %s\n", question)
 	fmt.Scan(&input)
 	fmt.Printf("%s was input\n", input)
 }
 
+
+Show Question Number (2)
+Let's also display the question number along with the question. 
+You can pass multiple arguments using commas ,
+
+func ask(number int, question string) {
+	
+	fmt.Printf("[Question %d] Please input the following word: %s\n", number, question)
+	
+}
+
+Passing Multiple Arguments:
+When using multiple arguments, be careful about the order in which 
+they're passed.
+
+func main() {
+	ask(1, "dog")
+	ask(2, "cat")
+	ask(3, "fish")
+}
+
+
+pass d questn numbers and questions in order
+func ask(number int, question string) {}
 
 
 
