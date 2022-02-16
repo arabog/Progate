@@ -8,6 +8,36 @@ app.post("/delete", (req, res) => {})
 Using Forms
 The delete button will not be created using a link but a form. You still use forms to make POST requests even when there's no value to submit so keep this in mind.
 
+<form action="/delete" method="POST">
+          <input type="submit" value="Delete">
+</form>
+
 Let's Redirect
 After submitting the form we'll display the list page. Since the delete feature makes changes to the database we'll use a redirect to display the list page.
 i.e res.redirect('/index')
+
+Using app.post, add a route for /delete.
+The ROUTE HANDLER in the second argument should have the parameters req and res.
+
+
+Specifying the Item's id
+For deleting items, we'll need to use the DELETE query. However in this case, if the item isn't specified using WHERE, then the server won't know which item to delete. If the server can get the id of the item to delete, then it can delete it.
+
+Passing a Value through the URL
+To transfer the id of the list item, we'll use the URL. The request URL will contain the id like /delete/3 and the route will be specified as /delete/:id. With using the URL like this, we'll be able to get the id. The /:id part of the route is known as a route parameter i.e       /delete/:id.
+
+Using a Route Parameter:
+<form action="/delete/<%=item.id%>" method="POST">
+          <input type="submit" value="Delete">
+</form>
+
+app.post("/delete/:id", (req, res) => {
+          res.redirect("/index");
+})
+
+Getting the Route Parameter Value
+You can get the value of a route parameter through 
+req.params.routeParamaterName e.g: req.params.id
+
+
+#Progate @progateEN @dev_careers #dev_careers
