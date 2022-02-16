@@ -1,0 +1,13 @@
+Setting Up the Route
+We need to set up the route for deleting items. Since this makes changes to the database, we'll use post
+
+<!-- since ds mks changes to d db we'll use post -->
+app.post("/delete", (req, res) => {})
+
+
+Using Forms
+The delete button will not be created using a link but a form. You still use forms to make POST requests even when there's no value to submit so keep this in mind.
+
+Let's Redirect
+After submitting the form we'll display the list page. Since the delete feature makes changes to the database we'll use a redirect to display the list page.
+i.e res.redirect('/index')

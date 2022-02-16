@@ -13,10 +13,20 @@ app.use(express.json())
 const connection = mysql.createConnection({
           // db name, password
         host: 'localhost',
-        user: 'arabog',
+        port: 3000,
+        user: 'Arabog',
         password: 'Aduke2022$=',
         database: 'shop_app'
 })
+
+connection.connect(function (err) {
+        if(err){
+                console.log("error occured while connecting");
+        }
+        else{
+                console.log("connection created with Mysql successfully");
+        }
+});
 
 
 app.get('/', (req, res) => {
@@ -31,7 +41,7 @@ app.get('/index', (req, res) => {
                 (error, results) => {
 			console.log(results)
 
-			res.render('index.ejs', {items: results})
+			// res.render('index.ejs', {items: results})
                 }
         )
 })
@@ -53,6 +63,6 @@ app.post('/create', (req, res) => {
 });
 
 
-app.listen(5050, () => {
-        console.log("App started on port: 5050")
+app.listen(3000, () => {
+        console.log("App started on port: 3000")
 })
