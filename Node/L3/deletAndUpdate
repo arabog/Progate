@@ -109,7 +109,7 @@ For updating, we'll use the UPDATE query. For updating a list item, we'll need t
 Let's Use a Route Parameter
 First, we'll pass the id using a route parameter. Let's set up the route for updating. The destination URL will include the item id that we had passed to edit.ejs. Also, we'll redirect to the list page after submitting the form.
 
-<form action="/update/<%=item.name%>" method="post">
+<form action="/update/<%=item.id%>" method="post">
           <input value="<%=item.name%>" type="text" >
 
           <input type="submit" value="Update">
@@ -118,5 +118,32 @@ First, we'll pass the id using a route parameter. Let's set up the route for upd
 app.post("/update/:id", (req, res) => {
           res.redirect("/index");
 })
+
+
+Submitting the Form Value:
+Next we'll submit the form value using the name attribute.
+<form action="/update/<%=item.id%>" method="post">
+          <input value="<%=item.name%>" type="text" name="inputValue">
+
+          <input type="submit" value="Update">
+</form>
+
+Sending the Data
+The value of the route parameter can be accessed through the params object and the form value can be accessed through the body object.
+
+
+Updating the Item
+We'll update the item using the id that was passed. When using multiple values in a query, you simply add elements to the array. The elements of the array need to match the order of the ? in the query.
+
+app.post("/update/:id", (req, res) => {
+          connection.query(
+                    "UPDATE  items SET name = ? WHERE id = ?",
+                    [req.body.itemName, req.params.id],
+                    (error, results) => {
+                              res.redirect("/index");
+                    }
+          )
+})
+
 
 #Progate @progateEN @dev_careers #dev_careers
