@@ -1,0 +1,47 @@
+Debugging means "to get rid of bugs". A bug is an 
+occurrence when the program does not work in the 
+intended manner. When program processes are 
+stopped and errors occur, these are also known 
+as bugs.
+
+In other words, debugging is finding the origin 
+of bugs and fixing them.
+
+
+The Debug Process:
+Step 1: Grasp and understand the details of the error.
+Step 2: Predict the cause or origin of the error.
+Step 3: Check your prediction step by step and confirm the issue. 
+
+Welcome to the debugging course!
+First, you'll learn how to debug step by step.
+
+Que: Let's understand the details of the error!
+An error message that contains the specific content of the error 
+is being displayed (in d browser).
+
+Next, we'll check the errors that are displayed in the terminal.
+
+Error messages can contain information that is necessary for debugging
+For example, this error message contains the location of where the error is triggered, as shown below.
+TypeError: /home/progate/list-app/views/index.ejs:24
+
+2. Let's predict the cause!
+Think about the cause of the error and make your own predictions.
+We're trying to use an iterative method on an array, but based on the content of the error message, we can assume that the foreach call may be wrong.
+
+
+3. Let's see if our prediction is correct!
+Let's check out the foreach method.
+Check out the foreach method and find out what's wrong with it by doing the following:
+・Search for JavaScript foreach on the Web.
+
+Can you find the mistake?
+Rather than foreach, the correct method is forEach 
+Now it's time to fix the code.
+Fix the items.foreach part with the correct method.
+
+
+
+
+#Progate @progateEN @dev_careers #dev_careers

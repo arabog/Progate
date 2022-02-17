@@ -1,5 +1,7 @@
 1. Creating a Database
-sudo mysql
+sudo mysql 
+or
+mysql -u root -p
 
 mysql --user=root --password
 sudo mysql --Arabog=root --Aduke2022$=
