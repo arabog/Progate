@@ -2,6 +2,7 @@
 sudo mysql
 
 mysql --user=root --password
+sudo mysql --Arabog=root --Aduke2022$=
 
 To display the list of existing databases, we will use the SHOW command. 
 Please run the following query: SHOW databases;
@@ -70,3 +71,12 @@ SHOW databases;
 
 Make sure that you do not accidentally delete the four databases that were created during the installation process (mysql, sys, information_schema, performance_schema).
 DROP DATABASE progate;
+
+
+
+
+DEbug:
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+Ans: mysql -u root -p
+
+ 
