@@ -275,6 +275,71 @@ func calculate(x int, yPtr *int) {
 }
 
 
+Calculating Score Using Pointers
+We're going to pass the address of totalScore variable as the 
+argument of the ask function. If the answer is correct, we'll add 
+10 to the original value through dereferencing the totalScore 
+pointer.
+
+func main() {
+          totalScore := 0
+
+          ask(1, "dog", &totalScore)
+          ask(2, "cat", &totalScore)
+          ask(3, "fish", &totalScore)
+
+          fmt.Println("Score": totalScore)
+}
+
+
+func ask(number int, question string, scorePtr int) {
+          *scorePtr += 10
+}
+
+Using what you've learned in this lesson about pointers, let's 
+complete our Typing Game.
+func main() {
+	totalScore := 0
+	
+          // Pass the address of the totalScore variable as the third argument
+	ask(1, "dog", &totalScore)
+	ask(2, "cat", &totalScore)
+	ask(3, "fish", &totalScore)
+
+	fmt.Println("Score", totalScore)
+}
+
+// Add a pointer parameter scorePtr of type *int as the third parameter
+func ask(number int, question string, scorePtr * int) {
+	var input string
+	
+          fmt.Printf("[Question %d] Please input the following word: %s\n", number, question)
+	
+          fmt.Scan(&input)
+
+	if question == input {
+		fmt.Println("Correct!")
+		
+                    // Calculate through dereferencing the pointer
+		*scorePtr += 10
+		
+	} else {
+		fmt.Println("Incorrect!")
+		
+                    *scorePtr += 0
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
 
 #Progate @progateEN @dev_careers #dev_careers
 */
