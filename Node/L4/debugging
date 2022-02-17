@@ -41,6 +41,35 @@ Rather than foreach, the correct method is forEach
 Now it's time to fix the code.
 Fix the items.foreach part with the correct method.
 
+Examples of Errors:
+Let's fix the problem of not being able to access the Top page. (ds page can't be reached)
+
+1. Let's understand the details of the error!
+First, let's check the errors that appear on the browser.
+"This page can't be reached" is being displayed.
+Next, let's check the errors that appear in the terminal.
+
+Let's analyze the error message.
+The first line shows the location where the error is triggered, as shown below.
+/home/progate/list-app/app.js:38
+  );
+  ^
+There seems to be an error around the closing parentheses ) in the connection.query code. The error message also describes the cause as shown below.
+
+SyntaxError means an error in the spelling or grammar of the programming language.
+
+2. Let's predict the cause!
+Since it's a syntax error, we can expect the program is written incorrectly.
+Also, the content of the error tells us that something else should be written instead of ).
+
+3. Let's see if our prediction is correct!
+Can you find the mistake?
+If you look near line 38 in app.js, you'll see that the closing curly braces } is missing.
+
+If there are mistakes in app.js like in this exercise, errors can occur when launching the server with app.listen and no URLs will be accessible.
+
+
+
 
 
 
