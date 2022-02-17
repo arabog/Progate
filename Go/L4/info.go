@@ -70,9 +70,71 @@ func main() {
 	var namePtr * string = &name
 	
           // Print the value of namePtr
-	fmt.Println(namePtr)
+	fmt.Println(namePtr)          // 0xc0000681e0
 
 }
+
+Accessing Variables through Pointers
+By dereferencing a pointer with an asterisk like *variableName, 
+you can access the value the pointer points to and return the value. 
+In the image below, by using *namePtr, we're accessing the value 
+of the variable name.
+
+
+
+func main() {
+          name := "john"
+
+         var namePtr * string = &name
+
+          fmt.Println(*namePtr)  // d pter value is printed: John
+}
+
+Updating Values through Pointers
+You can update values directly using pointers also. To do this, 
+you describe the value by inputting *variableName = updateName.
+E.g:
+
+func main() {
+          name := "john"
+
+         var namePtr * string = &name
+
+         *namePtr = "Kate"
+
+          fmt.Println(name)  // Kate
+}
+
+
+A Review of Pointers:
+By using & and * you can utilize pointers.
+
+fmt.Println(....)                       Value printed
+name                                              John
+&name                                          0xc0000681e0
+namePtr                                        0xc0000681e0
+*namePtr                                      john
+
+Let's update the value of name variable through dereferencing of pointer.
+
+func main() {
+	name := "John"
+
+	fmt.Println(name)
+	
+          // Declare the namePtr pointer and assign the address of variable name
+	var namePtr * string = &name 
+	
+	// Update the value of variable name with "Kate" through dereferencing of namePtr
+	*namePtr = "Kate"
+	
+	// Print the updated value of name variable
+	fmt.Println(name)
+
+}
+
+
+
 
 
 #Progate @progateEN @dev_careers #dev_careers
@@ -87,5 +149,7 @@ func main() {
 
          var namePtr * string = &name
 
-          fmt.Println(namePtr)  
+         *namePtr = "Kate"
+
+          fmt.Println(name)  
 }
