@@ -133,6 +133,72 @@ func main() {
 
 }
 
+Using Pointers in Other Functions:
+If you use pointers, you will be able to define a variable outside 
+the scope of a function. 
+
+Passing Address as an Argument
+When passing an address as a pointer into an argument, it's necessary 
+to prepare a corresponding pointer type parameter for the receiving 
+function,
+
+
+func main() {
+          name := "john"
+
+          changeName(&name)
+}
+
+
+func changeName(namePtr * string) {}
+
+Updating Values through Pointers in Another Function
+By passing an address as an argument, you can use it to update 
+the original variable's value from another function.
+
+
+func main() {
+          name := "john"
+
+          changeName(&name)
+
+          fmt.Println(name)
+}
+
+
+func changeName(namePtr * string) {
+          *namePtr = "Kate"
+}
+
+Let's set an address as an argument, and update the value 
+using the passed address.
+
+func main() {
+	name := "John"
+
+	fmt.Println(name)
+	
+          // Call the changeName function and pass the address of the name variable
+	changeName(&name)
+	
+	// Print the name variable
+	fmt.Println(name)
+
+}
+
+// Add a parameter pointer of type *string
+func changeName(namePtr * string) {
+           // Dereference namePtr and update the value of the name variable to "Kate"
+	*namePtr = "Kate"
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -147,9 +213,12 @@ import "fmt"
 func main() {
           name := "john"
 
-         var namePtr * string = &name
+          changeName(&name)
 
-         *namePtr = "Kate"
+          fmt.Println(name)
+}
 
-          fmt.Println(name)  
+
+func changeName(namePtr * string) {
+          *namePtr = "Kate"
 }
