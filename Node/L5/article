@@ -1,0 +1,67 @@
+Getting Ready to Build More Advanced Web Applications!
+In order to create a proper login functionality, we need to 
+learn about Session Management. 
+
+1. HTTP
+If we relook at the article Understanding More About the Web, 
+we have learned that in a client to server communication flow, 
+the client sends a request to the server, and the server returns 
+a response to the client.
+
+This form of communication follows the protocol known as 
+HTTP (Hyper Text Transfer Protocol).
+
+requests and responses used in Web Applications follow HTTP!
+
+2. Stateless
+The HTTP is actually a stateless protocol. A stateless protocol means that each request to the server is executed independently, where the server does not maintain, or know the current status of the individual client for each request execution. In simpler words, the status (state) of the client is not saved or maintained (less). In a sense, the server is unable to link up previous communications with the client.
+
+While a stateless protocol has the merits of having faster processing speeds, there can be some issues when trying to create a more advanced Web Application. Let's learn from an example using session management on a Web Application.
+
+First, let's send a login request from the client to the server. When the server receives the request and successfully authenticates the login request, it will send a response back to the client. The client, upon receiving this response, will be changed to the logged in state.
+
+Next, while the client is in the logged in state, let's send a request to the server to look at the profile page, where the client is required to be logged in. In this request, the server will instead send back a response informing that the client is not logged in. The reason for this response is because the server does not maintain the state of the client and hence, when it receives the request from the client, it treats the client as not logged in.
+
+In this case, the communication between client and server resets with every single request.
+Hence we use Session Management to solve this issue. Let us look at the details.
+
+3. Session Management
+Session management refers to the management of the clients' states in the server. A session can refer to the period between the beginning to the end of the intended usage of the Web Application. The period where from where the user logs into the Web Application till the user logs out of it is an example of a session.
+
+Session Management Flow
+The flow below illustrates the 3 steps of session management.
+1. Registering the client's state (e.g. After successful login)
+2. Checking the client's state (e.g. Looking at profile page）
+3. Destroying the managed client's state (e.g. Logging out）
+
+1. Registering the Client's State
+The client sends a login request to the server (1). 
+Upon successful authentication, the server saves the state "Client is logged in" in the memory or database (2). 
+Next, the server responds with a Session ID back to the client (3). 
+The client, upon receiving the response, saves the Session ID locally (4)
+
+※ The data that is the client's state is called the Session Properties, and the ID associated with it is called the Session ID, or SID.
+
+
+2. Checking the Client's State
+The client sends a request with the Session ID previously saved to the server, requesting to view the profile page (5). 
+The server uses the received Session ID to retrieve the associated session properties and looks at the stored information, checking and confirming that this client "is logged in" (6). 
+Since the server is able to confirm the login state of the client, it responds to the client with the profile page (7).
+
+3. Destroying the Managed Client's State
+The client sends a logout request with the Session ID to the server (8). The server uses the received Session ID to destroy the associated session properties (9). 
+The server then redirects the client to a suitable page(10).
+
+This way, the server maintains and manages the client's state until it is destroyed. This is an example of session management.
+
+4. Summary
+In summary, this article talks about the following 3 learning points.
+1. The protocol used in client and server communication is known as HTTP.
+
+2. Due to the stateless nature of HTTP, there can be some issues in cases where the server needs to know the communicating client's state.
+
+3. A solution to the stateless nature is to use session management. Session management involves saving the client's state as session properties in the server and to manage it using a Session ID.
+
+Further Reading:
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview#basic_aspects_of_http
+
