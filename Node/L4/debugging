@@ -135,12 +135,105 @@ app.post('/create', (req, res) => {
 		'INSERT INTO items (name) VALUES (?)',
 		[req.body.itemName],
 		(error, results) => {
+                              if (error) {
+                                        console.log(error)
+                              }
+
 			res.redirect('/index');
 		}
 	);
 });
 
 Although we print error for debugging, it's useful to print the contents of error automatically when a query error occurs 
+
+4. Visualizing Values
+I have prepared a problem within the update function. When you send the form information, not only will the original values not be updated with the entered values, the original values within the name column will also disappear.
+
+Let's fix the bugs that occurred in the update function.
+1. Let's understand the details of the error!
+First let's see what kind of bug it is.
+Let's see if there are any errors printed in the terminal.
+
+No error messages are displayed.
+The code to print the error, which was added in the previous lesson, also didn't catch any errors.
+
+2. Let's predict the cause!
+Like before, let's gather information while making predictions. Since this time, it's a bug in the update function, we can assume that the corresponding routing part of /update/:id is wrong.
+Let's check the corresponding code
+
+If you lose the value of the name column when you update, it's possible that you are saving the wrong value.
+
+If you actually print the value in this case, it's easier to see what the value is and find the mistake.
+The value of the item is sent to the the server by the form, and is received by req.body.itemName as shown below.
+
+app.post('/update/:id', (req, res) => {
+          connection.query(
+                    'UPDATE items SET name = ? WHERE id = ?',
+
+                    [req.body.itemName, req.params.id],
+
+                    (error, results) => {
+                              if (error) {
+                                        console.log(error);
+                              }
+
+                              res.redirect('/index');
+                    }
+          );
+});
+
+Let's see what the value looks like.
+Print req.body.itemName with console.log in the routing of /update/:id.
+
+app.post('/update/:id', (req, res) => {
+          console.log(req.body.itemName)
+
+          connection.query(
+                    'UPDATE items SET name = ? WHERE id = ?',
+
+                    [req.body.itemName, req.params.id],
+
+                    (error, results) => {
+                              if (error) {
+                                        console.log(error);
+                              }
+
+                              res.redirect('/index');
+                    }
+          );
+});
+
+Go to the Terminal tab to confirm if there are any errors being printed.
+
+The value of req.body.itemName is undefined, indicating that the form value isn't well received.
+Hence, we can make the assumption that the name attribute of the form and the req.body.name attribute doesn't match.
+
+After confirmation, let's delete the console.log line we added earlier. The reason for removing this line is because it is uninformative and is output unconditionally.
+In a situation where we have a lot of similar loggings like these, they can spam the log files and make it hard to analyze logs when needed.
+
+3. Let's see if our prediction is correct!
+The code of the form for edit is shown in the image below, and we can actually see that the name attribute is not specified!
+
+<form action="/update/<%= item.id %>" method="post">
+          <input type="text" value="<%= item.name %>">
+          <input type="submit" value="Update">
+</form>
+
+On the server side, it's set to req.body.itemName, so you need to specify the corresponding name attribute to the form.
+
+Let's fix the code.
+<form action="/update/<%= item.id %>" method="post">
+          <input type="text" value="<%= item.name %>"  name="itemName">
+          <input type="submit" value="Update">
+</form>
+
+
+
+
+
+
+
+
 
 
 
