@@ -10,21 +10,20 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
 
-const connection = mysql.createConnection({
+const conn = mysql.createConnection({
           // db name, password
         host: 'localhost',
-        // port: 3000,
         user: 'root',
-        password: 'password',
+        password: 'Aduke2022$=',
         database: 'shop_app'
 })
 
-connection.connect(function (err) {
+conn.connect(function (err) {
         if(err){
                 console.log("error occured while connecting");
                 console.log(err)
         }else{
-                console.log("connection created with Mysql successfully");
+                console.log("Connected successfully");
         }
 });
 
@@ -36,12 +35,12 @@ app.get('/', (req, res) => {
 
 app.get('/index', (req, res) => {
         // Write the necessary code to get data from the database
-        connection.query(
+        conn.query(
             "SELECT * FROM items",
                 (error, results) => {
-			console.log(results)
+			// console.log(results)
 
-			// res.render('index.ejs', {items: results})
+			res.render('index.ejs', {items: results})
                 }
         )
 })
@@ -53,7 +52,7 @@ app.get('/new', (req, res) => {
 
 	
 app.post('/create', (req, res) => {
-	connection.query(
+	conn.query(
 		'INSERT INTO items (name) VALUES (?)',
 		[req.body.itemName],
 		(error, results) => {
@@ -64,7 +63,7 @@ app.post('/create', (req, res) => {
 
 
 app.post('/delete/:id', (req, res) => {
-        connection.query(
+        conn.query(
                 'DELETE FROM items WHERE id = ?',
                 [req.params.id],
                 (error, results) => {
@@ -78,7 +77,7 @@ app.post('/delete/:id', (req, res) => {
 });
       
 app.get('/edit/:id', (req, res) => {
-        connection.query(
+        conn.query(
                 'SELECT * FROM items WHERE id = ?',
                 [req.params.id],
                 (error, results) => {
@@ -94,7 +93,7 @@ app.get('/edit/:id', (req, res) => {
 app.post('/update/:id', (req, res) => {
         // console.log(req.body.itemName)
         
-        connection.query(
+        conn.query(
                 'UPDATE items SET name = ? WHERE id = ?',
                 [req.body.itemName, req.params.id],
                 (error, results) => {
@@ -110,6 +109,7 @@ app.post('/update/:id', (req, res) => {
 
 
 
-app.listen(3003, () => {
-        console.log("App started on port: 3003")
+app.listen(3008, () => {
+        console.log("App started on port: 3008")
 })
+
