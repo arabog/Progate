@@ -192,15 +192,65 @@ func changeName(namePtr * string) {
 	*namePtr = "Kate"
 }
 
+Getting to Know How Arguments Work
+Passing Variables as Arguments
+When passing the totalScore variable as an argument, 
+the variable itself isn't being passed. The variable 
+totalScore's value is copied, and a new variable is 
+being assigned. This is known as pass by values.
 
 
+Updating Passed Values
+The main function and the ask function both have totalScore 
+variables, but are separate variables. For this reason, when 
+you update the totalScore variable in the ask function, only 
+the value of the totalScore variable in the ask function is updated.
+
+Comparing Pointers
+If you print the totalScore variable of the main and fn functions, 
+you'll notice that the variables are actually stored in different places. 
+
+func main() {
+          totalScore := 0
+
+          ask(totalScore)
+
+          fmt.Println(totalScore)       //0
+
+          fmt.Println(&totalScore)      // 0xc000080010
+}
 
 
+func ask(totalScore int) {
+          totalScore := 0
 
+          fmt.Println(totalScore)       // 10
+          fmt.Println(&totalScore)      // 0xc0000140b8
+}
 
+Let's deepen our understanding of copying values by comparing 
+the various variables from before and after passing them to functions.
+func main() {
+	totalScore := 0
+	ask(totalScore)
 
+	// Print the value of the totalScore variable
+	fmt.Println(totalScore)
+	
+          // Print the address of the totalScore variable
+	fmt.Println(&totalScore)
 
+}
 
+func ask(totalScore int) {
+	totalScore += 10
+	
+          // Print the value of the fn function's totalScore variable
+	fmt.Println(totalScore)
+	
+          // Print the address of the fn function's totalScore variable
+	fmt.Println(&totalScore)
+}
 
 
 #Progate @progateEN @dev_careers #dev_careers
@@ -211,14 +261,19 @@ package main
 import "fmt"
 
 func main() {
-          name := "john"
+          totalScore := 0
 
-          changeName(&name)
+          ask(totalScore)
 
-          fmt.Println(name)
+          fmt.Println(totalScore)
+          fmt.Println(&totalScore)
 }
 
 
-func changeName(namePtr * string) {
-          *namePtr = "Kate"
+func ask(totalScore int) {
+          totalScore += 10
+
+          // fmt.Println(totalScore)       //  10
+          
+          // fmt.Println(&totalScore)      // 0xc0000140b8
 }
