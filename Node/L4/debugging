@@ -69,6 +69,79 @@ If you look near line 38 in app.js, you'll see that the closing curly braces } i
 If there are mistakes in app.js like in this exercise, errors can occur when launching the server with app.listen and no URLs will be accessible.
 
 
+3. Visualizing Errors
+When you attempt to add a new item, it is set to not be saved by the database.
+
+Let's fix the bug that occurred in the create function!
+1. Let's understand the details of the error!
+First, let's see what kind of bug it is.
+
+Let's see if there are any errors printed in the terminal.
+This time no error messages are displayed.
+
+2. Let's predict the cause!
+We don't have enough information, so let's gather more information as we make our prediction. Since this time it's a bug in the create function, we can assume that the code written for the routing of /create is wrong.
+
+Let's check the code for the route path /create from line 32.
+
+Since the item isn't saved, it seems like that there is an error in the process of adding them to the database.
+
+ connection.query(
+    'INSERT INTO items name VALUES (?)',
+
+If an error occurs during the execution of the query, the content of the error is passed to the error argument below.
+
+app.post('/create', (req, res) => {
+          connection.query(
+                    'INSERT INTO items name VALUES (?)',
+                    [req.body.itemName],
+                    (error, results) => {
+                              res.redirect('/index');
+                    }
+          );
+});
+
+We will print the error argument to check if an error occurred during query execution.
+
+Print the error argument using console.log as shown in the image below.
+
+app.post('/create', (req, res) => {
+          connection.query(
+                    'INSERT INTO items name VALUES (?)',
+                    [req.body.itemName],
+                    (error, results) => {
+                              console.log(error)
+
+                              res.redirect('/index');
+                    }
+          );
+});
+
+Let's check if there are any errors being printed.
+Go to d create route in ds case: localhost:3000/new
+and input your desired value then click Create.
+
+2. Go to Terminal to check if errors are printed.
+An error is printed. The cause of the error is described in the sqlMessage.
+
+We can assume that there's a mistake in the way the query is written.
+
+3. Let's see if our prediction is correct!
+Can you find the mistake?
+If you look closely, you'll see that the column name name is not enclosed in a parentheses ().
+
+app.post('/create', (req, res) => {
+	connection.query(
+		'INSERT INTO items (name) VALUES (?)',
+		[req.body.itemName],
+		(error, results) => {
+			res.redirect('/index');
+		}
+	);
+});
+
+Although we print error for debugging, it's useful to print the contents of error automatically when a query error occurs 
+
 
 
 
