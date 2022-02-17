@@ -179,7 +179,7 @@ func main() {
 	fmt.Println(name)
 	
           // Call the changeName function and pass the address of the name variable
-	changeName(&name)
+	changeName(&name)   //passing address
 	
 	// Print the name variable
 	fmt.Println(name)
@@ -213,7 +213,7 @@ you'll notice that the variables are actually stored in different places.
 func main() {
           totalScore := 0
 
-          ask(totalScore)
+          ask(totalScore)     //passing value, notice dre is no & bf totalScore
 
           fmt.Println(totalScore)       //0
 
@@ -251,6 +251,29 @@ func ask(totalScore int) {
           // Print the address of the fn function's totalScore variable
 	fmt.Println(&totalScore)
 }
+
+Let's look at the difference between a value and an address that 
+are set in the calculate function.
+
+func main() {
+	x := 10
+	y := 10
+
+	// Call the calculate function, and pass x and the address of y variable as the argument
+	calculate(x, &y)
+
+	fmt.Println("When setting an integer as an argument:", x)
+	fmt.Println("When setting a pointer as an argument:", y)
+}
+
+func calculate(x int, yPtr *int) {
+	// Describe the process of adding 1 to the x variable and yPtr
+	
+          x += 1
+	
+          *yPtr += 1
+}
+
 
 
 #Progate @progateEN @dev_careers #dev_careers
