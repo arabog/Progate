@@ -430,4 +430,65 @@ We'll prepare a conditional statement in header.ejs, and switch the display of t
 </header>
 
 
+Dividing All and Limited Articles
+③ Restricting Access to the Article Details Page.
+
+Restricting access to articles is a two-step process. First, we will start with Article Classification.
+
+ articles that are available for all, and articles that are limited to logged in users.
+
+ you are going to add a new category column to the articles table.
+
+ To add a column.... it was... Alter Table ADD...
+ ALTER TABLE items ADD COLUMN stock INT
+
+ ALTER TABLE articles ADD COLUMN category TEXT
+
+
+Let's Change the Display Based on Article Types
+Let's make a modification so the display changes depending on the value in the category column. For example, for limited articles, a MEMBERS ONLY badge will be displayed. For now, we display the content of the article for both article types, but we'll change the content to be displayed for limited articles
+
+<div class="article>
+        <% if (article.category === "all") { %>
+                <h1> <%=  article.title %> </h1>
+
+                <p> <%=  article.content %> </p>
+        <% } %>
+ 
+         <% if (article.category === "limited") { %>
+                <i> MEMEBERS ONLY </I>
+
+                <h1> <%=  article.title %> </h1>
+
+                <p> <%=  article.content %> </p>
+        <% } %>
+</div>
+
+
+Articles are separated into all and limited categories. Let's display badges on articles that are limited.
+
+First, let's differentiate the display in Article Details page based on the category of the article. For a limited article, we'll display a MEMBERS ONLY badge.
+
+ <li>
+            <!-- Display the members only badge when the article.category is limited -->
+            <% if (article.category === 'limited') {%>
+                <i>MEMBERS ONLY</i>
+            <% } %>
+
+            <h2><%= article.title %></h2>
+            <p><%= article.summary %></p>
+            
+            <a href="/article/<%= article.id %>">Read more</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
 #Progate @progateEN @dev_careers #dev_careers

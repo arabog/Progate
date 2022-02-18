@@ -33,6 +33,9 @@ INSERT INTO items(name, price, category) VALUES ('Carrot', 60, 'Vegetables');
 INSERT INTO items(name, price, category) VALUES ('Banana', 200, 'Fruits');
 INSERT INTO items(name, price, category) VALUES ('Milk', 120, 'Drinks');
 
+INSERT INTO articles(title, summary, content, category) VALUES ('Mouse That Connects to a Computer', "Have you ever heard that every computer has a mouse on it? Actually, this story is true!", "Have you ever heard that every computer has a mouse on it? Actually, this story is true!", 'all');
+
+
 Let's check if the items have been successfully inserted.
 SELECT * FROM items;
 
@@ -57,6 +60,7 @@ NULL is shown for values in the stock as the stock numbers are currently not def
 We use the UPDATE query to set the actual data. Let's update the stock of the item 
 with the id 1 to 100.
 UPDATE items SET stock = 100 WHERE id = 1;
+UPDATE articles SET category = "limited" WHERE id = 1;
 
 3. Let's Change a Column
 Let's Look at the Steps to Change a Column Name
