@@ -73,6 +73,85 @@ app.post("/login", (req, res) => {
         <!-- user authentication -->
 })
 
+Let's create the process for log in.
+First, let's make it possible to send values from the form on the Login page.
+
+
+What's user authentication?
+User Authentication is a check to confirm the identity of the user. In general, identity confirmation for web applications are a combination of an email and a password.
+
+It is a post method process
+
+
+Searching for Users
+We'll search for the user using the submitted values from the form, and run a SELECT query to get the information of the user that matches the submitted email.
+
+app.post("/login", (req, res) => {
+        const email = req.body.email
+
+        connection.query(
+                  "SELECT * FROM users WHERE email = ?",
+                  [email],
+                  (error, results) => {
+                            <!--  -->
+                  }
+        )
+})
+
+
+Use the length property to check the number of elements in the results array. In the case that the number of elements are greater than 0, the user information is found and we proceed to the authentication process.
+
+app.post("/login", (req, res) => {
+        const email = req.body.email
+
+        connection.query(
+                    "SELECT * FROM users WHERE email = ?",
+                    [email],
+                    (error, results) => {
+                              if( results.length > 0 ) {
+                                        <!-- authentication process -->
+                              }else {
+                                        res.redirect("/login")
+                              }
+                    }
+        )
+})
+
+
+Authenticate the User
+To authenticate a user, you have to compare the password received from the form and the password from the result of the query execution. This time we're comparing the two directly without considering security issues. The original method will be introduced in Node.js Study VI.
+
+app.post("/login", (req, res) => {
+        const email = req.body.email
+
+        connection.query(
+                    "SELECT * FROM users WHERE email = ?",
+                    [email],
+                    (error, results) => {
+
+                    if( results.length > 0 ) {
+                              if (req.body.password === results[0].password) {
+                                        console.log("Authentication success")
+
+                                        res.redirect("/list")
+                              }else {
+                                           console.log("Authentication failed")
+
+                                        res.redirect("/login")
+                              }
+                    }else {
+                              res.redirect("/login")
+                    }
+        )
+})
+
+In order to authenticate the user, we need to compare the password received from the form with the password retrieved from the database query.
+
+Session Management
+
+
+
+
 
 
 
