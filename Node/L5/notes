@@ -14,6 +14,31 @@ article.ejs         Article details pg
 top.ejs             top pg
 
 
+Steps to Create a Login Functionality
+The login function can be made by: 
+① Login Page, 
+② User Authentication, and 
+③ Session Management, 
+
+Creating a Login Page
+Let's make it so the Login page will be displayed. To do this, we'll prepare the route path and the Login page file login.ejs.
+
+Creating a Form for Log in
+We're going to prepare a form to input the email and password to be used for user authentication on the Login page. For the password field, define the type attribute with the value password so the inputted values will be hidden.
+
+A Link to the Login Page
+Let's add a link to the Login page in the header of the Articles page. For now, we're just going to change the Articles page. After the creation of the login functionality is completed, we'll change the header of the Article Details page.
+
+
+Let's create the Login page!
+
+1. Prepare the route to display the Login page
+2. Display for the Login page
+3. Prepare the view file for the login functionality
+4. Create a link to the Login page
+
+
+
 
 
 #Progate @progateEN @dev_careers #dev_careers
