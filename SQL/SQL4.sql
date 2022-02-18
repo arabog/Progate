@@ -177,16 +177,60 @@ sorting the date in ascending order:
 ・Number sold per day
 Also, add the label sales to the "items sold" results.
 
+SELECT purchased_at, COUNT(purchased_at) AS "sales"
+FROM sales_records
+JOIN items
+ON sales_records.item_id = items.id
+GROUP BY purchased_at
+ORDER BY purchased_at ASC;
+
 Group the results by the date and get the following data, while also 
 sorting the date in ascending order:
 ・Date purchased
 ・The total sales for that date
 Also, label the results total sales
-.
 
+SELECT purchased_at, SUM(items.price) AS "total sales"
+FROM sales_records
+JOIN items
+ON sales_records.item_id = items.id
+GROUP BY purchased_at
+ORDER BY purchased_at ASC;
 
-Q8:
+Q8: Complex User Data Analysis:
+In this exercise, you'll combine the sales_records and 
+users tables to do a more advanced analysis.
 
+For users who purchased 10 items or more, get the 
+following data:
+・User ID
+・Name of the user
+・Number of units purchased
+Use the label number for the results displaying the 
+number of units purchased.
+
+SELECT users.id, users.name, count(*) AS "number"
+FROM sales_records
+JOIN users
+ON sales_records.user_id = users.id
+GROUP BY users.id, users.name
+HAVING count(*) >= 10;
+
+For unique users who purchased the product 
+sandals, get the following data:
+・ID
+・Name
+
+SELECT users.id, users.name
+FROM sales_records
+JOIN users
+ON sales_records.user_id = users.id
+WHERE sales_records.item_id = (
+          SELECT id
+          FROM items
+          WHERE name = "sandals"
+)
+GROUP BY users.id;
 
 Q9:
 
