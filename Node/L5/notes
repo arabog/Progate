@@ -352,11 +352,32 @@ paste ds code inside d header.ejs file
 </header>
 
 
+Creating a Logout Functionality:
+You are considered logged in when you have data stored in your session properties. For log out, all that needs to happen is for the data to be deleted from the session properties.
+
+Preparing a Logout Button and Route Path
+Let's prepare the route path and a button for logging out.
+
+Deleting Session Properties
+Let's delete the session properties. By writing 
+
+          app.get("/logout", (req, res) => {
+                    req.session.destroy( ()=>{ 
+                              // process after execution 
+                    }), 
+          })
+
+you can delete the saved session properties.
 
 
+Let's Try Redirecting
+After deleting the session properties, we're going to redirect to the Articles page. When the deletion process fails, the error parameter of req.session.destroy handler function will contains the information on why it failed.
 
-
-
+ app.get("/logout", (req, res) => {
+          req.session.destroy( (error)=>{ 
+                    res.redirect("/list")
+          }), 
+})
 
 
 
