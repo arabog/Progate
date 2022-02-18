@@ -147,9 +147,23 @@ app.post("/login", (req, res) => {
 
 In order to authenticate the user, we need to compare the password received from the form with the password retrieved from the database query.
 
-Session Management
+Session Management:
+session management is when the server manages and holds the state of the client.
 
+Getting Ready to Manage Sessions
+To be able to manage sessions, we first have to install the express-session package. After that, we're going to write the necessary information to be able to use express-session
 
+npm install express-session
+
+const session = require("express-session")
+
+app.use(
+          session({
+                    secret: "my_secret_key",
+                    resave: false,
+                    saveUninitialized: false,
+          })
+)
 
 
 
