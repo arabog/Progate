@@ -217,7 +217,40 @@ app.get("/list", (req, res) => {
 
 Note: You can reload your browser to return to the state where you are not logged in.
 
+Continually Checking the Login State:
+ Let us now switch to be able to check the login status in both the Articles page and the Article Details page.
 
+ If you use the app.use function, you will be able to perform the login status check every time there is a request. 
+
+
+ What's the app.use Function?
+The app.use function responds to all requests. For this reason, it's written at the very beginning of routing processes so it can be ran every time. 3 parameters are able to be received by the handler function. They are req, res, and next.
+
+
+app.use((req, res, next) => {
+          <!-- confirmatn of login state -->
+          next();
+})
+
+
+What's the next Function?
+next received as a parameter of the handler function in the app.use function can be used as a function within the routing process. When the next function is executed, you can run next process that matches a request.
+
+In ds case d next process is 
+app.get("/list", (req, res) =>{})
+
+Moving the Login State Check Processes
+Finally, let's move the login state check process from app.get('/list', ...) into the app.use function. This way, the session properties will be executed by all every other requests.
+
+app.use((req, res, next) => {
+          if( req.session.userId === undefined) {
+                    console.log("You are not logged in");
+          }else {
+                     console.log("You are logged in");
+          }
+          <!-- confirmatn of login state -->
+          next();
+})
 
 
 #Progate @progateEN @dev_careers #dev_careers
