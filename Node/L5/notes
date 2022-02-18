@@ -165,6 +165,57 @@ app.use(
           })
 )
 
+Let's Try Using a Session
+First, you have to save the state of the client when user authentication is successful into the session properties.  Then, you use that saved information to display login status.
+
+
+Saving Data to Session Properties
+The express-session package allows you to manage the values passed to the req.session object. Utilizing this, we're going to save the user ID into session properties after user authentication has finished. To save, you write it as: req.session.propertyName = value.
+
+app.post("/login", (req, res) => {
+       <!--  -->
+          if(req.body.password === results[0].password) {
+<!-- sves d d rettrieved user ID as userId in d session ppties -->
+                    req.session.userId = results[0].id
+          }else {
+
+          }
+
+          <!--  -->
+})
+
+Retrieving Data from the Session Properties
+To retrieve data from the session properties, you write req.session.propertyName. When doing this, the express-session package automatically checks the session ID that was sent and also gets any corresponding session properties.
+
+app.get("/list", (req, res) => {
+       <!--  -->
+        const userId = req.session.userId;
+
+        console.log(`User ID: ${userId}`)
+
+          <!--  -->
+})
+
+Confirming the Login State
+Let's use the user ID that was saved to the session properties to display the login state on the terminal. 
+
+app.get("/list", (req, res) => {
+       <!--  -->
+        <!-- const userId = req.session.userId;
+
+        console.log(`User ID: ${userId}`) -->
+
+        if(req.session.userId == = undefined) {
+                  console.log("You are not logged in")
+        }else {
+                  console.log("You are logged in")
+        }
+
+          <!--  -->
+})
+
+
+Note: You can reload your browser to return to the state where you are not logged in.
 
 
 
