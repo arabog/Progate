@@ -28,87 +28,36 @@ conn.connect(function (err) {
 
 
 // READ ROUTE
+// This is the route path for the Top page
+// Confirm the URL and the code to display the page
 app.get('/', (req, res) => {
         res.render('top.ejs');
 });
 
-
-app.get('/index', (req, res) => {
-        // Write the necessary code to get data from the database
-        conn.query(
-            "SELECT * FROM items",
+      
+// This is the route path for the Articles page
+// Confirm the URL and the code to display the page
+app.get('/list', (req, res) => {
+        connection.query(
+                'SELECT * FROM articles',
                 (error, results) => {
-			// console.log(results)
-
-			res.render('index.ejs', {items: results})
-                }
-        )
-})
-
-
-// CREAT GET ROUTE
-app.get('/new', (req, res) => {
-	res.render('new.ejs');
-});
-
-	
-
-// CREAT ROUTE
-app.post('/create', (req, res) => {
-	conn.query(
-		'INSERT INTO items (name) VALUES (?)',
-		[req.body.itemName],
-		(error, results) => {
-			res.redirect('/index');
-		}
-	);
-});
-
-
-// DELETE ROUTE
-app.post('/delete/:id', (req, res) => {
-        conn.query(
-                'DELETE FROM items WHERE id = ?',
-                [req.params.id],
-                (error, results) => {
-                        if (error) {
-                                console.log(error);
-                        }
-
-                        res.redirect('/index');
+                        // Confirm the data and property name to be passed to the EJS file
+                        res.render('list.ejs', { articles: results });
                 }
         );
 });
+      
+// This is the route path for the Article details page
+// Confirm the URL and the code to display the page
+app.get('/article/:id', (req, res) => {
+        const id = req.params.id;
 
-
-// UPDATE GET ROUTE
-app.get('/edit/:id', (req, res) => {
-        conn.query(
-                'SELECT * FROM items WHERE id = ?',
-                [req.params.id],
+        connection.query(
+                'SELECT * FROM articles WHERE id = ?',
+                [id],
                 (error, results) => {
-                        if (error) {
-                                console.log(error);
-                        }
-
-                        res.render('edit.ejs', {item: results[0]});
-                }
-        );
-});
-
-
-// UPDATE ROUTE
-app.post('/update/:id', (req, res) => {
-        // console.log(req.body.itemName)
-        
-        conn.query(
-                'UPDATE items SET name = ? WHERE id = ?',
-                [req.body.itemName, req.params.id],
-                (error, results) => {
-                        if (error) {
-                                console.log(error);
-                        }
-                        res.redirect('/index');
+                        // Confirm the data and property name to be passed to the EJS file
+                        res.render('article.ejs', { article: results[0] });
                 }
         );
 });
