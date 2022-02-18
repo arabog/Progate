@@ -477,15 +477,57 @@ First, let's differentiate the display in Article Details page based on the cate
 
             <h2><%= article.title %></h2>
             <p><%= article.summary %></p>
-            
+
             <a href="/article/<%= article.id %>">Read more</a>
 </li>
 
+Restricting Access to the Limited Article Details
+We will place the restrictions access using the values from the category column and the locals.isLoggedIn property that you made before.
 
+Organizing the Login Status and Restrictions Access
+Currently, anyone is able to view the articles. We'll now restrict access of users who are not logged in from viewing limited articles.
 
+Checking the Login Status and Limited Articles Display
+Let's check the content displayed for the limited articles. For users who aren't logged in, they'll be prompted with a display to log in.
 
+Displaying Articles When Logged In
+We're going to add a conditional branch that uses the values of the locals.isLoggedIn property that manages the users' login state. When the locals.isLoggedIn property value is true, or when a user is logged in, the contents of the article is able to be viewed.
 
+ <li>
+            <!-- Display the members only badge when the article.category is limited -->
+            <% if (article.category === 'limited') {%>
+                <i>MEMBERS ONLY</i>
 
+                <h1><%= article.title %></h1>
+
+                <% if (locals.isLoggedIn) {%>
+                        <p><%= article.content %></p>
+                 <% } else { %>
+
+                <% } %>
+            <% } %>
+
+</li>
+
+Hiding Articles When Not Logged In
+When the value is false, or when a user isn't logged in, the contents of the article won't be able to be viewed, and a link to the Login page will be displayed.
+
+<% if (locals.isLoggedIn) {%>
+                        <p><%= article.content %></p>
+                 <% } else { %>
+                        <div class="article-login">
+                                <p> Let's log in now </p>>
+
+                                <a class="btn" href="/login"> Log in </a>
+                        </div>
+
+                <% } %>
+<% } %>
+
+Let's limit what the users can see based on their login state.
+The steps are as follows:
+1. Create an if statement to check the login state and handle users that are logged in.
+2. Handle users that aren't logged in.
 
 
 
