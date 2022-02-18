@@ -11,7 +11,6 @@ app.use(express.json())
 
 
 const conn = mysql.createConnection({
-          // db name, password
         host: 'localhost',
         user: 'root',
         password: 'Aduke2022$=',
@@ -28,6 +27,7 @@ conn.connect(function (err) {
 });
 
 
+// READ ROUTE
 app.get('/', (req, res) => {
         res.render('top.ejs');
 });
@@ -46,11 +46,14 @@ app.get('/index', (req, res) => {
 })
 
 
+// CREAT GET ROUTE
 app.get('/new', (req, res) => {
 	res.render('new.ejs');
 });
 
 	
+
+// CREAT ROUTE
 app.post('/create', (req, res) => {
 	conn.query(
 		'INSERT INTO items (name) VALUES (?)',
@@ -62,6 +65,7 @@ app.post('/create', (req, res) => {
 });
 
 
+// DELETE ROUTE
 app.post('/delete/:id', (req, res) => {
         conn.query(
                 'DELETE FROM items WHERE id = ?',
@@ -75,7 +79,9 @@ app.post('/delete/:id', (req, res) => {
                 }
         );
 });
-      
+
+
+// UPDATE GET ROUTE
 app.get('/edit/:id', (req, res) => {
         conn.query(
                 'SELECT * FROM items WHERE id = ?',
@@ -89,7 +95,9 @@ app.get('/edit/:id', (req, res) => {
                 }
         );
 });
-      
+
+
+// UPDATE ROUTE
 app.post('/update/:id', (req, res) => {
         // console.log(req.body.itemName)
         
@@ -104,9 +112,6 @@ app.post('/update/:id', (req, res) => {
                 }
         );
 });
-
-
-
 
 
 app.listen(3008, () => {

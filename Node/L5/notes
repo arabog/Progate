@@ -1,0 +1,19 @@
+This time, we will divide the tasks to complete into 3 parts, 
+as shown in the image on the right: 
+① Creating a Login Functionality, 
+② Creating a Logout Functionality, and 
+③ Restricting Access to the Article Details Page.
+
+Checking the Blog's Structure
+The blog is constructed from 3 pages. In the app.js file, code is 
+written for each of the pages to be displayed. The view files 
+for each page are placed in the views folder.
+
+list.ejs            Article page
+article.ejs         Article details pg
+top.ejs             top pg
+
+
+
+
+#Progate @progateEN @dev_careers #dev_careers
