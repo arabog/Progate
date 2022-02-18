@@ -248,9 +248,81 @@ app.use((req, res, next) => {
           }else {
                      console.log("You are logged in");
           }
+
           <!-- confirmatn of login state -->
           next();
 })
+
+
+Displaying the Username in the Header:
+you save the username into the session properties and by calling it from the app.use function you can run the process.
+
+
+Managing the Username Using Sessions
+Let's manage the username using sessions. For starters, when log in is successful, the username is to be saved to the session properties. Then, the saved username is called from the session properties into the app.use function.
+
+app.post("/login", (req, res) => {
+       <!--  -->
+          if(req.body.password === results[0].password) {
+<!-- sves d d rettrieved user ID as userId in d session ppties -->
+                    req.session.userId = results[0].id;
+
+                    req.session.username = results[0].username;
+          }else {
+
+          }
+
+          <!--  -->
+})
+
+
+
+app.use((req, res, next) => {
+          if( req.session.userId === undefined) {
+                    console.log("You are not logged in");
+          }else {
+                     console.log("You are logged in");
+
+                    <!-- retrieve d username 4rm d sessn ppties -->
+                     const username = req.session.username;
+          }
+
+          <!-- confirmatn of login state -->
+          next();
+})
+
+
+Passing the Username to the EJS File
+When you use the res.locals object, you are able to pass values to an EJS file even if res.render is not there. It is beneficial to also use the res.locals object when dealing with values that are used throughout the entire application. 
+
+Assigning a Value to res.locals Objects
+With res.locals objects, you can assign values using the res.locals.propertyName = value form. The assigned value is able to be used until a response is returned.
+
+app.use((req, res, next) => {
+
+          if( req.session.userId === undefined) {
+                    console.log("You are not logged in");
+
+                    res.locals.username = "Guesr";
+          }else {
+                     console.log("You are logged in");
+
+                    <!-- retrieve d username 4rm d sessn ppties -->
+                    
+                    <!-- username is assigned wn logged in -->
+                     res.locals.username = req.session.username;
+          }
+
+          <!-- confirmatn of login state -->
+          next();
+})
+
+Getting a Value from locals Object:
+Let's display the assigned value in list.ejs. The assigned value are converted to locals object in the EJS file. For this reason, when using the value you'll write it as locals.propertyName. Be very careful not to include res when writing it out.
+
+<p> Welcome, <%= locals.username %> </p>
+
+
 
 
 #Progate @progateEN @dev_careers #dev_careers
