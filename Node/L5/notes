@@ -38,6 +38,41 @@ Let's create the Login page!
 4. Create a link to the Login page
 
 
+Creating a User Authentication Process
+
+Preparing the Route Path for the Login Processes
+<form action="/login" method="post">
+          <p>Email</p>
+          <!-- Add the name attribute -->
+          <input type="text" name="email">
+
+          <p>Password</p>
+          <!-- Add the name attribute -->
+          <input type="password" name="password">
+
+          <input type="submit" value="Log in">
+
+          <a href="/list">Back to articles</a>
+</form>
+
+app.post("/login", (req, res) => {
+          <!-- d email & password goes into req.body.email/password respectively -->
+          res.redirect("/list")
+})
+
+
+Route Path /login
+At this point, we see that the route path /login is defined for two processes. But because they have different methods (GET and POST), they are treated differently based on the request method.
+
+
+app.get("/login", (req, res) => {
+        <!-- display login page -->
+})
+
+app.post("/login", (req, res) => {
+        <!-- user authentication -->
+})
+
 
 
 
