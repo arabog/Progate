@@ -7,7 +7,8 @@ mysql --user=root --password
 sudo mysql --Arabog=root --Aduke2022$=
 
 To display the list of existing databases, we will use the SHOW command. 
-Please run the following query: SHOW databases;
+Please run the following query: 
+SHOW databases;
 
 *Don't forget to place a semicolon ( ; ) at the end of the query. 
 
@@ -32,6 +33,8 @@ CREATE TABLE users (          //users specify d name of d table created
           `name` text, 
           primary key (id));  //specify d id column s d pry key
 
+-- CREATE TABLE users ( `id` int auto_increment, `email` text, `password` text, primary key (id)); 
+
 This is the basic syntax used for creating a table. Details such as the column name, data type, and the options you want to add to the columns will differ depending on your purpose.
 
 Using the DESCRIBE statement, which is used to display table structures, let's check that the table has been created correctly.
@@ -52,6 +55,10 @@ SELECT * FROM users;
 
 Inserting
 INSERT INTO users(`name`) VALUES ('Ken the Ninja');
+
+-- INSERT INTO users(`email`, `password`) VALUES ('ninja@gmail.com', 'ninja');
+-- INSERT INTO users(`email`, `password`) VALUES ('HUGB', 'ninja');
+
 
 Retrieving
 SELECT * FROM users;

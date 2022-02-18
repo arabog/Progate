@@ -1,14 +1,20 @@
 <header>
           <div class="header-nav">
                     <a href="/">BLOG</a>
-                    
+
                     <p>Welcome, <%= locals.username %></p>
-                    
+
                     <ul>
                               <li><a href="/list">Articles</a></li>
-                              <li><a href="/login">Log in</a></li>
-                    </ul>
-          </div>
-          
+                                        <!-- Toggle the link to be displayed using locals.isLoggedIn -->
+                                        
+                                        <% if (locals.isLoggedIn) { %> 
+                                                  <li><a href="/logout">Log out</a></li>
+                                        <% } else { %>
+                                                  <li><a href="/login">Log in</a></li>
+                                        <% } %>
+                              </ul>
+                    </div>
+
           <p>Ken's Learning Blog</p>
 </header>

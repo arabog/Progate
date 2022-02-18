@@ -379,6 +379,55 @@ After deleting the session properties, we're going to redirect to the Articles p
           }), 
 })
 
+Switching the Display Using Login Status:
+we shall make it so depending on the login status of the user, the login and logout button will change accordingly. 
+
+Preparing a Variable that Determine Login Status
+To determine the login status, we'll provide isLoggedin property into the res.locals object. When logged in, true will be assigned to the isLoggedIn property while false will be assigned in when not logged in.
+
+app.use((req, res, next) => {
+
+          if( req.session.userId === undefined) {
+                    console.log("You are not logged in");
+
+                    res.locals.username = "Guesr";
+
+                    res.locals.isLoggedIn = false;
+          }else {
+                     console.log("You are logged in");
+
+                     res.locals.username = req.session.username;
+
+                      res.locals.isLoggedIn = true;
+          }
+
+          next();
+})
+
+Switching the Displayed Link
+We'll prepare a conditional statement in header.ejs, and switch the display of the link depending on the value of the locals.isLoggedIn property.
+
+
+<header>
+          <div class="header-nav">
+                    <a href="/">BLOG</a>
+                    <p>Welcome, <%= locals.username %></p>
+
+                    <ul>
+                              <li><a href="/list">Articles</a></li>
+                    
+                              <% if (locals.isLoggedIn) { %> 
+                                        
+                                        <li><a href="/logout">Log out</a></li>
+                                        
+                              <% } else { %>
+                                        <li><a href="/login">Log in</a></li>
+                              <% } %>
+                    </ul>
+          </div>
+
+          <p>Ken's Learning Blog</p>
+</header>
 
 
 #Progate @progateEN @dev_careers #dev_careers
