@@ -322,6 +322,41 @@ Let's display the assigned value in list.ejs. The assigned value are converted t
 
 <p> Welcome, <%= locals.username %> </p>
 
+Reusing the Header
+What's the include Function?
+EJS has a include function that calls another EJS file in a file. 
+
+Moving the Header to a Different File
+We'll create a file named header.ejs to bring together the contents of the header. From there, take the header portion of list.ejs and let's move it to header.ejs.
+
+Calling the Header Using include
+Let's proceed to display the same header in the Articles page and the Article Details page by calling header.ejs from within list.ejs and article.ejs. When you call a different EJS file, you write it as include(fileName);.
+
+<%- include("heder"); %>
+
+Reuse the header in the other EJS files.
+paste ds code inside d header.ejs file
+
+<header>
+          <div class="header-nav">
+                    <a href="/">BLOG</a>
+                    <p>Welcome, <%= locals.username %></p>
+                    
+                    <ul>
+                              <li><a href="/list">Articles</a></li>
+                              <li><a href="/login">Log in</a></li>
+                    </ul>
+          </div>
+
+          <p>Ken's Learning Blog</p>
+</header>
+
+
+
+
+
+
+
 
 
 
