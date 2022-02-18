@@ -232,14 +232,53 @@ WHERE sales_records.item_id = (
 )
 GROUP BY users.id;
 
-Q9:
+Q9: Complex Product Data Analysis
+For men's, women's, and gender-neutral products, get the following data:
+・Gender (0, 1, 2)
+・Sales total
+Also, use the label  sales total for the sales total.
+
+SELECT items.gender, SUM(items.price) AS "sales total"
+FROM sales_records
+JOIN items
+ON sales_records.item_id = items.id
+GROUP BY items.gender;
 
 
-Q10:
+For the top 5 products with the highest sales, organize the following data in descending order by the number of sales:
+・Product ID
+・Product name
+・Sales total
+Use the label sales total for the sales total.
+Note: Calculate the sales total as price × number of items.
+
+SELECT items.id, items.name, items.price * COUNT(*) AS "sales total"
+FROM sales_records
+JOIN items
+ON sales_records.item_id = items.id
+GROUP BY items.id, items.name, items.price
+ORDER BY COUNT(*) * items.price DESC
+LIMIT 5;
 
 
-Q11:
+For products with a higher sales value than the item "grey hoodie", get the following data:
+・Product ID
+・Product name
+・Sales total
+Again, use the label sales total for the sales total.
 
+SELECT items.id, items.name, items.price * COUNT(*) AS "sales total"
+FROM sales_records
+JOIN items
+ON sales_records.item_id = items.id
+GROUP BY items.id, items.name, items.price
+HAVING (COUNT(*) * items.price) > (
+          SELECT COUNT(*) * items.price
+          FROM sales_records
+          JOIN items
+          ON sales_records.item_id = items.id
+          WHERE items.name = "grey hoodie"
+);
 
 
 #Progate @progateEN @dev_careers #dev_careers
