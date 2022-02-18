@@ -75,9 +75,7 @@ Make sure that you do not accidentally delete the four databases that were creat
 DROP DATABASE progate;
 
 
-
-
-DEbug:
+Debug:
 ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
 Ans: mysql -u root -p
 

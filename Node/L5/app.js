@@ -14,7 +14,7 @@ const conn = mysql.createConnection({
         host: 'localhost',
         user: 'root',
         password: 'Aduke2022$=',
-        database: 'shop_app'
+        database: 'blog'
 })
 
 conn.connect(function (err) {
@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
 // This is the route path for the Articles page
 // Confirm the URL and the code to display the page
 app.get('/list', (req, res) => {
-        connection.query(
+        conn.query(
                 'SELECT * FROM articles',
                 (error, results) => {
                         // Confirm the data and property name to be passed to the EJS file
@@ -52,7 +52,7 @@ app.get('/list', (req, res) => {
 app.get('/article/:id', (req, res) => {
         const id = req.params.id;
 
-        connection.query(
+        conn.query(
                 'SELECT * FROM articles WHERE id = ?',
                 [id],
                 (error, results) => {
