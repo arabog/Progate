@@ -1,0 +1,55 @@
+Creating a New Node.js Application
+In this article we will introduce how to create a new Express 
+application within your own local environment.
+
+1. Creating a New Application
+First, let's create a folder for the new application.
+Create a folder called "list-app" wherever you like in your PC.
+
+
+
+2. Running Commands and Installing Packages
+We need to use a terminal/command prompt in order to run commands. You can open a terminal in VSCode by selecting on Terminal from the top menu and then clicking New Terminal.
+
+First, run the following command:
+npm init --yes
+
+This is the command used to generate package.json, which is an npm configuration file. The settings information of the npm package is outlined in the package.json file.
+
+
+ In this article, we will install express and ejs. To do this, run the following command:
+
+npm install express ejs
+
+Let's Start the Server and Display Pages
+Now you have all of the necessary packages! Let's start the server and display a page.
+
+app.js
+const express = require('express');
+
+const app = express();
+
+app.get('/', (req, res) => {
+          res.render('hello.ejs');
+});
+
+
+app.listen(3000);
+
+views/hello.ejs
+<h1>Hello World</h1>
+
+Now you have finished preparing the files. Let's try starting up the server.
+node app.js
+
+When you want to reflect the changes made in the file, first stop the server with Ctrl + C and restart the server with node app.js.
+
+3. Making the Server Restart Automatically After Updating a File
+We were able to display a page, but every time we make changes to it, we have to restart the server to reflect those changes.
+To avoid having to restart the server manually, let's install nodemon, an npm package that automatically restarts the server when changes are made to a file.
+
+npm install -g nodemon
+
+Next, let's start up the server using nodemon. To run nodemon, execute the command below. 
+
+nodemon app.js
