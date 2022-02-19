@@ -83,5 +83,40 @@ app.post("/signup", (req, res) => {
 
 })
 
+Signing up a User and Logging in Simultaneously
+If you were to use the session concept you learned in Node.js Study V, you will be able to sign up and log in simultaneously.
+
+Saving the User ID and Username to the Session Properties
+
+Getting the User ID
+When the INSERT query succeeds, the id of the added record is inserted into the insertId of the results object, even if it isn't explicitly set to be inserted. insertId is the new user ID. Let's save it to the session properties.
+
+app.post("/signup", (req, res) => {
+          const username = req.body.username;
+          const email = req.body.email;
+          const password = req.body.password;
+
+          conn.query(
+                    "INSERT INTO users (username, email, password) VALUES ( ?, ?, ?)",
+                    [username, email, password],
+                    (error, results) => {
+                              req.session.userId = results.insertId;
+
+                              <!-- username 4rm d form. y not 4rm db, results? -->
+                              req.session.username = username;
+
+                              res.redirect("/list")
+                    }
+          )
+
+
+})
+
+
+
+
+
+
+
 
 #Progate @progateEN @dev_careers #dev_careers
