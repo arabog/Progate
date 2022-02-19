@@ -47,11 +47,28 @@ manipulated before execution.
 
 SELECT * FROM students;
 
+What to Do With Unnecessary Data
+DELETE
+The DELETE statement is used to delete records. As with UPDATE, 
+records can't be reverted after query execution, so let's check the 
+records with SELECT before deleting them.
+
+DELETE FROM students WHERE id = 7;
+
+using WHERE specify d record to be deleted
+
+Important Point for DELETE
+If you don't specify the record to be deleted using WHERE, all of the 
+records within the table will be deleted.
+
+DELETE FROM students ;
 
 
+Using DELETE, let's delete the unnecessary records.
+DELETE FROM students WHERE id = 7;
 
-
-
+-- Don't delete the following query
+SELECT * FROM students WHERE id=7;
 
 #Progate @progateEN @dev_careers #dev_careers
 
