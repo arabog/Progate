@@ -27,10 +27,61 @@ The steps are as follows:
 3. Prepare the view file and the sign up form
 4. Create a link to the Sign up page
 
+Sending the Value of the Sign up Form
+Let's send the user information from the sign up form. This information consists of the username, email, and password. We'll also prepare the route path for sign up on the server side, and assign the received user information to the constants.
+
+<form action="/signup" method="post">
+          <input type="text" name="username">
+           <input type="text" name="email">
+            <input type="password" name="password">
+</form>
+
+app.post("/signup", (req, res) => {
+          const username = req.body.username;
+          const email = req.body.email;
+          const password = req.body.password;
+})
 
 
+Adding the User to the Database
+Let's add the user information that's been assigned to the constants to the users table using the INSERT query. It's not necessary to specify the value of id within the query because AUTO INCREMENT is being set in the id column of the users table!
+
+app.post("/signup", (req, res) => {
+          const username = req.body.username;
+          const email = req.body.email;
+          const password = req.body.password;
+
+          conn.query(
+                    "INSERT INTO users (username, email, password) VALUES ( ?, ?, ?)",
+                    [username, email, password],
+                    (error, result) => {
+                              <!-- signup process -->
+                    }
+          )
 
 
+})
+
+
+Redirecting to the Articles Page
+Once the user has been added to the database, let's redirect to the Articles page (/list).
+
+
+app.post("/signup", (req, res) => {
+          const username = req.body.username;
+          const email = req.body.email;
+          const password = req.body.password;
+
+          conn.query(
+                    "INSERT INTO users (username, email, password) VALUES ( ?, ?, ?)",
+                    [username, email, password],
+                    (error, result) => {
+                              res.redirect("/list")
+                    }
+          )
+
+
+})
 
 
 #Progate @progateEN @dev_careers #dev_careers
