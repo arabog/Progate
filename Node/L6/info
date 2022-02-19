@@ -345,4 +345,40 @@ app.get("/signup", (req, res) => {
           res.render("/signup.ejs", {errors: []})
 })
 
+
+Adding One More Middleware Function
+We should prepare a validation that checks for duplicate emails to keep users from registering twice.
+
+
+Confirming the Process Flow
+Let's prepare the middleware function to perform the duplicate emails check so it will be executed in between the empty input value check and sign up.
+
+Adding a Middleware Function
+Add the middleware function to perform the check for duplicate emails to the routing for sign up.
+
+app.post("/signup", 
+          <!-- middleware fxn to be used -->
+          (req, res, next) => {
+                    <!-- Empty input value check -->
+
+                    next();
+          },
+
+           (req, res, next) => {
+                    <!-- Duplicate emails check -->
+
+                    next();
+          },
+
+          (req, res) => {
+                    <!-- Sign up -->
+          }
+)
+
+
+Confirming the Order of the Middleware Function Execution
+1. Empty input value check
+2. Duplicate emails check 
+3. Sign up
+
 #Progate @progateEN @dev_careers #dev_careers
