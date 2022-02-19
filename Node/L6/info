@@ -472,6 +472,154 @@ npm install bcrypt
 
 const bcrypt = require("bcrypt")
 
+Introducing Password Hashing:
+ Hashing the Password during Sign up.
+
+hash Method
+To hash passwords, the hash method of the bcrypt package is used. If you pass a plain text password as the first argument, you can get the hashed password from the hash parameter of the callback function.
+
+app.post("/signup", 
+          <!-- middleware fxn to be used -->
+          (req, res, next) => {
+                    <!-- Empty input value check -->
+
+                    next();
+          },
+
+           (req, res, next) => {
+                    <!-- Duplicate emails check -->
+                    const email = req.body.email;
+
+                    const errors = [];
+
+                    conn.query(
+                              "SELECT * FROM users WHERE email = ?",
+                              [email],
+                              (error, results) => {
+                                        if (results.length > 0) {
+                                                  errors.push("Failed to register user')
+
+                                                  res.render("signup.ejs", {errors: errors})
+                                        } else {
+                                                  next();
+                                        }
+
+                              }
+                    )
+
+                    next();
+          },
+
+          (req, res) => {
+                    <!-- Sign up -->
+
+                    <!-- 
+                              password: plain text password
+                              10: password strength, d bigger d value
+                              hash: hashed password
+                     -->
+                    bcrypt.hash(password, 10, (error, hash) => {
+
+                    })
+          }
+)
+
+Adding to the Database
+Let's insert the hashed password into the password column of the users table.
+
+          bcrypt.hash(password, 10, (error, hash) => {
+                    conn.query(
+                              "INSERT INTO users (username, email, 
+                              password) VALUES ( ?, ?, ?)",
+
+                    // insert d hashed password to d password column
+                              [username, email, hash],
+
+                              (error, results) => {
+                                        req.session.userId = results.insertId;
+
+                                        req.session.username = username;
+
+                                        res.redirect("/list")
+                              }
+                    )
+          })
+
+Change the password constant passed in the second argument of the connection.query to hash. 
+  
+Note: Do not change the password written in the SQL statement. The password in the SQL statement refers to the password column in the users table.
+
+Fill in the inputs in the form and press the Sign up button.
+  
+In the users table of the Database tab, check that the password value for the newly created user is hashed.
+  
+Try to log in as the newly created user. In Your Result of the Browser tab, access the Login page using the URL 
+localhost:3000/login
+ and log in using the credentials that you've used to create the user.
+  
+You shouldn't be able to log in as the newly created user! This is because the password sent to the server by the login form for authentication is not hashed, hence user authentication will fail.
+
+Logging in with Hashed Passwords:
+Comparing Passwords
+To compare the plain text password inputted by the user with the hashed password in the database, the compare method of the bcrypt package is used. The plain text will be hashed inside the method.
+
+app.post("/login", (req, res) => {
+          <!-- ................ -->
+          const plain = req.body.password;
+          const hash = result[0].password;
+
+          <!-- 
+                    plain: plain text password
+                    hash: hashed password
+                    isEqual: comparison result
+           -->
+
+          bcrypt.compare(plain, hash, (error, isEqual) => {
+
+          })
+
+          conn.query(
+                    "INSERT INTO users (username, email, password) VALUES ( ?, ?, ?)",
+                    [username, email, password],
+                    (error, result) => {
+                              <!-- signup process -->
+                    }
+          )
+
+
+})
+
+Changing the Process Based on Comparison Results
+If the passwords match, isEqual becomes true. When this happens, the login process is performed. When the passwords don't match, let's redirect the users back to the Login page.
+
+app.post("/login", (req, res) => {
+          <!-- ................ -->
+          const plain = req.body.password;
+          const hash = result[0].password;
+
+          <!-- 
+                    plain: plain text password
+                    hash: hashed password
+                    isEqual: comparison result
+           -->
+
+          bcrypt.compare(plain, hash, (error, isEqual) => {
+
+<!-- If isEqual evaluates true (this means the passwords match) -->
+                    if (isEqual) {
+<!-- if password match, perform login process -->
+                              req.session.userId = results[0].id;
+                              req.session.username = results[0].username;
+
+                              res.redirect("/list");
+                    }else {
+                               <!-- if password don't match, redirect tologin page -->
+                              res.redirect("/login")
+                    }
+          })
+
+
+})
 
 
 
