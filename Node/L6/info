@@ -458,4 +458,21 @@ app.post("/signup",
 )
 
 
+Let's Learn about Handling Passwords Securely:
+High Security Passwords:
+What happened here is a plain string password of ninja was changed into a special string known as hashed password. the password is a complex string. 
+
+bcrypt Package
+The bcrypt package will be used to hash passwords and is widely used to take plain text password and hash them, to create highly secure passwords.
+
+bcrypt Package Preparation and Installation
+Let's install the bcrypt package using the npm install command. app.js will load the bcrypt package and assign it to the bcrypt constant.
+
+npm install bcrypt
+
+const bcrypt = require("bcrypt")
+
+
+
+
 #Progate @progateEN @dev_careers #dev_careers
