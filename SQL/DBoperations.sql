@@ -54,13 +54,15 @@ Let's add the new column.
 As stock numbers should be a whole number, we are going to set the column 
 data type as INT.
 
-ALTER TABLE items ADD COLUMN stock INT
+ALTER TABLE items ADD COLUMN stock INT;
+ALTER TABLE users ADD COLUMN username  TEXT;
 
 NULL is shown for values in the stock as the stock numbers are currently not defined.
 We use the UPDATE query to set the actual data. Let's update the stock of the item 
 with the id 1 to 100.
 UPDATE items SET stock = 100 WHERE id = 1;
-UPDATE articles SET category = "limited" WHERE id = 1;
+UPDATE users SET username = "HUGB" WHERE id = 2;
+
 
 3. Let's Change a Column
 Let's Look at the Steps to Change a Column Name

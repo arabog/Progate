@@ -1,0 +1,77 @@
+Connecting Node.js Applications to MySQL:
+In this article we will go over how to connect Node.js Applications to MySQL.
+
+1. Connecting Node.js Applications to MySQL
+Preparing the Foundational Application
+Let's prepare an application that will be connected to MySQL.
+If you do not have an application that you would like to connect, create a simple application by following the Creating a New Node.js Application article.
+Installing the mysql Package
+First, let's install the mysql package.
+npm install mysql
+
+Creating a Database and a Table
+ For more information on how to create a database, take a look at the Creating a Database With MySQL article.
+Database Name: list_app
+Table Name: users
+
+Entering the mysql Settings
+In app.js, we'll import the mysql package and connect to MySQL by entering the required information as shown below. For the password, enter the one you set during the installation process.
+
+const express = require('express');
+const mysql = require('mysql');
+
+const app = express();
+
+const connection = mysql.createConnection({
+          host: 'localhost',
+          user: 'root',
+          password: '[Password that you set previously]',
+          database: 'list_app'
+});
+
+
+Next, let's make it so that an error message is displayed when you are unable to connect to MySQL.
+
+connection.connect((err) => {
+          if (err) {
+                    console.log('error connecting: ' + err.stack);
+                    return;
+          }
+
+          console.log('success');
+});
+
+Now, let's write out a code that allows you to obtain and display information from MySQL.
+
+
+app.get('/', (req, res) => {
+          connection.query(
+                    'SELECT * FROM items',
+                    (error, results) => {
+                              console.log(results);
+                              res.render('hello.ejs');
+                    }
+          );
+});
+
+
+app.listen(3000);
+
+Lastly, let's create a view file to be displayed in views/hello.ejs when accessing localhost:3000/.
+
+<h1>Hello World</h1>
+
+
+When you have saved app.js, start the server by running nodemon app.js, and access localhost:3000/.
+
+(Bonus Task) Try Changing the Connection Information
+Let's test to see whether an error message pops up when you are unable to connect to the database. Try changing the name of the database as shown below.
+
+const connection = mysql.createConnection({
+          host: 'localhost',
+          user: 'root',
+          password: '[Password that you set previously]',
+          database: ''
+});
+
+If an error message is displayed, the code to determine whether your application is connected to the database is functioning properly.
