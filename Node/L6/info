@@ -1,0 +1,36 @@
+Creating a Sign up Functionality
+What's to Be Made
+① Sign up Functionality.
+② A Functionality to Check User Input and 
+③ A Functionality to Securely Handle Passwords.
+
+In this exercise, we're going to create 3 functionalities, let's take a look at them below!
+  
+1. Sign up
+2. Input validation
+3. Securing passwords
+
+
+Displaying a Sign up Page
+The Sign up page will be displayed when localhost:3000/signup is accessed.
+
+app.get("/signup", (req, res) => {
+          res.render("signup.ejs")
+});
+
+Creating a Sign up Form
+Let's prepare a form to input the username, email and password for the Sign up page.
+
+The steps are as follows:
+1. Prepare the route method to display the Sign up page
+2. Display for the Sign up page
+3. Prepare the view file and the sign up form
+4. Create a link to the Sign up page
+
+
+
+
+
+
+
+#Progate @progateEN @dev_careers #dev_careers
