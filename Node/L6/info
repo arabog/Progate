@@ -381,4 +381,81 @@ Confirming the Order of the Middleware Function Execution
 2. Duplicate emails check 
 3. Sign up
 
+Preventing Duplicate Emails
+Confirming the Process Flow
+If an email is a duplicate, let's pass the error message to the Sign up page. If there isn't a duplicate, then it'll continue on with the sign up process.
+
+Looking for Duplicate Email Addresses
+Let's search for the email received from the sign up form to see if it exists in the users table. If it already exists in the table, that means that the email is a duplicate.
+
+
+app.post("/signup", 
+          <!-- middleware fxn to be used -->
+          (req, res, next) => {
+                    <!-- Empty input value check -->
+
+                    next();
+          },
+
+           (req, res, next) => {
+                    <!-- Duplicate emails check -->
+                    const email = req.body.email;
+
+                    conn.query(
+                              "SELECT * FROM users WHERE email = ?",
+                              [email],
+                              (error, results) => {
+
+                              }
+                    )
+
+                    next();
+          },
+
+          (req, res) => {
+                    <!-- Sign up -->
+          }
+)
+
+Diverging the Flow Based on Duplicates
+In the event that an email is a duplicate, let's pass the errors array to the Sign up page. If it's not a duplicate, let's continue on to the sign up middleware function.
+
+app.post("/signup", 
+          <!-- middleware fxn to be used -->
+          (req, res, next) => {
+                    <!-- Empty input value check -->
+
+                    next();
+          },
+
+           (req, res, next) => {
+                    <!-- Duplicate emails check -->
+                    const email = req.body.email;
+
+                    const errors = [];
+
+                    conn.query(
+                              "SELECT * FROM users WHERE email = ?",
+                              [email],
+                              (error, results) => {
+                                        if (results.length > 0) {
+                                                  errors.push("Failed to register user')
+
+                                                  res.render("signup.ejs", {errors: errors})
+                                        } else {
+                                                  next();
+                                        }
+
+                              }
+                    )
+
+                    next();
+          },
+
+          (req, res) => {
+                    <!-- Sign up -->
+          }
+)
+
+
 #Progate @progateEN @dev_careers #dev_careers
