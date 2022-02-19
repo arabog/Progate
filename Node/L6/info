@@ -112,7 +112,206 @@ app.post("/signup", (req, res) => {
 
 })
 
+Creating an Empty Input Value Check Function:
+You will create a function to check for empty input values so that a new user cannot be created without input, like in the image on the right.
 
+ we will use a middleware function to create a function to check if the user input value is empty or not.
+
+ Learning about Middleware Functions:
+ As you learned in Node.js Study I, the client request is known as request and the answer from the server is known as response.
+
+ With Express, the function executed by the server between the request and response interaction is known as the middleware function.
+
+ An Example of a Middleware Function
+Actually, all of the functions that you've written up until now to deal with the processes for routing have been middleware functions. The sign up process in route path /signup is an example of middleware function.
+
+          (req, res) => {
+
+                    conn.query(
+                              "INSERT INTO users (username, email, ...
+                              [username, email, password],
+                              ....................
+                    )
+
+
+          }
+
+Adding a Middleware Function
+Between returning a response after receiving a request, you can actually make multiple middleware functions. So at this point, let's try adding a middleware function that checks for empty input values.
+
+app.post("/signup", 
+          <!-- middleware fxn to be used -->
+          (req, res, next) => {
+                    console.log("Empty input value check")
+
+                    next();
+          },
+
+          (req, res) => {
+                    console.log("Sign up")
+          }
+)
+
+Preventing Empty Inputs in the Sign up Form:
+In the middleware function you prepared earlier, you are going to write a process that checks if the input values of the sign up form are empty or not.
+
+This type of structure for checking data is known as validation.
+
+Confirming the Validation Process
+This time, we'll make a structure, or validation, to check if the username, email, and password that are input into the sign up form are blank or not. Let's make it where if the values in the form are empty, it's not possible to continue with sign up.
+
+Confirming the Process Flow
+The check for if the values in the sign up form are empty or not will be conducted by the middleware that prints "Empty input value check" to the terminal. When empty, the user will be redirected back to the Sign up page.
+
+Validating If the Input Values Are Empty
+First, in the middleware function for checking empty input values, let's check if the values in the sign up form are empty. For each username, password, and email, compare it with an empty string using '' (double/single quotes)
+
+
+app.post("/signup", 
+
+          (req, res, next) => {
+                    const username = req.body.username;
+                    const email = req.body.email;
+                    const password = req.body.password;
+
+                    console.log("Empty input value check")
+
+                    if (username == "") {
+
+                    }
+
+                     if (email == "") {
+                              
+                    }
+
+                     if (password == "") {
+                              
+                    }
+
+                    next();
+          },
+
+          (req, res) => {
+
+          conn.query(
+                    "INSERT INTO users (username, email, password) VALUES ( ?, ?, ?)",
+                    [username, email, password],
+                    (error, results) => {
+                              req.session.userId = results.insertId;
+
+                              <!-- username 4rm d form. y not 4rm db, results? -->
+                              req.session.username = username;
+
+                              res.redirect("/list")
+                    }
+          )
+
+
+})
+
+Adding an Error Message to an Array
+If the username or other input values are empty, error messages will be added to the errors array using the push method. Make sure to check the error message by printing it on the terminal.
+
+app.post("/signup", 
+
+          (req, res, next) => {
+                    const username = req.body.username;
+                    const email = req.body.email;
+                    const password = req.body.password;
+
+                    const errors = [];
+
+                    if (username == "") {
+                              errors.push("Username is empty");
+                    }
+
+                     if (email == "") {
+                              errors.push("Email is empty");
+                    }
+
+                     if (password == "") {
+                              errors.push("Password is empty");
+                    }
+
+                    console.log(errors)
+
+                    next();
+          },
+
+          (req, res) => {
+
+          conn.query(
+                    "INSERT INTO users (username, email, password) VALUES ( ?, ?, ?)",
+                    [username, email, password],
+                    (error, results) => {
+                              req.session.userId = results.insertId;
+
+                              req.session.username = username;
+
+                              res.redirect("/list")
+                    }
+          )
+
+
+})
+
+Diverging the Flow Based on Emptiness
+If the input values are empty, the number of elements in the errors array will be greater than 0. When this happens, let's redirect to the Sign up page. If the input values aren't empty, let's call the next function and the sign up process will continue.
+
+app.post("/signup", 
+
+          (req, res, next) => {
+                    const username = req.body.username;
+                    const email = req.body.email;
+                    const password = req.body.password;
+
+                    const errors = [];
+
+                    if (username == "") {
+                              errors.push("Username is empty");
+                    }
+
+                     if (email == "") {
+                              errors.push("Email is empty");
+                    }
+
+                     if (password == "") {
+                              errors.push("Password is empty");
+                    }
+
+                    if (errors.length > 0) {
+                              res.redirect("/signup")
+                    }else {
+                              next();   // continue with d next step
+                    }
+
+          },
+
+          (req, res) => {
+                    const username = req.body.username;
+                    const email = req.body.email;
+                    const password = req.body.password;
+
+                    conn.query(
+                              "INSERT INTO users (username, email, password) VALUES ( ?, ?, ?)",
+                              [username, email, password],
+                              (error, results) => {
+                                        req.session.userId = results.insertId;
+
+                                        req.session.username = username;
+
+                                        res.redirect("/list")
+                              }
+                    )
+
+
+})
+
+In this exercise, we're going to create input validation to check for empty fields.
+The steps are as follows:
+1. Retrieve the values from the sign up form
+2. Check if the values are empty
+3. Create a control flow based on the results in point 2.
 
 
 
