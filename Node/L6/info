@@ -267,15 +267,15 @@ app.post("/signup",
 
                     const errors = [];
 
-                    if (username == "") {
+                    if (username === "") {
                               errors.push("Username is empty");
                     }
 
-                     if (email == "") {
+                     if (email === "") {
                               errors.push("Email is empty");
                     }
 
-                     if (password == "") {
+                     if (password === "") {
                               errors.push("Password is empty");
                     }
 
@@ -314,8 +314,35 @@ The steps are as follows:
 3. Create a control flow based on the results in point 2.
 
 
+Displaying Error Messages:
+To help the user, we are going to display the error messages
+
+Passing Error Messages
+Let's display an error message on the Sign up page, for when the user leaves the input values empty. First, we'll pass the errors array that holds the error messages to the Sign up page's view file: signup.ejs.
+
+          if (errors.length > 0) {
+                    <!-- res.redirect("/signup") -->
+                    res.render("signup.ejs", {errors: errors})
+          }else {
+                    next();   // continue with d next step
+          }
+
+In signup.ejs, let's display the error messages that are in the errors array using the forEach method.
+
+<% if (errors.length > 0 ) { %>
+          <ul class="errors">
+                    <% errors.forEach(error => { %>
+                              <li> <%= error %>
+                    <% }); %>
+          </ul>
+
+<% %>
 
 
+Passing Empty Arrays: ds prevent d error msg being printed wn d signup link is clicked to go d signup page
 
+app.get("/signup", (req, res) => {
+          res.render("/signup.ejs", {errors: []})
+})
 
 #Progate @progateEN @dev_careers #dev_careers
