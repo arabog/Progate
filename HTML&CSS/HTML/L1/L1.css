@@ -73,6 +73,79 @@ color. You can set the background color just like the color property.
 In addition, if the same letter continues like #dddddd, it can be 
 shortened to #ddd.
 
+Width and Height
+To change the width and height of an element, use the width 
+property and height property, respectively. 
+
+<h1> Ken the Ninja </h1>
+
+<img src="https://progate.com/images/wanko.jpg" >
+
+h1 {     
+          width: 500px;
+          height: 80px;
+          background-color: #9de8ea;
+}
+
+img {
+          width: 500px;
+          height: 200px;
+}
+
+Applying CSS to
+a certain element
+When there are multiple <li> elements in your code, applying CSS 
+like the image below would turn all the <li> elements red.
+So, how do we change only one of the <li> elements to red?
+
+ <ul>
+          <li>HTML</li>
+          <li>PHP</li>
+          <li>Ruby</li>
+</ul>
+
+li {
+          color: red;         // all d li elemts av turned red
+}
+
+Labeling Tags
+You can achieve this by labeling elements using the class attribute.
+By adding a class to an HTML tag, you can differentiate each element 
+and apply different CSS.
+When applying CSS to a class selector, note that a period . is required 
+in front of the class name.
+
+ <ul>
+          <li class="selected">HTML</li>
+          <li>PHP</li>
+          <li>Ruby</li>
+</ul>
+
+.selected {
+          color: red;         // only d elemts with a class has turned red
+}
+
+
+Applying CSS to Multiple Tags
+If you assign the same class name to multiple HTML elements, the same 
+CSS applies to all of them.
+
+<ul>
+          <li class="selected">HTML</li>
+          <li class="selected">PHP</li>
+          <li>Ruby</li>
+</ul>
+
+.selected {
+          color: red;         // only d elemts with class has turned red
+}
+
+Note that CSS class selectors start with a period, but tags do not.
+
+
+
+
+
 
 
 
