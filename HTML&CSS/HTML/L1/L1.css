@@ -1,0 +1,33 @@
+/* 
+What is CSS?
+CSS is used to design a website. With CSS, you can change 
+hings like the color, size, and spacing of HTML elements.
+
+How CSS Works
+CSS is written in a separate file from HTML.
+You can apply CSS to HTML elements by specifying "where," "what," 
+and "how" you want to change it.
+In the example below, CSS is applied to an <h1> element (the "where") 
+and its color (the "what") is changed to red (the "how").
+The target HTML element is called the selector.
+
+<h1> Progate </h1>
+
+h1 {      // where (selector)
+          what      how
+          color:    red;
+          ppty      value
+}
+
+In CSS, colors are specified by hexadecimal values like color: #ff0000;
+
+CSS Comments
+Just as you did in HTML, you can write comments in a CSS file.
+In CSS, however, a comment should be surrounded by /* */
+
+/*
+
+#Progate @progateEN @dev_careers #dev_careers
+*/
+
+
