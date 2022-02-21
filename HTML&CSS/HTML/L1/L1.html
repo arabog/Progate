@@ -238,7 +238,27 @@
                               the top. When two values are defined, padding is applied in the 
                               order of "top / bottom" and "right / left".
 
-                              
+                              The Footer
+                              Next, we're going to work on the layout of the footer.
+                              As with the header, let's check out the design and the structure.
+                              On the left side of the footer is the logo, and on the right is the list.
+
+                              The Structure of he Footer
+                              When we created the header, we applied float and padding to every 
+                              <li> element. Because of that, the CSS properties are also applied 
+                              to the <li> elements in the footer.
+                              How do you think we can apply these CSS properties only to the 
+                              <li> tags in the header?
+
+                              Nested Selectors
+                              By adding li after header-list with a space in between, you can apply 
+                              CSS to only the <li> elements in the header-list.
+                              This allows you to apply different CSS to the <li> elements in the 
+                              header from those in the footer.
+
+                              .header-list li {
+                                        color: #ff0000;
+                              }
 
                               #Progate @progateEN @dev_careers #dev_careers
                      -->
