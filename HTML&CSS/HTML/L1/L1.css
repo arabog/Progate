@@ -26,6 +26,56 @@ Just as you did in HTML, you can write comments in a CSS file.
 In CSS, however, a comment should be surrounded by /* */
 
 /*
+Font Size
+The size of a font can be set with the font-size property.
+A common unit for setting the font-size is px (pixel).
+
+<h1> This is h1 </h1>
+<p> This is p</p>
+
+h1 {     
+          color:    red;
+          font-size: 10px;
+}
+
+p {     
+          color:    green;
+          font-size: 40px;
+}
+
+Font Family
+With the font-family property, you can specify the type of font.
+You can do this by setting font-family: font name;.
+If the font name contains a space, you need to surround it with double quotes.
+
+h1 {     
+          color:    red;
+          font-size: 10px;
+
+          font-family: serif;
+}
+
+p {     
+          color:    green;
+          font-size: 40px;
+
+          font-family: "Avenir Next";
+}
+
+Variety of Fonts
+When setting the font-family property, you can specify various font 
+types such as "serif" and "sans-serif".
+
+
+Background Colors
+The background-color property allows you to change the background 
+color. You can set the background color just like the color property.
+In addition, if the same letter continues like #dddddd, it can be 
+shortened to #ddd.
+
+
+
+
 
 #Progate @progateEN @dev_careers #dev_careers
 */
