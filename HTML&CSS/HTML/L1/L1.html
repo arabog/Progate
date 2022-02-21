@@ -155,11 +155,90 @@
                               <div class="main"> </div>
                               <div class="footer"> </div>
 
+                              Tag Autocompletion (Web Only)
+                              From here on, you'll be writing a lot of tags. So in order to prevent 
+                              typing errors, let's use the editor's autocomplete function. You can 
+                              enter a tag name and press the "tab" key to complete the tag 
+                              (Depending on the tag, some extra attributes may be inserted, 
+                              so please be careful).
 
 
+                              The Header:
+                              The Structure of the Header:
+                              There is a "Progate" logo and a list.
+                              Let's group these two parts using the <div> element 
 
+                              <div class="header"> 
+                                        <div class="header-logo"> Progate </div>
 
+                                        <div class="header-list">
+                                                  <ul>
+                                                            <li></li>
+                                                            <li></li>
+                                                            <li></li>
+                                                  </ul>
+                                        </div>
+                              </div>
 
+                              Removing the Bullets from List Items:
+                              By applying the list-style property on an <li> element, you can 
+                              remove the bullet points. Since we don't want bullets for our list, 
+                              let's set the list-style to none.
+
+                              li {
+                                        list-style: none; // removes d bullets 4rm <li>
+                              }
+
+                              Aligning the Header Horizontally
+                              Generally, elements written in HTML are vertically aligned.
+                              To horizontally align them, we need CSS.
+
+                              The Float Property:
+                              Using the float property, you can align targeted elements 
+                              horizontally. Specifying float: left; will arrange elements 
+                              side by side from left to right.
+
+                              <ul>
+                                        <li>HTML</li>
+                                        <li>PHP</li>
+                                        <li>Ruby</li>
+                              </ul>
+
+                              li {
+                                        float: left;        //HTMLPHPRuby
+                              }
+
+                              Padding: Adjusting Spaces
+                              Let's adjust the spaces between the elements in the header 
+                              so that both the logo and header list are placed in the 
+                              appropriate positions.
+
+                              Adding Space to an Element
+                              When you want to add some space to an element, the padding 
+                              property comes in handy. By applying padding: 〇〇px;, the 
+                              specified space is added to all sides of an element.
+                              <div class="logo1">
+                                        Progate
+                              </div>
+
+                              .logo1 {
+                                        padding: 20px;      // adds 20px padding to all sides
+                              }
+
+                              Applying Padding to Only One Side
+                              You may want to add padding to only one side of an element instead 
+                              of all sides. In that case, you can apply padding independently by 
+                              using properties like padding-top and padding-bottom.
+                              For example, to add the top padding, set padding-top: 〇〇px;.
+
+                              Padding Shorthand
+                              You can use shorthand when applying padding.
+                              You can apply padding to multiple sides using only one property.
+                              When four values are defined, padding is applied clockwise from 
+                              the top. When two values are defined, padding is applied in the 
+                              order of "top / bottom" and "right / left".
+
+                              
 
                               #Progate @progateEN @dev_careers #dev_careers
                      -->
