@@ -260,6 +260,53 @@
                                         color: #ff0000;
                               }
 
+                              float: right
+                              With float: right, you can horizontally align the targeted elements 
+                              from right to left.
+
+
+                              Positioning Elements Left and Right
+                              By combining float: left; and float: right;, you can place the logo 
+                              and the list in a row from left to right.
+                              Let's apply float: left; to the footer-logo selector so that it is placed 
+                              on the left edge. Also apply float: right; to the footer-list selector 
+                              to move it to the right edge.
+
+                              <div class="footer">
+                                        <div class="footer-logo">Progate</div>
+                                                  <div class="footer-list">
+                                                            <ul>
+                                                                      <li>About</li>
+                                                                      <li>Jobs</li>
+                                                                      <li>Contact us</li>
+                                                            </ul>
+                                                  </div>
+                                        </div>
+                              </div>
+
+
+                              .footer {
+                                        background-color: #2f5167;
+                                        
+                                        color: #fff;
+                                        
+                                        height: 120px;
+                                        padding: 40px;
+                              }
+
+                              .footer-logo {
+                                        font-size: 32px;
+                                        float: left;
+                              }
+
+                              .footer-list{
+                                        float: right;
+                              }
+
+                              .footer-list li { 
+                                        padding-bottom: 20px;
+                              }
+
                               #Progate @progateEN @dev_careers #dev_careers
                      -->
            -->
