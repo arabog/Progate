@@ -1,2 +1,63 @@
 Using the Inspect Tool (Development Mode)
-In this article, we'll explain how to use the Inspect tool (developer mode) in Google Chrome.
+In this article, we'll explain how to use the Inspect tool (developer mode) 
+in Google Chrome.
+The Inspect tool is a useful tool for web developers, as it lets you check 
+and edit the HTML and CSS of the page displayed in the browser. Work 
+efficiency will be considerably improved by mastering it, making it an 
+indispensable tool for web developers.
+
+In addition, the DevTools may be called by other names like "developer tools," 
+"inspect element tool," or "web inspector" in some cases.
+
+Right-click on the open page (anywhere on the screen is OK). When the menu 
+is displayed as shown in the image below, select "Inspect" at the bottom.
+
+Did a white panel appear on the right side (or the bottom side) of the window? 
+This is called the DevTools panel.
+
+Let’s look into the HTML more closely. Click the cursor icon on the upper-left 
+of the DevTools panel. After you click it, the color of the icon will change from 
+gray to blue. When you click an element on the page after that, the HTML for 
+the element will be shown and the background color of the HTML in the 
+DevTools panel will turn blue.
+
+You can also use the Inspect tool to change HTML tags. Right-click on the <p> tag and select "Edit as HTML" to open the edit screen again. Now replace the opening <p> tag and the ending </p> tag with <h2> and </h2> respectively. After this, press the command (⌘) key (or ctrl) and enter.
+
+ All of the changes made in the DevTools console are temporary and will only be shown on your terminal, so it is possible to go back to the original state by clicking the refresh button (in the upper left of the browser) to reload the page. In this way, by using the Inspect tool to change the HTML, you can make some changes to the appearance easily without making changes to the original source code when creating web pages.
+
+ 3. Inspecting CSS Code
+  On the bottom or right of the DevTools panel, there is a "Styles" section, and this is where the you can view the CSS code.
+
+  Next, let's look at the orange, yellow, green, and blue rectangles shown on the bottom or right of the panel where the CSS is shown
+
+This figure summarizes the size and margin of the elements that are currently selected.
+The inner blue part represents the width and height of the element itself respectively. 
+
+As the labels show, the surrounding green part represents the padding values, the yellow part represents the border, the orange part represents the margin. 
+
+
+Now, let's learn how to check CSS when the mouse hovers. In the upper-right of the panel where CSS was confirmed earlier, there is a gray character :hov. Click on it.
+
+"Force element state" should appear. Using this, you can check the CSS of various selectors of the HTML elements.
+
+For example, by selecting :active, you can see what CSS is applied when clicking the element, by selecting :hover, you can see the CSS applied when the mouse is hovering on/over the element.
+
+4. Editing the CSS
+Next, click where it says "4px". It'll change to an edit form 
+
+You can also edit the margin and padding using the orange and green figure shown earlier.
+Double click in the right side, in the orange margin section and enter "50," and then press enter.
+
+People who have experience creating websites use a lot of trial and error to figure out the perfect pixel (px) value for certain elements. By using the Inspect tool, you can easily adjust CSS and see how it is rendered in the browser to choose the right values.
+
+5. Adding CSS Code
+Click the plus mark "+" icon right beside the ": hov" button.
+A column for writing CSS will be added.
+Next, click the area to the right of h1 {.
+Then, a line containing a colon and a semicolon will be added 
+Type background-color into the input form and press enter.
+After that, type #02ccba and press the enter key again.
+
+Sometimes things can go wrong if you click on another element of the page or press a different key by mistake. If you did, don't worry, just start over by pressing the "+" button again.
+
+Now that you have a good idea of how to use the Inspect tool in Chrome, it's your turn to try out the Inspect tool to explore the code of other sites and for adjusting your own web pages!
