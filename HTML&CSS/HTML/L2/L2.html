@@ -307,7 +307,7 @@
 
           cursor: text/pointer/default;
 
-          message {
+          .message {
                     padding: 15px 40px;
                     background-color: #5dca88;
 
@@ -357,13 +357,26 @@
           ・Set box-shadow to none
           ・Use position: relative; with top to lower the element by the length of 
           the shadow
+          .message {
+                    padding: 15px 40px;
+                    background-color: #5dca88;
+
+                    cursor: pointer;
+
+                    box-shadow: 0 7px #1a7940;
+          }
 
           div:active {
+                    box-shadow: none;
+
+          <!-- d reltive here is to d btn div wn d btn is active -->
                     position: relative;
                     top:7px;
-                    
-                    box-shadow: none;
+
           }
+
+          The shadow is gone now, and by lowering the button by the length 
+          of the shadow, you can make the button look like it's been pressed.
 
 </body>
 </html>
