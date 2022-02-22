@@ -41,13 +41,42 @@
 
           letter-spacing: 5px;
 
+          Creating Buttons
+          Now let's create some buttons using <a> tags.
+          Since the <a> tag is an inline element, we can't specify its size and space.
+          Let's find out how to solve this.
+
+          Inline-block Elements
+          Inline-block elements have the characteristics of both block-level elements 
+          and inline elements. Like inline elements, they will be aligned horizontally, 
+          but you can also specify their size and spacing, like block elements.
+
+          display
+          <a> tags are inline elements by default, but you can use the display 
+          property to change this.
+          The display property can have block, inline-block or inline specified.
           
+          Specifying Multiple Classes
+          If you have several elements that have slightly different CSS, you 
+          can extract the common CSS and the individual CSS to different 
+          classes, and specify them both.
+          You can specify multiple classes by separating them with a space.
 
+          <div class="btn blue"></div>
 
+          <div class="btn red"></div>
 
+          .btn {
+                    <!-- common css -->
+          }
 
+          .blue {
+                    color: blue;
+          }
 
-
+          .red {
+                    color: red;
+          }
 
 </body>
 </html>
