@@ -286,6 +286,45 @@
                     color: #b3aeb5;
           }
 
+          Creating a 3D Button
+          Let's learn how to make the button look 3D by adding shadows to it.
+          We'll also be learning how to change the mouse pointer type.
+
+          box-shadow
+          The box-shadow property is used to add shadows to elements.
+          We can use it by specifying its horizontal length, vertical length, 
+          and the color.
+
+          .box {
+                    box-shadow: 10px              10px                #000;
+                                        horizontal          vertical            color
+          }
+
+          cursor:
+          The cursor property can be used to change the type of the
+          mouse pointer,. Some HTML tags like the <a> tag have the 
+          cursor property set to pointer by default.
+
+          cursor: text/pointer/default;
+
+          message {
+                    padding: 15px 40px;
+                    background-color: #5dca88;
+
+                    /* Change the cursor property to pointer */
+                    cursor: pointer;
+
+                    /* Change the box-shadow property */
+                    box-shadow: 0 7px #1a7940;
+          }
+
+          Pressing a Button
+          Let's add some more CSS to the button to make it look like it's 
+          been pressed when you click on it.
+          We can do this by doing the following things when the button is clicked.
+          ・Remove the shadow
+          ・Lowering the button by the length of the shadow
+
           
 
 </body>
