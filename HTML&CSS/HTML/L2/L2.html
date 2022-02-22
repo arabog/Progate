@@ -219,6 +219,73 @@
                     width: 50%;         //parent will be width: 100%
           }
 
+          Overlapping Elements
+          Now let's adjust the layout of each lesson part.
+          Normally in HTML, the elements never overlap.
+          But you can do this by adding some CSS.
+          In this exercise, we'll learn how to place some text on top of an image.
+
+          position: absolute;
+          You can use position: absolute; to make the elements overlap.
+          With position: absolute; you can specify the position relative to the 
+          top-left corner of the web page, using the top and left properties.
+
+          .box1 {
+                    position: absolute;
+                    top: 50px;
+                    left: 70px;
+          }
+
+          .box2 {
+                    position: absolute;
+                    top: 120px;
+                    left: 140px;
+          }
+
+          position: relative;
+          You can change the reference point for position: absolute
+          by specifying position: relative; to an ancestor element.
+          This way, the element with position: absolute specified will be 
+          positioned relative to the top-left corner of the ancestor element.
+
+          <div class="parent">
+                    <img class="child" src="ken.jpg" >
+          </div>
+
+          .parent{
+                    position: relative;
+          }
+
+          .child {
+                    position: absolute;
+                    top: 20px;
+                    left: 15px;
+          }
+
+          N.B:
+          /* Add CSS for lesson-icon */
+          .lesson-icon {
+                    position: relative;
+          }
+
+
+          /* Add CSS for <p> tags inside lesson-icon */
+          .lesson-icon p{
+                    position: absolute;
+                    top: 90px;
+                    width: 100%;        //?
+                    color: white;
+          }
+
+          /* Add CSS for txt-contents */
+          .txt-contents {
+                    width: 80%;
+                    display: inline-block;        //?
+                    margin-top: 20px;
+                    font-size: 15px;
+                    color: #b3aeb5;
+          }
+
 </body>
 </html>
 
