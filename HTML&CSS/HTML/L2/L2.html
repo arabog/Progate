@@ -167,12 +167,41 @@
                     opacity: 0.5;
           }
 
+          Improving the Login Link
+          Let's improve the login link by:
+          ・Adding some animation to the hover.
+          ・Vertically centering the Log in text.
+
+          transition
+          The transition property can be used to add animations.
+          You can specify the target and the duration of the animation.
+          The target can be a property, like color, but we often just specify all so it applies to all properties.
+          transition is often used with the hover selector.
+
+          transition: all 0.5s;
+
+          line-height
+          The line-height property can be used to specify the height that the line occupies.
+
+          Using line-height to Vertically Center Text
+          line-height can also be used to vertically center text.
+          Since the text will be placed in the center of the line-height, specifying 
+          the same value for the height and the line-height will vertically center 
+          the text inside.
+
+          .btn {
+                    height: 65px;
+                    line-height: 65px;
+          }
+
+          Expanding the <a> Tag
+          Since the <a> tag is an inline element, it only occupies the space of the 
+          text. As a result, we can only click the text area of the button.
+          We can fix this by making the <a> tag a block element, which spreads 
+          to the size of its parent element.
 
 
 
-
-
-          
 </body>
 </html>
 
