@@ -200,7 +200,24 @@
           We can fix this by making the <a> tag a block element, which spreads 
           to the size of its parent element.
 
+          font-weight
+          The font-weight property lets you change the thickness of the text.
+          You can specify values like normal and bold.
+          Since <h1>~<h6> tags have font-weight: bold; specified by default, 
+          you can specify font-weight: normal; to change them back to normal.
 
+          Specifying the Size With %
+          By using % instead of px, we can calculate the width based on its 
+          parent element's width. The same applies for the height property.
+
+          <div class="parent">
+                    <div class="child"></div>
+                    <div class="child"></div>
+          </div>
+
+          .child {
+                    width: 50%;         //parent will be width: 100%
+          }
 
 </body>
 </html>
