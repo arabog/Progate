@@ -130,12 +130,49 @@
           </body>
 
 
+          opacity and rgba
+          We've previously used opacity to make an element transparent.
+          But the problem with opacity is that it makes the entire element 
+          transparent, including all the child elements.
+          If we only want the background color to be transparent, we can 
+          use rgba.
+
+          rgb
+          To learn about rgba, we must first understand the rgb.
+          rgb is a way to specify the color with a combination of three values.
+          It works just like the hexadecimal format (e.g. #ffffff)
+
+          rgba
+          rgba is used when you want to specify the transparency of the color.
+          You specify four values for rgba, and the fourth value specifies the 
+          transparency from 0.0 to 1.0, 0.0 being the most transparent.
+          The example below shows the difference between rgba and opacity.
+
+          <div class="rgba-sample">
+                    <p>rgba</p>
+          </div>
+
+          <div class="opacity-sample">
+                    <p>opacity</p>
+          </div>
+
+          .rgba-sample {
+                    background-color: rgba(84, 190, 238, 0.5); // only d bg bcoms transparent
+          }
+
+          .opacity-sample{
+                    <!-- d elemt and its contents r transparent -->
+                    background-color: rgb(84, 190, 238);
+
+                    opacity: 0.5;
+          }
 
 
 
 
 
 
+          
 </body>
 </html>
 
