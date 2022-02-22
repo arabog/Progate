@@ -325,7 +325,45 @@
           ・Remove the shadow
           ・Lowering the button by the length of the shadow
 
-          
+          :active
+          The :active selector can be used to add CSS for when an element is 
+          being clicked.
+
+          <div>
+                    <h1>Progate</h1>
+          </div>
+
+          div:active {
+                    background-color: red;
+          }
+
+          Canceling CSS
+          You can remove the shadow by specifying box-shadow: none;.
+          Many CSS properties can be canceled by specifying none.
+
+          Usage of position: relative;
+          We previously learned how to use position: relative; with position: 
+          absolute;, but its actual role is to position the element relative to its 
+          normal position.
+
+          div:active {
+                    position: relative;
+                    top:70px;
+                    left: 10px;
+          }
+
+          Pressing a Button
+          We'll add the following CSS to make the button look like it's been pressed.
+          ・Set box-shadow to none
+          ・Use position: relative; with top to lower the element by the length of 
+          the shadow
+
+          div:active {
+                    position: relative;
+                    top:7px;
+                    
+                    box-shadow: none;
+          }
 
 </body>
 </html>
