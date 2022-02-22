@@ -378,6 +378,42 @@
           The shadow is gone now, and by lowering the button by the length 
           of the shadow, you can make the button look like it's been pressed.
 
+          Fixing the Header:
+          Fixing the Position of an Element
+          We can use position: fixed; to fix an element to a certain position of 
+          the screen. We can specify it by combining it with the top and left 
+          properties.
+
+          .fixed-img {
+                    position: fixed;
+                    top: 10px;
+                    left: 40px;
+          }
+
+          The Stack Order of Elements
+          We learned that we use the position property to make the elements 
+          overlap, but sometimes they won't be stacked in the desired order.
+
+          z-index
+          The z-index property lets you change the stack order of the elements.
+          The element with the greater z-index will be displayed on top.
+          Keep in mind that the z-index property will only take effect when 
+          combined with the position property.
+
+
+          header {
+                    height: 65px;
+                    width: 100%;
+                    background-color: rgba(34, 49, 52, 0.9);
+                    
+                    /* Change the position property to fixed, and top property to 0 */
+                    position: fixed;
+                    top: 0;
+                    
+                    /* Change the z-index property to 10 */
+                    z-index: 10;
+          }
+
 </body>
 </html>
 
