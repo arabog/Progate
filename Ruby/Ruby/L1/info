@@ -1,0 +1,9 @@
+What is Ruby?
+Ruby is a programming language widely used to build web applications. 
+Its role is very similar to that of PHP and Python.
+
+The Famous "Hello World"
+Let's run your first Ruby code! You'll see some characters are being 
+displayed in the console. If you write puts "Hello World" in Ruby, 
+the character after puts will be printed to the console.
+
