@@ -61,3 +61,8 @@ After that, type #02ccba and press the enter key again.
 Sometimes things can go wrong if you click on another element of the page or press a different key by mistake. If you did, don't worry, just start over by pressing the "+" button again.
 
 Now that you have a good idea of how to use the Inspect tool in Chrome, it's your turn to try out the Inspect tool to explore the code of other sites and for adjusting your own web pages!
+
+
+Tips
+Depending on the way you write your code, you might get errors even if you follow the values in the specifications. When that happens, please adjust the space and the size of the text.
+Long paragraphs and image URLs can be copied from the "Help Me" window.
