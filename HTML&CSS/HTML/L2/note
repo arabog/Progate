@@ -1,5 +1,15 @@
 How to Publish Webpages with GitHub
 
+5. Publishing your Webpage
+First, click the Settings tab on top right of the screen.
+
+You'll find GitHub Pages if you keep scrolling down the page.
+
+If it says "Your site is published at ..." where the green background is, the webpage is already published with the URL shown here.
+If not, Source is probably set as None, so change it to the default branch (master or main depending on when the repository was created) and then click the button Save to display the URL.
+This is the end of the procedure to publish your webpage to the internet. Now anybody can access the webpage you made with the URL!
+*If nothing is shown when accessing the URL, there is a possibility that the display page is being processed. It may take a while, so try coming back and loading the page later.
+
 6. Updating Published Pages
 Lastly, let's learn how to update the webpage you published. 
 This GitHub Pages updates not only the code in the file, but 
