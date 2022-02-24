@@ -421,13 +421,13 @@ end
 
 number = 77
 # Add a conditional statement
-if number % 3 == 0 && number % 5 == 0
+if number % 3 == 0 && number % 5 == 0   #number =75
           puts "This is a multiple of 15"
-elsif number % 5 == 0
+elsif number % 5 == 0         #number =25
           puts "This is a multiple of 5"
-elsif number % 3 == 0
+elsif number % 3 == 0         #number =12
           puts "This is a multiple of 3"
-else !(number % 3 == 0) || !(number % 5 == 0)
+else !(number % 3 == 0) || !(number % 5 == 0)     #number =77
           puts "This is not a multiple of 3 or 5"
 end
 
