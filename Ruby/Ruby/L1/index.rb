@@ -396,6 +396,15 @@ end
 # both if and elsif r true, but only if statemt is printed out being d 1st
 
 
+# && (AND)
+# You can use logical operators to express AND and OR. && is used 
+# for AND, and will return true only when both conditions are true. 
+# The mathematical expression of 10 < x < 30 will be expressed 
+# as x > 10 && x < 30 in Ruby.
+
+# | | (OR)
+# OR is expressed by ||, and will return true if either of the conditions are true. 
+
 
 
 
