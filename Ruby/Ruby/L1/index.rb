@@ -269,4 +269,46 @@ if score > 80
           puts "Great job!"
 end
 
+# Printing a Condition
+# Now that we have a grasp of what if statements do,
+#  let's look deeper into the conditions. When we print 
+# a condition like below, we get true as the output. 
+# What exactly is this true value
+
+score = 94
+puts score > 80     # true
+
+# Booleans
+# The printed true is known as a Boolean. There are 
+# only two values for a boolean, which are true and false. 
+# Conditions are replaced with one of these values, so the 
+# output will either be true or false when we print them.
+
+# if Statements and Booleans
+# We learned that conditions are replaced with either true 
+# or false.From this we can see that the if statement will be 
+# executed if the condition is true, and not if it's false.
+
+score = 94
+
+if score > 80       # returns true i.e (if true)
+          puts "Great job!"
+end
+
+# Comparison Operators
+# Operators like > are known as comparison operators. 
+# The condition of the comparison is either true or false. 
+# You can also use >= and <= to make them inclusive
+
+# x < y
+# x <= y
+
+# x > y
+# x >= y``
+
+
+
+
+
+
 # #Progate @progateEN @dev_careers #dev_careers
