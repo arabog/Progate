@@ -320,4 +320,39 @@ name = "john"
 put name == "John"    #false
 put name == "john"    #true
 
+# Handling false Conditions
+# else
+# Using the else statement, you can add some code you want to 
+# run for when the condition of the if statement is false.
+
+# if condition
+          # some code
+# else
+          # some code
+# end
+
+score = 100
+
+if score == 100
+          puts "Great job!"
+end
+
+if score != 100
+          puts "You can do better!"
+end
+# ds can be written as ds:
+
+if score == 100
+          puts "Great job!"
+else 
+          puts "You can do better!"
+end
+          
+
+
+
+
+
+
+
 # #Progate @progateEN @dev_careers #dev_careers
