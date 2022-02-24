@@ -1,7 +1,7 @@
 # to run ds file: ruby index.rb
 
 # console
-puts "Hello World"
+# puts "Hello World"
 
 
 #Strings
@@ -22,9 +22,9 @@ puts "Hello World"
 # they don't need to be enclosed in quotes. You can do additions and 
 # subtractions with them just like you do in math.
 
-puts 2
-puts 2 + 3
-puts 7 - 4
+# puts 2
+# puts 2 + 3
+# puts 7 - 4
 
 # Difference between Strings and Integers
 # Strings and integers are interpreted differently in programming. 
@@ -32,8 +32,8 @@ puts 7 - 4
 # the output of 5 + 2 will become 7, but "5 + 2" will stay as it is 
 # since it'll be interpreted as a string.
 
-puts 5 + 2           # 7
-puts "5 + 2"       # "5 + 2" 
+# puts 5 + 2           # 7
+# puts "5 + 2"       # "5 + 2" 
 
 # More Calculations
 # Other than + and - operators, there are three more basic operators 
@@ -41,23 +41,23 @@ puts "5 + 2"       # "5 + 2"
 # division. You can also calculate the remainder of a division 
 # (modulus) using %.
 
-puts 3 * 5
-puts 6 / 2
-puts 9 % 2
+# puts 3 * 5
+# puts 6 / 2
+# puts 9 % 2
 
 # String Concatenation
 # The + operator that we used before also lets us combine strings.
 # Combining strings is known as string concatenation.
 
-puts "Hello " + "Ruby"
+# puts "Hello " + "Ruby"
 
 # Once again, here we can see the difference between integers 
 # and strings. Adding the strings "3" and "5" returns the 
 # concatenated string "35", while adding 3 and 5 returns 
 # the sum 8.
 
-puts "3" +  "5" # 35
-puts 3 + 5 # 8
+# puts "3" +  "5" # 35
+# puts 3 + 5 # 8
 
 # What is a Variable?
 # Now, we'll learn about variables. You can think of a variable as 
@@ -72,15 +72,15 @@ puts 3 + 5 # 8
 # the variable on the left. Note that variable names are not 
 # enclosed in double quotes.
 
-name = "john"
+# name = "john"
 
 # Using Variables
 # Using variables is quite simple. For example, if you print out 
 # the name variable that has "John" as the value, Ruby replaces 
 # the variable with its value, so the output will be John.
 
-name = "John"
-puts name
+# name = "John"
+# puts name
 
 # Where Variables Can Be Used
 # A variable can only be used after it's been defined. This is because 
@@ -88,7 +88,7 @@ puts name
 
 # can't access d name variable
 
-name = "john"
+# name = "john"
 
 # can access d name variable
 
@@ -98,22 +98,22 @@ name = "john"
 # assign to it. For example, you can concatenate a string variable 
 # and a string, or concatenate two string variables.
 
-greeting = "Hello "
-puts greeting + "John"
+# greeting = "Hello "
+# puts greeting + "John"
 
-name = "kate"
-puts greeting + name
+# name = "kate"
+# puts greeting + name
 
 # Integer Variables
 # Similarly, if a variable contains an integer, you can do calculations 
 # with it, just like with plain integers. You can use it with other integers, 
 # or other variables containing integers.
 
-number1 = 10
-puts number1 + 3
+# number1 = 10
+# puts number1 + 3
 
-number2 = 5
-puts number1 + number2
+# number2 = 5
+# puts number1 + number2
 
 # Why Use Variables?
 # 1. Easy to tell what d values represent
@@ -126,14 +126,14 @@ puts number1 + number2
 # you want to change "Ruby" to "Programming", you only need to 
 # change it once, not three times
 
-puts "Let's master Ruby at Progate, John"
-puts "Let's master Ruby at Progate, Kate"
-puts "Let's master Ruby at Progate, Bob"
+# puts "Let's master Ruby at Progate, John"
+# puts "Let's master Ruby at Progate, Kate"
+# puts "Let's master Ruby at Progate, Bob"
 
-text = "Let's master Ruby at Progate, "
-puts text + "John"
-puts text + "Kate"
-puts text + "Bob"
+# text = "Let's master Ruby at Progate, "
+# puts text + "John"
+# puts text + "Kate"
+# puts text + "Bob"
 
 # in order to change "Ruby" to "Programming" u only need to change 
 # it once inside text variable
@@ -144,9 +144,9 @@ puts text + "Bob"
 # of the variable from its name, the code will be hard to read and you 
 # might make mistakes.
 
-number = "John"     # d variable doesn't correctly describe d value
+# number = "John"     # d variable doesn't correctly describe d value
 
-name = "John" # use of a descriptive variable name
+# name = "John" # use of a descriptive variable name
 
 # Naming Conventions
 # There are some conventions you need to follow when naming 
@@ -160,11 +160,11 @@ name = "John" # use of a descriptive variable name
 # Variables can be updated with another value. This can be done 
 # simply by assigning a new value to an already defined variable, using =.
 
-number = 7
-puts number         #7
+# number = 7
+# puts number         #7
 
-number = 9
-puts number         # 9
+# number = 9
+# puts number         # 9
 
 # The Flow of Updating Variables
 # The number variable is being updated as the program runs 
@@ -176,23 +176,23 @@ puts number         # 9
 # to the number variable, and assigning it back again to the 
 # number variable. This is known as self assignment.
 
-number = 2
-puts number        
+# number = 2
+# puts number        
 
-number = number + 3
-puts number   
+# number = number + 3
+# puts number   
 
 # Self Assignment Shorthand
 # You can use shorthand like the image below when updating 
 # the value of an integer variable. The same syntax applies for 
 # all kinds of calculations.
-x = 50
+# x = 50
 
-x = x + 10          # x += 10
-x = x - 10          # x -= 10'
-x = x * 10          # x *= 10
-x = x / 10          # x /= 10
-x = x % 10          # x %= 10
+# x = x + 10          # x += 10
+# x = x - 10          # x -= 10'
+# x = x * 10          # x *= 10
+# x = x / 10          # x /= 10
+# x = x % 10          # x %= 10
 
 # String Interpolation
 # There's a way to include the value of a variable inside a string. 
@@ -200,14 +200,13 @@ x = x % 10          # x %= 10
 # include it in the string by inserting #{variable_name}, as 
 # shown below. This is known as string interpolation.
 
-name = "Kate"
-puts "Hello, #{name}"
+# name = "Kate"
+# puts "Hello, #{name}"
 
-age = 21
-puts "I am #{age} years old"
+# age = 21
+# puts "I am #{age} years old"
 
-Rules of
-# String Interpolation
+# Rules of String Interpolation
 # There's one thing to be careful of with string interpolation. 
 # It can only be used in double quotes ". If it's used with single 
 # quotes ', the variable won't be replaced with its value.
@@ -221,17 +220,53 @@ Rules of
 # concatenation, but you can with string interpolation. Therefore, 
 # it's preferable to use string interpolation in these cases.
 
-age = 21
-puts "I am "        + age +   " years old"        #syntax error
+# age = 21
+# puts "I am "        + age +   " years old"        #syntax error
           #string   #integer            #string
 
-
-age = 21
-puts "I am  #{age} years old"           # correct
-
+# age = 21
+# puts "I am  #{age} years old"           # correct
 
 
+# Control Flow
+# In programming, we often want to run different code based 
+# on certain conditions. For example, you may want to say 
+# "Great job!" only if the score is 100%
 
+# if Statement
+# The if statement is the most common type of control 
+# flow. By putting a condition after if, the code inside the 
+# if...end will only be executed if the condition is true.
 
+# if condition 
+          #run ds code
+# end
+
+# if score is above 80%
+#           puts "Great job!"
+# end
+
+# Example of if Statement
+# Let's take a look at an example of an if statement. 
+# score > 80 is a condition for when the score is 
+# greater than 80. Since the value of the score variable 
+# is 94, the condition of the if is true, so the code inside 
+# is executed
+
+score = 94
+
+if score > 80
+          puts "Great job!"
+end
+
+# When the Condition Is false
+# When the condition of the if statement is false, the code 
+# inside if...end won't be executed.
+
+score = 38
+
+if score > 80
+          puts "Great job!"
+end
 
 # #Progate @progateEN @dev_careers #dev_careers
