@@ -137,3 +137,22 @@ puts text + "Bob"
 
 # in order to change "Ruby" to "Programming" u only need to change 
 # it once inside text variable
+
+# Variable Names
+# Always make sure to choose a variable name that clearly describes 
+# what kind of data the variable contains. If you can't tell the content 
+# of the variable from its name, the code will be hard to read and you 
+# might make mistakes.
+
+number = "John"     # d variable doesn't correctly describe d value
+
+name = "John" # use of a descriptive variable name
+
+# Naming Conventions
+# There are some conventions you need to follow when naming 
+# variables in Ruby. When you use a variable name that has 
+# more than two words, you should separate them with an underscore _.
+
+date      # lowercase
+user_name # separate d words with an underscore
+
