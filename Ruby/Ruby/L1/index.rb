@@ -1,3 +1,7 @@
+# to run ds file: ruby index.rb
+
+# console
 puts "Hello World"
 
-# to run ds file: ruby index.rb
+
+# strings
