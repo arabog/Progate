@@ -405,8 +405,42 @@ end
 # | | (OR)
 # OR is expressed by ||, and will return true if either of the conditions are true. 
 
+score = 68
+
+if score < 80 && score > 60
+          puts "Not bad"
+end
 
 
+# In this final exercise, we'll be using conditional statements to create 
+# an app that determines whether the number variable is a:
+          # - Multiple of 3 and 5 (Multiple of 15)
+          # - Multiple of 5
+          # - Multiple of 3
+          # - Multiple of neither 3 or 5
 
+number = 77
+# Add a conditional statement
+if number % 3 == 0 && number % 5 == 0
+          puts "This is a multiple of 15"
+elsif number % 5 == 0
+          puts "This is a multiple of 5"
+elsif number % 3 == 0
+          puts "This is a multiple of 3"
+else !(number % 3 == 0) || !(number % 5 == 0)
+          puts "This is not a multiple of 3 or 5"
+end
 
-# #Progate @progateEN @dev_careers #dev_careers
+# 1. In conditional statements, only the first case that is true will be run. 
+# Therefore, the order of the conditions is extremely important and the 
+# stricter conditions must be placed first.
+# In this case, place the Multiple of 3 and 5 condition at the beginning.
+
+# 2. You can determine if the number variable is a multiple of X by 
+# checking if it is divisible by X.
+# For example, if the value of the number variable is divisible by 5 
+# (the remainder is 0), then the value of the number variable is a 
+# multiple of 5. Therefore, if number % 5 == 0 is true, then number 
+# variable is a multiple of 5.
+
+#Progate @progateEN @dev_careers #dev_careers
