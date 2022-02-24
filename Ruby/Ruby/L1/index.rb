@@ -306,9 +306,18 @@ end
 # x > y
 # x >= y``
 
+# Ruby also has operators to compare if two values are equal.
+# x == y returns true if x and y have the same value, and false 
+# if they don't. x != y is the opposite. Try not to confuse the 
+# difference between assignment = and comparison ==.
 
 
+score = 70
+put score == 100    #false
+put score == 80    #true
 
-
+name = "john"
+put name == "John"    #false
+put name == "john"    #true
 
 # #Progate @progateEN @dev_careers #dev_careers
