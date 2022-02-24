@@ -253,21 +253,21 @@
 # is 94, the condition of the if is true, so the code inside 
 # is executed
 
-score = 94
+# score = 94
 
-if score > 80
-          puts "Great job!"
-end
+# if score > 80
+#           puts "Great job!"
+# end
 
 # When the Condition Is false
 # When the condition of the if statement is false, the code 
 # inside if...end won't be executed.
 
-score = 38
+# score = 38
 
-if score > 80
-          puts "Great job!"
-end
+# if score > 80
+#           puts "Great job!"
+# end
 
 # Printing a Condition
 # Now that we have a grasp of what if statements do,
@@ -275,8 +275,8 @@ end
 # a condition like below, we get true as the output. 
 # What exactly is this true value
 
-score = 94
-puts score > 80     # true
+# score = 94
+# puts score > 80     # true
 
 # Booleans
 # The printed true is known as a Boolean. There are 
@@ -289,11 +289,11 @@ puts score > 80     # true
 # or false.From this we can see that the if statement will be 
 # executed if the condition is true, and not if it's false.
 
-score = 94
+# score = 94
 
-if score > 80       # returns true i.e (if true)
-          puts "Great job!"
-end
+# if score > 80       # returns true i.e (if true)
+#           puts "Great job!"
+# end
 
 # Comparison Operators
 # Operators like > are known as comparison operators. 
@@ -312,13 +312,13 @@ end
 # difference between assignment = and comparison ==.
 
 
-score = 70
-put score == 100    #false
-put score == 80    #true
+# score = 70
+# put score == 100    #false
+# put score == 80    #true
 
-name = "john"
-put name == "John"    #false
-put name == "john"    #true
+# name = "john"
+# put name == "John"    #false
+# put name == "john"    #true
 
 # Handling false Conditions
 # else
@@ -331,24 +331,69 @@ put name == "john"    #true
           # some code
 # end
 
-score = 100
+# score = 100
 
-if score == 100
-          puts "Great job!"
-end
+# if score == 100
+#           puts "Great job!"
+# end
 
-if score != 100
-          puts "You can do better!"
-end
+# if score != 100
+#           puts "You can do better!"
+# end
+
 # ds can be written as ds:
 
-if score == 100
+# if score == 100
+#           puts "Great job!"
+# else 
+#           puts "You can do better!"
+# end
+          
+
+# Adding More Conditions
+# What if we want to add more conditions to our if-else statements?
+
+# elsif
+# You can use the elsif statement to add alternative conditions 
+# to the control flow. Make sure not to misspell elsif with elseif
+
+# if condition1
+          # some code         # run code if conditn1 is true
+# elsif condition2
+          # some code         # run code if conditn2 is true
+# else
+          # some code         # odawise run ds code
+# end
+
+score = 77
+
+if score > 80
+          puts "Great job!"
+elsif score > 60
+          puts "Not bad"
+else 
+          puts "You can do better!"
+end
+
+
+# When Multiple Conditions Match
+# You can add as many elsif statements as you want. 
+# However, keep in mind that only the code that returns 
+# true for the first time will be executed. If you place 
+# score > 60 before score > 80, you may not get the 
+# desired output.
+
+score = 98
+
+if score > 60
+          puts "Not bad"
+elsif score > 80
           puts "Great job!"
 else 
           puts "You can do better!"
 end
-          
 
+# both if and elsif r true, but only if statemt is printed out being d 1st
 
 
 
