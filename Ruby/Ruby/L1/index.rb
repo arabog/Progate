@@ -130,7 +130,7 @@ puts "Let's master Ruby at Progate, John"
 puts "Let's master Ruby at Progate, Kate"
 puts "Let's master Ruby at Progate, Bob"
 
-text = "Let's master Ruby at Progate, John"
+text = "Let's master Ruby at Progate, "
 puts text + "John"
 puts text + "Kate"
 puts text + "Bob"
@@ -153,6 +153,85 @@ name = "John" # use of a descriptive variable name
 # variables in Ruby. When you use a variable name that has 
 # more than two words, you should separate them with an underscore _.
 
-date      # lowercase
-user_name # separate d words with an underscore
+# date      # lowercase
+# user_name # separate d words with an underscore
 
+# Updating Variables
+# Variables can be updated with another value. This can be done 
+# simply by assigning a new value to an already defined variable, using =.
+
+number = 7
+puts number         #7
+
+number = 9
+puts number         # 9
+
+# The Flow of Updating Variables
+# The number variable is being updated as the program runs 
+# from the top to the bottom.
+
+# Self Assignment of Variables
+# What if we want to add 3 to the value of the number variable 
+# that's already been defined? This can be done by adding 3 
+# to the number variable, and assigning it back again to the 
+# number variable. This is known as self assignment.
+
+number = 2
+puts number        
+
+number = number + 3
+puts number   
+
+# Self Assignment Shorthand
+# You can use shorthand like the image below when updating 
+# the value of an integer variable. The same syntax applies for 
+# all kinds of calculations.
+x = 50
+
+x = x + 10          # x += 10
+x = x - 10          # x -= 10'
+x = x * 10          # x *= 10
+x = x / 10          # x /= 10
+x = x % 10          # x %= 10
+
+# String Interpolation
+# There's a way to include the value of a variable inside a string. 
+# You can replace a variable with the value you assigned and 
+# include it in the string by inserting #{variable_name}, as 
+# shown below. This is known as string interpolation.
+
+name = "Kate"
+puts "Hello, #{name}"
+
+age = 21
+puts "I am #{age} years old"
+
+Rules of
+# String Interpolation
+# There's one thing to be careful of with string interpolation. 
+# It can only be used in double quotes ". If it's used with single 
+# quotes ', the variable won't be replaced with its value.
+
+# age = 21
+# puts 'I am #{age} years old'
+
+# Interpolation or Concatenation
+# String interpolation and concatenation are similar but different. 
+# You can't concatenate an integer and a string with string 
+# concatenation, but you can with string interpolation. Therefore, 
+# it's preferable to use string interpolation in these cases.
+
+age = 21
+puts "I am "        + age +   " years old"        #syntax error
+          #string   #integer            #string
+
+
+age = 21
+puts "I am  #{age} years old"           # correct
+
+
+
+
+
+
+# #Progate @progateEN @dev_careers #dev_careers
