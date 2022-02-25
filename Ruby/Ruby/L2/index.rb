@@ -319,15 +319,36 @@
 # You can use hashes as well as strings and numbers for 
 # array elements. 
 
-users =[
-          {name: "John", age: 21},
+# users =[
+#           {name: "John", age: 21},
 
-          {name: "Kate", age: 12},
-]
+#           {name: "Kate", age: 12},
+# ]
 
 
 # Remember how each element of an array has an index number? 
 # Even when the element of an array is a hash, you can get the 
 # corresponding hash using index numbers
 
-puts users[1]
+# puts users[1]
+
+# The Value of a Hash inside an Array
+# We learned how to get a hash inside an array using index numbers. 
+# Now, we can get the value of that element by assigning the hash to 
+# a variable, and giving the corresponding symbol for the value. I
+
+users =[
+          {name: "John", age: 21},
+
+          {name: "Kate", age: 12},
+]
+
+user = users[1]
+
+puts user[:name]
+
+# You can even abbreviate the assignment and get the value in one line, 
+# like this: array_name[index][symbol].
+
+puts user[1][:name]
+
