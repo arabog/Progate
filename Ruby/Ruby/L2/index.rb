@@ -337,18 +337,56 @@
 # Now, we can get the value of that element by assigning the hash to 
 # a variable, and giving the corresponding symbol for the value. I
 
+# users =[
+#           {name: "John", age: 21},
+
+#           {name: "Kate", age: 12},
+# ]
+
+# user = users[1]
+
+# puts user[:name]
+
+# You can even abbreviate the assignment and get the value in one line, 
+# like this: array_name[index][symbol].
+
+# puts user[1][:name]
+
+# Using the each Method
+# What if we use the each method for an array with hash elements?
+
+# users =[
+#           {name: "John", age: 21},
+
+#           {name: "Kate", age: 12},
+# ]
+
+# users.each do |user|
+#           puts user
+# end
+
+
+# Handling Hash Values inside the each Method
+# Since the user variable has a hash assigned to it, you can get the values 
+# of the hash elements by writing user[symbol]
+
 users =[
           {name: "John", age: 21},
 
           {name: "Kate", age: 12},
 ]
 
-user = users[1]
+users.each do |user|
+          puts user[:name]
+end
 
-puts user[:name]
+# Let's print all the elements of the exams array using the each method.
+exams = [
+          {subject: "Math", score: 80},
+          {subject: "Science", score: 55}
+]
 
-# You can even abbreviate the assignment and get the value in one line, 
-# like this: array_name[index][symbol].
-
-puts user[1][:name]
-
+# Get each element of exams using the each method, and print "Your score for ____ is ____%"
+exams.each do |exam|
+          puts "Your score for #{exam[:subject]} is #{exam[:score]} %"
+end
