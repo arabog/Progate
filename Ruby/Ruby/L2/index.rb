@@ -16,9 +16,9 @@
 # As a convention, the variable name is pluralized, like names, as it 
 # will contain multiple elements. 
 
-names = ['John', 'Bob', 'Kate']
+# names = ['John', 'Bob', 'Kate']
 
-puts names
+# puts names
 
 # Index Numbers
 # For each element of an array, a number is given like 0, 1, 2, .... 
@@ -32,9 +32,9 @@ puts names
 # Just like other variables, you can use string interpolation with an 
 # element of an array.
 
-names = ['John', 'Bob', 'Kate']
+# names = ['John', 'Bob', 'Kate']
 
-puts "My name is #{names[1]}"
+# puts "My name is #{names[1]}"
 
 
 # Loops
@@ -51,8 +51,29 @@ puts "My name is #{names[1]}"
           #puts variable_name
 # end
 
+# names = ['John', 'Bob', 'Kate']
+
+# names.each do |name|
+#           puts name
+# end
+
+# Scope
+# The temporary variable for the each method can only be used in 
+# the do...end block. An error will occur if used outside the each 
+# statement. The range where a variable can be accessed is 
+# called the scope.
+
+# On the other hand, variables defined outside of the each 
+# method can be used inside the each method. 
+
+message = "Hello"
+
 names = ['John', 'Bob', 'Kate']
 
 names.each do |name|
           puts name
 end
+
+# puts name           #impossible
+
+puts message        #possible
