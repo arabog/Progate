@@ -289,26 +289,45 @@
 # In the anoda example below, the value user[:age] is nil, 
 # so the else statement is executed.
 
-user = {
-          name: "john", 
+# user = {
+#           name: "john", 
 
-          age: 21
-}
+#           age: 21
+# }
 
-if user[:age]
-          puts "#{user[:name]} is #{user[:age]} years old"
-else 
-          puts "#{user[:name]}'s age is unknown"
-end
+# if user[:age]
+#           puts "#{user[:name]} is #{user[:age]} years old"
+# else 
+#           puts "#{user[:name]}'s age is unknown"
+# end
 
 # ---------------
 
-user = {
-          name: "john", 
-}
+# user = {
+#           name: "john", 
+# }
 
-if user[:age]
-          puts "#{user[:name]} is #{user[:age]} years old"
-else 
-          puts "#{user[:name]}'s age is unknown"
-end
+# if user[:age]
+#           puts "#{user[:name]} is #{user[:age]} years old"
+# else 
+#           puts "#{user[:name]}'s age is unknown"
+# end
+
+
+# Arrays with Hash Elements
+# Let's take a look at an array whose elements are hashes. 
+# You can use hashes as well as strings and numbers for 
+# array elements. 
+
+users =[
+          {name: "John", age: 21},
+
+          {name: "Kate", age: 12},
+]
+
+
+# Remember how each element of an array has an index number? 
+# Even when the element of an array is a hash, you can get the 
+# corresponding hash using index numbers
+
+puts users[1]
