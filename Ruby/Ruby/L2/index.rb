@@ -35,3 +35,9 @@ puts names
 names = ['John', 'Bob', 'Kate']
 
 puts "My name is #{names[1]}"
+
+
+# Loops
+# When you want to print all the elements of an array, it's not efficient 
+# to repeat the same code. You can use loops to make this easier. 
+
