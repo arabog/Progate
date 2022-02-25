@@ -1,3 +1,6 @@
+# In this lesson, we'll be learning about arrays, hashes, and loops.
+
+
 # Structuring Data
 # Let's learn how to manage a group of data with a single variable. 
 # For example, when there's a list of user's name, it's not efficient 
@@ -370,26 +373,26 @@
 # Since the user variable has a hash assigned to it, you can get the values 
 # of the hash elements by writing user[symbol]
 
-users =[
-          {name: "John", age: 21},
+# users =[
+#           {name: "John", age: 21},
 
-          {name: "Kate", age: 12},
-]
+#           {name: "Kate", age: 12},
+# ]
 
-users.each do |user|
-          puts user[:name]
-end
+# users.each do |user|
+#           puts user[:name]
+# end
 
 # Let's print all the elements of the exams array using the each method.
-exams = [
-          {subject: "Math", score: 80},
-          {subject: "Science", score: 55}
-]
+# exams = [
+#           {subject: "Math", score: 80},
+#           {subject: "Science", score: 55}
+# ]
 
 # Get each element of exams using the each method, and print "Your score for ____ is ____%"
-exams.each do |exam|
-          puts "Your score for #{exam[:subject]} is #{exam[:score]} %"
-end
+# exams.each do |exam|
+#           puts "Your score for #{exam[:subject]} is #{exam[:score]} %"
+# end
 
 # Let's make sure that correct information is printed depending on the 
 # value of the element with the symbol :age.
