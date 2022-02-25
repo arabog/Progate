@@ -135,14 +135,60 @@
 # However, be aware that if you specify a key that already 
 # exists in the hash, you're updating the element, not adding it.
 
+# user = {
+#           "name" => "john", 
+
+#           "age" => 21
+# }
+
+# puts user
+
+# user["gender"] = "male"
+
+# puts user
+
+# Symbols
+# The key of a hash can be written by prepending (adding 
+# in front) the key with a colon : instead of enclosing them 
+# in ' or ". The way of writing :name is known as symbol.
+
+# strings
+# user = {
+#           "name" => "john", 
+
+#           "age" => 21
+# }
+
+# symbols
+# user = {
+#           :name => "john", 
+
+#           :age => 21
+# }
+
+# puts user
+# ds is prepending a colon
+
+# Strictly speaking, strings and symbols are different things, 
+# but they can be used in the same way.
+
+# Using Symbols for Keys
+# Symbols are commonly used for hash keys. If you use 
+# symbols for the hash keys, you need to also use 
+# symbols to get the value.
+
+# strings
 user = {
           "name" => "john", 
 
           "age" => 21
 }
+puts user["name"]
 
-puts user
+# symbols
+user = {
+          :name => "john", 
 
-user["gender"] = "male"
-
-puts user
+          :age => 21
+}
+puts user[:name]
