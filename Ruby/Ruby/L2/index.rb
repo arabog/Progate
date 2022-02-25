@@ -255,13 +255,13 @@
 # So far, we've gotten the value of the hash using hash_name[symbol]. 
 # But what will happen if we specify a symbol that doesn't exist in the hash?
 
-user = {
-          name: "john", 
+# user = {
+#           name: "john", 
 
-          age: 21
-}
+#           age: 21
+# }
 
-puts user[:weight]  # ds symbol doesn't exist so noth is printed
+# puts user[:weight]  # ds symbol doesn't exist so noth is printed
 
 
 # nil
@@ -269,3 +269,46 @@ puts user[:weight]  # ds symbol doesn't exist so noth is printed
 # a value doesn't exist. Since nil means "nothing", puts nil 
 # will print nothing.
 
+# Avoiding nil
+# Let's learn how to use control flow with nil. This will 
+# enable you to print different things based on whether 
+# n element with the symbol :age exists or not. We'll be 
+# learning how to combine the if statement with a nil value.
+
+# if and nil
+# We've learned how to use boolean values with if statements. 
+# You can actually use values other than booleans as conditions. 
+# When you use values that are false or nil, the code won't be 
+# executed, but all values other than false and nil are treated 
+# as true.
+
+# Using if with nil
+# Since nil is treated as false, you can use hash values as conditions. 
+# In the example below, the condition of the value user[:age] is 21, 
+# which is neither nil nor false, so the if statement is executed. 
+# In the anoda example below, the value user[:age] is nil, 
+# so the else statement is executed.
+
+user = {
+          name: "john", 
+
+          age: 21
+}
+
+if user[:age]
+          puts "#{user[:name]} is #{user[:age]} years old"
+else 
+          puts "#{user[:name]}'s age is unknown"
+end
+
+# ---------------
+
+user = {
+          name: "john", 
+}
+
+if user[:age]
+          puts "#{user[:name]} is #{user[:age]} years old"
+else 
+          puts "#{user[:name]}'s age is unknown"
+end
