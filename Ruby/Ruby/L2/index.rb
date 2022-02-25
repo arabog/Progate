@@ -250,3 +250,22 @@
 # exam = {subject: "Math", score: 80}
 
 # puts "#{exam[:subject]} score is #{exam[:score]}"
+
+# When the Symbol Doesn't Exist
+# So far, we've gotten the value of the hash using hash_name[symbol]. 
+# But what will happen if we specify a symbol that doesn't exist in the hash?
+
+user = {
+          name: "john", 
+
+          age: 21
+}
+
+puts user[:weight]  # ds symbol doesn't exist so noth is printed
+
+
+# nil
+# There is a special value in Ruby known as nil to express that 
+# a value doesn't exist. Since nil means "nothing", puts nil 
+# will print nothing.
+
