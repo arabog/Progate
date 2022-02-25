@@ -41,3 +41,18 @@ puts "My name is #{names[1]}"
 # When you want to print all the elements of an array, it's not efficient 
 # to repeat the same code. You can use loops to make this easier. 
 
+# The each Method
+# The each method allows you to access each element of an array 
+# in a temporary variable, and apply the same code to it. You begin 
+# a loop by writing array_name.each do |variable_name|, and place 
+# the code you want to repeat before end.
+
+# array_name.each do |variable_name|
+          #puts variable_name
+# end
+
+names = ['John', 'Bob', 'Kate']
+
+names.each do |name|
+          puts name
+end
