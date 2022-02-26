@@ -113,6 +113,26 @@ introduce("Ken", 12)
 
 # the order of the arguments must correspond to the order of the parameters.
 
+# Return Values
+# The result we receive from calling the method is also known as the 
+# return value. 
+
+# def method_name(parameter)
+          # return value
+# end
+
+# Receiving the Return Value
+# When you call a method that has a return value, the caller 
+# will be replaced by the value. In the example below, add(1,3) 
+# will be replaced by 4, then assigned to a variable.
+
+def add(a, b)
+          return a + b
+end
+
+sum = add(2, 3)
+
+puts sum
 
 
 
