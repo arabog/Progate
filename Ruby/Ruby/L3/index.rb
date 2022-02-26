@@ -54,13 +54,35 @@
 # Using Parameters
 # Parameters can be used inside a method just like other variables. 
 
-def introduce(name)
+# def introduce(name)
+#           puts "Hello"
+#           puts "I am #{name}"
+# end
+
+# introduce("Ken the Ninja")
+# introduce("Master Wooly")
+
+# Value Types of Arguments
+# We can also pass in values of other types, such as integers.
+
+# def introduce(age)
+#           puts "Hello"
+#           puts "I am #{age} years old"
+# end
+
+# introduce(14)
+
+# ArgumentError
+# The number of parameters and arguments must match. 
+# If your method has a parameter but you try to call it 
+# without an argument, you'll get an ArgumentError.
+
+def introduce(age)
           puts "Hello"
-          puts "I am #{name}"
+          puts "I am #{age} years old"
 end
 
-introduce("Ken the Ninja")
-introduce("Master Wooly")
+introduce
 
 
 
