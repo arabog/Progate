@@ -21,5 +21,15 @@ end
 
 introduce
 
+# Defining a Method
+# Let's learn how to define a method from scratch. All you have to 
+# know is that you must write the code you want to execute between 
+# def method_name and end.
+
+# def method_name 
+          # some code
+# end
+
+
 
 #Progate @progateEN @dev_careers #dev_careers
