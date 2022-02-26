@@ -100,6 +100,20 @@
 # The Scope of Variables inside Methods
 # Just like parameters, they can only be used inside the method.
 
+# Multiple Parameters
+# You can add multiple parameters to a method by separating them 
+# with a comma ,.
+
+def introduce(name, age)
+          puts "I am #{name}"
+          puts "I am #{age} years old"
+end
+
+introduce("Ken", 12)
+
+# the order of the arguments must correspond to the order of the parameters.
+
+
 
 
 
