@@ -104,12 +104,12 @@
 # You can add multiple parameters to a method by separating them 
 # with a comma ,.
 
-def introduce(name, age)
-          puts "I am #{name}"
-          puts "I am #{age} years old"
-end
+# def introduce(name, age)
+#           puts "I am #{name}"
+#           puts "I am #{age} years old"
+# end
 
-introduce("Ken", 12)
+# introduce("Ken", 12)
 
 # the order of the arguments must correspond to the order of the parameters.
 
@@ -126,13 +126,58 @@ introduce("Ken", 12)
 # will be replaced by the value. In the example below, add(1,3) 
 # will be replaced by 4, then assigned to a variable.
 
-def add(a, b)
-          return a + b
-end
+# def add(a, b)
+#           return a + b
+# end
 
-sum = add(2, 3)
+# sum = add(2, 3)
 
-puts sum
+# puts sum
+
+# Types of Return Values
+# We can use return with all kinds of values, like strings and booleans. 
+# For example, you can return a boolean value. As a convention, we 
+# add a question mark ? at the end of the method name if it returns 
+# a boolean value.
+
+# def negative? (number)
+#           return number < 0
+# end
+
+# puts negative? (5)
+
+# Call the shipping_free? method with 30  as the argument, 
+# then use the return value as the condition for the if statement.
+
+# Define the shipping_free? method
+# def shipping_free? (price)
+#           return price >= 50
+# end
+
+
+# Add control flow based on the return value of the shipping_free? function
+# if shipping_free?(30)
+#           puts "Shipping is free for purchases above $50"
+# else
+#           puts "The shipping fee will be $5"
+# end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
