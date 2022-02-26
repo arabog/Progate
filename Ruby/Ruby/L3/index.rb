@@ -171,21 +171,55 @@
 # Multiple Returns
 # By adding control flow, you can use return multiple times. 
 
-def judge(score)
-          if score > 80
-                    return "Great Job!"
-          end
+# def judge(score)
+#           if score > 80
+#                     return "Great Job!"
+#           end
 
-          return "You can do better"
-end
+#           return "You can do better"
+# end
 
-puts judge(70)
-
-
+# puts judge(70)
 
 
+# Keyword Arguments
+# When we have a lot of parameters, it gets difficult to see 
+# which argument corresponds to which parameter. This 
+# can be solved by using keyword arguments. With 
+# keyword arguments, we can explicitly specify the 
+# parameter name.
+
+# def introduce(name, age, food)
+#           puts "I am #{name}"
+#           puts "I am #{age} years old"
+#           puts "I like #{food}"
+# end
+
+# introduce("Ken", 12, "noodles")
 
 
+# def introduce(name:, age:, food:)
+#           puts "I am #{name}"
+#           puts "I am #{age} years old"
+#           puts "I like #{food}"
+# end
+
+# with keyword
+# introduce(name: "Ken", age: 12, food: "noodles")
+
+# Methods with Keyword Arguments
+# We can define a method with keyword arguments by:
+# 1. On the method definition, put a colon : after the parameter.
+# 2. On the method caller, prepending the parameter name with 
+# a colon : to each argument.
+
+# def introduce(name:, age:, food:)
+#           puts "I am #{name}"
+#           puts "I am #{age} years old"
+#           puts "I like #{food}"
+# end
+
+# introduce(name: "Ken", age: 12, food: "noodles")
 
 
 
