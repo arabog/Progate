@@ -162,12 +162,24 @@
 #           puts "The shipping fee will be $5"
 # end
 
+# How return Works
+# Let's look deeper into how return works. Not only does return 
+# send back the return value to the caller, but it also terminates 
+# the execution of a method. This means that anything that 
+# comes after return won't be executed.
 
+# Multiple Returns
+# By adding control flow, you can use return multiple times. 
 
+def judge(score)
+          if score > 80
+                    return "Great Job!"
+          end
 
+          return "You can do better"
+end
 
-
-
+puts judge(70)
 
 
 
