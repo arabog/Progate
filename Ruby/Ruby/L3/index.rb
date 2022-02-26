@@ -77,12 +77,28 @@
 # If your method has a parameter but you try to call it 
 # without an argument, you'll get an ArgumentError.
 
-def introduce(age)
-          puts "Hello"
-          puts "I am #{age} years old"
-end
+# def introduce(age)
+#           puts "Hello"
+#           puts "I am #{age} years old"
+# end
 
-introduce
+# introduce
+
+# The Scope of Parameters
+# In the previous lesson, we learned that a variable has 
+# its own scope, the specific range where the variable 
+# can be accessed. A parameter is a variable, and its 
+# scope is restricted to the boundary of the method. 
+# Therefore, it cannot be accessed outside of the method.
+
+# def method_name(parameter)
+          # scope of d parameter
+# end
+
+# can't access d parameter from here
+
+# The Scope of Variables inside Methods
+# Just like parameters, they can only be used inside the method.
 
 
 
