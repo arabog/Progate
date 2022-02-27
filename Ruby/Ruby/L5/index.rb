@@ -133,8 +133,57 @@ end
 # That way, the Food class can assign the value of the calorie 
 # instance variable when we call Food.new.
 
+# Avoiding Duplications
+# We were able to override the initialize method in the Food class, 
+# but we have repeated the same code for initializing the name 
+# nd price instance variables.
+
+class Menu
+          attr_accessor :name
+          attr_accessor :price
+
+          # Rewrite the initialize method
+          def initialize(name:, price:)
+                    self.name = name
+                    self.price = price
+          end
+
+end
 
 
+class Food < Menu
+          attr_accessor :name
+          attr_accessor :price
 
+          # Rewrite the initialize method
+          def initialize(name:, price:, calorie)
+                    self.name = name
+                    self.price = price
+
+                    self.calorie = calorie
+          end
+
+end
+
+# super
+# When overriding a method, you can call the method 
+# of the parent class using super. When doing so, you 
+# must pass the necessary arguments to it.
+
+class Food < Menu
+          attr_accessor :name
+          attr_accessor :price
+
+          # Rewrite the initialize method
+          def initialize(name:, price:, calorie:)
+                    # converting 
+                    # initialize(name:, price:) &
+                    # self.name = name & self.price = price to ds:
+                    super(name: name, price: price) 
+                    
+                    self.calorie = calorie
+          end
+
+end
 
 #Progate @progateEN @dev_careers #dev_careers
