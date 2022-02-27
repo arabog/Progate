@@ -283,11 +283,67 @@ require "date"
 def Menu
           def Menu.discount_day?
                     today = Date.today
+
+                    today.sunday?
           end
 end
 
 
+# Calling Class Methods
+# We can call a class method just how you defined it, 
+# like ClassName.method_name.
+
+def Menu
+          def Menu.discount_day?
+                    # sm code
+          end
+end
 
 
+puts Menu.discount_day?
+
+
+Calling a Class Method
+# Inside an Instance Method
+# A class method can also be called from inside of the class. 
+# For example, we can call the discount_day? class method 
+# in the get_total_price instance method.
+
+class Menu
+          attr_accessor :price
+
+
+          def get_total_price
+
+                    if Menu.discount_day?
+                              # sm code
+                    end
+
+          end
+end
+
+# Instance Methods and Class Methods
+# Make sure you understand that an instance method is a method 
+# called from an instance of the class, and a class method is a 
+# method called from the class itself.
+
+def Menu
+          def info  # def an instance method
+                    # sm code
+          end
+end
+
+menu1 = Menu.new
+
+puts menu1.info # call d instance method 4rm an instance
+
+
+def Menu
+          def Menu.discount_day?        #def a class method
+                    # sm code
+          end
+end
+
+Menu.discount_day?  # call d class method 4rm d menu class i.e d class itself
 
 #Progate @progateEN @dev_careers #dev_careers
