@@ -203,6 +203,48 @@ class Drink < Menu
 
 end
 
+# Dealing with Dates
+# We will be adding one last feature to the app. Let us give 
+# a $1 discount on Sundays.
+
+# The Date Class
+# To handle dates, you can use the class known as Date class. 
+# The Date class is a predefined class in Ruby, so you can use 
+# it by importing it using require as shown in the image below. 
+# Note that you don't need the ./ to import predefined classes.
+
+require "date"
+
+
+# An Instance of Date
+# Just like all the classes we used before, the Date class uses 
+# Date.new to create a new instance. If you run puts on a 
+# Date class instance, it'll print the date
+
+require "date"
+
+date1 = Date.new(2014, 07, 31)
+
+
+puts date1
+
+# Instance Methods of Date
+# The Date class has many instance methods that we can use. 
+# We'll be using the sunday? instance method in the exercise, 
+# which returns true if the date of the Date class instance is 
+# Sunday, and false if it isn't.
+
+require "date"
+
+date1 = Date.new(2014, 07, 31)
+
+
+puts date1.sunday?   #false
+
+
+
+
+
 
 
 #Progate @progateEN @dev_careers #dev_careers
