@@ -75,7 +75,14 @@ class Food < Menu
 end
 
 
+# Adding Instance Methods
+class Food < Menu 
+          attr_accessor :calorie
 
+          def calorie_info
+
+          end
+end
 
 
 
