@@ -242,7 +242,16 @@ date1 = Date.new(2014, 07, 31)
 puts date1.sunday?   #false
 
 
+# Today's Date instance
+# We've seen how to create a Date class instance using Date.new. 
+# The Date class also lets you create an instance of today's date 
+# by using Date.today.
 
+require "date"
+
+date1 = Date.today
+
+puts date1
 
 
 
