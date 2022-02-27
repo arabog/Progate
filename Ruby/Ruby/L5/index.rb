@@ -346,4 +346,3 @@ end
 
 Menu.discount_day?  # call d class method 4rm d menu class i.e d class itself
 
-#Progate @progateEN @dev_careers #dev_careers
