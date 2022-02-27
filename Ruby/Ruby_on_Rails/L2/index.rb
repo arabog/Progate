@@ -36,5 +36,82 @@ rails g controller posts index
 # We're going to write the HTML for the Posts page in 
 # views/posts/index.html.erb.
 
+# Assigning the Post Content to a Variable
+# We can't establish a connection to the database with just HTML.
+# Let's assign each post to a variable.We'll gradually modify our 
+# code using Ruby to introduce how to use databases.
+
+<div class="post-index-item">
+          Learning Rails with Progate
+</div>
+
+<div class="post-index-item">
+          Trying to display the posts
+</div>
+
+# Defining a Variable in a View
+# In erb (or Embedded Ruby) file format like index.html.erb, you 
+# can embed Ruby code in HTML using the <% %> brackets.
+
+<% post1 = "Learning Rails with Progate" %>
+<% post2 = "Trying to display the posts" %>
+
+# Displaying the Value of a Variable
+# When you want to display the embedded Ruby code in the browser,
+# the <%= %> brackets are used instead of the <% %> brackets.
+
+<% post1 = "Learning Rails with Progate" %>
+<%= post1 %>
+
+# <% %> and <%= %>
+# We've learned that we can <% %> and <%= %> to embed 
+# Ruby code. <% %> is used in cases like defining a variable 
+# as it won't be displayed. <%= %>, on the other hand, is used 
+# for cases like printing the content of a variable as it will be displayed.
+
+# <% Language = "Ruby" %>
+
+# Learning <%= Language %>       # Learning Ruby
+
+# Learning <% Language %>        # Learning
+
+# Using the each Method in Views
+
+# Preparing an Array
+# Let's prepare the posts variable and assign an array containing 
+# each post data as shown in the image below. Since it's an array, 
+# don't forget to separate the elements with a comma. Also, you 
+# can write Ruby code across multiple lines like the image below.
+
+# <%
+#           posts = [
+#                     "Learning Rails with Progate",
+#                     "Trying to display the posts" 
+#           ]
+
+# %>
+
+# The each Method
+# In the example, each element is assigned to the post variable, 
+# then printed. This way, you won't have to write the same HTML 
+# code repeatedly to print each post. Make sure to enclose 
+# posts.each do |post| and end in <% %>.
+
+          # <%
+          #           posts = [
+          #                     "Learning Rails with Progate",
+          #                     "Trying to display the posts" 
+          #           ]
+          # %>
+
+          # <% posts.each do |post| %>
+                    <div class="post-index-item">
+                              # <%= post %>
+                    </div>
+          # <% end %>
+
+
+
+
 
 #Progate @progateEN @dev_careers #dev_careers
