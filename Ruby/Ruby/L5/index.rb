@@ -85,6 +85,17 @@ class Food < Menu
 end
 
 
+# Let's add an instance method to the Food class.
+require "./menu"
+
+class Food < Menu
+          attr_accessor :calorie
+          
+          # Define the calorie_info method
+          def calorie_info
+                    return "#{self.name} is #{self.calorie} kcal"
+          end
+end
 
 
 
