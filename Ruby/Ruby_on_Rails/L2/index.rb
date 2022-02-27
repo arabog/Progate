@@ -110,6 +110,63 @@ rails g controller posts index
                     </div>
           # <% end %>
 
+# Defining Variables in Actions
+# In Rails variables should be defined in actions, not views.
+# Let us define them in an action of the controller from now on.
+
+# Defining a Variable in an Action
+# Let's define a variable in an action to use it in views. You can 
+# use the variable in index.html.erb by defining it in between def 
+# index and end. We'll explain the @ prepended to the variable 
+# in the next slide.
+
+# post_controller.rb
+def index 
+          @posts = [
+                    "Learning Rails with Progate",
+                    "Trying to display the posts" 
+          ]
+end
+
+# @ Variables
+# In general, a variable defined in an action can't be used in views.
+# However, by prepending @ to the variable name, it turns into a 
+# special variable which you can use in views.
+
+def index 
+          @post1 = "Ken the ninja"
+
+          post2 = "Wooly"
+end
+
+
+post_controller.rb
+class PostsController < ApplicationController
+          def index
+                    # Paste the posts array defined in the view, then rename it to @posts
+            
+                    @posts = [
+                              "Learning Rails with Progate!",
+                              "Trying to display the posts!"
+                    ]
+         
+          end
+end
+
+
+index.html.erb
+<div class="main posts-index">
+          <div class="container">
+                    <% @posts.each do |post| %>
+                              <div class="posts-index-item">
+                                        <%= post %>
+                              </div>
+                    <% end %>
+          </div>
+</div>
+
+# <%= post1 %>  will be rendered
+# <%= post2 %> will nt be rendered
 
 
 
