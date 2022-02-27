@@ -98,6 +98,35 @@ class Food < Menu
 end
 
 
+# Customizing the Methods
+# We will be overriding the info method in the Food class.
+
+# Method Override
+# You can override a method by defining a method with 
+# the same name in the child class. If you override a 
+# method, the instances of the child class will call the 
+# method in the child class, not the one in the parent class.
+
+class Menu
+          def info
+                    # d info method in parent class
+          end
+end
+
+class Food < Menu
+          def info
+                    # overriding d info method in parent class
+          end
+end
+
+# How Overriding Works
+# Let's look at overriding in more depth. When you call 
+# a method from a child class instance, it first looks for 
+# the method in the child class. If it isn't found there, it 
+# then looks for the method in the parent class.
+
+
+
 
 
 
