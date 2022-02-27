@@ -16,6 +16,8 @@
 # This command creates a folder with the application's name, 
 # then generates other necessary folders and files.
 
+rails new application_name
+
 # Starting the Server
 # To see the application in the browser, you need to start the server 
 # with the rails server command. After running this command, 
