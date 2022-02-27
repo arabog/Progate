@@ -32,4 +32,9 @@ rails generate controller posts index
 
 rails g controller posts index
 
+# Creating the View for the Posts Page
+# We're going to write the HTML for the Posts page in 
+# views/posts/index.html.erb.
+
+
 #Progate @progateEN @dev_careers #dev_careers
