@@ -126,6 +126,13 @@ end
 # then looks for the method in the parent class.
 
 
+# Overriding the initialize Method
+# Let us use the override technique we just learned to override 
+# the initialize method as well.
+
+# That way, the Food class can assign the value of the calorie 
+# instance variable when we call Food.new.
+
 
 
 
