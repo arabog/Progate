@@ -253,6 +253,40 @@ date1 = Date.today
 
 puts date1
 
+# Class Methods
+
+# Defining Class Methods
+# You can define a class method like def ClassName.method_name. 
+# Note that unlike instance methods, you have to put the class name 
+# before the method name. We'll be defining the discount_day? class 
+# method in the Menu class!
+
+def ClassName.method_name
+          # some code
+end
+
+
+def Menu
+          def Menu.discount_day?
+                    # sm code
+          end
+end
+
+# We want Class method to return true if it is Sunday, and 
+# false otherwise.
+
+# Using the Date Class Inside a Class Method
+
+require "date"
+
+
+def Menu
+          def Menu.discount_day?
+                    today = Date.today
+          end
+end
+
+
 
 
 
