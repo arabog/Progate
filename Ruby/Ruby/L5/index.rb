@@ -57,4 +57,30 @@ food1.name
 
 food1.info
 
+# Adding Instance Variables
+# Now that the Food and Drink classes are prepared, 
+# let us add the calorie instance variable to Food, 
+# and the volume instance variable to Drink.
+
+
+# Adding an Instance Variable to a Child Class
+# To add an instance variable to the child class, we can 
+# again use attr_accessor. In the example below, the 
+# Food class has the calorie instance variable in addition 
+# to the name and price variables defined in the Menu class.
+
+
+class Food < Menu 
+          attr_accessor :calorie
+end
+
+
+
+
+
+
+
+
+
+
 #Progate @progateEN @dev_careers #dev_careers
