@@ -186,4 +186,23 @@ class Food < Menu
 
 end
 
+
+class Drink < Menu
+          attr_accessor :name
+          attr_accessor :price
+
+          # Rewrite the initialize method
+          def initialize(name:, price:, volume:)
+                    # converting 
+                    # initialize(name:, price:) &
+                    # self.name = name & self.price = price to ds:
+                    super(name: name, price: price) 
+                    
+                    self.volume = volume
+          end
+
+end
+
+
+
 #Progate @progateEN @dev_careers #dev_careers
