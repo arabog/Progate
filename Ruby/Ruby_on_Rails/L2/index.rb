@@ -253,8 +253,21 @@ rails g model
 class Post < ApplicationRecord
 end
 
+# we can handle the posts table through the Post model,
 
 
+# Using rails console
+# We will use rails console to learn how to save data to the database.
+
+# rails console
+# You can launch the console by inputting rails console followed 
+# by the Enter key in the terminal. Inside the console, you can run 
+# ruby commands like 1 + 1. Also, you can exit the console by 
+# executing the quit command.
+
+
+# In the console, you can define a variable, too. You can keep 
+# using the variable until you exit from the console with quit.
 
 
 
