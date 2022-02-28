@@ -338,6 +338,27 @@ rails console
 posts = Post.all[0].content
 
 
+# Displaying the Data in Views
+# Displaying All the Posts
+# In the index action of the Posts controller, let's get the data from 
+# the database using Post.all, then assign them to the @posts variable. 
+# In posts/index.html.erb, we can use the each method to loop through 
+# the @posts array to print each post.
+
+# posts_controller.rb
+def index
+          @posts = Post.all
+end
+
+
+# posts/index.html.erb
+# <% @posts.each do |post| %>
+          <div class = "posts-index-item">
+                    <%= post.content %>
+          </div>
+# <% end %>
+
+
 
 
 
