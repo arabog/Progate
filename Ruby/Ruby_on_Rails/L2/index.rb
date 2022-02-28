@@ -380,6 +380,17 @@ end
 # allows you to combine common layouts, such as headers 
 # into one.
 
+# The link_to Method
+# let us add a link to the Posts page in the header.
+# In Rails, you can use the link_to method to generate <a> tags.
+# Do not forget to enclose the method in <%= %> since it is Ruby 
+# code.
+
+# The first argument is the text to display, and the second argument 
+# is the URL.
+
+<%= link_to("Tweep", "/") %>
+<%= link_to("About", "/about") %>
 
 
 
