@@ -299,6 +299,25 @@ post = Post.new(content: "Hello world")
 
 post.save # saves a Post instance to d table
 
+post1 = Post.new(content: "Learning Rails with Progate!")
+post1.save
+
+post2 = Post.new(content: "Trying to display the posts!")
+post2.save
+
+# Getting Data from a Table
+# You can get the first record(/row) in the posts table using Post.first.
+
+rails console
+post = Post.first
+
+# Getting the Value of the content Column
+# with post.content, you can get the content of the first post!
+rails console
+post = Post.first
+post.content
+
+
 
 
 
