@@ -210,6 +210,26 @@ class CreatePosts < ActiveRecord::Migration[5.0]
 end
 
 
+# Creating a Table
+# We will apply the changes to the database using the migration 
+# file you have created. To apply the changes in the database, 
+# simply execute the command 
+
+rails db:migrate
+
+# By executing the command, it will create a table according 
+# to the code in the migration file.
+
+# id is automatically added when a table is created. created_at 
+# and updated_at are automatically added when a migration 
+# file is created while content is created by u
+
+# Migration Error
+# When you try to access a page before applying the changes 
+# in a migration file, Rails will throw you a migration error. 
+# You always need to run the rails db:migrate command after 
+# you've created a migration file.
+
 
 
 
