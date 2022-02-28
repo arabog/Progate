@@ -168,6 +168,16 @@ index.html.erb
 # <%= post1 %>  will be rendered
 # <%= post2 %> will nt be rendered
 
+# Preparing a Database
+# Let us learn how to use a database to store and get data!
+#  Let us take a look at how a database works
+
+# How a Database Works
+# A database consists of tables. Each table has rows and 
+# columns. Each row also known as a record, represents 
+# a post while each column represents a specific type of data.
+
+
 
 
 
