@@ -177,6 +177,38 @@ index.html.erb
 # columns. Each row also known as a record, represents 
 # a post while each column represents a specific type of data.
 
+# Creating the posts Table
+# To store data in a database, we need to create a table.
+# Let us create the posts table for storing posts.
+
+# Creating a Migration File
+# We need to create a migration file to make changes to the 
+# database. With the rails g model Post content:text command, 
+# you can create a migration file which adds the posts table 
+# with the content column. The text describes the type of data 
+# that will be stored in the column.
+
+rails g model Post content:text
+
+content: column name
+text: long string e.g Learning Rails
+
+# The Migration Folder
+# After you run the rails g model command, you'll find a 
+# migration file created in the db/migrate folder. The file 
+# has the code to make changes to the database. This code 
+# is generated automatically, so don't worry too much about it.
+
+class CreatePosts < ActiveRecord::Migration[5.0]
+          def change
+                    create_table :posts do |t|
+                              t.text :content
+
+                              t.timestamps
+                    end
+          end
+end
+
 
 
 
