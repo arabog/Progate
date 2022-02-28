@@ -359,6 +359,30 @@ end
 # <% end %>
 
 
+# Refactoring the Common Layout
+# let us add a link to the Posts page in the header
+# You may have noticed that the header is in several files. We will 
+# first simplify our code by putting the common layout in a single file.
+
+# Refactoring the Common Layout
+# In Rails, you can bundle the common HTML of your website into 
+# views/layouts/application.html.erb. By default, the common parts 
+# of a website such as the <head> tag and the <body> tag are 
+# written in this file. Let's also add the header to this file so that 
+# it's shared in every page.
+
+# How Common Layouts Work in Rails
+# Now let's take a look at how common layout works. In 
+# views/layouts/application.html.erb there is a code 
+# <%= yield =>. Every view file, such as top.html.erb 
+# is assign to this <%= yield => section and is displayed 
+# in the browser as part of the application.html.erb. This 
+# allows you to combine common layouts, such as headers 
+# into one.
+
+
+
+
 
 
 
