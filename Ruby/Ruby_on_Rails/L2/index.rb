@@ -269,10 +269,35 @@ end
 # In the console, you can define a variable, too. You can keep 
 # using the variable until you exit from the console with quit.
 
+# Saving Data to a Table
+# Follow these steps to save a post to the database:
+# 1. Create an instance of the Post model using the new method.
+# 2. Save it to the posts table.
 
 
+# The new Method
+# Let's create an instance of Post from the Post model (Post 
+# class) in the rails console. To create an instance, we're 
+# going to use the new method. For example, you can create 
+# a Post instance with the content, "Hello world".
 
 
+rails console
+
+post = Post.new(content: "Hello world")
+# creates a Post instance with d content, Hello world
+
+# The save Method
+# To save a Post instance to the posts table, you need 
+# to run the save method. Because the Post model 
+# inherits from ApplicationRecord, it can use the methods 
+# defined in ApplicationRecord, like the save method.
+
+rails console
+
+post = Post.new(content: "Hello world")
+
+post.save # saves a Post instance to d table
 
 
 
