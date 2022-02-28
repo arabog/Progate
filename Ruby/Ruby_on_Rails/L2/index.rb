@@ -317,6 +317,28 @@ rails console
 post = Post.first
 post.content
 
+# Getting All the Posts
+# Getting All the Data in the Posts Table
+# To get all the data from the posts table, use Post.all.
+
+# Post.all returns you all the data saved in the table in the form of an array
+
+rails console
+posts = Post.all
+
+# Getting an Element of an Array
+# You can get an element using an index number like Post.all[0].
+
+# Getting the Content of an Element
+# The data you get with Post.all[0] is the same as the data you get 
+# with Post.first. So with Post.all[0].content, you can get the 
+# content of the first post.
+
+rails console
+posts = Post.all[0].content
+
+
+
 
 
 
