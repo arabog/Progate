@@ -136,7 +136,25 @@ end
           </div>
 </div>
 
+# Adding Links to the Post Details Page
+# let us add a link that redirects the Post details page to the Posts page.
 
+# Adding a Link to the Post Details Page
+# In the Posts page, let's create a link to the Post details page for each 
+# post. You can make each post a link to the Post details page by 
+# changing it to link_to (post.content, "/posts/#{post.id}") so 
+# that clicking on the content part of each post will redirect 
+# us to the Post details page.
+
+
+# Let's make each post in the Posts page a link to the Post details  page.
+
+# posts/index.html.erb
+<% @posts.each do |post| %>
+          <div class = "posts-index-item">
+                    <%= link_to(post.content, "/posts/#{post.id}") %>
+          </div>
+<% end %>
 
 
 
