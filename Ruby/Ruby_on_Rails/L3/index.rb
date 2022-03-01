@@ -183,6 +183,14 @@ end
 # .../layouts/application.html.erb
 # Add a link to the New post page
 
+# Adding Input Fields to Form
+# you can create input fields using the <textarea> 
+# tag or the <input> tag. Remember that you need 
+# to specify the type="submit" attribute for the submit 
+# button to submit the form. Since we're going to name 
+# the button as Post, let's also add the value="Post" attribute.
+
+
 
 
 
