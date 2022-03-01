@@ -84,7 +84,28 @@ get "posts/:id" => "posts#show"
           </div>
 </div>
 
+# Getting the id from the URL
+# In the show action, we need to show the post details that has 
+# the same id as the id in the URL.
 
+# To do that, let us first learn how to get the id part, or more 
+# specifically the 1 or 2 part from each URL.
+
+# The params Variable
+# In the show action, the value of the :id is stored in a hash 
+# variable known as params. You can get that value using 
+# params[:id].
+
+# posts_controller.rb
+def show
+          @id = params[:id]
+end
+
+# posts.show.html.erb
+# <=% @id %>
+
+# "This page shows the details of a post with id: #{@id}"
+# Note: In Ruby, you can display a value of a variable in a string by using #{}.
 
 
 #Progate @progateEN @dev_careers #dev_careers
