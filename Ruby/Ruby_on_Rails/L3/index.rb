@@ -190,9 +190,43 @@ end
 # button to submit the form. Since we're going to name 
 # the button as Post, let's also add the value="Post" attribute.
 
+# Sending the Input Data
+# How Posts Are Saved
+# Generally, when you press the submit button, the post 
+# data will be sent to the server-side (Rails). Let's prepare 
+# a create action to save the received post data to the 
+# database. The URL of the create action should be "/posts/create".
 
 
+# The Route for the create Action
+# Let's set the route for the create action. We've been using 
+# get for routes, but we need to use post when receiving 
+# data from a form. (Note that this "post" has nothing to 
+# do with the "Post" model.)
 
+# routes.rb
+get "posts/index" => "posts#index"
+
+get "posts/new" => "posts#new"
+
+get "posts/:id" => "posts#show"
+
+post "posts/create" => "posts#create"
+
+# The route should be defined as follows: post URL => controller#action.
+
+# Specifying the Destination to Send the Form Data
+# You can send the data entered in the form using the form_tag 
+# method. The destination URL is specified like : 
+# <%= form_tag (destination URL) do%>. This allows 
+# <input type="submit" ...>, also known as the submit button in 
+# the form, when clicked, for the data to be sent to the specified URL.
+
+<%= form_tag("/posts/create")  do %>
+          <textarea></textarea>
+
+          <input type="submit" value = "Post" >
+<% end %>
 
 
 
