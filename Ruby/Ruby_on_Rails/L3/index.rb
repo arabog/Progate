@@ -150,11 +150,39 @@ end
 # Let's make each post in the Posts page a link to the Post details  page.
 
 # posts/index.html.erb
-<% @posts.each do |post| %>
+# <% @posts.each do |post| %>
           <div class = "posts-index-item">
                     <%= link_to(post.content, "/posts/#{post.id}") %>
           </div>
-<% end %>
+# <% end %>
+
+# Creating the New Post Page
+# Preparing for the New Post Page
+# Let's make the New post page accessible from the URL 
+# localhost:3000/posts/new. Let's add a route, an action 
+# and a view. For the action, let's use new action.
+
+# routes.rb
+get "posts/index" => "posts#index"
+
+# The route should be added above get "posts/:id" => "...".
+get "posts/new" => "posts#new"
+
+get "posts/:id" => "posts#show"
+
+# posts_controller.rb
+def show
+          @post = Post.find_by(id: params[:id])
+end
+
+def new
+end
+
+# posts/new.html.erb
+
+# .../layouts/application.html.erb
+# Add a link to the New post page
+
 
 
 
