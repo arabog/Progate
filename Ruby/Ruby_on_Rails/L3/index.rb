@@ -302,6 +302,18 @@ def create
 #  2. Get the form input data with the name attribute.
 # <textarea name="content"></textarea>
 
+# Sorting Posts
+# Sorting the Posts The order Method
+# You can sort the list of posts using the order method 
+# as follows: order(column_name: sorting_order). 
+# By sorting posts in the descending order :desc of 
+# created_at, you can display the posts from the 
+# newest to the oldest.
+
+# posts_controller.rb
+def index
+          @posts = Post.all.order(created_at: :desc)
+ end
 
 
 
