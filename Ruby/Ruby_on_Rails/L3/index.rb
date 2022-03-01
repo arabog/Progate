@@ -105,7 +105,42 @@ end
 # <=% @id %>
 
 # "This page shows the details of a post with id: #{@id}"
-# Note: In Ruby, you can display a value of a variable in a string by using #{}.
+# Note: In Ruby, you can display a value of a variable in a 
+# string by using #{}.
+
+# Displaying a Post in the Post Details Page
+# Lastly, let us combine params[:id] and the find_by 
+# method to display the requested post.
+
+# Displaying a Post in the Post Details Page 
+# To display the post, we declare the variable @post in the 
+# show action and assign it the posts whose id is equal to 
+# params[:id] by retrieving them from the database. 
+# Then we'll display the details of the @post in show.html.erb.
+
+# posts_controller.rb
+def show
+          @post = Post.find_by(id: params[:id])
+end
+
+# posts/show.html.erb
+<div class="main posts-show">
+          <div class="container">
+                    <div class="posts-show-item">
+                              <%= @post.content %>
+
+                              <div class="post-time" >
+                                        <%= @post.created_at %>
+                              </div>
+                    </div>
+          </div>
+</div>
+
+
+
+
+
+
 
 
 #Progate @progateEN @dev_careers #dev_careers
