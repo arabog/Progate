@@ -248,6 +248,61 @@ def create
          redirect_to("/posts/index")
 end
 
+# Saving the Post
+# To save a post, we need to follow the steps:
+# 1. Send post data to d create action
+# 2. Receive d sent data in create action and save it
+
+# The name Attribute
+# At the moment, our form can't send the input data 
+# to the create action after you press the submit button. 
+# To fix this, you need to specify the name attribute of the 
+# <textarea> tag. This way, the data in the <textarea> tag 
+# will be sent to the Rails side as a hash with the name 
+# attribute as the key.
+
+<textarea name="content"></textarea>
+
+# Getting the Form Input Data
+# Once you specify the name attribute of a form element, 
+# the action of the controller can receive the form data. 
+# Since the params variable is a hash with the name attribute 
+# as the key, we can get the content with params[:content].
+
+def create
+          params[:content]
+          
+          redirect_to("/posts/index")
+ end
+
+#  Saving the Post
+#  Saving Posts to the Database
+#  Like we did before using the rails console, we can save 
+# a post by creating an instance of the Post model, then 
+# saving it. As shown in the image below, we can create 
+# a post with the data received from the form by using 
+# params[:content] as the argument.
+
+def create
+          @post = Post.new(content: params[:content])
+
+          @post.save
+          
+          redirect_to("/posts/index")
+ end
+
+#  Summary of the params Variables
+#  We've used params when receiving the input data and 
+# also to get the id value from the URL.
+
+#  Remember there are two ways of using params:
+#  1. Get the value from the URL of the route.
+# get "posts/:id" => .....
+
+#  2. Get the form input data with the name attribute.
+# <textarea name="content"></textarea>
+
+
 
 
 
