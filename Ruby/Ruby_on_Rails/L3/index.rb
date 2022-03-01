@@ -44,6 +44,46 @@ post.content
 # Run post.created_at and get the post time.
 post.created_at
 
+# Creating the Post Details Page
+# emember that when generating a new page, 
+# we need the route, the action and the view
+
+# We will pass the id of the post you want to display in the 
+# URL of the Post details page.
+# Then, we will find and display the post with the id.
+
+# Routes of the Post Details Page
+# Adding an id to the URL
+# By writing posts/:id with a colon : in the URL of the route, 
+# you can map URLs like /posts/1 and /posts/2 to the show action. 
+# This applies to every URL written as /posts/..
+
+# routes.rb
+get "posts/:id" => "posts#show"
+
+# posts_controller.rb
+def show
+end
+
+# The Post Details Page Important Note in posts/:id
+# You need to write the route posts/:id below posts/index. This is 
+# because the routing looks for URLs from the top. Writing it 
+# above posts/index would cause the URL 
+# localhost:3000/posts/index to match the route posts/:id.
+
+# routes.rb
+get "posts/index" => "posts#index"
+get "posts/:id" => "posts#show"
+
+# show.html.erb
+<div class="main posts-show">
+          <div class="container">
+                    <div class="posts-show-item">
+                              <p>This page shows the details of a post</p>
+                    </div>
+          </div>
+</div>
+
 
 
 
