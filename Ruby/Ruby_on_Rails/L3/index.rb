@@ -226,7 +226,27 @@ post "posts/create" => "posts#create"
           <textarea></textarea>
 
           <input type="submit" value = "Post" >
-<% end %>
+# <% end %>
+
+# Adding the Content of the create Action
+# We have specified where to send the form data, but there are 2 
+# problems as shown below, so the form cannot be used as it is now.
+
+# 1. No matching view for d create action
+# 2. Can't save any posts
+
+# Redirect
+# For our create action, let us redirect the request to the Posts page.
+
+# redirect_to
+# To redirect from one URL to another URL, use the redirect_to 
+# method. By setting it as redirect_to(URL), the redirect_to 
+# method redirects to the given URL.
+
+# posts_controller.rb
+def create
+         redirect_to("/posts/index")
+end
 
 
 
