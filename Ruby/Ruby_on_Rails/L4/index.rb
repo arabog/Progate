@@ -145,4 +145,56 @@ posts/edit.html.erb
           <input type="submit" value="Save" >
 # <% end %>
 
-# 
+# Adding Code to the update Action
+# Hw to update d content of a post
+          # 1. use d id in d URL to get d post data 4rm d db
+          # 2. update d content of d post with d data received 4rm d form
+
+# Updating a Post
+# Let's first get the post that you want to update 
+# from the database. You can get it using the id 
+# contained in the URL of the update action.
+
+posts/edit.html.erb
+# <%= form_tag("/posts/#{@post.id}/update") do %> # #{@post.id}
+
+# routes.rb
+post "posts/:id/update" => "posts#update"         # :id
+
+# posts_controller.rb
+def update
+          @post = Post.find_by(id: params[:id])   #get d id in d URL
+
+          redirect_to("/posts/index") 
+end
+
+# Next, let's set the name attribute of the <textarea> tag so that 
+# the content entered will be assigned to the params variable 
+# and sent to the update action. The update action receives 
+# values submitted from the form in params[:content] and 
+# updates the content of the submitted data with 
+# @post.content = params[:content].
+
+
+posts/edit.html.erb
+# <%= form_tag("/posts/#{@post.id}/update") do %>
+          <textarea name="content"> 
+                    <%= @post.content%> 
+          </textarea>
+
+          <input type="submit" value="Save" >
+# <% end %>
+
+# posts_controller.rb
+def update
+          # 1. Get post data 4rm database! using the id from the URL
+          @post = Post.find_by(id: params[:id])   #get d id in d URL
+
+          # 2. Overwrite the content of the post
+          @post.content = params[:content]
+
+          # 3. Save the overwritten data
+          @post.save
+
+          redirect_to("/posts/index") 
+end
