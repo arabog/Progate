@@ -35,6 +35,9 @@ CREATE TABLE users (          //users specify d name of d table created
 
 -- CREATE TABLE users ( `id` int auto_increment, `email` text, `password` text, primary key (id)); 
 
+-- ds was used for ruby on rails db
+-- CREATE TABLE posts ( `id` int auto_increment, `content` text, primary key (id)); 
+
 This is the basic syntax used for creating a table. Details such as the column name, data type, and the options you want to add to the columns will differ depending on your purpose.
 
 Using the DESCRIBE statement, which is used to display table structures, let's check that the table has been created correctly.
@@ -58,7 +61,7 @@ INSERT INTO users(`name`) VALUES ('Ken the Ninja');
 
 -- INSERT INTO users(`email`, `password`) VALUES ('ninja@gmail.com', 'ninja');
 -- INSERT INTO users(`email`, `password`) VALUES ('HUGB', 'ninja');
-
+INSERT INTO posts(`content`) VALUES ('Learning Rails with Progate!');
 
 Retrieving
 SELECT * FROM users;
