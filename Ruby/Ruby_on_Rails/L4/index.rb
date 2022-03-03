@@ -227,3 +227,19 @@ post "posts/:id/destroy" => "posts#destroy"
 def destory
           redirect_to("/posts/index") 
 end
+
+# Link to the destroy Action
+# Let us use the link_to method to add a link to the destroy action.
+
+# Let us learn how to do a post request using the link_to method.
+
+
+# Creating a Link for post
+# You can send a post request with the link_to method by adding 
+# {method: "post"} as the third argument.
+
+# posts/show.html.erb
+# <%= link_to("Delete", "/posts/#{@post.id}/destroy", {method: "post"}) %>
+
+# routes.rb
+post "posts/:id/destroy" => "post#destroy"
