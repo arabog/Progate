@@ -315,6 +315,7 @@ def index
           @posts = Post.all.order(created_at: :desc)
  end
 
+# N.B: Action is inside d controller
 
 
 
