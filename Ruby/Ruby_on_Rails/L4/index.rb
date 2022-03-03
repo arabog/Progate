@@ -198,3 +198,32 @@ def update
 
           redirect_to("/posts/index") 
 end
+
+# Creating the Delete Feature
+# The destroy action is responsible for the following:
+# ・Deleting the post
+# ・Redirecting to the Posts page
+
+# Route for the destroy Action
+# the route for the destroy action should be post instead 
+# of get. Be sure to also include the id of the post data 
+# in the URL like posts/:id/destroy so that you can 
+# identify the post you want to delete.
+
+post "posts/:id/destroy" => "posts#destroy"
+
+# get & post
+# Why should we use post for the destroy action even 
+# though it's not dealing with forms?
+
+# get: doesn't change d db(it only retrieves)
+
+# post: may change d db(depending on hw posted data is used)
+
+# We had used post for forms since they are often used 
+# to update the database.
+
+# posts_controller.rb
+def destory
+          redirect_to("/posts/index") 
+end
