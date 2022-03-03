@@ -82,5 +82,31 @@ end
 # The next step is adding a link to the Edit post page 
 # on the Post details page.
 
-# You've created the Edit post page, but there's no form for editing yet.
+# You've created the Edit post page, but there's no form 
+# for editing yet.
 
+# Preparing the Input Form
+# On the Edit post page, we want to make sure that the 
+# original post content will be the default value 
+
+# Preparing the Initial Value in the Form
+# With the <textarea> tag, you can set an initial value 
+# by putting it between the opening and closing tags like 
+# this: <textarea>initial value</textarea>.
+
+# Set the Post Content as the Initial Value of the Form
+# Let's set the content of the post we want to edit as the initial 
+# value of the form. In the edit action, retrieve the post data 
+# from the database using the same id as the id in the URL, 
+# and set the value of the content as the initial value.
+
+# route.rb
+get "posts/:id/edit" => "posts#edit"
+
+# posts_controller.rb
+def edit
+          @post = Post.find_by(id: params[:id])
+end
+
+# posts/edit.html.erb: initil value = post.content
+<textarea> <%= @post.content%> </textarea>
