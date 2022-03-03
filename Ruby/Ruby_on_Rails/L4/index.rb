@@ -22,3 +22,10 @@ post.save
 # value of the updated_at column will change to the time 
 # when the data was most recently updated.
 
+# Deleting a Post
+# To delete a post, you retrieve the post and use the 
+# destroy method to delete it from the database.
+
+rails console
+post = Post.find_by(id: 1)
+post.destroy
