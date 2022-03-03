@@ -110,3 +110,39 @@ end
 
 # posts/edit.html.erb: initil value = post.content
 <textarea> <%= @post.content%> </textarea>
+
+# Preparing to Save Edits
+# The update action is responsible for the following:
+# ・Saving the content
+# ・Redirecting to the Posts page
+
+# Preparing the update Action
+# Since the update action receives the value from 
+# the form, we need to change the routing to post 
+# instead of get. It also updates the post with a 
+# specific id, so make sure to include id in the URL. 
+# We'll redirect to the Posts page after editing, so 
+# we don't need a view.
+
+# routes.rb
+post "posts/:id/update" => "posts#update"
+
+# posts_controller.rb
+def update
+          redirect_to("/posts/index") #redirect to d posts pg
+end
+
+# Specifying the Destination of the Form
+# The data of the form needs to be sent to the update action 
+# in order to be saved to the database. Just like with the 
+# New post page, you can specify the destination using the 
+# form_tag method.
+
+posts/edit.html.erb
+# <%= form_tag("/posts/#{@post.id}/update") do %>
+          <textarea> <%= @post.content%> </textarea>
+
+          <input type="submit" value="Save" >
+# <% end %>
+
+# 
