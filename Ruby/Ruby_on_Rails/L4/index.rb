@@ -243,3 +243,24 @@ end
 
 # routes.rb
 post "posts/:id/destroy" => "post#destroy"
+
+# Creating the Delete Feature
+# We need to get the post from the database, then delete it.
+
+# post_controller.rb
+# Get d post
+@post = Post.find_by(id: params[:id])
+
+# Delete d post
+@post.destroy
+
+
+# dt is:
+def destroy
+          # Get the post with params[:id] as the id, then destroy it
+          @post = Post.find_by(id: params[:id])
+          
+          @post.destroy
+          
+          redirect_to("/posts/index")
+end
