@@ -29,3 +29,58 @@ post.save
 rails console
 post = Post.find_by(id: 1)
 post.destroy
+
+# Preparing the Edit Post Page
+# First, we need to prepare a page for editing posts. 
+# Do you remember what you need to create a new page?
+# Of course! The route, the action, and the view!
+
+
+# Creating the Edit Post Page
+# To distinguish which post to edit, the URL of the 
+# Edit post page should contain the id of the post 
+# to be edited. That means you need to include the 
+# id in the route like we did in the show action. 
+# In addition, let's create the edit action in the 
+# Posts controller and create edit.html.erb as the 
+# corresponding view.
+
+# routes.rb
+get "posts/:id/edit" => "posts#edit"    # include d id of d post to edit
+
+# posts_controller.rb
+class PostsController < ApplicationController
+          def edit
+          end
+end
+
+# Adding a Link to the Edit post Page
+# Let's add an Edit link in show.html.erb
+# For the id used in the link, use the id retrieved 
+# using the show action defined in the posts controller.
+
+# view
+# posts/show.html.erb
+# <%= link_to("Edit", "/posts/#{@post.id}/edit") %>
+
+# posts_controller.rb
+class PostsController < ApplicationController
+          def edit
+          end
+
+          def show
+                    @post = Post.find_by(id: params[:id])
+          end
+end
+
+# Note that the corresponding action should be the edit 
+# action of the Posts controller.
+
+# Next, add the action.
+# .../controllers/posts_controller.rb
+
+# The next step is adding a link to the Edit post page 
+# on the Post details page.
+
+# You've created the Edit post page, but there's no form for editing yet.
+
