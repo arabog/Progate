@@ -107,14 +107,78 @@ def update
           else 
                     # if post is not saved
                     redirect_to("/posts/#{@post.id}/edit")
+                    
           end
 end
 
+# Redisplaying the Content of Failed Post
+# We've been able to redirect back to the form, but it's 
+# annoying how the edited data disappears each time.
+
+# Why the Content of the Failed Post Disappears
+# This is because:
+# 1. When the update action fails, it redirects to the edit action.
+def update 
+          
+          else 
+                    # if post is not saved
+                    redirect_to("/posts/#{@post.id}/edit")
+                    
+          end
+end
+# 2. The edit action gets the unedited post from the database.
+def edit 
+          @post = Post.find_by(...)
+end
+# 3. The form's initial value is set using the unedited post sent 
+# from the edit action.
+
+# edit.html.erb
+<textarea>
+          # <%= @post.content %>
+</textarea>
 
 
+# Displaying the Content of the Failed Post
+# The @post of the update action contains the content of the 
+# failed post, so if we make this @post accessible in 
+# edit.html.erb, we'll be able to display it. Let's learn how 
+# to display edit.html.erb directly from the update action 
+# without going through the edit action.
 
+def update 
+          
+          @post = Post.find_by(params[:id])
 
+          @post.content = params[:content]
+          
+end
 
+# The render Method
+# You can use the render method to display views without 
+# going through another action as follows: 
+# render("folder_name/file_name"). When you use the 
+# render method, you can use the @variables defined in 
+# the action as they're in the view, unlike when you use 
+# the redirect_to method. This way, the @post variable 
+# will still have the failed post as the content.
+
+def update 
+          
+          @post = Post.find_by(params[:id])
+
+          @post.content = params[:content]
+   
+          render("posts/edit")
+end
+
+# Using the redirect_to and render method
+# It's easy to make mistakes in writing the redirect_to 
+# and render methods, so let's review them. When 
+# calling redirect_to, we set the redirect URL like 
+# redirect_to(URL). On the other hand, we call render 
+# by setting the view file to be rendered like 
+# render("folder_name/view_name").
 
 
 
