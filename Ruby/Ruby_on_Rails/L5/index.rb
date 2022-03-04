@@ -24,7 +24,7 @@
 # name and the details of the validation as arguments. By 
 # using {presence: true} as shown, we can check whether 
 # the value of the column exists or not.
-model/post.rb
+# model/post.rb
 class Post < ApplicationRecord 
           validates :column_name, {details of d validation}
 end
@@ -39,5 +39,25 @@ end
 # to save an empty post using the save method 
 # should fail.
 
+# Limiting the Length of Posts
+# Let us also use validation to limit the length of 
+# the posts to no more than 140 characters. 
 
+# Validating the Number of Characters
+# Validation can be used to check not only the 
+# existence of a value but the number of characters 
+# as well. As shown in the image, you can set the 
+# maximum number of characters using length 
+# and specifying {maximum: number}.
+class Post < ApplicationRecord 
+          validates :content, {length: {maximum: 140}}
+end
 
+# Specifying Multiple Contents to Validate
+# The list of validation rules, known as validators, is actually 
+# a hash. You can specify more than one by separating them 
+# with a comma
+
+class Post < ApplicationRecord 
+          validates :content, {presence: true, length: {maximum: 140}}
+end
