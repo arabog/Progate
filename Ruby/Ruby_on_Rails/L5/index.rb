@@ -61,3 +61,32 @@ end
 class Post < ApplicationRecord 
           validates :content, {presence: true, length: {maximum: 140}}
 end
+
+# Validations and the save Method
+# Now, let us try to redirect back to the input form again 
+# when the post is invalid
+# To do so, let us first learn that the save method will produce 
+# different results depending on the result of the validation.
+
+# Return Value of the save Method
+# The save method, which saves posts to the database, 
+# returns true if it succeeds and false if it fails the 
+# validation. Let's confirm that the save method returns 
+# a boolean value using the rails console.
+
+rails console
+post = Post.new
+post.save #false
+
+
+post.content = "Learning Rails is fun"
+post.save #true
+
+
+
+
+
+
+
+
+#Progate @progateEN @dev_careers #dev_careers
