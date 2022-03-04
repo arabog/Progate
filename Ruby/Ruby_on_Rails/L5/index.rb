@@ -82,6 +82,37 @@ post.save #false
 post.content = "Learning Rails is fun"
 post.save #true
 
+# Redirecting After Validations
+# Let us display the form again when post submission fails.
+# We will use the fact that the save method returns true 
+# when post submission succeeds, and false when fails.
+# Let us first work on the Edit post page.
+
+# Redirecting to Different Pages
+# When saving fails, we should redirect to the Edit post 
+# page again instead of the Posts page. We can use the 
+# save method as the condition, which returns values of 
+# true or false depending on the result of the validation.
+
+# In the update action,  use an if-else statement to redirect to:
+# ・The Posts page when saving succeeds.
+# ・ The Edit post page (URL: 
+
+# posts_controller.rb
+def update 
+          if @post.save
+                    # if post is saved
+                    redirect_to("/posts/index")
+
+          else 
+                    # if post is not saved
+                    redirect_to("/posts/#{@post.id}/edit")
+          end
+end
+
+
+
+
 
 
 
