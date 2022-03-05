@@ -203,11 +203,47 @@ post.errors.full_messages #Content can't be blank
 # Displaying Error Messages
 # Let's display error messages one by one using 
 # the each method above the form in edit.html.erb.
-post/edit.html.erb
+# post/edit.html.erb
 <% @post.errors.full_messages.each do |message| %>
           <%= message %>
-<% end %>
+# <% end %>
 
+# Displaying Success Messages
+# We will display these messages only once right 
+# after the post is saved.
+
+# Flash
+# The message displayed only once on a page is known 
+# as a flash. If you refresh the page or move to another 
+# page after the flash is displayed, the flash will disappear.
+
+# The flash Variable
+# Rails provides a special flash variable. By assigning 
+# a string to flash[:notice] in an action, you can use 
+# flash[:notice] in the views. Flashes are automatically 
+# removed after being displayed once. We'll add 
+# flash[:notice] to application.html.erb because it'll 
+# be used in many places.
+
+# posts_controller.rb
+def update
+          if @post.save
+                    flash[:notice] = "The message to display"
+end
+
+# layouts/application.html.erb
+<% if flash[:notice] %>
+          <div class="flash">
+                    <%= flash[:notice] %>
+          </div>
+# <% end %>
+
+# <!-- Show the message stored in flash[:notice] -->
+<% if  %>
+          <div class="flash">
+                    <%=  %>
+          </div>
+<% end %>
 
 
 
