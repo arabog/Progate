@@ -180,6 +180,38 @@ end
 # by setting the view file to be rendered like 
 # render("folder_name/view_name").
 
+# Displaying Error Messages
+# We should also let the users know what was 
+# wrong when the post is invalid. Let us display 
+# error messages
+
+# Getting Error Messages
+# If a post fails validation when calling the save 
+# method, Rails automatically generates error messages. 
+# The content of the error is stored in 
+# post.errors.full_messages as an array.
+
+rails console
+post = Post.new(content: "")
+# has an empty arr bf d save method fails
+post.errors.full_messages => [] 
+post.save #false
+
+post.errors.full_messages #Content can't be blank
+
+
+# Displaying Error Messages
+# Let's display error messages one by one using 
+# the each method above the form in edit.html.erb.
+post/edit.html.erb
+<% @post.errors.full_messages.each do |message| %>
+          <%= message %>
+<% end %>
+
+
+
+
+
 
 
 
