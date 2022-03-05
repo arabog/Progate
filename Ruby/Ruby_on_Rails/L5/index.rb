@@ -156,11 +156,6 @@ end
 # We've been able to redirect back to the form, but it's 
 # annoying how the edited data disappears each time.
 
-# edit.html.erb
-<textarea>
-          # <%= @post.content %>
-</textarea>
-
 
 # Why the Content of the Failed Post Disappears
 # This is because:
@@ -193,7 +188,12 @@ def edit
           @post = Post.find_by(id: params[:id])
 end
         
+# edit.html.erb
+<div class="form-body">
+        <textarea> <%= @post.content %> <textarea>
 
+        <input type="submit" value="Save">
+</div>
 
 # Displaying the Content of the Failed Post
 # The @post of the update action contains the content of the 
@@ -227,6 +227,25 @@ def update
    
           render("posts/edit")
 end
+
+# edit.html.erb
+<h1 class="form-heading">Edit a post</h1>
+<%= form_tag("/posts/#{@post.id}/update") do %>
+          <div class="form">
+                    <div class="form-body">
+                              <% @post.errors.full_messages.each do |message| %>
+                                        <div class="form-error">
+                                                  <%= message %>
+                                        </div>
+                              <% end %>
+                              
+                              <textarea name="content"><%= @post.content %></textarea>
+                              
+                              <input type="submit" value="Save">
+                    </div>
+          </div>
+# <% end %>
+
 
 # Using the redirect_to and render method
 # It's easy to make mistakes in writing the redirect_to 
