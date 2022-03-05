@@ -245,7 +245,7 @@ post "posts/create" => "posts#create"
 
 # posts_controller.rb
 def create
-         redirect_to("/posts/index")
+          redirect_to("/posts/index")
 end
 
 # Saving the Post

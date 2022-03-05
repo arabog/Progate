@@ -224,7 +224,7 @@ post "posts/:id/destroy" => "posts#destroy"
 # to update the database.
 
 # posts_controller.rb
-def destory
+def destroy
           redirect_to("/posts/index") 
 end
 

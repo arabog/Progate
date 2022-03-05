@@ -62,6 +62,47 @@ class Post < ApplicationRecord
           validates :content, {presence: true, length: {maximum: 140}}
 end
 
+
+# Next you need to make it possible to save the content of posts in 
+# the database by pressing the "Post" button on the New post page.
+
+# posts_controller.rb
+def create
+          @post = Post.new(content: params[:content])
+
+          if @post.save
+                    flash[:notice] = "Post successfully created"
+                    redirect_to("/posts/index")
+          else
+                    render("posts/new")
+          end
+end
+        
+def new
+          @post = Post.new
+end
+
+
+# new.html.erb
+<%= form_tag("/posts/create") do %>
+          <div class="form">
+                    <div class="form-body">
+                              <% @post.errors.full_messages.each do |message| %>
+                                        <div class="form-error">
+                                                  <%= message %>
+                                        </div>
+                              <% end %>
+
+                              <textarea name="content"><%= @post.content %></textarea>
+                              <input type="submit" value="Post">
+                    </div>
+          </div>
+# <%s end %>
+
+# routes.rb
+post "posts/create" => "posts#create"
+
+
 # Validations and the save Method
 # Now, let us try to redirect back to the input form again 
 # when the post is invalid
@@ -115,6 +156,12 @@ end
 # We've been able to redirect back to the form, but it's 
 # annoying how the edited data disappears each time.
 
+# edit.html.erb
+<textarea>
+          # <%= @post.content %>
+</textarea>
+
+
 # Why the Content of the Failed Post Disappears
 # This is because:
 # 1. When the update action fails, it redirects to the edit action.
@@ -133,10 +180,19 @@ end
 # 3. The form's initial value is set using the unedited post sent 
 # from the edit action.
 
-# edit.html.erb
-<textarea>
-          # <%= @post.content %>
-</textarea>
+# show.html.erb
+<div class="post-menus">
+          <%= link_to("Edit", "/posts/#{@post.id}/edit") %>
+</div>
+
+# route.rb
+get "posts/:id" => "posts#show"
+
+# ctrller.erb
+def edit
+          @post = Post.find_by(id: params[:id])
+end
+        
 
 
 # Displaying the Content of the Failed Post
@@ -245,6 +301,19 @@ end
           </div>
 # <% end %>
 
+# route.rb
+def create
+          @post = Post.new(content: params[:content])
+
+          if @post.save
+                    flash[:notice] = "Post successfully created"
+                    
+                    redirect_to("/posts/index")
+          else
+                    render("posts/new")
+          end
+end
+
 # Displaying Messages after Creating/Deleting a Post
 
 # Validations on the New Post Page
@@ -299,8 +368,6 @@ end
 def new 
           @post = Post.new
 end
-
-posts/new.html.erb
 
 
 # posts/new.html.erb
