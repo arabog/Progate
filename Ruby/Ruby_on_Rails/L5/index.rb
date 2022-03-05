@@ -265,8 +265,63 @@ def create
 
 end
 
+# Displaying Error Messages and the Failed Post
+# Next, let us display error messages when the post is 
+# invalid. We should also keep the failed post and use 
+# it as the default value of the form.
+
+# Displaying Error Messages and the Post Content
+# The way to display the error messages and the content 
+# of the failed post is the same as what we did for the 
+# Edit post feature. 
+
+def create
+          @post = Post.new(content: params[:content])
+          # Redirect to the "Posts" page if the @post is valid, and render the "New post" page if it's invalid
+          if @post.save
+                    flash[:notice] = "Post successfully created"
+                    redirect_to("/posts/index")
+          else
+                    render("posts/new")
+          end
+
+          @post.save
+
+end
+
+# Defining @post in the new Action
+# Since new.html.erb will also be displayed via the new 
+# action (localhost:3000/posts/new), an error will occur 
+# unless we also define the @post variable there. You 
+# can solve this by assigning Post.new (a blank Post 
+# instance), to @post
+
+def new 
+          @post = Post.new
+end
+
+posts/new.html.erb
 
 
+# posts/new.html.erb
+<% @post.errors.full_messages.each do |message| %>
+          <div class="form-error"
+                    <%= message %>
+          </div>
+# <% end %>
+
+<textarea> <%= @post.content %> </textarea>
+
+# Since new.html.erb is also displayed via the new action, 
+# the @post variable has to be defined there too.
+# Unless we do so, the @post variable would be 
+# undefined, and an error will occur.
+
+# posts_controller.rb
+def new
+          # Declare @post variable, and assign it the new instance of Post created using the "new" method
+          @post = Post.new
+end
 
 
 #Progate @progateEN @dev_careers #dev_careers
