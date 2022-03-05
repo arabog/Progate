@@ -413,6 +413,11 @@ end
 # Success Messages for Creating/Deleting a Post
 # Let's also display a flash message when creating 
 # or deleting a post is successful!
+<div class="post-menus">
+          <%= link_to("Edit", "/posts/#{@post.id}/edit") %>
+
+          <%= link_to("Delete", "/posts/#{@post.id}/destroy", {method: "post"}) %>
+</div>
 
 def update
           @post = Post.find_by(id: params[:id])
@@ -427,6 +432,8 @@ def update
           end
 end
 
+post "posts/:id/update" => "posts#update"
+
 
 def destroy
           @post = Post.find_by(id: params[:id])
@@ -437,5 +444,8 @@ def destroy
           flash[:notice] = "Post successfully deleted"
           redirect_to("/posts/index")
 end
+
+
+post "posts/:id/destroy" => "posts#destroy"
 
 #Progate @progateEN @dev_careers #dev_careers
