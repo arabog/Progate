@@ -324,4 +324,32 @@ def new
 end
 
 
+# Success Messages for Creating/Deleting a Post
+# Let's also display a flash message when creating 
+# or deleting a post is successful!
+
+def update
+          @post = Post.find_by(id: params[:id])
+
+          @post.content = params[:content]
+
+          if @post.save
+                    flash[:notice] = "Post successfully edited"
+                    redirect_to("/posts/index")
+          else
+                    render("posts/edit")
+          end
+end
+
+
+def destroy
+          @post = Post.find_by(id: params[:id])
+
+          @post.destroy
+
+          # Store the message in flash[:notice]
+          flash[:notice] = "Post successfully deleted"
+          redirect_to("/posts/index")
+end
+
 #Progate @progateEN @dev_careers #dev_careers
