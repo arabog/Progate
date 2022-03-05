@@ -243,10 +243,27 @@ end
           <div class="flash">
                     <%=  %>
           </div>
-<% end %>
+# <% end %>
 
+# Displaying Messages after Creating/Deleting a Post
 
+# Validations on the New Post Page
+# Let us start with the New post page. If the validation fails, 
+# we will render the same page again.
 
+def create
+          @post = Post.new(content: params[:content])
+          # Redirect to the "Posts" page if the @post is valid, and render the "New post" page if it's invalid
+          if @post.save
+                    flash[:notice] = "Post successfully created"
+                    redirect_to("/posts/index")
+          else
+                    render("posts/new")
+          end
+
+          @post.save
+
+end
 
 
 
