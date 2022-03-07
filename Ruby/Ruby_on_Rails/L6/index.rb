@@ -273,10 +273,10 @@ We should also do the following when validation fails:
 <%= form_tag("/users/create") do %>
 <div class="form-body">
           <p>Name</p>
-          <input name="name" value="Ken the Ninja">
-          
+          <input name="name" value="<%= @user.name %>">
+                              
           <p>Email</p>
-          <input name="email" value="ken@prog.com">
+          <input name="email" value="<%= user.email %>">
           
           <input type="submit" value="Sign up">
 </div>
@@ -317,4 +317,60 @@ def create
                    
           end
 end
+
+
+# Editing the User
+# Let us also add the edit and update actions so that the user's data can be edited!
+
+
+Remember to follow these steps:
+Step 1: Create the Edit account page
+Step 2: Save the data to the database
+Step 3: Display success/error messages
+
+# Edit Account Page
+# Let's include the id of the user being edited in the URL of the Edit 
+# account page like localhost:3000/users/1/edit, and set the initial 
+# value on the edit account form. Also, create a link to the Edit 
+# account page on the User details page.
+
+get "users/:id/edit" => "users#edit"
+
+def edit
+          @user = User.find_by(id: params[:id])
+end
+
+# show.html.erb
+<div class="main user-show">
+          <div class="container">
+                    <div class="user">
+                              <h2><%= @user.name %></h2>
+
+                              <p><%= @user.email %></p>
+
+                              <%= link_to("Edit", "/users/#{@user.id}/edit") %>
+
+                    </div>
+          </div>
+</div>
+
+# edit.html
+<div class="main users-edit">
+          <div class="container">
+                    <div class="form-heading">Edit Account</div>
+                              <div class="form users-form">
+                                        <div class="form-body">
+                                                  <p>Name</p>
+                                                  <input value="<%= @user.name %>">
+
+                                                  <p>Email</p>
+                                                  <input value="<%= @user.email %>" >
+
+                                                  <input type="submit" value="Save">
+                                        </div>
+                              </div>
+                    </div>
+          </div>
+</div>
+
 
