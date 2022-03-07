@@ -86,7 +86,7 @@ end
 
 rails g controller users index
 
-rails db:migrate
+rails db:migraterils 
 
 # users_controller.rb
 class UsersController < ApplicationController
@@ -115,3 +115,32 @@ end
 
 # route.rb
 get "users/index" => "users#index"
+
+# Creating the User Details Page
+# Let's include the id of the user in the URL of the User details 
+# page like localhost:3000/users/1. Also, make sure that the user's 
+# name on the Users page is a link to the User details page.
+
+# users_controller.rb
+def show
+          @user = User.find_by(id: params[:id])
+end
+
+# show.html.erb
+<div class="main user-show">
+          <div class="container">
+                    <div class="user">
+                              # <!-- Display the @user's name -->
+                              <h2><%= @user.name %></h2>
+
+                              # <!-- Display the @user's email -->
+                              <p><%=@user.email %></p>
+                    </div>
+          </div>
+</div>
+
+# route.rb
+get "users/:id" => "users#show"
+
+
+# N.B: run rails db:migrate again
