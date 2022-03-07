@@ -74,3 +74,44 @@ class User < ApplicationRecord
           validates :email, {presence: true, uniqueness: true}
           
 end
+
+# Creating the Users Features
+# Creating the Users Page Users Page
+# Let's create the Users controller and the index action for the 
+# Users page. All users stored in the database are displayed here. 
+# Let's also add a link to the Users page in the header.
+
+# Using the rails g controller command, create a new controller named 
+# users with the index action for the Users page.
+
+rails g controller users index
+
+rails db:migrate
+
+# users_controller.rb
+class UsersController < ApplicationController
+          def index
+                    @users = User.all
+          end
+end
+
+
+# view/users/index.html.erb 
+<div class="main users-index">
+          <div class="container">
+                    <h1 class="users-heading">All Users</h1>
+                    # <!-- Add an each method inside <% %> -->
+                    # <%@users.each do |user| %>
+                              <div class="users-index-item">
+                                        <div class="user-right">
+                                                  # <!-- Display the user's name -->
+                                                  # <%= user.name %>
+                                        </div>
+                              </div>
+                              # <!-- Add an end statement -->
+                    # <% end %>
+          </div>
+</div>
+
+# route.rb
+get "users/index" => "users#index"
