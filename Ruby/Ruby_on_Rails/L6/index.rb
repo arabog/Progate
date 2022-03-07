@@ -37,3 +37,40 @@ rails console
 user = User.new(name: "Ken the Ninja", email: "ken@prog.com")
 
 user.save
+
+# Adding Validations
+# We have successfully created a user. But right now, users without a 
+# name or email can be created. Let us prevent this by adding validations 
+
+# We can also display error messages by adding validations.
+# In addition, we should add a validation to prevent users from 
+# having the same email.
+
+# Checking the Uniqueness of a Value
+# Let's add a validation to check for a "duplicate email" so that 
+# new users can't register with an email already stored in the 
+# database. You can validate the uniqueness with uniqueness: true
+
+models/user.rb
+class User < ApplicationRecord
+          validates :email, {uniqueness: true}
+end
+
+# Set 2 validations on the email column to prevent the following:
+# ・An empty value
+# ・A duplicate email
+# E.g:
+user1 = User.new(name: "Master Wooly", email: "master@prog-8.com")
+user1.save
+
+user2 = User.new(name: "Master", email: "master@prog-8.com")
+user2.save
+
+class User < ApplicationRecord
+          # Validate that the name column is not empty
+          validates :name, {presence: true}
+          
+          # Validate that the email column is unique and not empty
+          validates :email, {presence: true, uniqueness: true}
+          
+end
