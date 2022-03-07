@@ -25,3 +25,15 @@ rails db:migrate    #applies d changes to d db
 # Using the rails db:migrate command, reflect 
 # the contents of the migration file to the database. 
 
+# Creating a User
+# Now that we have the users table, let us actually save a user to the 
+# database. We will try it out using rails console.
+
+# Recall that we needed to do the following to save data to the database:
+# 1. Create an instance of the User model using the new method
+# 2. Save it to the users table using the save method
+
+rails console
+user = User.new(name: "Ken the Ninja", email: "ken@prog.com")
+
+user.save
