@@ -144,3 +144,50 @@ get "users/:id" => "users#show"
 
 
 # N.B: run rails db:migrate again
+
+# Creating the Sign up Feature
+You will need to work on the following:
+Step 1: Creating the Sign up page
+Step 2: Saving the users
+Step 3: Displaying success/error messages
+
+# How to Create a Form
+# A single line form can be created using the <input> tag. 
+# Note that the <input> tag doesn't need a closing tag </input>.
+
+
+
+For the Sign up page, we need to prepare the following :
+1. Route
+2. Action
+3. View
+
+# application.html.erb
+<li> <%= link_to("Signup", "/signup") %> </li>
+
+
+# new.html.erb
+<div class="main users-new">
+          <div class="container">
+                    <div class="form-heading">Sign up</div>
+                              <div class="form users-form">
+                                        <div class="form-body">
+                                                  <p>Name</p>
+                                                  <input>
+                                                  
+                                                  <p>Email</p>
+                                                  <input>
+                                                  
+                                                  <input type="submit" value="Sign up">
+                                        </div>
+                              </div>
+                    </div>
+          </div>
+</div>
+
+get "signup" => "users#new"
+
+def new
+    
+end
+
