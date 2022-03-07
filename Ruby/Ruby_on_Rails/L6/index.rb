@@ -146,10 +146,10 @@ get "users/:id" => "users#show"
 # N.B: run rails db:migrate again
 
 # Creating the Sign up Feature
-You will need to work on the following:
-Step 1: Creating the Sign up page
-Step 2: Saving the users
-Step 3: Displaying success/error messages
+# You will need to work on the following:
+# Step 1: Creating the Sign up page
+# Step 2: Saving the users
+# Step 3: Displaying success/error messages
 
 # How to Create a Form
 # A single line form can be created using the <input> tag. 
@@ -157,10 +157,10 @@ Step 3: Displaying success/error messages
 
 
 
-For the Sign up page, we need to prepare the following :
-1. Route
-2. Action
-3. View
+# For the Sign up page, we need to prepare the following :
+# 1. Route
+# 2. Action
+# 3. View
 
 # application.html.erb
 <li> <%= link_to("Signup", "/signup") %> </li>
@@ -188,6 +188,55 @@ For the Sign up page, we need to prepare the following :
 get "signup" => "users#new"
 
 def new
-    
+
 end
 
+
+# Saving the User
+# We will send the data to /users/create, save the data, then redirect 
+# to the User details page.
+
+# name Attribute
+# You need to specify the name attribute for both <input> tags to 
+# send the value entered in the form.
+
+<%= form_tag("/users/create") do %>
+          <div class="form-body">
+                    <p>Name</p>
+                    <input name="name">
+                    
+                    <p>Email</p>
+                    <input name="email">
+                    
+                    <input type="submit" value="Sign up">
+          </div>
+# <% end %>
+
+post "users/create" => "users#create"
+
+def create
+          @user = User.new(name: params[:name], email: params[:email])
+
+          @user.save
+
+          redirect_to("users/#{@user.id}")
+end
+
+
+# Completing the Sign up Feature
+We should also do the following when validation fails:
+          1. Render the form again
+          2. Display error messages
+          3. Keep the invalid data
+
+<%= form_tag("/users/create") do %>
+          <div class="form-body">
+                    <p>Name</p>
+                    <input name="name" value="Ken the Ninja">
+                    
+                    <p>Email</p>
+                    <input name="email" value="ken@prog.com">
+                    
+                    <input type="submit" value="Sign up">
+          </div>
+# <% end %>
