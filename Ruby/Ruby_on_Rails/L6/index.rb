@@ -374,3 +374,42 @@ end
 </div>
 
 
+# Updating the Changes
+# The Edit account page is looking good. Finish the following:
+# Step 2: Save the data to the database
+# Step 3: Display success/error messages 
+
+def update
+          @user = User.find_by(id: params[:id])
+          @user.name = params[:name]
+          @user.email = params[:email]
+          
+          if @user.save
+                    flash[:notice] = "Your account has been updated successfully"
+                    
+                    redirect_to("/users/#{@user.id}")
+          else 
+                    render("users/edit")
+          end
+end
+
+post "users/:id/update" =>"users#update"
+
+<div class="form-body">
+          <% @user.errors.full_messages.each do |message| %>
+                    <div class="form-error">
+                              <%= message %>
+                    </div>
+          <% end %>
+
+          <%= form_tag("/users/#{@user.id}/update") do %>
+                    <p>Name</p>
+                    <input name="name" value="<%= @user.name %>">
+
+                    <p>Email</p>
+                    <input name="email" value="<%= @user.email %>">
+                    
+                    <input type="submit" value="Save">
+          <% end %>
+</div>
+
