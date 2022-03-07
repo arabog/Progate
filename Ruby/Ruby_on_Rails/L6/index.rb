@@ -219,7 +219,7 @@ def create
 
           @user.save
 
-          redirect_to("users/#{@user.id}")
+          redirect_to("/users/#{@user.id}")
 end
 
 
@@ -240,3 +240,81 @@ We should also do the following when validation fails:
                     <input type="submit" value="Sign up">
           </div>
 # <% end %>
+
+# Initial Value of the Form
+# In the <input> tag, the value of the value attribute becomes 
+# the initial value. If you specify a value for the value attribute, 
+# you can display the form with the value inputted from the beginning
+
+# Embedding Ruby in the value Attribute
+# Using <%= %> you can embed Ruby code inside " " of value=" " 
+# to set the initial value of the <input> tag with Ruby code.
+
+<%= form_tag("/users/create") do %>
+          <div class="form-body">
+                    <p>Name</p>
+                    <input name="name" value="<%= @user.name %>">
+                    
+                    <p>Email</p>
+                    <input name="email" value="<%= user.email %>">
+                    
+                    <input type="submit" value="Sign up">
+          </div>
+# <% end %>
+
+
+# Adding Success or Error msg
+<% @user.errors.full_messages.each do |message| %>
+          <div class="form-error">
+                    <%= message %>
+          </div>
+<% end %>
+
+<%= form_tag("/users/create") do %>
+<div class="form-body">
+          <p>Name</p>
+          <input name="name" value="Ken the Ninja">
+          
+          <p>Email</p>
+          <input name="email" value="ken@prog.com">
+          
+          <input type="submit" value="Sign up">
+</div>
+# <% end %>
+
+def create
+          @user = User.new(name: params[:name], email: params[:email])
+
+          # Redirect to the Users page if the @user is valid, and render the New user page if it isn't
+          if @user.save
+                    flash[:notice] = "You have signed up successfully"
+
+                    redirect_to("/users/#{@user.id}")
+          else
+                    render("/users/new")
+                    # get "signup" => "users#new"
+                    # def new @user = User.new end
+          end
+end
+
+# At this point, you should encounter an error when trying to 
+# access the Sign up page. Let's fix the error.
+
+def new
+          @user = User.new          
+end
+
+  
+def create
+          @user = User.new(name: params[:name], email: params[:email])
+
+          if @user.save
+                    flash[:notice] = "You have signed up successfully"
+                    redirect_to("/users/#{@user.id}")
+          else
+                    render("/users/new")          #notice where ds is redirected to
+                    # it's supposed to go to /users/new but went to users/create 
+                   
+          end
+end
+
