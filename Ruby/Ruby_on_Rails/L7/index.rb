@@ -195,4 +195,77 @@ File.write("public/sample.txt", "Hello World")
 # sample.txt
 Hello World
 
+# Saving the Sent Image
+# Using the way to create files you learned earlier, 
+# let us save the image sent from the form.
+# The update action should:
+# ・Save the file in the database
+# ・Create the image in the public folder
+
+# Saving the Filename to the Database
+# First, let's see how to save the filename to the database.
+# You can overwrite the value of @user.image_name in the 
+# same way as updating the name or the email. Let's set the 
+# filename to the user's id like 1.jpg
+
+# users_controller.rb
+def update
+          @user = User.find_by(id: params[:id])
+          @user.name = params[:name]
+          @user.email = params[:email]
+          @user.image_name = "#{@user.id}.jpg"
+
+          if user.save
+          end
+end
+
+
+# Receiving the Image
+# Next, let's see how to save the image in the public 
+# folder. Just like other data, you can get the image 
+# with params[:image]. params[:image] contains 
+# he information of the image file. Let's use that to 
+# create an image in the public folder.
+
+<input name="image" >
+
+# users_controller.rb
+def update
+          @user.image_name = "#{@user.id}.jpg"
+
+          image = params[:image]
+end
+
+# Saving the Image
+# To save an image, you need to create an image 
+# file using the sent data. We'll use File.binwrite 
+# instead of File.write because image data is a 
+# special type of text. Also, the image data can be 
+# retrieved by using read method for the variable image
+
+def update
+          @user.image_name = "#{@user.id}.jpg"
+          
+          image = params[:image]
+
+          File.binwrite("public/user_images/#{@user.image_name}", image.read)
+end
+
+# Checking If an Image Exists
+# Let's execute the process of saving images only when the 
+# image data has been sent. You can do this by adding an 
+# if statement to validate
+
+def update
+          if params[:image]   #checks if an img has been sent
+
+          @user.image_name = "#{@user.id}.jpg"
+          
+          image = params[:image]
+
+          File.binwrite("public/user_images/#{@user.image_name}", image.read)
+end
+
+# In the update action, overwrite the value of the image_name column 
+# of the User instance. We'll name the file using the user's id, like 1.jpg.
 
