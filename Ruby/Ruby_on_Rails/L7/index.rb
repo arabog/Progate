@@ -169,3 +169,30 @@ Sending Images
 # <% end %>
 
 
+# Creating a File
+# We have now finished setting up the form to send the 
+# uploaded image. Next, in the update action, we will 
+# save the image in the public folder, and save the name 
+# of the file in the database.
+
+# In order to create images in the public folder, we must 
+# learn how to create a file.
+
+# Images are just files containing a series of characters.
+# So, they can be treated the same way as other text files.
+# We will start by learning how to use Ruby code to 
+# create and save a simple text file.
+
+# Creating a File using Ruby Code
+# To handle files with Ruby code, you can use the File class 
+# which is provided by Ruby by default. The write method of 
+# the File class creates a file. You can use it like: 
+# File.write(file_location, file_content)
+
+rails console
+File.write("public/sample.txt", "Hello World")
+
+# sample.txt
+Hello World
+
+
