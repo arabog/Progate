@@ -131,3 +131,41 @@ end
 # data in @users to the user variable one by one and display 
 # each user's profile image.
 
+# users/index.html.erb
+# <% @users.each do |user| %>
+          <img src="<%= "/user_images/#{user.image_name}" %>" >
+
+# Uploading Images
+
+Sending Images
+# Select Image Button
+# By adding type="file" to the <input> tag, you can display a 
+# button for selecting an image file. Also, let's set the name 
+# attribute with the value "image".
+
+<p> Image </p>
+<input name="image" type="file" >
+
+# multipart : true
+# You need to add {multipart: true} to the form_tag because 
+# sending an image is a special case. You don't need to understand 
+# he details now. Just remember that {multipart: true} is necessary 
+# when sending an image.
+
+# <%= form_tag("......", {multipart: true}) do %>
+          
+# edit.html.erb
+<%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
+          <p>Name</p>
+          <input name="name" value="<%= @user.name %>">
+
+          <p>Image</p>
+          <input name="image" type="file" >
+
+          <p>Email</p>
+          <input name="email" value="<%= @user.email %>">
+
+          <input type="submit" value="Save">
+# <% end %>
+
+
