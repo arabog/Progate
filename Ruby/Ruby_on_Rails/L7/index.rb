@@ -72,3 +72,41 @@ class AddImageNameToUsers < ActiveRecord::Migration[5.0]
           end
 end
 
+# Setting the Default Image
+# We've prepared default_user.jpg in the public/user_images folder to 
+# use as the default image. Let's save the name of this image file to the 
+# image_name column when a new user signs up.
+
+# Saving the Default Image When a User Signs Up
+# When a user signs up, we'll set the value of the image_name column to
+# default_user.jpg. You can add image_name as an argument of the new 
+# method where in the create action.
+
+# users_controller.rb
+def create
+          @user = User.new(
+                    name: params[:name],
+                    email: params[:email],
+                    image_name: "default_user.jpg"
+          )
+
+          if @user.save
+          end
+end
+
+# users_controllers.rb
+def create
+          @user = User.new(
+                    name: params[:name],
+                    email: params[:email],
+                    # Add an argument to set the "image_name"
+                    image_name: "default_user.jpg"
+          )
+
+          if @user.save
+                    flash[:notice] = "You have signed up successfully"
+                    redirect_to("/users/#{@user.id}")
+          else
+                    render("users/new")
+          end
+end
