@@ -110,3 +110,24 @@ def create
                     render("users/new")
           end
 end
+
+# Displaying the Profile Images
+# At the moment we can only display the default image in d db, 
+# but let us go ahead and display it on the Users page and the User 
+# details page.
+
+# Displaying the Image on the User Details Page
+# You can use the HTML <img> tag to display the profile images. 
+# Since the image will be saved in the public/user_images folder, 
+# the value of the src attribute should be /user_images/file_name. 
+# Notice that we need to enclose Ruby code in <%= %>.
+
+# users/show.html.erb
+<img src="<%= "/user_images/#{@user.image_name}" %>" >
+
+# Displaying the Users Page
+# To display all the profile images on the Users page, the each 
+# method can be used. By using each, we can assign each user 
+# data in @users to the user variable one by one and display 
+# each user's profile image.
+
