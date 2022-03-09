@@ -13,3 +13,28 @@
 # 3. Show name of d current user
 # 4. Limit access for users who r not logged In
 # 5. Prevent editing accounts of other users
+
+# Creating the Login Feature
+# The Flow of Logging in
+# To log in, we send information such as a user's email 
+# and password from the Login page to Rails(database). 
+# It identifies the current user based on the information 
+# received and makes the user status "logged in". 
+
+# Creating the Login Page
+# Let's add the routes, actions, and views to create the Login page.
+
+get "login" => "users#login_form"
+
+def login_form
+end
+
+# login_form.html.erb
+
+# Adding a Form for Password
+# Let's add an input field for password in login_form.html.erb. If 
+# you set the type attribute of the <input> tag to password, it 
+# becomes an input specifically for passwords in which the text is hidden
+
+<input type="password" >
+
