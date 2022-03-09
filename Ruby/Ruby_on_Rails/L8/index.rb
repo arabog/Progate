@@ -38,3 +38,44 @@ end
 
 <input type="password" >
 
+# Adding the Password Column
+# we have to add a password column to the users table in the database.
+
+# Adding the Password Column
+# First, let's create a migration file with the name add_password_to_users 
+# using rails g migration. Change the content of  the migration file  
+# by running rails db:migrate
+
+rails g migration add_password_to_users
+
+# add_password_to_users.rb
+class AddPasswordToUsers < ActiveRecord::Migration[5.0]
+          def change
+                    add_column :users, :password, :string
+          end
+end
+
+# apply changes to db
+rails db:migrate
+
+# Setting the Validation
+# Let's set the validation on the password column because the password 
+# value should always exist in the user's information. Validation that 
+# checks existence can be added using presence.
+
+validates :password, {presence: true}
+
+# model/user.rb
+class User < ApplicationRecord
+          validates :name, {presence: true}
+
+          validates :email, {presence: true, uniqueness: true}
+
+          validates :password, {presence: true}
+          
+end
+
+# Lastly, let's set a password for a user currently registered in the database.
+user = User.find_by(id: 1)
+user.password = "Ibadan"
+user.save

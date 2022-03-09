@@ -224,10 +224,10 @@ end
 
 
 # Completing the Sign up Feature
-We should also do the following when validation fails:
-          1. Render the form again
-          2. Display error messages
-          3. Keep the invalid data
+# We should also do the following when validation fails:
+#           1. Render the form again
+#           2. Display error messages
+#           3. Keep the invalid data
 
 <%= form_tag("/users/create") do %>
           <div class="form-body">
@@ -323,10 +323,10 @@ end
 # Let us also add the edit and update actions so that the user's data can be edited!
 
 
-Remember to follow these steps:
-Step 1: Create the Edit account page
-Step 2: Save the data to the database
-Step 3: Display success/error messages
+# Remember to follow these steps:
+# Step 1: Create the Edit account page
+# Step 2: Save the data to the database
+# Step 3: Display success/error messages
 
 # Edit Account Page
 # Let's include the id of the user being edited in the URL of the Edit 
