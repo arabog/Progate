@@ -692,3 +692,26 @@ before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
                     <% end %>
           </div>
 </header>
+
+# Restricting the Edit Account Page
+# Link to the Edit Account Page
+# Currently, just by logging in, a user can access the Edit 
+# account page for any other user from the User details 
+# page for that user.
+
+# First of all, we need to make it so that the link to the 
+# Edit account page only appears when a user is accessing 
+# their own User details page
+
+# Hiding the Edit Link
+# On the User details page, let's hide the link to the Edit 
+# account page unless it's the user's own page. As shown 
+# in the figure below, the link is displayed only when the 
+# id of @user is the same as that of @current_user.
+
+# users/show.html.erb
+<% if @user.id == @current_user.id %>
+          <%= link_to("Edit", "/users/#{@user.id}/edit") %>
+# <% end %>
+
+
