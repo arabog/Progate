@@ -645,9 +645,50 @@ class ApplicationController < ActionController::Base
           def authenticate_user
                     if @current_user == nil
                               flash[:notice] = "You must be logged in"
-                              
+
                               redirect_to("/login")
                     end
           end
           
 end
+
+# Pages That Can't Be Accessed by Logged in Users
+# Let us make some pages not accessible for a user who is logged in.
+
+# Pages like the Signup page or the Login page, for example, are not 
+# needed for a user who has logged in.
+# So, let us restrict user access to those pages after a log in.
+
+# forbid_login_user
+# Next, we'll define a method named forbid_login_user in the 
+# Application controller. This method redirects the user to the 
+# Posts page if the user is logged in. Let's use before_action to 
+# run the method and use only to specify the actions.
+
+def forbid_login_user
+          if @current_user
+                    flash[:notice] = "You are already logged in"
+
+                    redirect_to("/posts/index")
+          end
+end
+
+# home_controller.rb
+before_action :forbid_login_user, {only: [:top]}
+
+# users_controller.rb
+before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
+
+# application.html.erb
+# Delete the line<%= link_to("TweetApp", "/") %> and paste the below HTML:
+
+<header>
+          <div class="header-logo">
+                    # <!-- Remove the line below, then paste the new code -->
+                    <% if @current_user %>
+                              <%= link_to("TweetApp", "/posts/index") %>
+                    <% else %>
+                              <%= link_to("TweetApp", "/") %>
+                    <% end %>
+          </div>
+</header>
