@@ -160,3 +160,67 @@ def login
           end
 
 end
+
+#When the User Does Not Exist 
+# When an unregistered email or password is inputted, we already 
+# display the same page again.  Let us also add an error message 
+# and keep the form values.
+
+# Displaying the Error Message
+# Let's display an error message if there's no user associated with 
+# the email and password from the login form. You need to create 
+# this error message yourself because it's telling the result of the 
+# find_by method, unlike the error message for the validation.
+
+def login
+          if
+
+          else
+                    @error_message = "Invalid email/password combination"
+
+                    render("users/login_form")
+          end
+end
+
+# login_form.html.erb
+<% if @error_message %>
+          <div class="form-error">
+                    <%= @error_message %>
+          </div>
+# <% end %>
+
+# Setting the Default Values
+# Let's define the @email and @password 
+# variables with the values params[:email] and 
+# params[:password], to use as the default values 
+# of the form. Remember that you can use the value 
+# attribute to set the default value.
+
+def login
+          if
+
+          else
+                    @error_message = "Invalid email/password combination"
+
+                    @email = params[:email]
+
+                    @password = params[:password]
+
+                    render("users/login_form")
+          end
+end
+
+# login_form.html.erb
+<% if @error_message %>
+          <div class="form-error">
+                    <%= @error_message %>
+          </div>
+<% end %>
+
+<%= form_tag("/login") do %>
+          <p> Email </p>
+          <input name="email" value="<%= @email %>">
+
+          <p> Password </p>
+          <input name="password" type="password"  value="<%= @password %>" >
+# <% end %>
