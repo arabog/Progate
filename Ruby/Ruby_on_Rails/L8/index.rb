@@ -557,4 +557,97 @@ end
           end
 </ul>
 
-# 
+
+# Restricting Access
+# For example, users should not be able to create a new post 
+# without being logged in. Users can access some pages by directly 
+# entering the URLs even if they aren't logging in. Let's add code to 
+# redirect them to the Login page if @current_user is nil. We'll put 
+# this code in the Application controller and use the before_action 
+# because we want to use it in several actions.
+
+def new
+          if @current_user == nil
+                    flash[:notice] = "You must be logged in"
+
+                    redirect_to("/login")
+          end 
+end
+
+# Creating authenticate_user Method
+# We'll create a method named authenticate_user in the Application 
+# controller to redirect users to the Login page. Let's look at how to 
+# apply before_action to only certain actions of certain controllers 
+# because we don't want to apply this to all the actions.
+
+def authenticate_user
+          if @current_user == nil
+                    flash[:notice] = "You must be logged in"
+
+                    redirect_to("/login")
+          end 
+end
+
+# Running before_action in Specified Actions
+# As shown below, you can run a before_action only for specific 
+# actions by setting the names of actions in the only parameter. 
+# Also, the authenticate_user method can be used in all the 
+# controllers as they are inherited from the ApplicationController.
+
+# users_controller.rb
+before_action :authenticate_user, {only: {edit, update}}
+
+# application_controller.rb
+def authenticate_user
+end
+
+# posts_controller.rb
+class ApplicationController < ActionController::Base
+          before_action :set_current_user
+  
+          def set_current_user
+            @current_user = User.find_by(id: session[:user_id])
+          end
+
+          before_action :authenticate_user
+end
+
+# @current_user
+# Notice that @current_user is also used in the authenticate_user 
+# method. Variables defined using @ can be used in different methods 
+# after they're defined.
+
+# application_controller.rb
+def authenticate_user
+          def set_current_user
+                    @current_user = User.find_by(id: session[:user_id])
+          end
+
+          def authenticate_user
+                    if @current_user
+                    end
+          end
+end
+
+# Set the authenticate_user method as a before_action for 
+# all the index, show, edit, and update actions using only
+
+class ApplicationController < ActionController::Base
+          before_action :set_current_user
+          
+          def set_current_user
+                    @current_user = User.find_by(id: session[:user_id])
+          end
+          
+          before_action :authenticate_user, {only: {index, show, edit, update}}
+          
+          # Define the authenticate_user method
+          def authenticate_user
+                    if @current_user == nil
+                              flash[:notice] = "You must be logged in"
+                              
+                              redirect_to("/login")
+                    end
+          end
+          
+end
