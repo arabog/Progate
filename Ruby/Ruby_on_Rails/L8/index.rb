@@ -224,3 +224,42 @@ end
           <p> Password </p>
           <input name="password" type="password"  value="<%= @password %>" >
 # <% end %>
+
+# Retaining the User Information
+# After identifying the current user, we need to retain the user information.
+
+# session Variable
+# We use a special variable known as session to keep user information 
+# across different pages. The value assigned to session is saved in the 
+# browser (Internet Explorer, Google Chrome, etc). Rails can use this 
+# value to identify the logged in user.
+
+# Specifically, when storing a value with the session variable, you can 
+# use user_id as the key. When @user is found, you can keep the 
+# information of that user in the browser by storing @user.id in 
+# the session variable.
+
+session[:key] = value
+
+def login
+          @user = User.find_by()
+
+          if @user 
+                    session[:user_id] = @user.id
+          end
+end
+
+
+# Displaying the ID of the Current User
+# Let's display the id of the current user in the header to confirm that 
+# the value stored in session[:user_id] is kept across different pages.
+# Using session[:user_id], you can get the value of the session variable 
+# saved in the browser
+
+# application.html.erb
+<% if session[:user_id] %>
+          <li>
+                    Your ID is: <%= session[:user_id] %>
+          </li>
+# <% end %>
+
