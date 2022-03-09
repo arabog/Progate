@@ -116,3 +116,47 @@ end
 
 get "login" => "users#login_form"
 post "login" => "users#login"
+
+
+# Identifying the User
+# we are going to use the email and password sent 
+# from the form to identify the user.
+
+# Identifying the User Logging in
+# You can get the email and password inputted in the 
+# form with params. Let's get the user that matches the 
+# input values from the users table and assign it to the 
+# @user variable. You can use the find_by method with 
+# multiple conditions by separating the arguments with 
+# comma ,
+
+def login
+          @user = User.find_by(
+                              email: params[:email], 
+                              
+                              password: params[:password]
+                    )
+end
+
+# The Existence of the User
+# If there's a user that matches the email and 
+# password sent from the form, let's redirect the 
+# user to the Posts page, and display a flash message. 
+# If the user doesn't exist, let's display the Login page again.
+
+def login
+          @user = User.find_by(
+                              email: params[:email], 
+                              
+                              password: params[:password]
+                    )
+
+          if @user 
+                    flash[:notice] = "You have logged in successfully"
+
+                    redirect_to("/posts/index")
+          else 
+                    render("users/login_form")
+          end
+
+end
