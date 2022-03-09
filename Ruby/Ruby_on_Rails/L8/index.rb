@@ -358,3 +358,49 @@ end
                     <%= link_to("Log in", "/login") %>
           </li>
 # <% end %>
+
+# Logging in after Signing Up
+# Let us make the user logged in right after they have successfully 
+# signed up.
+
+
+# Saving the Password When Signing up
+# let's set the value of the password column at the time of sign up. 
+# We can do this by adding password as an argument of the new 
+# method in the create action.
+
+# new.html.erb
+<p> Password </p>
+
+<input name="password" type="password" value="<%= @user.password %>" >
+
+def create
+          @user = User.new (
+                    name: params[:name]
+                    email: params[:email]
+                    image_link: "default_user.jpg"
+                    password: params[:password]
+          )
+end
+
+# Logging in When Signing up
+# When sign up succeeds, we should log the user in automatically.
+# To do this, let's assign the id of the new user to session[:user_id] 
+# in the create action.
+
+def create
+          @user = User.new (
+                    name: params[:name]
+                    email: params[:email]
+                    image_link: "default_user.jpg"
+                    password: params[:password]
+          )
+
+          if @user.save
+                    session[:user_id] = @user.id
+
+                    flash[:notice] = "You have signed up successfully"
+                    
+                    redirect_to("/users/#{@user.id}")
+          end
+end
