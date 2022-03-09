@@ -404,3 +404,157 @@ def create
                     redirect_to("/users/#{@user.id}")
           end
 end
+
+# Displaying the User's Name
+# Using the value of session[:user_id], let's get the logged in 
+# user information from the database. We'll use the find_by 
+# method to retrieve the user whose id column value is equal 
+# to session[:user_id] from the users table and assign it to a 
+# variable named current_user. Also the user name to be 
+# displayed should be a link to the User Details page
+
+# applicatn.html.erb
+<%= current_user = User.find_by(id: session[:user_id]) %>
+
+<li>
+          <%= link_to(current_user.name, "/users/#{current_user.id}") %>
+</li>
+
+# Getting a User That Is Currently Logged In
+# Do I need to define the current_user variable in views?
+# So far, we've been defining variables in actions,
+
+# It is true that variables should be defined in actions, but this t
+# ime we need to do something a little different. by def it in view
+
+# Rewrite the condition of the if statement using current_user.
+
+# applicatn.html.erb
+<header>
+          <div class="header-logo">
+                    <%= link_to("TweetApp", "/") %>
+          </div>
+
+          <ul class="header-menus">
+                    # <!-- Declare the current_user variable and assign it the user gotten using session[:user_id] as the id -->
+                    <%= current_user = User.find_by(id: session[:user_id]) %>
+
+                    # <!-- Change the condition for the if statement -->
+                    <% if current_user %>
+                              <li>
+                                        <%= link_to(current_user.name, "/users/#{current_user.id}") %>
+                              </li>
+
+                              <li>
+                                        <%= link_to("Posts", "/posts/index") %>
+                              </li>
+
+                              <li>
+                                        <%= link_to("New post", "/posts/new") %>
+                              </li>
+
+                              <li>
+                                        <%= link_to("Users", "/users/index") %>
+                              </li>
+
+                              <li>
+                                        <%= link_to("Log out", "/logout", {method: :post}) %>
+                              </li>
+
+                              <% else %>
+
+                              <li>
+                                        <%= link_to("About", "/about") %>
+                              </li>
+
+                              <li>
+                                        <%= link_to("Sign up", "/signup") %>
+                              </li>
+
+                              <li>
+                                        <%= link_to("Log in", "/login") %>
+                              </li>
+                    <% end %>
+          </ul>
+</header>
+
+# Defining the Common Variable in Action
+# In the header, we defined the current_user variable, but it is 
+# better to define it in an action.  We will see how to do that, 
+# but first let us review how application.html.erb works.
+
+# How application.html.erb Works
+# Recall that the view file for each action is assigned to the 
+# <%= yield %> part of application.html.erb and displayed. 
+# Therefore, application.html.erb is called from all the actions.
+
+# Defining the Variable in Every Action
+# Since application.html.erb is called from all the actions, 
+# you would have to define @current_user in every action 
+# to use it in the view. But this is troublesome.
+
+def index
+          @current_user =User.find_by(id: session[:user_id])
+end
+
+def show
+          @current_user =User.find_by(id: session[:user_id])
+end
+
+def new
+          @current_user =User.find_by(id: session[:user_id])
+end
+
+# before_action
+# It's convenient to use before_action if you have a process 
+# that's common to all actions in a controller. By using 
+# before_action, the process that's set in before_action will 
+# always be executed whenever an action is called. This 
+# allows you to put the common process of all actions in 
+# one place.
+
+before_action
+
+def index
+          @current_user =User.find_by(id: session[:user_id])
+end
+
+def show
+          @current_user =User.find_by(id: session[:user_id])
+end
+
+def new
+          @current_user =User.find_by(id: session[:user_id])
+end
+
+# Application Controller
+# The code in the Application controller can be used in all 
+# controllers. Like shown below, if we define the 
+# :set_current_user method and set it as a before_action, 
+# @current_user will be defined in all the actions of all 
+# the controllers.
+
+# controller/application_controller.rb
+class ApplicationController < ActionController::Base
+          # Set the set_current_user method as a before_action
+          before_action :set_current_user
+          
+          # Define the set_current_user method
+          def set_current_user
+                    @current_user = User.find_by(id: session[:user_id])
+          end
+        
+end
+
+
+<ul class="header-menus">
+          <!-- Rewrite using @current_user -->
+          <% if @current_user %>
+                    <li>
+                              <!-- Rewrite using @current_user -->
+                              <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
+                    </li>
+          end
+</ul>
+
+# 
