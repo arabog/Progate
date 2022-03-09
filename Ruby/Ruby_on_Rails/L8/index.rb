@@ -263,3 +263,98 @@ end
           </li>
 # <% end %>
 
+# Creating the Logout Feature
+# Logout, on the other hand, will remove the user_id from the session variable.
+
+# Emptying session[:user_id] Value
+# In order to log out, you should make the value of session[:user_id] empty. 
+# You can do this by assigning nil to session[:user_id].
+
+def logout
+          session[:user_id] = nil
+end
+
+# Creating the logout Action
+# Let's prepare the logout action to implement the logout feature. 
+# Similar to login, the route should be post, not get. Let's also 
+# redirect to the Login page after logging out.
+
+post "logout" => "users#logout"
+
+def logout
+          session[:user_id] = nil
+
+          flash[:notice] = "You have logged out successfully"
+
+          redirect_to("/login")
+end
+
+# get and post
+# Even though we're not changing the database and 
+# there's no form_tag method, we should use post in 
+# the routes?
+
+# In addition to when you alter the database, you 
+# need to use post when you modify the value of 
+# the session variable.
+
+# Changing the Header
+# The link to the Login page is currently always 
+# displayed in the header, but it's unnecessary 
+# when you're already logged in. Let's decide 
+# whether or not to display this kind of link by 
+# using the fact that the value of session[:user_id] 
+# changes before and after log in.
+
+# application.html.erb
+<% if session[:user_id] %>
+          <li>
+                    <%= session[:user_id] %>
+          </li>
+
+<% else %>
+          <li>
+                    <%= link_to("...", "/about") %>
+          </li>
+
+# <% end %>
+
+# useer logged in
+<% if session[:user_id] %>
+          <li>
+                    Your ID is: <%= session[:user_id] %>
+          </li>
+
+          <li>
+                    <%= link_to("Posts", "/posts/index") %>
+          </li>
+
+          <li>
+                    <%= link_to("New post", "/posts/new") %>
+          </li>
+
+          <li>
+                    <%= link_to("Users", "/users/index") %>
+          </li>
+
+          <li>
+          #   <!-- Add a link to the "logout" action -->
+                    <%= link_to("Log out", "/logout", {method: :post}) %>
+          <li>
+                    
+
+# <% else %>
+
+          # user logout
+          <li>
+                    <%= link_to("About", "/about") %>
+          </li>
+
+          <li>
+                    <%= link_to("Sign up", "/signup") %>
+          </li>
+          
+          <li>
+                    <%= link_to("Log in", "/login") %>
+          </li>
+# <% end %>
