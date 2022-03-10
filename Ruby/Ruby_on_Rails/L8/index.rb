@@ -595,21 +595,32 @@ end
 # controllers as they are inherited from the ApplicationController.
 
 # users_controller.rb
-before_action :authenticate_user, {only: {edit, update}}
-
-# application_controller.rb
-def authenticate_user
+class UsersController < ApplicationController
+          # Set the authenticate_user method as a before_action
+          before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
 end
 
 # posts_controller.rb
+class PostsController < ApplicationController
+          before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
+end
+
+
+# appliction_controller.rb
 class ApplicationController < ActionController::Base
           before_action :set_current_user
-  
+
           def set_current_user
-            @current_user = User.find_by(id: session[:user_id])
+                    @current_user = User.find_by(id: session[:user_id])
           end
 
-          before_action :authenticate_user
+          def authenticate_user
+                    if @current_user == nil
+                              flash[:notice] = "You must be logged in"
+
+                              redirect_to("/login")
+                    end
+          end
 end
 
 # @current_user
@@ -632,6 +643,13 @@ end
 # Set the authenticate_user method as a before_action for 
 # all the index, show, edit, and update actions using only
 
+# users_controllser.rb
+before_action :authenticate_user, {only: {index, show, edit, update}}
+
+# posts_controllser.rb
+before_action :authenticate_user, {only: {index, show, edit, update}}
+
+# applicatn_controller.rb
 class ApplicationController < ActionController::Base
           before_action :set_current_user
           
@@ -639,7 +657,6 @@ class ApplicationController < ActionController::Base
                     @current_user = User.find_by(id: session[:user_id])
           end
           
-          before_action :authenticate_user, {only: {index, show, edit, update}}
           
           # Define the authenticate_user method
           def authenticate_user
@@ -714,4 +731,52 @@ before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
           <%= link_to("Edit", "/users/#{@user.id}/edit") %>
 # <% end %>
 
+# Authenticating the "edit" Action
+# If left as is, the Edit account page could be accessed by 
+# simply entering the URL directly.
+
+# To avoid this, let us restrict access using the same 
+# conditional statement in the actions in addition to 
+# removing the link in the view.
+
+# The ensure_correct_user Method
+# Let's restrict the edit and the update actions in the 
+# Users controller. We'll create the ensure_correct_user 
+# method to determine if the id of the current user 
+# matches that of the user being edited. If they don't 
+# match, let's show a flash notice and redirect to the 
+# Posts page.
+
+# users_controller.rb
+before_action :ensure_correct_user, {only: [:edit, :update]}
+
+def ensure_correct_user 
+          if        # d user's id of d Edit account pg doesn't match with d current user's id
+                    flash[:notice] = "Unauthorized access"
+
+                    redirect_to("/posts/index")
+          end
+end
+
+# to_i Method
+# params[:id] can only store a string value, whereas 
+# @current_user.id will return an integer. Therefore, 
+# comparing them will always return false. We can 
+# solve this using the to_i method to params[:id], 
+# which will convert a string to a numerical value.
+
+# users_controller.rb
+before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
+before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
+
+before_action :ensure_correct_user, {only: [:edit, :update]}
+
+def ensure_correct_user 
+          if @current_user.id != params[:id].to_i
+
+                    flash[:notice] = "Unauthorized access"
+
+                    redirect_to("/posts/index")
+          end
+end
 
