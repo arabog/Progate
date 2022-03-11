@@ -48,9 +48,21 @@ end
 
 
 # :- Associating New Posts with a User
+# Next let us add that data whenever a user creates a new post.
 
+# Saving the id of the User Who Created the Post
+# When creating a new post, let's be sure to save it with the value 
+# of the user_id. We'll use @current_user.id as the value because 
+# the user who posted is the user currently logged in.
 
-
+# posts_controller.rb
+def create
+          @post = Post.new(
+                    content: params[:content]
+                    
+                    user_id: @current_user.id
+          )
+end
 
 
 
