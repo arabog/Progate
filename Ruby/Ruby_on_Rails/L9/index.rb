@@ -145,3 +145,76 @@ end
 <% else %>!
           <%= link_to("Like!", "/likes/#{@post.id}/create", {method: "post"}) %>
 # <% end %>
+
+# :- Removing Likes
+# We can do this by removing the data that gets created 
+# when we like a post.
+# The destroy Action
+# In order to create a feature to undo a "Like!", let's first 
+# create a destroy action in the Likes controller. In the 
+# destroy action, we get the "like" data using 
+# @current_user.id and params[:post_id], and delete it 
+# using the destroy method.
+
+
+# likes_controller.rb
+def destroy
+          @like = Like.find_by(
+                    user_id: @current_user.id,
+
+                    post_id: params[:post_id]
+          )
+
+          @like.destroy
+
+          redirect_to("/posts/#{params[:post_id]}")
+end
+
+# routes.rb
+post "likes/:post_id/destroy" => "likes#destroy"
+
+
+# Creating a Link to the destroy Action
+# Let's add a link to the destroy action on the Post 
+# details page. Like the example below, we'll change 
+# the text "Liked!" to a link to undo the "Like!".
+
+# posts/show.html.erb
+<% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+          <%= link_to("Liked!", "/likes/#{@post.id}/destroy", {method: "post"}) %>
+<% else %>!
+          <%= link_to("Like!", "/likes/#{@post.id}/create", {method: "post"}) %>
+# <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# :-
+
+
+# :-
+
+
+# :-
+
+
+# :-
+
+
+# :-
+
+
