@@ -225,7 +225,35 @@ post "likes/:post_id/destroy" => "likes#destroy"
 
 <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
           <span class="fa fa-heart like-btn-unlike"></span>
-<% end %> 
+# <% end %> 
+
+
+# :- Displaying the Number of Likes
+# let us retrieve the number of likes from the likes table.
+
+# The count Method
+# To get the number of data from the likes table, 
+# we can use the count method. This is a method 
+# to obtain the number of elements in an array, and 
+# can also get the number of data in a table
+
+rails console
+Like.all.count
+Like.where(post_id: 1).count
+
+# posts_controllers.rb
+def show
+          @likes_count = Like.where(post_id: params[:id]).count
+end
+
+# posts/show.html.erb
+<%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
+          <span class="fa fa-heart like-btn"></span>
+<% end %>
+
+<%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
+          <span class="fa fa-heart like-btn-unlike"></span>
+# <% end %> 
 
 
 
@@ -234,12 +262,6 @@ post "likes/:post_id/destroy" => "likes#destroy"
 
 
 
-
-
-
-
-
-# :-
 
 
 # :-
