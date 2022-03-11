@@ -199,6 +199,33 @@ post "likes/:post_id/destroy" => "likes#destroy"
 # application.html.erb
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+# :-Displaying the Heart Icon
+# You can display a heart icon by adding a <span> tag 
+# with the fa fa-heart class. But, if you put HTML elements 
+# in the link_to method, they will be recognized as a plain 
+# string. Let's see how to use an HTML element with the 
+# link_to method.
+
+# posts/show.html.erb
+# Normal link_to method
+# <%= link_to("Text to displat", "URL") %>
+
+# link_to method with HTML
+# <%= link_to("URL") do %>
+          # HTML to display
+# <% end %>
+
+# Displaying the Heart Icon with the link_to Method
+# You can make the heart icon a link by putting 
+# <span> between <%= link_to(URL) do %> and <% end %>
+
+<%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
+          <span class="fa fa-heart like-btn"></span>
+<% end %>
+
+<%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
+          <span class="fa fa-heart like-btn-unlike"></span>
+<% end %> 
 
 
 
@@ -210,13 +237,6 @@ post "likes/:post_id/destroy" => "likes#destroy"
 
 
 
-
-
-
-
-
-
-# :-
 
 
 # :-
