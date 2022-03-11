@@ -186,6 +186,18 @@ post "likes/:post_id/destroy" => "likes#destroy"
           <%= link_to("Like!", "/likes/#{@post.id}/create", {method: "post"}) %>
 # <% end %>
 
+# :- Creating a Like Button Icon
+# Font Awesome
+# Font Awesome allows us to use various icons in the views.
+
+# Using Font Awesome
+# In order to use Font Awesome, you need to load it in the 
+# <head> tag. Since the common HTML like <head> is 
+# written in application.html.erb, let's load the Font 
+# Awesome using <link> tag there!
+
+# application.html.erb
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 
@@ -202,8 +214,6 @@ post "likes/:post_id/destroy" => "likes#destroy"
 
 
 
-
-# :-
 
 
 # :-
