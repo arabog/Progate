@@ -130,14 +130,15 @@ class Post < ApplicationRecord
           
 end
 
+# :- Using Instance Methods
+# Let's rewrite the @user variable defined in the 
+# show action using the user instance method.
 
-
-
-
-
-
-# :-
-
+# controllers/posts_controller.rb
+# Rewrite the following line using the "user" method
+@user = User.find_by(id: @post.user_id)
+to
+@user = @post.user(id: self.user_id)
 
 
 
