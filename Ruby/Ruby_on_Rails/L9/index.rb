@@ -111,3 +111,37 @@ def LikesController < ApplicationController
           def create
           end
 end
+
+# -: Creating the "Like!" Button
+# Completing the create Action
+# Let's complete the code of the create action. 
+# We'll set the user_id column using 
+# @current_user, and the post_id column from 
+# the URL using params. Let's redirect to the 
+# Post details page after creating the new data.
+
+
+# likes_controller.rb
+def create
+          @like = Like.new(
+                    user_id: @current_user.id,
+
+                    post_id: params[:post_id]
+          )
+
+          @like.save
+
+          redirect_to("/posts/#{params[:post_id]}")
+end
+
+# Preparing the Link to the create Action
+# Let's add the link to the create action on the Post details page. 
+# Like the example below, we'll change the text "Not Liked!" 
+# to a link to "Like!" the post.
+
+# posts/show.html.erb
+<% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+          Liked
+<% else %>!
+          <%= link_to("Like!", "/likes/#{@post.id}/create", {method: "post"}) %>
+# <% end %>
