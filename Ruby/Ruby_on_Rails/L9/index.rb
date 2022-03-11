@@ -6,7 +6,7 @@
 # we'll display all the posts created by that user.
 
 
-# How to Create the Like Feature
+# -: How to Create the Like Feature 
 # The Like feature will manage "which user liked 
 # which post" as data. As a start, we can create a 
 # likes table in the database in order to save the data. 
@@ -27,6 +27,10 @@
 
 rails g model Like user_id:integer post_id:integer
 
+# After checking the migration file, use the rails 
+# db:migrate command to apply the changes 
+# specified in the migration file to the database.
+
 rails db:migrate
 
 # Adding the Validations
@@ -38,3 +42,14 @@ class Like < ApplicationRecord
           validates :user_id, {presence: true}
           validates :post_id, {presence: true}
 end
+
+# -: Creating the Like Data 
+# Creating the Data with rails console
+# Let's add data to the likes table on the console.
+# By running Like.new (user_id: 1, post_id: 2), 
+# you can create data that indicates "id:1 user 
+# likes id:2 post".
+
+rails console
+like = Like.new(user_id: 1, post_id: 2)
+like.save
