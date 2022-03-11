@@ -256,16 +256,29 @@ end
 # <% end %> 
 
 
+# :- Displaying the Liked Posts
+# The page we will make this time is user-related. So, 
+# instead of the Likes controller, we will create a likes 
+# action in the Users controller.
+
+# Creating the likes Action
+# Let's create an action named likes in the Users controller 
+# in order to list all of the "Liked!" posts. We'll set the URL 
+# of the route to users/:id/likes in order to clarify which 
+# user's information to display.
+
+get "users/:id/likes" => "users#likes"
 
 
+def likes
+end
 
+# /users/show.html.erb
+<ul class="user-tabs">
+          <li class="active"><%= link_to("Posts", "/users/#{@user.id}") %></li>
 
-
-
-
-
-# :-
-
+          <li><%= link_to("Likes", "/users/#{@user.id}/likes") %></li>
+</ul>
 
 # :-
 
