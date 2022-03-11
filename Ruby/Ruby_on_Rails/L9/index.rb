@@ -53,3 +53,31 @@ end
 rails console
 like = Like.new(user_id: 1, post_id: 2)
 like.save
+
+# -: Displaying Likes on posts
+# based on the likes table you have created, 
+# let us display whether the current logged 
+# in user has liked a certain post or not
+
+# "Liked!" or "Not Liked!"
+# On the Post details page, let's display 
+# "Liked!" if the current user has liked the 
+# post. In other words, we'll check if there's 
+# a record in the likes table with the current 
+# user's id as user_id and the post's id as post_id. 
+# Otherwise, let's display "Not Liked!".
+
+# The Condition for "Liked!"
+# We'll use the find_by method to check whether 
+# a record with matching user_id and post_id 
+# exists in the likes table. find_by will return nil 
+# if no such data is found.
+
+# posts/show.html.erb
+<% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+          Liked
+<% else %>!
+          Not Liked!
+# <% end %>
+
+
