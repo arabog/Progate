@@ -153,6 +153,7 @@ Sending Images
 # when sending an image.
 
 # <%= form_tag("......", {multipart: true}) do %>
+<%= form_tag("/users/#{@user.id}/update", {multipart: true) do %>
           
 # edit.html.erb
 <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
@@ -266,6 +267,7 @@ def update
           File.binwrite("public/user_images/#{@user.image_name}", image.read)
 end
 
-# In the update action, overwrite the value of the image_name column 
-# of the User instance. We'll name the file using the user's id, like 1.jpg.
+# In the update action, overwrite the value of the 
+# image_name column of the User instance. We'll 
+# name the file using the user's id, like 1.jpg.
 

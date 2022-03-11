@@ -215,14 +215,16 @@ end
           <div class="form-error">
                     <%= @error_message %>
           </div>
-<% end %>
-
-<%= form_tag("/login") do %>
-          <p> Email </p>
-          <input name="email" value="<%= @email %>">
-
-          <p> Password </p>
-          <input name="password" type="password"  value="<%= @password %>" >
+          
+          <%= form_tag("/login") do %>
+                    <p> Email </p>
+                    <input name="email" value="<%= @email %>">
+                    
+                    <p> Password </p>
+                    <input name="password" type="password"  value="<%= @password %>" >
+                    
+                    <input type="submit" value="Log in">
+          <% end %>
 # <% end %>
 
 # Retaining the User Information
@@ -566,7 +568,7 @@ end
 # this code in the Application controller and use the before_action 
 # because we want to use it in several actions.
 
-def new
+def authenticate_user
           if @current_user == nil
                     flash[:notice] = "You must be logged in"
 
@@ -602,7 +604,7 @@ end
 
 # posts_controller.rb
 class PostsController < ApplicationController
-          before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
+          before_action :authenticate_user
 end
 
 
@@ -682,6 +684,7 @@ end
 # Posts page if the user is logged in. Let's use before_action to 
 # run the method and use only to specify the actions.
 
+# controllers/application_controller.rb
 def forbid_login_user
           if @current_user
                     flash[:notice] = "You are already logged in"
