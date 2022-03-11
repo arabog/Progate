@@ -64,19 +64,38 @@ def create
           )
 end
 
+# :- Displaying User's Name for Each Post
+# On the Post details page let us try to display 
+# the name and profile image of the user who 
+# created the post.
 
+# Getting the User's Information from user_id
+# In order to display the name and image of a user, 
+# you need to find the user from the database. Since 
+# @post.user_id has the id of the user who created 
+# the post, let's use that to find the user.
 
+# posts_controller.rb
+def show
+          @post = Post.find_by(id: params[:id])
 
+          @user = User.find_by(id: @post.user_id)
+end
 
+# Displaying User's Name and Images
+# You can display the name and image of a user 
+# with the @user variable, which we have already 
+# defined in the action. Also, let's make the user's 
+# name a link to the user's User details page.
 
-# :-
+# posts/show.html.erb
+<div>
+          <img src="<%= "/user_images/#{@user.image_name}" %>" >
 
+          <%= link_to(@user.name, "/users/#{@user.id}") %>
+</div>
 
-
-
-
-
-# :-
+# :- 
 
 
 
