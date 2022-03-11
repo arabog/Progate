@@ -95,7 +95,41 @@ end
           <%= link_to(@user.name, "/users/#{@user.id}") %>
 </div>
 
-# :- 
+# :- Defining an Instance Method
+# Defining Instance Methods in Models
+# In Rails, you can define an instance method in a model. 
+# The instance method defined in the Post model can be used 
+# for the post instance
+
+# models/post.rb
+def post
+          puts "Hello"
+end
+
+post.hello          #Hello
+
+
+rails console
+
+post = Post.new(content: "I love coding", user_id: 1)
+post.save
+
+post = Post.find_by(id: 1)
+
+post.user
+
+# models/post.rb
+class Post < ApplicationRecord
+          validates :content, {presence: true, length: {maximum: 140}}
+          validates :user_id, {presence: true}
+          
+          # Define the "user" instance method
+          def user 
+                    return User.find_by(id: self.user_id)
+          end
+          
+end
+
 
 
 
