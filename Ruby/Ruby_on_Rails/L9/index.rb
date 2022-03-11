@@ -80,4 +80,34 @@ like.save
           Not Liked!
 # <% end %>
 
+# -: Creating the "Like!" Button
+# From here we will implement the functionality 
+# for actually "liking" and "unliking" posts. 
+# First we need to create the Likes controller and 
+# prepare an action for creating Like data.
 
+# Creating the Likes Controller
+# So far, we've generated controllers using the 
+# rails g controller. But since we don't need the 
+# view files that are also created by this command, 
+# let's try making the controller manually. You can 
+# create a new file likes_controller.rb 
+
+# likes_controller.rb
+def LikesController < ApplicationController
+          def create
+          end
+end
+
+# routes.rb
+post "likes/:post_id/create" => "likes#create"
+
+# Let's authenticate access to the Likes controller 
+# so that only logged in users have access.
+
+def LikesController < ApplicationController
+          before_action :authenticate_user
+          
+          def create
+          end
+end
