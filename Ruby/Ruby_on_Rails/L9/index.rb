@@ -186,8 +186,18 @@ posts = Post.where(user_id: 1)
 
 posts[0].content
 
+# Using this, we can define the posts instance method in the 
+# User model that will collect all posts associated with a user. 
 
+# models/user.rb
+def posts
+          return Post.where(user_id: self.id)
+end
 
+rails console
+user = User.where(user_id: 1)
+
+user.posts
 
 
 # :-
