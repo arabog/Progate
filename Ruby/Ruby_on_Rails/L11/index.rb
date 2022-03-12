@@ -158,10 +158,26 @@ end
 
 rails db:migrate
 
+# :- password Column
+# password and password_digest
+# To save the encrypted password in the password_digest 
+# column, you can assign the value to password as you've 
+# done before. The value assigned to password will be 
+# encrypted by has_secure_password, then stored in the 
+# password_digest column. Therefore, there's no need to 
+# change the existing code for the password.
+
+rails console
+
+user = User.find_by(id: 1)
+user.password = "ninja0310"
+
+# Confirm that the encrypted password can be retrieved by running: 
+user.password_digest
+
+user.save
 
 
-
-# :-
 
 
 
