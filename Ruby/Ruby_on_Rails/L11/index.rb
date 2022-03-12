@@ -178,59 +178,64 @@ user.password_digest
 user.save
 
 
+# :-  Log in with Encrypted Passwords
+# Currently, the value of the password column is used 
+# for log in. We need to change that to use the value of 
+# the password_digest column.
+
+# Login with Encrypted Passwords
+# Now we'll use the encrypted password in the login process. 
+# In the current login action, we search for a user whose email 
+# address and password match the values inputted in the form. 
+# However, we'll change it to the steps shown in the below.
+
+# 1. find d user dt hs d email sent 4rm d form
+# 2. compare d user's encrypted password with d password 
+# sent 4rm d form
+
+# authenticate Method
+# With the has_secure_password method, you can use the 
+# authenticate method. This method encrypts the received 
+# argument and compares it with the value of password_digest. 
+# We can use this to judge whether the password sent from the 
+# form matches the password_digest.
+
+@user.authenticate("ibadan")
+      |                             |
+      |                             |
+password_digest      encrypt
+
+# users_controller.rb
+def login
+          @user = User.find_by(email: params[:email])
+
+          if @user && @user.authenticate(params[:password])
+          end
+end
 
 
+# login action being refactored
+def login
+          # Rewrite the following line to only use the email to find the user
+          @user = User.find_by(email: params[:email])
+          # @user = User.find_by(email: params[:email], password: params[:password])
+          
+          # Rewrite the if statement using && and the "authenticate" method
+          if @user && @user.authenticate(params[:password])
+          # if @user
+                    session[:user_id] = @user.id
 
+                    flash[:notice] = "You have logged in successfully"
+                    
+                    redirect_to("/posts/index")
+          else
+                    @error_message = "Invalid email/password combination"
 
+                    @email = params[:email]
 
-
-# :-
-
-
-
-
-
-
-# :-
-
-
-
-
-
-
-# :-
-
-
-
-
-
-
-# :-
-
-
-
-
-
-
-# :-
-
-
-
-
-
-
-# :-
-
-
-
-
-
-
-# :-
-
-
-
-
-
-
+                    @password = params[:password]
+                    
+                    render("users/login_form")
+          end
+end
 
