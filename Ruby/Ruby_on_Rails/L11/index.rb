@@ -92,12 +92,71 @@ class User < ApplicationRecord
 end
 
 
+# :- Adding the password_digest Column
+# The password is stored in the password_digest 
+# column after being encrypted by the 
+# has_secure_password method.
+
+# For safety it is stored in the password_digest 
+# column and not in the password column
+
+# We need to add a password_digest column to the 
+# users table as it does not yet exist. Also, since the 
+# password column is no longer needed, let us remove 
+# it from the database. 
 
 
+# Changing Multiple Columns
+# You can change multiple columns in one migration 
+# file. For example, you can add the image_name 
+# column and the password column at the same time. 
+# This time, let's add the password_digest column 
+# and remove the password column.
 
-# :-
+# 20170427023467_add_columns_to_users.rb
+class AddColumnsToUsers < ActiveRecord::Migration[5.0]
+          def change
+                    add_column :users, :image_name, :string
+
+                    add_column :users, :password, :string
+          end
+end
 
 
+# Creating the Migration File
+# Let's create a migration file using the rails g migration
+# command. You can name the file change_users_columns 
+# as we'll be changing multiple columns. After creating 
+# the file, edit the migration file so that the 
+# password_digest column is added.
+
+rails g migration change_users_columns
+
+# 20170427023467_add_columns_to_users.rb
+class ChangeUsersColumns < ActiveRecord::Migration[5.0]
+          def change
+                    add_column :users, :password_digest, :string
+          end
+end
+
+
+# Removing the password Column
+# We'll also remove the password column. 
+# To remove a column, you can use remove_column 
+# instead of add_column. After editing the file, let's 
+# run rails db:migrate in the terminal and reflect the 
+# changes in the database.
+
+# 20170427023467_add_columns_to_users.rb
+class ChangeUsersColumns < ActiveRecord::Migration[5.0]
+          def change
+                    add_column :users, :password_digest, :string
+
+                    remove_column :users, :password, :string
+          end
+end
+
+rails db:migrate
 
 
 
