@@ -250,20 +250,30 @@ contains sm similar code to users/show.html.erb
 
 
 
+# Yeah, the edit and delete links can still be seen by going 
+# directly to the URL, right?
+
+# Validating the Editing and Deleting
+# This time, we'll use the ensure_correct_user method in 
+# the Posts controller to judge whether the user associated 
+# with the post and the current logged in user are different. 
+# By using before_action, you can apply this method to the 
+# edit, update, and destroy actions.
 
 
-# :-
+# Finally, we'll limit access to the edit, update, and destroy actions.
+# posts_controller.rb
+before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
 
+def ensure_correct_user
+          @post = Post.find_by(id: params[:id])
 
+          if @post.user_id != @current_user.id
+                    flash[:notice] = "Unauthorized access"
 
-
-
-
-# :-
-
-
-
-
+                    redirect_to("/posts/index")
+          end
+end
 
 
 
