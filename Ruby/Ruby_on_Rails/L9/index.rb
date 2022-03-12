@@ -171,10 +171,20 @@ to
 
 
 # :- Displaying Posts on the User Details Page
+# Getting Multiple User-Associated Posts
+# We can get them with Post.find_by(user_id: @user.id) right?
+# Correct. However, the find_by method will only allow 
+# us to get a single result that matches the given condition.
 
+# The where Method
+# You can use the where method to retrieve multiple records 
+# of data that meet a certain condition. Each piece of data 
+# comes in an array when acquired by the where method. 
 
+rails console
+posts = Post.where(user_id: 1)
 
-
+posts[0].content
 
 
 
