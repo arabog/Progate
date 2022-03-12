@@ -231,8 +231,22 @@ user.posts
 contains sm similar code to users/show.html.erb
 
 
-# :-
+# :- Preventing Others from Editing Your Posts
+# To prevent this we should first only show the edit 
+# and delete links for the user who created the post.
 
+# Displaying the Edit/Delete Links Only for Your Own Posts
+# Let's display the links to edit/delete posts only when the 
+# post was created by the current logged in user. In the example below, 
+# the user_id of @post and the id of @current_user are compared, 
+# and the edit/delete links are displayed only when they're equal.
+
+# posts/show.html.erb
+# <% if @post.user_id == @current_user.id %>
+          <%= link_to("Edit", "/posts/#{@post.id}/edit") %>
+
+          <%= link_to("Delete", "/posts/#{@post.id}/destroy", {method: "post"}) %>
+# <% end %>
 
 
 
