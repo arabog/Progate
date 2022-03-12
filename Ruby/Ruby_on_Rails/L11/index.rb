@@ -60,18 +60,18 @@ end
 
 
 class User < ApplicationRecord
-          # Add the has_secure_password method
-          has_secure_password
-          
-          validates :name, {presence: true}
-          validates :email, {presence: true, uniqueness: true}
-          # Remove the following validation
-          validates :password, {presence: true}
-          
-          def posts
-                    return Post.where(user_id: self.id)
-          end
-          
+      # Add the has_secure_password method
+      has_secure_password
+      
+      validates :name, {presence: true}
+      validates :email, {presence: true, uniqueness: true}
+      # Remove the following validation
+      validates :password, {presence: true}
+      
+      def posts
+                  return Post.where(user_id: self.id)
+      end
+
 end
 
 # Next, let's delete the validation of the password column 
@@ -79,16 +79,16 @@ end
 # checks whether a password exists or not.
 
 class User < ApplicationRecord
-          # Add the has_secure_password method
-          has_secure_password
-          
-          validates :name, {presence: true}
-          validates :email, {presence: true, uniqueness: true}
-          
-          def posts
-                    return Post.where(user_id: self.id)
-          end
-          
+      # Add the has_secure_password method
+      has_secure_password
+      
+      validates :name, {presence: true}
+      validates :email, {presence: true, uniqueness: true}
+      
+      def posts
+                  return Post.where(user_id: self.id)
+      end
+            
 end
 
 
@@ -115,11 +115,11 @@ end
 
 # 20170427023467_add_columns_to_users.rb
 class AddColumnsToUsers < ActiveRecord::Migration[5.0]
-          def change
-                    add_column :users, :image_name, :string
+      def change
+                  add_column :users, :image_name, :string
 
-                    add_column :users, :password, :string
-          end
+                  add_column :users, :password, :string
+      end
 end
 
 
@@ -134,9 +134,9 @@ rails g migration change_users_columns
 
 # 20170427023467_add_columns_to_users.rb
 class ChangeUsersColumns < ActiveRecord::Migration[5.0]
-          def change
-                    add_column :users, :password_digest, :string
-          end
+      def change
+                  add_column :users, :password_digest, :string
+      end
 end
 
 
@@ -149,11 +149,11 @@ end
 
 # 20170427023467_add_columns_to_users.rb
 class ChangeUsersColumns < ActiveRecord::Migration[5.0]
-          def change
-                    add_column :users, :password_digest, :string
+      def change
+                  add_column :users, :password_digest, :string
 
-                    remove_column :users, :password, :string
-          end
+                  remove_column :users, :password, :string
+      end
 end
 
 rails db:migrate
@@ -200,42 +200,43 @@ user.save
 # We can use this to judge whether the password sent from the 
 # form matches the password_digest.
 
-@user.authenticate("ibadan")
-      |                             |
-      |                             |
-password_digest      encrypt
+   @user.authenticate("ibadan")
+	|                                 |
+	|                                 |
+password_digest(b/end)   encrypt
 
 # users_controller.rb
 def login
-          @user = User.find_by(email: params[:email])
+      @user = User.find_by(email: params[:email])
 
-          if @user && @user.authenticate(params[:password])
-          end
+      if @user && @user.authenticate(params[:password])
+      end
 end
 
 
 # login action being refactored
 def login
-          # Rewrite the following line to only use the email to find the user
-          @user = User.find_by(email: params[:email])
-          # @user = User.find_by(email: params[:email], password: params[:password])
-          
-          # Rewrite the if statement using && and the "authenticate" method
-          if @user && @user.authenticate(params[:password])
-          # if @user
-                    session[:user_id] = @user.id
+      # Rewrite the following line to only use the email to find the user
+      @user = User.find_by(email: params[:email])
+      # @user = User.find_by(email: params[:email], password: params[:password])
+      
+      # Rewrite the if statement using && and the "authenticate" method
+      if @user && @user.authenticate(params[:password])
+      # if @user
+                  session[:user_id] = @user.id
 
-                    flash[:notice] = "You have logged in successfully"
-                    
-                    redirect_to("/posts/index")
-          else
-                    @error_message = "Invalid email/password combination"
+                  flash[:notice] = "You have logged in successfully"
+                  
+                  redirect_to("/posts/index")
+      else
+                  @error_message = "Invalid email/password combination"
 
-                    @email = params[:email]
+                  @email = params[:email]
 
-                    @password = params[:password]
-                    
-                    render("users/login_form")
-          end
+                  @password = params[:password]
+                  
+                  render("users/login_form")
+      end
 end
 
+https://progate.com/path_certificate/b34a78bbr8nno0
