@@ -36,8 +36,10 @@ rails db:migrate
 # user_id and post_id exist, let's add the validation 
 # presence: true for both user_id and post_id.
 
+# models/like.rb
 class Like < ApplicationRecord
           validates :user_id, {presence: true}
+
           validates :post_id, {presence: true}
 end
 
@@ -73,8 +75,8 @@ like.save
 
 # posts/show.html.erb
 <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
-          Liked
-<% else %>!
+          Liked!
+<% else %>
           Not Liked!
 # <% end %>
 
@@ -147,6 +149,7 @@ end
 # :- Removing Likes
 # We can do this by removing the data that gets created 
 # when we like a post.
+
 # The destroy Action
 # In order to create a feature to undo a "Like!", let's first 
 # create a destroy action in the Likes controller. In the 
@@ -183,6 +186,7 @@ post "likes/:post_id/destroy" => "likes#destroy"
 <% else %>!
           <%= link_to("Like!", "/likes/#{@post.id}/create", {method: "post"}) %>
 # <% end %>
+
 
 # :- Creating a Like Button Icon
 # Font Awesome
@@ -226,6 +230,21 @@ post "likes/:post_id/destroy" => "likes#destroy"
 # <% end %> 
 
 
+# =======================
+
+<% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+          <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
+                    <span class="fa fa-heart like-btn-unlike"></span>
+          <% end %> 
+          
+<% else %>
+          
+          <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
+                    <span class="fa fa-heart like-btn"></span>
+          <% end %>
+
+<% end %> 
+
 # :- Displaying the Number of Likes
 # let us retrieve the number of likes from the likes table.
 
@@ -253,6 +272,8 @@ end
           <span class="fa fa-heart like-btn-unlike"></span>
 # <% end %> 
 
+# <%= @likes_count %>
+
 
 # :- Displaying the Liked Posts
 # The page we will make this time is user-related. So, 
@@ -271,19 +292,21 @@ get "users/:id/likes" => "users#likes"
 def likes
 end
 
-# /users/show.html.erb
+# /users/show.html.erb: for d tabs dt have user Posts and Likes
 <ul class="user-tabs">
           <li class="active"><%= link_to("Posts", "/users/#{@user.id}") %></li>
 
           <li><%= link_to("Likes", "/users/#{@user.id}/likes") %></li>
 </ul>
 
-# Now let us write the code of the likes action to complete the Likes page!
+# Now let us write the code of the likes action to complete the 
+# Likes page!
+
 # users_controllers.rb
 def likes
           @user = User.find_by(id: params[:id])
 
-         @likes = Like.where(user_id: @user.id) 
+          @likes = Like.where(user_id: @user.id) 
 end
 
 # /users/likes.html.erb
