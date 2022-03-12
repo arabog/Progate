@@ -200,11 +200,35 @@ user = User.where(user_id: 1)
 user.posts
 
 
-# :-
+# :- Displaying the Posts
+# Let's display each post using @user.posts. 
+# Since the records acquired by the where method 
+# are contained in an array, let's display the posts 
+# one by one with the each method in the view.
 
+# users/show.html.erb
+# <% @user.posts.each do |post| %>
+          # code
+# <% end %>
 
+<% @user.posts.each do |post| %>
+          <div class="posts-index-item">
+                    <div class="post-left">
+                              <img src="<%= "/user_images/#{post.user.image_name}" %>">
+                    </div>
 
+                    <div class="post-right">
+                              <div class="post-user-name">
+                                        <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+                              </div>
 
+                              <%= link_to(post.content, "/posts/#{post.id}") %>
+                    </div>
+          </div>
+# <% end %>
+
+# posts/index.html.erb
+contains sm similar code to users/show.html.erb
 
 
 # :-
