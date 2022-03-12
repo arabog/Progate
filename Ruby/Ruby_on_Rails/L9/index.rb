@@ -140,18 +140,40 @@ end
 to
 @user = @post.user(id: self.user_id)
 
+# :- Displaying the User's Name on the Posts Page
+# Next we should display the user's name and image associated 
+# with each post on the Posts page. For this, as with the Post 
+# details page, we will utilize the user instance method.
+
+# posts/index.html.erb
+<img src="<%= "/user_images/#{post.user.image_name}" %>">
+
+<%= link_to(post.user.name, "/users/#{post.user.id}") %>
+
+<div class="container">
+          <% @posts.each do |post| %>
+                    <div class="posts-index-item">
+                              <div class="post-left">
+                                        # <!-- Fill in the src attribute to display the user's profile image -->
+                                        <img src="<%= "/user_images/#{post.user.image_name}" %>">
+                              </div>
+                              
+                              <div class="post-right">
+                                        <div class="post-user-name">
+                                        # <!-- Add a link to the "User details" page using the link_to method -->
+                                                  <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+                                        </div>
+                                        # <!--<%= link_to(post.content, "/posts/#{post.id}") %>-->
+                              </div>
+                    </div>
+          <% end %>
+</div>
+
+
+# :- Displaying Posts on the User Details Page
 
 
 
-
-# :-
-
-
-
-
-
-
-# :-
 
 
 
