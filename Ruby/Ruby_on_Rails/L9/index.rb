@@ -58,7 +58,7 @@ end
 # posts_controller.rb
 def create
           @post = Post.new(
-                    content: params[:content]
+                    content: params[:content],
                     
                     user_id: @current_user.id
           )
@@ -137,7 +137,9 @@ end
 # controllers/posts_controller.rb
 # Rewrite the following line using the "user" method
 @user = User.find_by(id: @post.user_id)
+
 to
+
 @user = @post.user(id: self.user_id)
 
 # :- Displaying the User's Name on the Posts Page
@@ -150,12 +152,14 @@ to
 
 <%= link_to(post.user.name, "/users/#{post.user.id}") %>
 
+
 <div class="container">
           <% @posts.each do |post| %>
                     <div class="posts-index-item">
                               <div class="post-left">
                                         # <!-- Fill in the src attribute to display the user's profile image -->
                                         <img src="<%= "/user_images/#{post.user.image_name}" %>">
+                                        
                               </div>
                               
                               <div class="post-right">
@@ -211,21 +215,38 @@ user.posts
           # code
 # <% end %>
 
-<% @user.posts.each do |post| %>
-          <div class="posts-index-item">
-                    <div class="post-left">
-                              <img src="<%= "/user_images/#{post.user.image_name}" %>">
-                    </div>
 
-                    <div class="post-right">
-                              <div class="post-user-name">
-                                        <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+<div class="container">
+          <div class="user">
+                    <img src="<%= "/user_images/#{@user.image_name}" %>">
+                    
+                    <h2><%= @user.name %></h2>
+                    
+                    <p><%= @user.email %></p>
+                    
+                    <% if @user.id == @current_user.id %>
+                              <%= link_to("Edit", "/users/#{@user.id}/edit") %>
+                    <% end %>
+          </div>
+
+          <% @user.posts.each do |post| %>
+                    <div class="posts-index-item">
+                              <div class="post-left">
+                                        <img src="<%= "/user_images/#{post.user.image_name}" %>">
                               </div>
 
-                              <%= link_to(post.content, "/posts/#{post.id}") %>
+                              <div class="post-right">
+                                        <div class="post-user-name">
+                                                  <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+                                        </div>
+
+                                        <%= link_to(post.content, "/posts/#{post.id}") %>
+                              </div>
                     </div>
-          </div>
-# <% end %>
+          # <% end %>
+</div>
+
+
 
 # posts/index.html.erb
 contains sm similar code to users/show.html.erb
