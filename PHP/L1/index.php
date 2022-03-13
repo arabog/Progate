@@ -109,6 +109,14 @@ $date
 $user_name
 $userName
 
+Updating Variables
+A variable can also be updated to change the value it 
+contains. Like in the examples below, when you assign 
+another value to the variable, this new value will 
+overwrite its original content.
+
+
+
 
 
 -->
