@@ -109,13 +109,48 @@ $date
 $user_name
 $userName
 
-Updating Variables
+-: Updating Variables
 A variable can also be updated to change the value it 
 contains. Like in the examples below, when you assign 
 another value to the variable, this new value will 
 overwrite its original content.
 
+$num = 3;
 
+echo $num;          //3
+
+$num =5;
+
+echo $sum;          //5
+
+Adding Numbers to Variables
+What should we do, for instance, when we want to 
+add 10 to a variable? To do this, we simply need 
+to add the number to the variable and assign that 
+result back to the variable. We can do other 
+calculations like subtraction in the same way. In 
+PHP, note that the = means assign, not an i
+ndication that the left and right values are equal.
+
+
+$x = 1;
+$x = $x +10;
+
+echo $x;   //11
+
+In fact, there is a shorter way of writing when adding 
+numbers to variables.
+
+$x += 10;
+
+$x += 1; is d same as $x++
+
+$x = 3;
+$y = 3;
+
+echo ++$x;          //4 ds means add 1 before running echo
+
+echo $y++           //3 ds means add 1 after running echo
 
 
 
