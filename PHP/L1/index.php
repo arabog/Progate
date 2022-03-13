@@ -56,10 +56,59 @@ echo 7 + 3          //10
 echo 3 * 6          //18
 echo 5 % 2          //1
 
--->
-<?php
-          // This is a comment
-          echo "Hello";
 
-          echo "Learn PHP!";
+-: Data Types
+There are different types of data used in PHP like numbers 
+and characters. Text data like 'Kid' or 'A' are called strings 
+and numbers like 42 or 3.1415 are numeric data types.
+
+Comparing Strings and Numerics
+As you can see below, 5 + 2 becomes 7 when printed as a 
+numeric value. But, if you put it in single or double quotes, 
+the value will be interpreted as the literal string '5 + 2'.
+
+<?php
+          echo 5 + 2          //7
+
+          echo "5 + 2"        // 5 + 2 
 ?>
+
+
+-: Variables
+What are Variables?
+Now let's learn about a very important programming concept 
+called a variable. A variable is like a box to store data. We 
+define variable by adding the $ symbol at the beginning. 
+All types of data can be stored using the syntax 
+$variableName = value;. In the programming world, = 
+means to assign the value on the right to what's on the left.
+
+<?php
+          $name = "Bob";
+
+          echo $name;
+
+?>
+
+The Role of Variables
+There are 2 major benefits to using variables: 
+(1) you can give a name to a piece of data to 
+describe it; and 
+(2) you can update the value of a variable in just 
+one place even if it's used many times in your code.
+
+How to Name Variables
+There are a few rules and conventions you need to 
+follow when declaring variables. You can't use numbers 
+at the beginning of a variable name. Also, it's important 
+to choose a variable name that clearly describes what 
+kind of data the variable contains. We should also be 
+consistent in writing the variable names.
+
+$date
+$user_name
+$userName
+
+
+
+-->
