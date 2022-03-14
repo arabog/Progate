@@ -10,7 +10,7 @@ situation.
 
 How to Write PHP
 PHP code can be embedded within HTML. Using the 
-special PHP tag, you can write instructions <?php ... ?>. 
+special PHP tag, you can write instructions <?php ... ?>
 The code written in <?php ... ?> will be converted into 
 HTML and displayed.
 
@@ -48,8 +48,8 @@ Arithmetic
 Calculations are what computers do best! In programming, 
 you can also do calculations with symbols known as arithmetic 
 operators. The symbols used for calculations in PHP are as 
-follows: + (addition), - (subtraction), * (multiplication), and 
-/ (division). You can also calculate the remainder after division 
+follows: + addition, - subtraction, * multiplication, and 
+/ division. You can also calculate the remainder after division 
 with the % symbol.
 
 echo 7 + 3          //10
@@ -92,9 +92,9 @@ means to assign the value on the right to what's on the left.
 
 The Role of Variables
 There are 2 major benefits to using variables: 
-(1) you can give a name to a piece of data to 
+1 you can give a name to a piece of data to 
 describe it; and 
-(2) you can update the value of a variable in just 
+2 you can update the value of a variable in just 
 one place even if it's used many times in your code.
 
 How to Name Variables
@@ -152,6 +152,10 @@ echo ++$x;          //4 ds means add 1 before running echo
 
 echo $y++           //3 ds means add 1 after running echo
 
-
+:- String Concatenation
+You can concatenate strings using a period .. This is called the dot operator in PHP. There are 3 kinds of string concatenation:
+1 a string with a string, 
+2 a string variable with a string variable, and 
+3 a string with a string variable.
 
 -->
