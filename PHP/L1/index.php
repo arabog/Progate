@@ -190,4 +190,58 @@ echo 'Hello, {$name}'; // Hello, {$name};
 
 
 
+:- The if Statement
+Using an if statement makes it possible to create a conditional 
+branch. If you put a condition in () after if, the code between 
+the braces { } will be executed only when the condition is true.
+
+<?php
+          $x = 20;
+          if ($x > 10) {
+                    echo '$x is greater than 10';           //ds wil be executed
+          }
+
+          if ($x > 30) {
+                    echo '$x is greater than 30';           //ds will not be executed
+          }
+?>
+
+Comparing Numbers
+The symbols used to compare two values, like > are known as 
+comparison operators. The condition of the comparison is either 
+true or false. The most common comparison operators are shown 
+below.
+
+x == y
+x != y
+x < y
+x <= y
+x > y
+x >= y
+
+The if Statement and Boolean Values
+The condition of the comparison operator gets replaced with 
+a boolean value. Boolean is another data type and there are 
+only two boolean values: true and false. The if statement only 
+executes the code between the braces { } when the condition is true.
+
+if (true) {
+          echo 'The condition is true';
+}
+
+<?php
+          $x = 20;
+
+          // <!-- true -->
+          if ($x > 10) {      
+                    echo '$x is greater than 10';           //ds wil be executed
+          }
+
+          // <!-- false -->
+          if ($x > 30) {
+                    echo '$x is greater than 30';           //ds will not be executed
+          }
+?>
+
+
 -->
