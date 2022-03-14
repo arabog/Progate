@@ -480,6 +480,94 @@ for ( $i = 1; $i <= 10; $i++) {
 }
 
 
+-: foreach
+The foreach loop iterates over an indexed array or 
+associative array in order from the first value. You 
+can retrieve values in arrays one by one as shown 
+below. Values are sequentially assigned to the 
+variable after the keyword as at the start of each 
+loop. The variable name after as can be anything 
+you want.
+
+$towns = Array('Tokyo', 'London', 'New York');
+
+foreach($towns as $town) {
+          echo $town.' ';
+}
+
+How to Use foreach
+In a foreach loop, array values are sequentially 
+assigned to the key variable and value variable, 
+then the code in the loop is repeatedly executed. 
+An index number or a key (for associative arrays) 
+is assigned to the key variable. However, note that 
+the key variable is optional.
+
+
+foreach ($array as $value) {
+          Run some code here
+}
+
+
+foreach ($array as $key => $value) {
+          Run some code here
+}
+
+Let's look at an example of a foreach loop. Below is an 
+example with an associative array that has fruit names 
+as keys and colors as values. In the first iteration of the 
+loop, "Apple" and "Red" are used as the $key and $value. 
+In the next iteration, "Banana" and "Yellow" are used.
+
+
+$colors = Array (
+          'Apple' => 'Red',
+          'Banana' => 'Yellow',
+          'Grape' => 'Purple',
+);
+
+foreach ($colors as $key => $value) {
+          echo $key.':'.$value.' ';
+}
+
+-: Fxns
+
+
+
+
+
+
+-: 
+
+
+
+
+
+-: 
+
+
+
+
+
+-: 
+
+
+
+
+
+
+-: 
+
+
+
+
+
+-: 
+
+
+
+
+
 -: 
 
 
@@ -488,6 +576,7 @@ for ( $i = 1; $i <= 10; $i++) {
 
 
 
+-: 
 
 
 
