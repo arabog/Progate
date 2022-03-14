@@ -19,7 +19,9 @@ HTML and displayed.
                     <body>
                               <h1>PHP</h1>
 
-                              <?php echo "<h2> Beginner </h2>"; ?>
+                              <?php 
+                                        echo "<h2> Beginner </h2>"; 
+                              ?>
                     </body>
           </head>
 </html>
@@ -34,9 +36,9 @@ making notes.
 
 <?php
           // This is a comment
-          echo "Hello";
+          echo 'Hello';
 
-          echo "Learn PHP!";
+          echo 'Learn PHP!';
 ?>
 
 String Output
@@ -68,9 +70,9 @@ numeric value. But, if you put it in single or double quotes,
 the value will be interpreted as the literal string '5 + 2'.
 
 <?php
-          echo 5 + 2          //7
+          echo 5 + 2;          //7
 
-          echo "5 + 2"        // 5 + 2 
+          echo '5 + 2';       // 5 + 2 
 ?>
 
 
@@ -84,7 +86,7 @@ $variableName = value;. In the programming world, =
 means to assign the value on the right to what's on the left.
 
 <?php
-          $name = "Bob";
+          $name = 'Bob';
 
           echo $name;
 
@@ -157,5 +159,35 @@ You can concatenate strings using a period .. This is called the dot operator in
 1 a string with a string, 
 2 a string variable with a string variable, and 
 3 a string with a string variable.
+
+$lesson = "PHP";
+echo $lesson . "Beginner";     // PHP Beginner
+
+
+$level = "Beginner";
+echo $lesson . $level;         // PHP Beginner
+
+You can omit the concatenation of a variable and a string using .=.
+
+$name = "Ken";
+$name .= "the Ninja";
+ds is d same as $name = $name."the Ninja"
+
+echo $name;         // Ken the Ninja
+
+-: Variable Substitution
+Within a string that is in double quotes ", you can insert a 
+variable by putting the variable name in braces { }. This is 
+called variable substitution. If you use single quotes ' instead, 
+the variables won't be substituted because it will be interpreted 
+as a string even if it's in braces.
+
+$name = 'Ken the Ninja';
+echo "Hello, {$name};         // Hello, Ken the Ninja
+
+echo 'Hello, {$name}'; // Hello, {$name};
+
+
+
 
 -->
