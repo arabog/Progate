@@ -377,3 +377,23 @@ that already exists.
 
           echo $names[1];
 ?>
+
+-: Creating Associative Arrays
+Associative arrays allow us to manage a collection of data 
+like normal arrays. The difference is that instead of using 
+index numbers to manage individual elements, you can 
+specify values as keys. Keys can come in the form of strings. 
+You can set the key for a value with => as follows: 
+arrayName = array('keyName' => 'value1', ...);.
+
+<?php
+          $user = array(
+                    'name' => 'Ken', 
+                    'age' => 14, 
+                    'gender' > 'male',
+          );
+
+          echo user['name']; 
+
+          user[level] = 'beginner';
+?>
