@@ -345,3 +345,35 @@ put one at the end of every case!
 
 
 -->
+
+-: What are Arrays?
+You can store multiple values ​​collectively using an array, 
+whereas variables can handle only one value as we learned 
+previously. An array is like a box with an inner partition; 
+each space contains data, and the name for each space is 
+assigned an index number (0, 1, 2 …).
+
+Creating Arrays
+The basic syntax for declaring an array is as follows: 
+$arrayName = array(value1, value2, …);. An index 
+number is designated to each array element in order from 
+0 to the last element. To retrieve data from an array, we use 
+these index numbers like so: $arrayName[indexNumber].
+
+Adding and Overwriting Values
+To add an element to the end of the array, write the 
+following: $arrayName[] = value;. You can also overwrite 
+a value in an array ​​by specifying an existing index number 
+that already exists.
+
+<?php
+          $names = array('John', 'Kate', 'Bob');
+
+          $names[] = 'Mary';
+
+          echo $names[3];
+
+          $names[1] = 'Jane';
+
+          echo $names[1];
+?>
