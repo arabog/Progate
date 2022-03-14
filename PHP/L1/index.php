@@ -607,12 +607,23 @@ function printSum($num1, $num2) {
 }
 
 
+-: Return Values
+A function can return a value, and this value is known as 
+the return value. It's like executing a function and the 
+function execution part is replaced by the return value. 
+The return value is specified by return.
+
+$sum = getSum(1, 3);
+echo $sum;
+
+function getSum($num1, $num2) {
+          return $num1 + $num2;
+}
 
 
 
 
 
--: 
 
 
 
