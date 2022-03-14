@@ -560,6 +560,58 @@ echo count($towns); //3
 echo rand(1, 4);
 
 
+You can also create functions yourself. When you group 
+code in one place, you can make changes to all the 
+places it's used at once by editing the function 
+containing it. This is much more manageable than 
+changing many separate and nearly identical lines of 
+code.
+
+
+function printCircleArea($radius) {
+          echo $radius * $radius * 3.14
+}
+
+printCircleArea(3);
+printCircleArea(5);
+
+How to Create Functions
+Use the syntax: function functionName() { ... } to 
+create a function. Just give your function a name 
+and then call it using parentheses () like so: 
+functionName().
+
+function hello() {
+          echo 'Hello World';
+}
+
+
+hello();
+
+
+Arguments
+When calling a function, you can pass a value to be used 
+within the function. Values that are passed to a function 
+are known as arguments. To use arguments in a function, 
+you need to specify a corresponding parameter to receive 
+the argument in the function definition. If there are 
+multiple parameters, you need to separate each with a 
+comma ,.
+
+
+
+printSum(1, 3);
+
+function printSum($num1, $num2) {
+          echo $num1 + $num2;
+}
+
+
+
+
+
+
+
 -: 
 
 
