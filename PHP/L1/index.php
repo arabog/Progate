@@ -271,12 +271,44 @@ executed; if all conditions are false C will be executed.
 <?php
           $x = 20;
 
-          // <!-- false -->
           if ($x < 30) {      
                     echo '$x is less than 30';           //ds wil be executed even though elseif is also true
           }elseif ($x >= 20) {
                     echo '$x is greater than 20 or equal to 20';   
           }else { 
                     echo '$x is not 30';           
+          }
+?>
+
+-: Combining Multiple Conditional Statements
+And && and or || are known as logical operators. They 
+are used to combine multiple conditions. The result of 
+statements with && becomes true only when both left 
+and right expressions are true. The result of statements 
+with || become true when either or both of the left and 
+right expressions are true.
+
+<?php
+          $x = 20;
+
+          if ($x > 10 && $x < 30) {      
+                    echo '$x is greater than 10 and less than 30';           
+          }
+          
+          if ($x < 10 || $x > 30) {
+                    echo '$x is  less than 10 and greater than 30';   
+          }
+?>
+
+Negating Conditions
+An exclamation mark ! is also a logical operator. You can
+negate the condition using !. The output becomes false if 
+the expression is true, and true if the expression is false.
+
+<?php
+          $x = 20;
+
+          if !($x == 30) {      
+                    echo '$x is not equl to 30';           
           }
 ?>
