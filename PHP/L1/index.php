@@ -530,11 +530,34 @@ foreach ($colors as $key => $value) {
           echo $key.':'.$value.' ';
 }
 
--: Fxns
+-: Creating Functions
+A function is a section of code designed to accomplish a specific 
+task and return an output. Some common and useful functions 
+are already embedded in PHP; those are called built-in functions. 
+For example strlen returns the number of characters in a string. 
+Here, the value in parentheses () is called an argument.
 
 
+echo strlen('Progate');  //7
+
+$lang = 'PHP';
+echo strlen($lang); //3
+
+Using Functions
+Let's look at some other built-in functions: count returns 
+the number of elements in an array; rand returns a 
+random integer between the first argument and the 
+second argument. There are many other PHP built-in 
+functions, but you don't have to memorize them. It's 
+better to look up and learn about useful functions for 
+specific purposes.
 
 
+$towns = Array('Tokyo', 'London', 'New York');
+echo count($towns); //3
+
+
+echo rand(1, 4);
 
 
 -: 
