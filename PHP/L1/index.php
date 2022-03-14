@@ -642,28 +642,21 @@ This time, we will send the form values to a page called
 sent.php. 
 
 
+-: Creating Text Boxes
+We use the HTML tag <input type="text"> to create a 
+text box. We use the name attribute to retrieve the input 
+value. This attribute is used to receive form data later. 
+Note that the <input> tag doesn't need a closing tag.
 
 
+<form action="sent.php" method="post">
+          Enter your emaiil here
+          <input type='text' name='email' >
 
-
-
-
-
-
-
-
-
-
-
-
--: 
-
-
-
-
-
-
--: 
+          Message
+          <textarea name='content'> </textarea>
+          
+</form>
 
 
 
@@ -676,6 +669,26 @@ sent.php.
 
 
 -: 
+
+
+
+
+
+-: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
