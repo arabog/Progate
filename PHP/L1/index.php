@@ -621,6 +621,25 @@ function getSum($num1, $num2) {
 }
 
 
+-: Creating Forms
+To finish up, let's make a contact form! We can make the 
+form's design with HTML and then use PHP to handle 
+the input values.
+
+Preparing Forms
+When creating a form, we use the HTML tag <form>. 
+For the action attribute, we specify the URL to pass 
+the data. The method attribute is set to either get or 
+post for sending the form values. When using get, 
+the value to be sent is displayed in the URL whereas 
+when using post, it's hidden in the URL.
+
+<form action="url" method="post">
+          sm code
+</form>
+
+This time, we will send the form values to a page called 
+sent.php. 
 
 
 
@@ -629,7 +648,9 @@ function getSum($num1, $num2) {
 
 
 
--: 
+
+
+
 
 
 
