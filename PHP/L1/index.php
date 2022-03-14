@@ -344,7 +344,7 @@ case(s) until a break statement is found. So, make sure to
 put one at the end of every case!
 
 
--->
+
 
 -: What are Arrays?
 You can store multiple values ​​collectively using an array, 
@@ -397,3 +397,52 @@ arrayName = array('keyName' => 'value1', ...);.
 
           user[level] = 'beginner';
 ?>
+
+-: Loops and Iteration
+We use loops to do something repeatedly. For example, say 
+you wanted to print numbers from 1 to 100. By using a loop, 
+you can reduce long blocks of repetitive code down to just a 
+few lines as shown in the example below.
+
+for ($i = 1; $i <= 100; $i++) {
+          echo $i;
+}
+
+The for Loop
+You can iterate (repeat) code using a for loop. In the 
+example above, the variable $i is assigned 1 as an initial 
+value then echo $i; gets executed. After that, the value of 
+$i is updated ($i++) and echo $i; is executed repeatedly 
+until the condition($i <= 100) of the loop is no longer 
+satisfied.
+
+To print each number on a new line, we can use <br> 
+as follows:
+
+echo $i;
+echo '<br>';
+
+or
+
+echo $i.'<br>';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
