@@ -243,5 +243,40 @@ if (true) {
           }
 ?>
 
+:- else
+If you use else in combination with an if statement, you 
+can add code for when the condition is false. If the 
+matching if statement is false, the code in else is 
+executed.
 
 -->
+<?php
+          $x = 20;
+
+          // <!-- false -->
+          if ($x == 30) {      
+                    echo '$x is 30';           
+          } else { 
+                    echo '$x is not 30';           //ds will be executed
+          }
+?>
+
+elseif
+You can use the elseif statement to add alternative 
+conditions to the control flow. Samples of alternative 
+conditions may be: A will be executed if condition X 
+is true; elseif Y is true given that X is false, B will be 
+executed; if all conditions are false C will be executed.
+
+<?php
+          $x = 20;
+
+          // <!-- false -->
+          if ($x < 30) {      
+                    echo '$x is less than 30';           //ds wil be executed even though elseif is also true
+          }elseif ($x >= 20) {
+                    echo '$x is greater than 20 or equal to 20';   
+          }else { 
+                    echo '$x is not 30';           
+          }
+?>
