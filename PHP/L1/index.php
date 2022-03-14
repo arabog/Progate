@@ -249,7 +249,6 @@ can add code for when the condition is false. If the
 matching if statement is false, the code in else is 
 executed.
 
--->
 <?php
           $x = 20;
 
@@ -312,3 +311,37 @@ the expression is true, and true if the expression is false.
                     echo '$x is not equl to 30';           
           }
 ?>
+
+-: switch Statements
+The switch statement is another way to control the flow of 
+your code to make it easier to read and understand, 
+especially when conditional branching gets complicated. 
+switch statements usually have many cases. The first case 
+that matches the condition value will get executed. When 
+there is no match, the default case is executed.
+
+<?php
+          switch($coin) {
+                    case 0:
+                              echo 'Head';
+                              break;
+
+                    case 1:
+                              echo 'Tail';
+                              break
+
+                    default
+                              echo 'Error';
+                              break;
+          }
+?>
+
+switch Statements - break
+With switch statements, every case needs a break statement 
+at the end. This will exit the switch statement when executed. 
+Without it, the switch statement will continue on to the next 
+case(s) until a break statement is found. So, make sure to 
+put one at the end of every case!
+
+
+-->
