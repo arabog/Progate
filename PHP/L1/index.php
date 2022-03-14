@@ -655,21 +655,47 @@ Note that the <input> tag doesn't need a closing tag.
 
           Message
           <textarea name='content'> </textarea>
-          
+
+</form>
+
+
+-: Creating a Submit Button
+To create a submit button you can use <input type="submit">.
+The value set for the value attribute will be displayed on the 
+button.
+
+<form action="sent.php" method="post">
+          Enter your emaiil here
+          <input type='text' name='email' >
+
+          Message
+          <textarea name='content'> </textarea>
+
+          <input type='submit' value='Submit'>
+
 </form>
 
 
 
+-: $_POST
+Receiving Data from Forms
+We use $_POST to receive the value we submitted in the form. 
+$_POST is an associative array. Therefore, we can receive the 
+value we submitted by putting the name attribute of <input> 
+and <textarea> in brackets [].
+
+sent.php
+echo $_POST['name'];
+echo $_POST['email'];
 
 
--: 
+$_POST is an associative array
 
+array (
+          'name' => 'Ken the Ninja';
 
-
-
-
--: 
-
+          'email' => 'ken@prog-8.com';
+)
 
 
 
