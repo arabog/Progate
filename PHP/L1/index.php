@@ -449,10 +449,38 @@ condition at the end of a while loop, this causes an infinite
 loop as the condition would always be true. Infinite loops 
 put a huge load on the computer, so make sure the condition is false at some point in execution.
 
+-: break
+The break statement forcibly ends the current loop and is used 
+in iterative statements like loops (for, while, foreach, etc). 
+break statements are generally used in combination with 
+conditional statements like if statements.
+
+for ( $i = 1; $i <= 10; $i++) {
+          if($i > 5) {
+                    break;
+          }
+
+          echo $i;
+}
+
+
+-: continue
+While the break statement completely exits the loop, 
+the continue statement only skips the current iteration 
+but remains in the loop. The continue statement can 
+also be used in iterative statements such as for, while, 
+foreach, etc.
+
+for ( $i = 1; $i <= 10; $i++) {
+          if($i % 3 == 0) {
+                    continue;
+          }
+
+          echo $i;
+}
+
+
 -: 
-
-
-
 
 
 
