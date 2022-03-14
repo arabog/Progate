@@ -426,9 +426,28 @@ or
 
 echo $i.'<br>';
 
+-: The while Loop
+The while loop allows you to iterate code like the for loop. 
+When a condition is specified, the code in the loop gets 
+repeatedly executed while it is true. Different from the for 
+loop, the increment of the variable, $i++; in this case, has 
+to be written in the loop. This is an important difference 
+between while loops and for loops.
 
+init d value
+$i = 1;     
 
+while ($i <= 100) {
+          echo $i;
 
+          $i++;
+}
+
+Infinite Loops
+If you forget to update the value of the variable used for the 
+condition at the end of a while loop, this causes an infinite 
+loop as the condition would always be true. Infinite loops 
+put a huge load on the computer, so make sure the condition is false at some point in execution.
 
 
 
