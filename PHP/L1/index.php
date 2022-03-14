@@ -698,11 +698,31 @@ array (
 )
 
 
+-: How to Create a Select Box
+We can create a dropdown box like the one shown in the 
+example below by arranging <option> tags inside a 
+<select> tag. The content of the <option> tag is displayed 
+as a choice.
 
+<select>
+          <option> Apple </option>
+          <option>Banana </option>
+          <option> Orange </option>
+</select>
 
--: 
+Submitting Selected Values
+Let's take a look at how to pass in the value of the dropdown 
+list. The <select> tag has a name attribute to receive the value 
+with $_POST. The value attribute of the <option> tag is the 
+value to be sent.
 
-
+<form action='sent.php' method='post'>
+          <select name='fruit'>
+                    <option value='apple'> Apple </option>
+                    <option value='banana'>Banana </option>
+                    <option value='orange'> Orange </option>
+          </select>
+</form>
 
 
 
