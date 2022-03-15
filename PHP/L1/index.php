@@ -826,21 +826,38 @@ echo "<option value= '3'> 3 </option>";
           echo $menu['name'].' is $'.$menu['price'];
 
 
-
-
-
-
-
-
-
-
-
 8.
+          // Let's print all the menus together with the prices from the array.
 
+          $menus = array(
+                    array('name' => 'CURRY', 'price' => 9),
+                    array('name' => 'PASTA', 'price' => 12),
+                    array('name' => 'COFFEE', 'price' => 6)
+        );
+        
+        // Write your code below
+        foreach($menus as $menu) {
+                    foreach($menu as $key => $value) {
+                              $menu['name'].' is $'.$menu['price'];
+                    }
 
+                    echo $menu['name'].' is $'.$menu['price'].'<br>';
+        }
 
 
 9.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
