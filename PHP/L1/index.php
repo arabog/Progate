@@ -862,7 +862,51 @@ echo "<option value= '3'> 3 </option>";
           echo 'The total price is $'.$totalPrice;
 
 
+10.
+          // In addition to the total price, let's also determine the 
+          // item with the highest price and display it.
+          
+          // Progate soln
 
+          $menus = array(
+                    array('name' => 'CURRY', 'price' => 9),
+                    array('name' => 'PASTA', 'price' => 12),
+                    array('name' => 'COFFEE', 'price' => 6)
+          );
+
+          $totalPrice = 0;
+
+          $maxPrice = 0; // Variable for the max price
+
+          $maxPriceMenuName = ''; // Variable to store the name of the most expensive item
+          
+          
+          foreach ($menus as $menu) {
+                    $name = $menu['name'];
+
+                    $price = $menu['price'];
+
+                    echo $name.' is $'.$price;
+
+                    echo '<br>';
+
+
+                    $totalPrice += $price;
+
+                    // When greater than the value stored in $maxPrice
+                    if ($price > $maxPrice) {
+                              // Update $maxPrice with the higher value
+                              $maxPrice = $price;
+                              // Update $maxPriceMenuName with name of the new most expensive item
+                              $maxPriceMenuName = $name;
+                    }
+          }
+
+          echo 'The total price is $'.$totalPrice;
+          
+          echo '<br>';
+          
+          echo 'The most expensive item is '.$maxPriceMenuName.' with the price $'.$maxPrice;
 
 
 
