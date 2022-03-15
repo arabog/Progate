@@ -738,9 +738,14 @@ echo "<option value= '1'> 1 </option>";
 echo "<option value= '2'> 2 </option>";
 echo "<option value= '3'> 3 </option>";
 
+<?php
+          $name = 'Tom';
+
+          echo 'My name is '.$name;
+?>
+
+
 -->
-
-
 
 <!-- -: FULL FORM CODE :-
 index.php -->
