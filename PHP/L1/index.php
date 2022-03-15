@@ -739,9 +739,35 @@ echo "<option value= '2'> 2 </option>";
 echo "<option value= '3'> 3 </option>";
 
 <?php
+1.
           $name = 'Tom';
 
           echo 'My name is '.$name;
+          
+2.
+          $price = 10;
+          $taxRate = 0.08;  
+  
+          $taxIncludedPrice = $price + $price * $taxRate;
+          echo 'The price after tax is $'.$taxIncludedPrice;
+
+3.
+          $money = 20;
+          $price = 10;
+          $taxRate = 0.08;
+
+          $taxIncludedPrice = $price + $price * $taxRate;
+
+          if ($taxIncludedPrice < $money) {
+                    echo 'You can buy this item';
+          } elseif($money == $taxIncludedPrice) {
+                    echo 'You can buy this item, but you will not have any money left';
+          }else {
+                    echo 'You cannot buy this item';
+          }
+
+
+
 ?>
 
 
