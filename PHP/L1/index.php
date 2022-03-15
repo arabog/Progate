@@ -795,14 +795,38 @@ echo "<option value= '3'> 3 </option>";
           echo 'The total price is $'.$total;
 
 6.
+          // In addition to the total price, let's also display the 
+          // value of the highest price.
+          $prices = array(10, 6, 7, 8);
 
+          $total = 0;
 
+          foreach ($prices as $price) {
+                    $total +=$price;
+          }
+          
+          echo 'The total price is $'.$total;
+          
+          $highestPrice = 6;
+          
+          echo '<br>';
+          
+          foreach ($prices as $price) {
+                    if ($price >= $highestPrice) {
+                              $highestPrice = $price;
+                    };
+          }
 
-
-
-
+          echo 'The highest price is $'.$highestPrice;
 
 7.
+
+
+
+
+
+
+
 
 
 
