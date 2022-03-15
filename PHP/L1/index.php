@@ -767,17 +767,32 @@ echo "<option value= '3'> 3 </option>";
           }
 
 4.
-          Let's make simple FizzBuzz program here.
-          
-
-
-
-
+          // Let's make simple FizzBuzz program here.
+          for ($i = 1; $i <= 100; $i++) {
+                    if ($i % 3 == 0 && $i % 5 == 0) { // When $i is a multiple of 3 and 5
+                              echo 'FizzBuzz';
+                    } elseif ($i % 3 == 0) { // When $i is a multiple of 3
+                              echo 'Fizz';
+                    } elseif ($i % 5 == 0) { // When $i is a multiple of 5
+                              echo 'Buzz';
+                    } else {
+                              echo $i;
+                    }
+                    echo '<br>';
+          }
 
 5.
+          // Let's calculate the total price from the price array!
+          $prices = array(10, 6, 7, 8);
 
+          $total = 0;
 
+          foreach ($prices as $price) {
+                    $total +=$price;
+          
+          }
 
+          echo 'The total price is $'.$total;
 
 6.
 
