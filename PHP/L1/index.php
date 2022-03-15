@@ -766,6 +766,43 @@ echo "<option value= '3'> 3 </option>";
                     echo 'You cannot buy this item';
           }
 
+4.
+          Let's make simple FizzBuzz program here.
+          
+
+
+
+
+
+5.
+
+
+
+
+6.
+
+
+
+
+
+
+
+7.
+
+
+
+
+
+8.
+
+
+
+
+9.
+
+
+
+
 
 
 ?>
