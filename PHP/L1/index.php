@@ -820,7 +820,10 @@ echo "<option value= '3'> 3 </option>";
           echo 'The highest price is $'.$highestPrice;
 
 7.
+          // Let's print the prices of each menu.
+          $menu = array('name' => 'CURRY', 'price' => 9);
 
+          echo $menu['name'].' is $'.$menu['price'];
 
 
 
