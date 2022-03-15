@@ -846,7 +846,20 @@ echo "<option value= '3'> 3 </option>";
 
 
 9.
+          // Let's print all the menus together with the prices from the array.
+          $totalPrice = 0;
 
+          foreach($menus as $menu) {
+                    foreach($menu as $key => $value) {
+                              $menu['name'].' is $'.$menu['price'].'<br>';
+                    }
+
+                    echo $menu['name'].' is $'.$menu['price'].'<br>';
+                    
+                    $totalPrice += $menu['price'];
+          }
+
+          echo 'The total price is $'.$totalPrice;
 
 
 
