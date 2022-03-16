@@ -419,3 +419,67 @@ public function getTaxIncludedPrice() {
 call d method in index.php
 <p class="price">$<?php echo $menu -> getTaxIncludedPrice()  ?> (tax included)</p>
 
+-: Encapsulation
+From here, we'll learn encapsulation. This is one of the important 
+functions of object-oriented programming which hides information 
+that is unnecessary to the user.
+
+What is Encapsulation?
+First, let's imagine encapsulation with a real-life example. A 
+computer's circuitry is hidden so that the user can only operate 
+limited parts such as the keyboard. Hiding the circuitry 
+(encapsulation) avoids the risk of touching the circuitry and 
+damaging the computer. Even in programming, there is such 
+an "encapsulation" fundamental.
+
+Encapsulating within Classes
+In order to make classes easier for other people to use, you 
+should public the functions you want them to use and hide 
+the functions you don't want them to use outside of a class. 
+Limiting the usage of functions makes it easier for other people 
+to understand which functions to use and makes it safer for 
+them to use classes.
+
+public and private
+Encapsulation is the act of restricting access to class properties 
+and methods. public is used to allow access from outside the 
+class, and private is used to limit that access. In general, class 
+properties are made private.
+
+
+class Menu{
+          private $name;
+
+          public function __construct($name) {
+
+                    $this -> name = $name;
+          }
+}
+
+$curry = new Menu('Curry');
+echo $curry -> name           gives error
+
+-: Getter
+If you set a property to private, you won't be able to 
+retrieve the value of the property from outside the class. 
+Here, we will define a method that will return only the 
+value of the property. This kind of method exists only 
+to return the value of a property and is known as a getter. 
+Getters are commonly named like getPropertyName().
+
+class Menu{
+          private $name;
+
+          public function __construct($name) {
+
+                    $this -> name = $name;
+          }
+
+          public function getName() {
+                    return $this -> name;
+          }
+}
+
+$curry = new Menu('Curry');
+
+echo $curry -> getName();
