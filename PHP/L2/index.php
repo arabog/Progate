@@ -83,7 +83,6 @@ access d value
 echo $curry -> name;
 
 
--->
 -: What is a Method?
 Next, we will define methods in the class. A method is a function 
 that every instance has
@@ -175,3 +174,35 @@ $curry = new Menu('Curry');
 $curry -> name;               Curry
 
 
+-: Embedding PHP in HTML
+In order to put the layout together, let's embed the PHP code in 
+the HTML. When embedding PHP code, separating the PHP 
+and HTML makes the code easier to read.
+
+php
+<?php 
+          class Menu{
+                    public $name;
+          }
+
+          $curry = new Menu('Curry');
+?>
+
+html
+a semicolon isn't needed 4 only one line of code
+<p><?php echo $curry -> name ?> </p>    
+
+
+php
+<?php 
+          class Menu{
+                    public $name;
+          }
+
+          $curry = new Menu('Curry');
+
+          // html
+          echo '<p> '.$curry -> name.' </p>';     
+?>
+
+-->
