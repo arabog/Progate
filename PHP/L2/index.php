@@ -279,3 +279,42 @@ $menus = array($juice, $coffee, $curry, $pasta);
           <?php endforeach ?>
 
 </div>
+
+-: require_once
+Since the code is getting long, let's divide it into 3 files: 
+one for displaying (index.php), one for defining classes
+(menu.php), and one for defining data (data.php). To 
+access all the classes and variables in the other files, 
+you can use require_once. This loads an outside file 
+into the current file.
+
+menu.php
+<?php
+
+
+?>
+
+
+data.php
+<?php
+          require_once('menu.php');
+
+          $curry = new Menu('Curry');
+
+?>
+
+index.php
+<?php require_once('data.php') ?>
+
+<p>
+          <?php echo $curry -> name ?>
+</p>
+
+
+Let's separate the files as follows:
+・Code for defining a class.
+・Code for declaring variables.
+
+Since the Menu class is used in the data.php file, import 
+the menu.php file using require_once in data.php.
+
