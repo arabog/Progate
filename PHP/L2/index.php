@@ -399,3 +399,23 @@ index.php
                     </div>
           </body>
 </html>
+
+-: Showing Prices
+Using the price property for each element, we'll display 
+the prices including tax. Let's define the method to return
+the price including tax using the price property of the Menu 
+instance.
+
+menu.php
+// Define the getTaxIncludedPrice method
+public function getTaxIncludedPrice() {
+          $price = $this -> price * 1.0725;
+
+          return $price = round($price, 2);
+
+}
+
+
+call d method in index.php
+<p class="price">$<?php echo $menu -> getTaxIncludedPrice()  ?> (tax included)</p>
+
