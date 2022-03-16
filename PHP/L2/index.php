@@ -576,6 +576,46 @@ the name property.
 confirm.php
 <?php require_once('data.php') ?>
 
+<p> <?php echo $_POST[$curry -> getName()] ?> </p>
+
 <p> <?php echo $curry -> getName() ?> </p>
 
-<p> <?php echo $_POST[$curry -> getName()] ?> </p>
+<!-- ------------------------------- -->
+
+$orderCount = $_POST[$menu->getName()];
+
+<?php echo $menu->getName() ?>
+
+<?php echo $orderCount ?>
+
+-: Calculate the Subtotals
+First, calculate the subtotal of the orders using $orderCount 
+(number of order) and the price including tax, then display it.
+
+Calling Methods with $this
+Let's access a method using $this. Below, we can see how the 
+method is called when $curry is assigned to $menu.
+
+confirm.php
+<?php foreach($menus as $menu); ?>
+          <p class= "order-price"> 
+                    // Set the orderCount property of $menu to $orderCount using the setOrderCount method
+                    $menu -> setOrderCount($orderCount);
+                    
+                    $<?php echo $menu -> getTotalPrice() ?> </p>
+
+<?php endforeach ?>
+
+Menu.php
+class Menu{
+          public fundtion getTaxIncludedPrice() {
+
+          }
+
+          public function getTotalPrice() {
+                    return $this -> getTaxIncludedPrice() * $this -> orderCount;
+          }
+}
+
+
+
