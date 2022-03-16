@@ -123,4 +123,18 @@ class Menu{
 $curry = new Menu();
 $curry -> hello();
 
+-: Constructors
+If you define a special method named __construct(), this method 
+will be called automatically when you create an instance using new. 
+This kind of method that is called when a new instance is created 
+is called a constructor.
+
+class Menu{
+          public function _constructor() {
+                    echo 'A menu was created';
+          }
+}
+
+$curry = new Menu();          d constructor is automatically called
+
 
