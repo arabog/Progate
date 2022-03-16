@@ -35,6 +35,8 @@ CREATE TABLE users (          //users specify d name of d table created
 
 -- CREATE TABLE users ( `id` int auto_increment, `email` text, `password` text, primary key (id)); 
 
+-- CREATE TABLE users ( `id` int auto_increment,`username` text, `email` text, `password` text, primary key (id)); 
+
 -- ds was used for ruby on rails db
 -- CREATE TABLE posts ( `id` int auto_increment, `content` text, primary key (id)); 
 
@@ -91,7 +93,12 @@ Ans: mysql -u root -p
 
  ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Aduke2022$=';
 
+ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Aduke2022$=';
+
+ ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'Aduke2022$=';
+
  FLUSH PRIVILEGES;
+
 
  Full Steps For MySQL 8
 Connect to MySQL
@@ -104,3 +111,18 @@ Reset your password
 mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'your_new_password';
 mysql> FLUSH PRIVILEGES;
 mysql> quit
+
+
+https://raghwendra-sonu.medium.com/in-this-story-i-am-going-to-talk-about-how-you-can-connect-to-mysql-database-through-postman-and-8987b1aacca0
+
+
+CONNECTING MySQL TO POSTMAN
+npm install -g xmysql
+
+xmysql -h localhost -u Username -p Password -d DBName
+
+xmysql -h localhost -u root -p Aduke2022$= -d astrapay
+
+ http://localhost:3000/_version 
+
+ http://localhost:3000/api/users
