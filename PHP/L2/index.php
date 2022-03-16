@@ -483,3 +483,47 @@ class Menu{
 $curry = new Menu('Curry');
 
 echo $curry -> getName();
+
+-: Let's Order Food!
+Let's enable users to actually order food. Add a property 
+called orderCount to manage the quantity of the order.
+
+Setter
+When you make the access to a property private, you can't 
+change the value of the property from outside the class. 
+Here, we will define a method that will change the property 
+value. This kind of method which exists only to change the 
+value of a property is known as a setter. Setters are commonly 
+named like setPropertyName()
+
+class Menu{
+          private $orderCount;
+
+          public function setOrderCount($orderCount) {
+
+                    $this -> orderCount = $orderCount;
+          }
+}
+
+$curry = new Menu('Curry', ...);
+$curry -> setOrderCount(3);
+
+echo $curry -> getOrderCount(); //3
+
+Initial Values of Properties
+Let's make the initial value of the orderCount property 0. 
+When defining a property, you can set the initial value as 
+shown below.
+
+class Menu{
+          private $orderCount = 0; 
+
+          public function getOrderCount() {
+                    return $this -> orderCount;
+          }
+
+          public function setOrderCount($orderCount) {
+
+                    $this -> orderCount = $orderCount;
+          }
+}
