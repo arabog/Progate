@@ -130,11 +130,48 @@ This kind of method that is called when a new instance is created
 is called a constructor.
 
 class Menu{
-          public function _constructor() {
+          public function __construct() {
+
                     echo 'A menu was created';
           }
 }
 
 $curry = new Menu();          d constructor is automatically called
+
+-: Constructors and Arguments
+The __construct() method can take arguments. When you create 
+an instance using new and enter arguments, those arguments 
+will be passed to the constructor.
+
+class Menu{
+          $name;
+
+          public function __construct($name) {
+
+                    echo $name;
+          }
+}
+
+
+$curry = new Menu('Curry'); 
+
+Constructors and Properties
+As seen below, it is possible to use $this to set a value for an instance 
+property inside the __construct() method. This is useful because it 
+enables you to set properties when you create an instance.
+
+class Menu{
+          $name;
+
+          public function __construct($name) {
+
+                    $this -> name = $name;
+          }
+}
+
+
+$curry = new Menu('Curry'); 
+
+$curry -> name;               Curry
 
 
