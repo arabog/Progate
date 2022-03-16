@@ -39,8 +39,51 @@ start with a capital letter.
           }
 ?>
 
+Instances
+The specific object made from a class (instance blueprint) is called 
+an instance (object). Instances are created by using new ClassName(). 
+By writing $variableName = new ClassName(); you can put the 
+instance you create into a variable. Also, take note that instances 
+are created outside of the class definition.
 
+class Menu{
+          // sm code
+}
 
+$menu1 = bew Menu();
+$menu2 = bew Menu();
+$menu3 = bew Menu();
 
+Properties and Methods
+A property is the data that an instance possesses, and a method 
+is a function related to the instance.
+
+How to Write Properties
+A property is defined with public $property 
+
+class Menu{
+          public $name;
+}
+
+How to Access Properties
+By writing $instance->property you can access the property of 
+an instance. ($ is unnecessary for the property). When accessing 
+a property, -> is used.
 
 -->
+class Menu{
+          public $name;
+}
+
+$curry = new Menu();
+
+<!-- set d value -->
+$curry -> name = 'CURRY';
+
+<!-- access d value -->
+echo $curry -> name;
+
+
+
+
+
