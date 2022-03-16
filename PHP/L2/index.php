@@ -104,7 +104,23 @@ class Menu{
 $curry = new Menu();
 $curry -> hello();
 
+-: $this
+When you want to access an instance property or method within 
+a method, you can use a special variable called $this. $this can 
+only be used within the definition of a method in the class. 
+When a method is called, $this is replaced by an instance that 
+is calling the method.
 
 
+class Menu{
+          public $name;
+
+          public function hello() {
+                    echo 'My name is '.$this -> name.'.';
+          }
+}
+
+$curry = new Menu();
+$curry -> hello();
 
 
