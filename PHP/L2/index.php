@@ -617,5 +617,6 @@ class Menu{
           }
 }
 
+-: Calculate the Total Price
 
 
