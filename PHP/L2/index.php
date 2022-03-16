@@ -205,4 +205,77 @@ php
           echo '<p> '.$curry -> name.' </p>';     
 ?>
 
+Omitting Semi-Colons in Statements
+So you've learned up until this point that with PHP code, 
+you need to close the statement by placing a semi-colon ; 
+at the end. But, when the code is a single statement there 
+isn't a need to close the statement. In these cases, you can 
+omit the semi-colon.
+
+<p><?php echo $curry -> name ?> </p>    
+
+
+-: Let's Make the Menu!
+We will display the 4 menus. To do this, we'll make an array 
+of the 4 menus and display each menu as we iterate through 
+the array.
+
+Embedding foreach Loops in HTML
+When you embed a foreach loop in HTML, it can be written as 
+shown below. Embedded foreach loops are very useful as you 
+can use HTML tags within them. When embedding:
+・Use : instead of {.
+・Use endforeach instead of }.
+
+<?php
+          $words = array('apple', 'banana', 'orange');
+
+          foreach ($words as $word) {
+                    echo '<p> '.$word.' </p>';
+          }
+?>
+
+<?php
+          $words = array('apple', 'banana', 'orange');
+?>
+
+<?php foreach ($words as $word): ?>
+          <p> <?php echo $word ?> </p>
+<?php endforeach ?>
+
+// Closing Sequences
+// As with the foreach loop, the if, for,while and switch 
+// sequences can be closed with endif, endfor, endwhile 
+// and endswitch respectively.
+
 -->
+
+<?php
+          $age = 24;
+?>
+
+
+<?php if($age <= 18): ?>
+          <p> <?php echo 'You re an adult' ?> </p>
+<?php endif ?>
+
+<?php for($i = 0; $i < 100; $i++): ?>
+          <p> <?php echo $i ?> </p>
+<?php endfor ?>
+
+
+$juice = new Menu('JUICE');
+$coffee = new Menu('COFFEE');
+$curry = new Menu('CURRY');
+$pasta = new Menu('PASTA');
+
+// Declare the $menus array
+$menus = array($juice, $coffee, $curry, $pasta);
+
+<div class="menu-items">
+          <!-- Write the foreach loop -->
+          <?php foreach($menus as $menu): ?>
+                    <h3> <?php echo $menu -> name ?> </h3> 
+          <?php endforeach ?>
+
+</div>
