@@ -560,3 +560,22 @@ index.php
 
           <input type = "submit" value="Order">
 </form>
+
+-: Let's Make an Order Confirmation Page!
+From here, we will make an order confirmation page. First, 
+we will receive the quantity from each of the orders and 
+display them.
+
+Receive the Values
+You learned that you can receive the values submitted by 
+the form with $_POST in PHP Study I. The name attribute
+in the <input> tag refers to the name property of each Menu 
+instance, so let's receive the value that was submitted using 
+the name property.
+
+confirm.php
+<?php require_once('data.php') ?>
+
+<p> <?php echo $curry -> getName() ?> </p>
+
+<p> <?php echo $_POST[$curry -> getName()] ?> </p>
