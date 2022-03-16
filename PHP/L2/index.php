@@ -527,3 +527,36 @@ class Menu{
                     $this -> orderCount = $orderCount;
           }
 }
+
+-: Let's Order Food!
+We will specify the quantity per menu and enable the user to order the food.
+
+Let's Create the Form!
+Let's use HTML <form> and <input> tags to allow the user to order 
+each menu with a specific number of items. Here, we will specify the 
+value of the name property of the Menu instance in the <input> tag 
+name attribute.
+The name attribute of the <input> tag is used to receive the value
+
+index.php
+<form method="post" action="confirm.php">
+          <span>Qty:</span>
+
+          <input name="<?php echo $curry -> getName() ?>">
+
+          <input type = "submit" value="Order">
+</form>
+
+Initial Values for <input>
+You can set the initial value using a value attribute in the <input> tag. 
+The initial value that you specify will be displayed inside the textbox 
+at the beginning.
+
+index.php
+<form method="post" action="confirm.php">
+          <span>Qty:</span>
+
+          <input type='text' value='0' name="<?php echo $curry -> getName() ?>">
+
+          <input type = "submit" value="Order">
+</form>
