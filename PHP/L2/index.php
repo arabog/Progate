@@ -21,7 +21,7 @@ Let's take a look at the food ordering site we're going to create.
 We'll take each menu as an object and create an ordering site 
 while assembling them.
 
-Classes
+-: Classes
 To make the ordering site, we will now make objects for all of 
 the menus one by one. In object-oriented programming, we 
 create a blueprint of an object called "class" and create an 
@@ -54,7 +54,7 @@ $menu1 = bew Menu();
 $menu2 = bew Menu();
 $menu3 = bew Menu();
 
-Properties and Methods
+-: Properties and Methods
 A property is the data that an instance possesses, and a method 
 is a function related to the instance.
 
@@ -70,18 +70,39 @@ By writing $instance->property you can access the property of
 an instance. ($ is unnecessary for the property). When accessing 
 a property, -> is used.
 
--->
 class Menu{
           public $name;
 }
 
 $curry = new Menu();
 
-<!-- set d value -->
+ set d value 
 $curry -> name = 'CURRY';
 
-<!-- access d value -->
+access d value 
 echo $curry -> name;
+
+
+-->
+-: What is a Method?
+Next, we will define methods in the class. A method is a function 
+that every instance has
+
+How to Use Methods
+The method is defined with public function method(). Also, it is 
+possible to access (call) a method by writing $instance->method().
+
+
+class Menu{
+          public $name;
+
+          public function hello() {
+                    echo "I'm an instance of Menu"
+          }
+}
+
+$curry = new Menu();
+$curry -> hello();
 
 
 
