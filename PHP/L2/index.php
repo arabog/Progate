@@ -318,3 +318,84 @@ Let's separate the files as follows:
 Since the Menu class is used in the data.php file, import 
 the menu.php file using require_once in data.php.
 
+-: Showing Images and Prices
+We will display the image and price for each one of the 
+elements. Let's define the image property and price 
+property of the Menu class.
+
+Showing Images and Prices
+We will display the image and price for each one of the 
+elements. Let's define the image property and price 
+property of the Menu class.
+
+<img src="<?php echo $curry -> image ?>" >
+
+<!-- soln -->
+menu.pjp
+<?php
+          class Menu {
+                    public $name;
+                    // Declare the $price property
+                    public $price;
+                    // Declare the $image property
+                    public $image;
+                    
+                    // Add the $price and $image parameters to the constructor
+                    public function __construct($name, $price, $image) {
+                              $this -> name = $name;
+                              // Assign $price to the price property 
+                              $this -> price = $price;
+                              // Assign $image to the image property
+                              $this -> image = $image;
+                    }
+  
+}
+?>
+
+data.php
+<?php
+          require_once('menu.php');
+
+          // Pass prices and images to each new Menu()
+          $juice = new Menu('JUICE', 6, 'https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/juice.png');
+
+          $coffee = new Menu('COFFEE', 5, 'https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/coffee.png');
+
+          $curry = new Menu('CURRY', 9, 'https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/curry.png');
+
+          $pasta = new Menu('PASTA', 12, 'https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/pasta.png');
+
+          $menus = array($juice, $coffee, $curry, $pasta);
+?>
+
+index.php
+<?php require_once('data.php') ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Café Progate</title>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link href='https://fonts.googleapis.com/css?family=Pacifico|Lato' rel='stylesheet' type='text/css'>
+</head>
+          <body>
+                    <div class="menu-wrapper container">
+                              <h1 class="logo">Café Progate</h1>
+                              
+                              <div class="menu-items">
+                                        <?php foreach ($menus as $menu): ?>
+                                                  <div class="menu-item">
+                                                            <!-- Print the image property of $menu -->
+                                                            <img src="<?php echo $menu -> image ?>">
+
+                                                            <h3 class="menu-item-name"><?php echo $menu->name ?></h3>
+                                                            
+                                                            <!-- Print the price property of $menu -->
+                                                            <p class="price">$<?php echo $menu -> price ?></p>
+                                                  </div>
+                                        <?php endforeach ?>
+                              </div>
+                    </div>
+          </body>
+</html>
