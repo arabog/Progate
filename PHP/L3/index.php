@@ -351,14 +351,22 @@ writing if else in html inside php
 <?php if ($menu instanceof Drink): ?>
           <p class="menu-item-type"><?php echo $menu->getType() ?></p>
           
-          <!-- Add an else statement -->
-          <?php else: ?>
+<!-- Add an else statement -->
+<?php else: ?>
 
           <p> Spiciness: <?php echo $menu -> getSpiciness() ?> </p>
 
 <?php endif ?>
 
 
--: 
+-: Finishing the Food Display
+We will display chili peppers corresponding to the spiciness.
+Let's display the number of chili peppers based on the level 
+of spiciness using iteration.
+
+
+Instead of a number, let's display chili pepper icons for the 
+spiciness property.
+
 
 -->

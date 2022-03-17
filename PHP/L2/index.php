@@ -619,4 +619,25 @@ class Menu{
 
 -: Calculate the Total Price
 
+confirm.php
+ <!-- Declare the $totalPayment variable -->
+ <?php $totalPayment = 0 ?>
+ 
+<?php foreach ($menus as $menu): ?>
+	<?php 
+		$orderCount = $_POST[$menu->getName()];
 
+		$menu->setOrderCount($orderCount);
+		
+		// Increment the $totalPayment variable
+		$totalPayment = $totalPayment + $menu -> getTotalPrice();
+	?>
+
+	<p class="order-amount">
+		<?php echo $menu->getName() ?>
+		
+		<?php echo $orderCount ?>
+	</p>
+
+	<p class="order-price">$<?php echo $menu->getTotalPrice() ?></p>
+<?php endforeach ?>
