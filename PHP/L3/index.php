@@ -228,3 +228,60 @@ index.php
 <?php if($menu instanceof Drink): ?>
           <p class="menu-item-type"><?php echo $menu->getType() ?></p>
 <?php endif ?>
+
+-: Overriding
+Previously, we used a setter to set the value of $type, but here we 
+define our own constructor for the Drink class and set the value of 
+$type. The __construct method is already defined in the parent class, 
+but if we define a method with the same name in the child class, 
+we can override the contents of the method. Such a method is 
+known as overriding.
+
+drink.php
+class Drink extends Menu {
+          private $type;
+
+          public function __construct($name, ..., $type) {
+                    $this -> name = $name;
+
+                    $this -> type = $type;
+          }
+
+          public function setType($type) {
+                    $this -> type = $type;
+          }
+}
+
+Child Classes & Access Rights
+We learned in PHP Study II that if the access of a property is private, 
+we cannot directly access the property from outside the class. In fact, 
+private properties cannot be accessed from child classes either. So we 
+cannot access the private property of the Menu class from the Drink 
+class.
+
+Protected Properties
+In order to access a property defined in the parent class from the 
+child class, we need to set the access right of the property to 
+protected. A property whose access is protected can only be 
+accessed from its own class and from child classes which inherit 
+that class
+
+class Menu {
+          protected $name;
+}
+
+class Drink extends Menu {
+          public function __construct($name, ...) {
+                    accessible since d ppty was set as protected in parent class
+                    $this -> name = $name;
+          }
+}
+
+Summary of Access Rights
+Let's review the following three access rights:
+· public: content is accessible from anywhere
+· protected: content is accessible only from the 
+class in which it's created and subclasses (child classes)
+· private: content is only accessible from the class 
+in which it's created
+
