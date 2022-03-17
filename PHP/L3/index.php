@@ -210,7 +210,7 @@ belongs to a particular class. By writing $instanceName
 instanceof className, the code will return true if the 
 instance belongs to the specified class, and false otherwise.
 
--->
+
 data.php
 $coffee = new Drink('Coffee', ...);
 
@@ -335,7 +335,7 @@ drink.php           child class
 class Drink extends Menu {
 
           same as __construct in d parent class except $type
-          public function __construct($type) {
+          public function __construct($name, $price, $image, $type) {
 
                     parent:: __construct($name, $price, $image);
 
@@ -346,3 +346,19 @@ class Drink extends Menu {
 
 $coffee = new Drink('Coffee', ...., 'hot');
 echo $drink -> getType();
+
+writing if else in html inside php
+<?php if ($menu instanceof Drink): ?>
+          <p class="menu-item-type"><?php echo $menu->getType() ?></p>
+          
+          <!-- Add an else statement -->
+          <?php else: ?>
+
+          <p> Spiciness: <?php echo $menu -> getSpiciness() ?> </p>
+
+<?php endif ?>
+
+
+-: 
+
+-->
