@@ -285,3 +285,64 @@ class in which it's created and subclasses (child classes)
 · private: content is only accessible from the class 
 in which it's created
 
+-: Organizing Code
+As we defined the constructor of the Drink class earlier, we can 
+see that a lot of the constructor overlaps with that of the Menu 
+class. This is inconvenient because it means we have to change 
+both codes when changing the overlapping areas. Let's solve 
+this issue by putting the overlapping code in one place.
+
+menu.php  parent class
+class Menu {
+          public function __construct($name, $price, $image) {
+                    $this -> name = $name;
+                    $this -> price = $price;
+                    $this -> image = $image;
+                    self::$count++;
+          }
+}
+
+drink.php           child class
+class Drink extends Menu {
+          same as __construct in d parent class except $type
+          public function __construct($name, $price, $image, $type) {
+                    $this -> name = $name;
+                    $this -> price = $price;
+                    $this -> image = $image
+
+                    self::$count++;
+          }
+}
+
+parent
+To call a method defined in the parent class when overriding, 
+we use parent as follows: parent::methodName. The method 
+of the parent class is executed at the place where 
+parent::methodName is described. By doing this, we can 
+write the constructor we created earlier in a clear manner.
+
+menu.php  parent class
+class Menu {
+          public function __construct($name, $price, $image) {
+                    $this -> name = $name;
+                    $this -> price = $price;
+                    $this -> image = $image;
+                    self::$count++;
+          }
+}
+
+drink.php           child class
+class Drink extends Menu {
+
+          same as __construct in d parent class except $type
+          public function __construct($type) {
+
+                    parent:: __construct($name, $price, $image);
+
+                    $this -> type = $type;
+
+          }
+}
+
+$coffee = new Drink('Coffee', ...., 'hot');
+echo $drink -> getType();
