@@ -149,3 +149,43 @@ $coffee = new Drink('Coffee', ...);
 
 echo $coffee -> getName(); // Coffee
 
+-: Independent Properties
+Let's start by customizing the Drink class. We want the 
+Drink object to have a type; either hot or cold, in the 
+Drink object, so we'll add the $type property to manage this. 
+
+class Drink extends Menu {
+          private $type;
+}
+
+Independent Methods
+We can also define our own methods for child classes. Let's 
+define the getter and setter of the $type property to the Drink class.
+
+class Drink extends Menu {
+          private $type;
+
+          public function getType() {
+                    return $this -> type;
+          }
+
+          public function setType($type) {
+                    $this -> type = $type;
+          }
+}
+
+data.php
+$coffee = new Drink('Coffee', ...);
+<!-- ds can be called in Drink class -->
+$coffee -> setType('hot');
+
+$coffee = new Menu('Coffee', ...);
+<!-- ds cant be called in Menu class -->
+$curry -> setType('hot');
+
+Calling Child Methods
+When calling a method of a child class, the program searches 
+for the method. If a method is defined in a child class, that 
+method is called right away. If it's not defined there, the 
+method of the parent class is called.
+
