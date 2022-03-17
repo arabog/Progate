@@ -99,3 +99,53 @@ $menu2 = new Menu('Pasta', ...);
 
 echo Menu::getCount();  //2
 
+-: Separating Food and Drinks
+From here, we'll display spiciness for food and hot/cold for 
+drinks in the menu list. Rather than giving all Menu instances 
+both spiciness and hot/cold data, we want to give the spiciness 
+data to food and hot/cold data to drinks, so let's put food and 
+drinks in different classes: Food and Drink. We'll create instances 
+from each class.
+
+Class Inheritance
+We're going to make a new Food menu (Food class) and Drink 
+menu (Drink class). However, most of the data and functions of 
+the Food and Drink classes will be the same as the Menu class 
+which we have implemented so far. So let's have the new classes 
+inherit the content of the Menu class and then customize them.
+
+What is Inheritance?
+We can make a class inherit already defined properties and 
+methods of another class by using inheritance. The original 
+class to hand over its content is known as a parent class, and 
+the new class which inherits the content is called a child class. 
+Once the child class has inherited all the content from the 
+parent class, we can add new features to the child class.
+
+Inheritance Syntax
+When defining a new child class using inheritance, we use extends.
+
+<!-- Parent Class -->
+class parentClassName {}
+
+<!-- Child Class -->
+class childClassName extends parentClassName {}
+
+menu.php
+class Menu {
+          public function __construct($name, ...) {
+                    $this -> name = $name;
+          }
+
+          public function getName() {
+                    return $this -> name;
+          }
+}
+
+drink.php
+class Drink extends Menu {}
+
+$coffee = new Drink('Coffee', ...);
+
+echo $coffee -> getName(); // Coffee
+
