@@ -119,10 +119,16 @@ https://raghwendra-sonu.medium.com/in-this-story-i-am-going-to-talk-about-how-yo
 CONNECTING MySQL TO POSTMAN
 npm install -g xmysql
 
-xmysql -h localhost -u Username -p Password -d DBName
+xmysql -h localhost -u Username -p Password -d DBName;
 
-xmysql -h localhost -u root -p Aduke2022$= -d astrapay
+xmysql -h localhost -u root -p Aduke2022$= -d astrapay;
 
  http://localhost:3000/_version 
 
  http://localhost:3000/api/users
+
+
+CREATE TABLE periods ( `id` int auto_increment,`facilitatorName` text, `periodPerDay` int, `maxPeriodsPerDay` int, primary key (id)); 
+
+
+CREATE TABLE pay ( `id` int auto_increment, `payPerPeriod` int, `totalPeriodPerWeek` int, `maxWeeklyPeriods` int, `totalWeeklyPay` int, primary key (id)); 
