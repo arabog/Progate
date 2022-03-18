@@ -383,8 +383,28 @@ class User {
 $user1 = new User('Alex', 'male');
 echo user1 -> getId();        //1
 
+soln:
+In the constructor of the User class, add code to do the following:
+・Increment the $count class property by 1
+・Assign the value of the $count class property to the id property.
 
+// Declare the $count private class property with 0 as the initial value
+private static $count = 0;
 
+public function __construct($name, $gender) {
+          $this->name = $name;
+          $this->gender = $gender;
+
+          // Increment the $count class property by 1
+          self::$count++;
+
+          // Assign the value of the $count class property to the id property
+          $this -> id = self::$count;
+}
+
+show.php
+<!-- Print the id property using the getter method for $user -->
+<p><?php echo $user -> getId() ?></p>
 
 
 
