@@ -239,6 +239,22 @@ show.php
           </div>
 <?php endforeach ?>
 
+-: Displaying User Names
+From here, we'll make each review display the information about 
+the user who wrote that review.
+
+Making the User Class
+Since we want to regard each user as an object and make an instance 
+for each person, we first need to create a User class. In the User class, 
+we will define the property for the name of a user as name and the 
+property for their gender as gender.
+
+user.php
+class User {
+          private $name;
+
+          private $gender;
+}
 
 
 
@@ -247,7 +263,6 @@ show.php
 
 
 
--:
 
 
 
