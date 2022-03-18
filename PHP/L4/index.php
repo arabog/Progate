@@ -140,12 +140,20 @@ show.php
 $menu = Menu:: findByName($menus, $menuName);
 
 
--:
+-: Making a Review Class
+From here, we'll display reviews on the detail page. We 
+want each review to be considered an instance of the 
+Review class, so let's create a Review class! In the 
+Review class, we'll define the $menuName property 
+which refers to what menu's review it is and the $body 
+property which is the content of the review.
 
+review.php
+class Review {
+          private $menuName;
 
-
-
-
+          private $body;
+}
 
 -:
 
