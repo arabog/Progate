@@ -155,8 +155,17 @@ class Review {
           private $body;
 }
 
--:
+-: Review Instances
+Since we created a Review class, we'll create instances based on 
+the Review class.
 
+Let's import the review.php file to use the Review class in data.php.
+
+// Assign an instance of the Review class to the $review1 variable
+$review1 = new Review($juice -> getName(), 'Yummy');
+
+// Assign an instance of the Review class to the $review2 variable
+$review2 = new Review($curry -> getName(), 'Very hearty');
 
 
 
