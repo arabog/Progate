@@ -309,7 +309,7 @@ private $body;
 // Add $userName to the second parameter
 public function __construct($menuName, $userName, $body) {
           $this->menuName = $menuName;
-          
+
           // Assign $userName to the userName property
           $this -> userName = $userName;
           
@@ -317,16 +317,74 @@ public function __construct($menuName, $userName, $body) {
 }
 
 
+-: Displaying User Data
+We'll display the names of users who wrote the reviews. Also, 
+we'll change the icon display depending on the value of the 
+user's gender property.
+
+show.php
+In the foreach loop:
+・Call getUser method with the argument $users
+ for the current $review object.
+・ Declare the $user variable and assign the return 
+value of the getUser method to it.
+
+Write an if statement with the following characteristics:
+・Use the getter method of $user to retrieve the gender 
+property and compare if it is equal to the string male
+
+<!-- Write the if statement below -->
+<?php if($user -> getGender() == 'male'): ?>
+          <img src="<?php echo "https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/male.png" ?>" class='icon-user'>
+          
+<?php else: ?>
+                    <img src="<?php echo "https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/female.png"   ?>" class='icon-user'>
+<p><?php endif ?></p>
+                    
+          <p><?php echo $user->getName() ?></p>
+
+          <p class="review-text"><?php echo $review->getBody() ?></p>
+<?php endforeach ?>
+
+
+-: Identifying Users
+When User instances with same the name properties are created, 
+it becomes impossible to identify which user wrote the review. 
+Here, we'll make it possible to identify each use
+
+By giving unique values to User instances, we'll be able to 
+differentiate them. Here, we'll give them a property named id 
+and put in numbers ascending in numerical order from 1.
+id Property
+So how do we make the values of the id property go in 
+ascending order from 1? If we manage the number of 
+instances created, we can use that number to put in the 
+correct value for each id property. Since we have already 
+learned how to manage the number of instances made in 
+the Menu class, we'll use that knowledge.
+
+user.php
+class User {
+          private $id;
+          private static $count = 0;
+
+          public function __construct($name, $gender) {
+                    self $count++;
+
+                    $this ->id = self $count;
+          }
+
+
+          public function getId() {
+                    return $this -> id;
+          }
+}
+
+$user1 = new User('Alex', 'male');
+echo user1 -> getId();        //1
 
 
 
-
--:
-
-
-
-
--:
 
 
 
