@@ -68,17 +68,76 @@ soln
 <h1><?php echo $menuName ?> details page</h1>
 
 
+-: Making Content for the Details Page
+Here, we'll display the details of the menu (name, price, etc.) that 
+is clicked. Therefore, it's necessary to retrieve the Menu instances. 
+Presently, show.php knows the name of the menu that must be 
+displayed from $_GET. So let's make a method that will get the 
+instance from the name property.
 
+Obtaining Menu Instances
+Using the value of the name property, we're going to create a class 
+method findByName that will get a particular Menu instance from 
+the $menus array. Let's look at how to create the findByName method.
 
+show.php
+$menus = array($juice, $coffee, $curry, $pasta);
 
+$menu = Menu.findByName($menus, 'CURRY');
 
+echo $menu -> getName(); // CURRY
 
+menu.php
+class Menu {
+          public static function findByName($menus, $name) {}
+}
 
+return
+In order to implement the findByName method, it's necessary 
+to gain new knowledge about return. We learned that return 
+returns values in PHP Study I. As a matter of fact, return not 
+only returns a value but also ends functions and methods at 
+the point where it's called.
 
--:
+function getLargeNum($num1, $num2) {
+          if($num1 > $num2) {
+                    echo '$num1 is greater than $num2';
 
+                    return $num1;
+          }
 
+          if return in d if statement is called, ds code wont be executed
+          echo '$num2 is greater than or equal to $num1';
+          return $num2;
+}
 
+$result = getLargeNum(5, 1);
+echo $result;       //5
+
+Implementing findByName
+If the findByName method was called, If there is an instance 
+that matches the name during the iteration, it returns that 
+instance as the return value and ends the process, so there 
+will be no further iteration.
+
+menu.php
+class Menu {
+          public static function findByName($menus, $name) {
+                    foreach($menus as menu) {
+
+                              if d name ppty of d instance matches $name, 
+                              return dt instance
+                              if($menu -> getName() == $name) {
+                                        return $menu;
+                              }
+
+                    }
+          }
+}
+
+show.php
+// Call the findByName method of the Menu class
+$menu = Menu:: findByName($menus, $menuName);
 
 
 -:
