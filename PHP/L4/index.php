@@ -167,16 +167,62 @@ $review1 = new Review($juice -> getName(), 'Yummy');
 // Assign an instance of the Review class to the $review2 variable
 $review2 = new Review($curry -> getName(), 'Very hearty');
 
+-: Displaying the Reviews
+Let's display the reviews on the details page. For now, we will 
+display the reviews of all of the menus on all of the detail pages.
+
+show.php
+Write a foreach statement to iterate through $reviews, and use 
+review  as the variable to assign value of the element.
+(Don't forget the endforeach!)
+
+   <!-- Write the foreach loop below -->
+<?php foreach($reviews as $review): ?>
+          <h3><?php echo $review->getMenuName() ?></h3>
+          
+          <p><?php echo $review->getBody() ?></p>
+<?php endforeach ?>
 
 
--:
+-:Getting the Reviews
+Let's only display the reviews that are related to each detail page. 
+Using the name property of Menu class and the menuName property 
+of Review class, we'll create a method named getReviews to get the 
+related Review instances.
+
+show.php
+$curry = new Food('Curry', ...);
+$reviews = array ($review1, $review2, $review2);
+
+$curryReviews = $curry -> getReviews($reviews);
+
+Implementing getReviews
+The getReviews method is written as shown below. First, 
+we prepare a blank array named $reviewsForMenu and start 
+adding Review instances with names that match the Menu 
+instance's name. Then, we'll return the array of $reviewsForMenu. 
+Look back at PHP Study I if you forget how to add elements to an 
+array.
+
+menu.php
+class Menu {
+          public function getReviews($reviews) {
+                    empty array
+                    $reviewsForMenu = array();
+
+                    foreach($reviews as $review) {
+                              if($review -> getMenuName() == $this.name) {
+                                        $reviewsForMenu[] = $review;
+                              }
+                    }
+
+                    return reviewsForMenu;
+          }
+}
 
 
 
 
-
-
--:
 
 
 
