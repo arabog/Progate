@@ -407,12 +407,53 @@ show.php
 <p><?php echo $user -> getId() ?></p>
 
 
+-: Connecting Reviews and Users
+The Review and User instances are currently connected by 
+the user's name. Because of this, if there are users with the 
+same name, it's impossible to acquire the correct user 
+connected to the review.
+
+Connecting by id
+If we connect the Review and User by id instead of name, 
+we can correctly identify the User instance connected to 
+the Review instance. Instead of using the userName property, 
+we'll have the Review instance use the userId property. Also, 
+although we used the name in the getUser method before, 
+this time we'll replace it with the id property.
+
+review.php
+// Change $userName to $userId
+// private $userName;
+private $userId;
+private $body;
+
+// Change the parameter $userName to $userId
+public function __construct($menuName, $userId, $body) {
+          $this->menuName = $menuName;
+
+          // Change userName to userId
+          $this->userId = $userId;
+          $this->body = $body;
+}
+
+ public function getUser($users) {
+          foreach ($users as $user) {
+
+                    // Rewrite the code below
+                    if ($user->getId() == $this->userId) {
+                              return $user;
+                    }
+          }
+}
 
 
-
-
--:
-
-
-
+data.php
+$review1 = new Review($juice->getName(), $user1->getId(), 'Yummy');
+$review2 = new Review($curry->getName(), $user1->getId(), 'Very hearty');
+$review3 = new Review($coffee->getName(), $user2->getId(), 'Smelled so nice');
+$review4 = new Review($pasta->getName(), $user2->getId(), 'The sauce was really good :)');
+$review5 = new Review($juice->getName(), $user3->getId(), 'Just a plain old orange juice');
+$review6 = new Review($curry->getName(), $user3->getId(), 'Tasted good for its price');
+$review7 = new Review($coffee->getName(), $user4->getId(), 'The bitterness was just right.');
+$review8 = new Review($pasta->getName(), $user4->getId(), 'Finely selected ingredients.');
 
