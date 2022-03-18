@@ -257,24 +257,64 @@ class User {
 }
 
 
+-: User Instances
+As we have created a User class, we will make instances based on 
+the User class.
+
+Let's import the user.php file to use the User class in the data.php file.
+$user1 = new User('Alex', 'male');
+$user2 = new User('Emma', 'female');
+
+$users = array($user1, $user2);
 
 
+-: Connecting Reviews & Users
+Let's connect the information so that we can recognize which user 
+wrote which review. In order to save the names of the users who 
+wrote the review, we'll define the userName property in the Review 
+class. Also, using the value of the userName property, we'll define 
+the getUser method which gets the User instance with the same 
+name
 
+Getting Related Users
+Implementing the getUser method should look like the example below.
 
+review.php
+class Review {
+          private $userName;
 
+          public function getUser($users) {
+                    foreach($users as $user) {
+                              if($user -> getName() == $this -> userName) {
+                                        return $user;
+                              }
+                    }
+          }
+}
 
+In the constructor, assign the value of the $userName parameter to
+the userName property.
 
+public function __construct($userName) {
+          $this -> userName = $userName;
+}
 
+review.php
+private $menuName;
+// Declare the $userName private property
+private $userName;
 
+private $body;
 
-
-
--:
-
-
-
-
--:
+// Add $userName to the second parameter
+public function __construct($menuName, $userName, $body) {
+          $this->menuName = $menuName;
+          
+          // Assign $userName to the userName property
+          $this -> userName = $userName;
+          
+          $this->body = $body;
+}
 
 
 
