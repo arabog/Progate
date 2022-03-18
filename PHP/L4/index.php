@@ -179,7 +179,7 @@ review  as the variable to assign value of the element.
    <!-- Write the foreach loop below -->
 <?php foreach($reviews as $review): ?>
           <h3><?php echo $review->getMenuName() ?></h3>
-          
+
           <p><?php echo $review->getBody() ?></p>
 <?php endforeach ?>
 
@@ -205,20 +205,40 @@ Look back at PHP Study I if you forget how to add elements to an
 array.
 
 menu.php
-class Menu {
-          public function getReviews($reviews) {
-                    empty array
-                    $reviewsForMenu = array();
-
-                    foreach($reviews as $review) {
-                              if($review -> getMenuName() == $this.name) {
-                                        $reviewsForMenu[] = $review;
-                              }
+public function getReviews($reviews) {
+          $reviewsForMenu = array();
+          
+          foreach($reviews as $review) {
+                    if($review -> getMenuName() == $this ->name) {
+                              $reviewsForMenu[] = $review;
                     }
-
-                    return reviewsForMenu;
           }
+
+          return $reviewsForMenu;
 }
+
+Let's make it possible for a Menu instance to get a Review 
+instance that is related to it.
+
+$review1 = new Review($juice->getName(), 'Yummy');
+$review2 = new Review($curry->getName(), 'Very hearty');
+$review3 = new Review($coffee->getName(), 'Smelled so nice');
+$review4 = new Review($pasta->getName(), 'The sauce was really good :)');
+$review5 = new Review($juice->getName(), 'Just a plain old orange juice');
+$review6 = new Review($curry->getName(), 'Tasted good for its price');
+$review7 = new Review($coffee->getName(), 'The bitterness was just right.');
+$review8 = new Review($pasta->getName(), 'Finely selected ingredients.');
+
+show.php
+<?php $menuReviews = $menu -> getReviews($reviews) ?>
+          <!-- Change $reviews to $menuReviews in the foreach loop -->
+          <?php foreach($menuReviews as $review): ?>
+
+          <div class="review-list-item">
+                    <p><?php echo $review->getBody() ?></p>
+          </div>
+<?php endforeach ?>
+
 
 
 
