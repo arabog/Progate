@@ -368,5 +368,18 @@ of spiciness using iteration.
 Instead of a number, let's display chili pepper icons for the 
 spiciness property.
 
+index.php
+<?php if ($menu instanceof Drink): ?>
+          <p class="menu-item-type"><?php echo $menu->getType() ?></p>
+
+<?php else: ?>
+          <?php $iter = $menu -> getSpiciness() ?>
+          
+          <!-- Make a for loop that repeats until the count of iterations is greater than the $spiciness property value -->
+          <?php for($i = 1; $i <= $iter; $i++): ?>
+                    <img class="icon-spiciness" src="<?php echo "https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/chilli.png" ?>" >
+          <?php endfor ?>
+              
+<?php endif ?>
 
 -->

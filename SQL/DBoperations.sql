@@ -92,7 +92,14 @@ Check the target table again after dropping the column
 Dropping the Target Column:
 ALTER TABLE items DROP COLUMN category;
 
-5. What to Check for When There Are Problems
+5. How to Delete a row in MySQL
+To delete a row in MySQL, the DELETE FROM statement is used:
+
+DELETE FROM `table_name` [WHERE condition];
+DELETE FROM users WHERE id = 1;
+
+
+6. What to Check for When There Are Problems
 If you are unable to successfully perform the various column operations, 
 please check on the following.
 The code specified in the article has not been run
