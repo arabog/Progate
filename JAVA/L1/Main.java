@@ -75,23 +75,59 @@ will concatenate the two strings to become "53", instead of adding
 them as numbers. Try to always be aware of the difference between 
 an integer and string.
 
+-: Data Types
+So far, we have worked with two types of values, strings and integers. 
+These are called data types. There are other data types as well but 
+let's first cover the two types we've learned, String and int. Keep in 
+mind that the first letter of String is capitalized while int is not.
+
+Declaring Variables
+You first need to declare a variable before storing a value in it. By 
+declaring the variable, a "box" is created that can store the value.
+There are two steps to declaring a variable in Java:
+① Specify the data type of the value.
+② Decide the name of the variable.
+
+int number;
+String name;
+
+Assigning Values
+After declaring a variable, you need to assign a value. You can do this 
+in the following format: variableName = value. The = operator in 
+Java does not mean "equal". This assignment operator means assign 
+the value on the right to the variable on the left. Note that variable 
+names are not enclosed in double quotes.
+
+number = 3;
+name = "John";
+
 
 
 */ 
 
 class Main {
           public static void main(String[] args) {
+                    // string
                     System.out.println("Hello world");
 
+                    // calculation
                     System.out.println(5 + 5);
-
                     System.out.println(5 % 3);
 
-                      // Concatenate "38" and "19", and print it
+                      // Concatenate 
                     System.out.println("38" + "19");
-                    
-                    // Add 38 and 19, and print it
                     System.out.println(38 + 19);
+
+                    // data type
+                    int number;
+                    String name;
+
+                    number = 3;
+                    name = "John";
+
+                    System.out.println(number);
+                    System.out.println(name);
+
           }
 }
 
