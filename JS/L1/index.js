@@ -11,6 +11,10 @@ Multiplication and Division:
 multiplication can be done using the asterisk * symbol and 
 division can be done using the slash / symbol.
 
+Remainders
+Furthermore, the percentage % symbol can be used to find 
+the remainder when dividing. 
+
 
 
 */ 
