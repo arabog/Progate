@@ -26,6 +26,16 @@ Let's look at an example of the difference between strings and integers.
 This is why it's important to remember that strings and integers are 
 completely different!
 
+-: Variable
+variable is a container (box) for data (values). The name attached to 
+the box is the variable name, and the actual values (strings, numbers, 
+etc.) are stored inside the box.
+
+
+Variables are defined as let variableName = value. The = symbol in 
+programming doesn't mean equal, but assign what's on the right side 
+to the left side". let is a declaration that says "I'm going to define a 
+variable", followed by the variable name and the value is assigned.
 
 
 
