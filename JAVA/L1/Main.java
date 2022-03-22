@@ -192,6 +192,35 @@ mount. You can print them the same way you print int values.
 double decimalNum = 3.14;
 System.out.println(decimalNum);
 
+-: Type Conversion
+We learned about concatenating strings, but can we concatenate 
+an integer and a string? You can, by using type conversion. In 
+Java, types can be converted both implicitly and explicitly. In 
+the example, 23 is converted to "23". This is because int gets 
+converted to String implicitly when you add them together.
+
+System.out.println("I am " + 23 + " years old");
+
+Rules of Calculation
+Before learning about implicit type conversion between an int 
+and a double, there's one important rule to be careful of. 
+Calculations between two identical types will return the same 
+type. Therefore, 5 / 2 returns 2, not 2.5.
+
+System.out.println(5 / 2);    //2
+
+System.out.println(5.0 / 2.0);          //2.5
+
+int and double Calculations
+What happens when we do calculations with an int and a double?
+In this case, the int will be implicitly converted to a double, and 
+the result will be a double. So, both 5 / 2.0 and 5.0 / 2 will be 2.5.
+Since integers can be expressed as numbers with a decimal point
+(like 5 and 5.0), Java automatically converts them.
+
+
+
+
 */ 
 
 // javac Main.java 
@@ -225,6 +254,10 @@ class Main {
                     double decimalNum = 3.14;
                     System.out.println(decimalNum);
 
+                    // implicit type conversn
+                    System.out.println(7 / 2);    //3
+                    System.out.println(7.0 / 2.0);          //3.5
+                    System.out.println(7 / 2.0);  //3.5
           }
 }
 
