@@ -54,6 +54,20 @@ a line. Comments will be ignored when running the code, so you
 can use them to leave notes.
 
 
+-: Integers
+You can use numbers like integers in programming. Unlike strings,
+they don't need to be enclosed in quotes. You can add and subtract 
+integers just like you do in math. Putting spaces before and after 
+integers is not required, but it makes the code easier to read.
+
+System.out.println(5 + 5); //10
+
+Difference between Strings and Integers
+Strings and integers are interpreted differently in programming.
+5 + 2 will print 7, the result of the addition. However, if you make 
+it a string by adding double quotes " like "5 + 2", the output will 
+be the literal string: 5 + 2.
+
 
 
 */ 
@@ -61,6 +75,8 @@ can use them to leave notes.
 class Main {
           public static void main(String[] args) {
                     System.out.println("Hello world");
+
+                    System.out.println(5 + 5);
           }
 }
 
