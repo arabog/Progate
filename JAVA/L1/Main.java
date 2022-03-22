@@ -101,6 +101,33 @@ names are not enclosed in double quotes.
 number = 3;
 name = "John";
 
+-: Initializing Variables
+You can also declare a variable and assign a value to it at the same 
+time, like int number = 3; or String text = "Hello World";.
+Declaring a variable and assigning a value at the same time is 
+called variable initialization. Let's keep that in mind.
+
+int number = 3;
+String name = "John";
+
+Calculation with Variables
+If a variable is an integer, you can do calculations with it, just like 
+with plain integer values. You can use it with other integer values, 
+or integer variables.
+
+System.out.println(number + 5);         //8
+
+Concatenating Variables
+Similarly, you can concatenate string variables in the same way 
+that you concatenate strings. Just be careful not to put variables 
+in double quotes. If you do, it will just print the variable name 
+instead of the value stored.
+
+String name = "John";
+System.out.println("Hello " + name);         //Hello John
+
+
+
 
 
 */ 
