@@ -68,6 +68,13 @@ Strings and integers are interpreted differently in programming.
 it a string by adding double quotes " like "5 + 2", the output will 
 be the literal string: 5 + 2.
 
+-: String Concatenation
+The + that we used for calculations also lets us combine strings.
+Combining strings is known as string concatenation. "5" + "3" 
+will concatenate the two strings to become "53", instead of adding 
+them as numbers. Try to always be aware of the difference between 
+an integer and string.
+
 
 
 */ 
@@ -79,6 +86,12 @@ class Main {
                     System.out.println(5 + 5);
 
                     System.out.println(5 % 3);
+
+                      // Concatenate "38" and "19", and print it
+                    System.out.println("38" + "19");
+                    
+                    // Add 38 and 19, and print it
+                    System.out.println(38 + 19);
           }
 }
 
