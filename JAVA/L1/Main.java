@@ -77,6 +77,8 @@ class Main {
                     System.out.println("Hello world");
 
                     System.out.println(5 + 5);
+
+                    System.out.println(5 % 3);
           }
 }
 
