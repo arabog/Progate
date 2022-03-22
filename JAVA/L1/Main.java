@@ -126,6 +126,24 @@ instead of the value stored.
 String name = "John";
 System.out.println("Hello " + name);         //Hello John
 
+-: Updating Variables
+Variables can be updated with another value. This can be done 
+simply by assigning a new value to a variable that already has 
+a value, using =.
+
+String name = "John";
+System.out.println(name);  // John
+
+name = "Kate";
+System.out.println(name);  // Kate
+
+Common Mistakes with Variables
+When updating a variable, you don't need to specify a type, as it 
+has been already declared. If you do specify a type, it will be 
+interpreted as a new variable. This will be an error because no 
+variables can have the same name.
+
+
 
 
 
