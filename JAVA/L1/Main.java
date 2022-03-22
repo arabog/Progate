@@ -165,9 +165,38 @@ When you're adding or subtracting 1, you can shorten it further
 with ++ and --. x++ is the same as x += 1, and x-- is the same 
 as x -= 1. It's a convenient way to write, so let's remember it.
 
+-: Why Use Variables?
+We've learned the basics of variables, but why do we need them?
+One benefit is that variables make it easier to tell what the values 
+represent, making the code easier to read. Another benefit is 
+reusability, where you can use the same data in multiple places.
+And easy to make changes to data.
 
+-: Double
+Decimal Numbers
+So far, we've learned that we use the int type to deal with integers 
+(numbers without a decimal point), but what if we want to work 
+with numbers with a decimal point? float and double are used 
+for this purpose, but we will be using double in our course. There 
+re lots of other data types in Java, so look up "Java data types" 
+on the Internet if you're interested!
+
+3.14      double type
+
+The double Type
+Numbers like 3 and -39 belong to the int type, which is for integers.
+The double type is for numbers with decimals, like 3.28 and -5.7.
+3 is an int while 3.0 is a double, even though they are the same 
+mount. You can print them the same way you print int values.
+
+double decimalNum = 3.14;
+System.out.println(decimalNum);
 
 */ 
+
+// javac Main.java 
+// java Main
+
 
 class Main {
           public static void main(String[] args) {
@@ -191,6 +220,10 @@ class Main {
 
                     System.out.println(number);
                     System.out.println(name);
+
+                    // double
+                    double decimalNum = 3.14;
+                    System.out.println(decimalNum);
 
           }
 }
