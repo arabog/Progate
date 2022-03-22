@@ -143,8 +143,27 @@ has been already declared. If you do specify a type, it will be
 interpreted as a new variable. This will be an error because no 
 variables can have the same name.
 
+To update a variable by addition, you can just assign the sum 
+of the variable's current value and a number back to itself, as 
+shown below. This may seem strange, but remember that = in 
+Java means assign, not equal.
 
+int x = 2;
+System.out.println(2); 
 
+x = x + 2;
+System.out.println(x);
+
+You can use shorthand as shown below when updating a variable 
+that has an integer value. This kind of syntax is often used for 
+calculations, so be sure to remember it!
+
+x = x + 10;                   x += 10;
+
+Adding 1, Subtracting 1
+When you're adding or subtracting 1, you can shorten it further 
+with ++ and --. x++ is the same as x += 1, and x-- is the same 
+as x -= 1. It's a convenient way to write, so let's remember it.
 
 
 
