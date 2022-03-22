@@ -192,7 +192,7 @@ mount. You can print them the same way you print int values.
 double decimalNum = 3.14;
 System.out.println(decimalNum);
 
--: Type Conversion
+-: Implicit Type Conversion
 We learned about concatenating strings, but can we concatenate 
 an integer and a string? You can, by using type conversion. In 
 Java, types can be converted both implicitly and explicitly. In 
@@ -219,7 +219,21 @@ Since integers can be expressed as numbers with a decimal point
 (like 5 and 5.0), Java automatically converts them.
 
 
+-: Explicit Calculating int Type Numbers
+We've learned that 5 / 2, a calculation of integers, results in 2.
+What should we do if we want to find a more accurate value when 
+dividing an integer by another integer?
 
+Cast
+Explicit type conversion, also known as casting, solves that for us.
+You can convert an integer to a double by casting it, like shown below
+※ You only have to cast one of the integers to a double, as we 
+learned in the previous lesson.
+
+int num1 = 13;
+int num2 = 3;
+
+System.out.println((double)num1 / num2);
 
 */ 
 
@@ -258,6 +272,12 @@ class Main {
                     System.out.println(7 / 2);    //3
                     System.out.println(7.0 / 2.0);          //3.5
                     System.out.println(7 / 2.0);  //3.5
+
+                    // cast
+                    int num1 = 13;
+                    int num2 = 3;
+
+                    System.out.println((double)num1 / num2);
           }
 }
 
