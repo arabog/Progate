@@ -332,8 +332,60 @@ for (int i = 0; i <= 10; i++) {
 }
 
 
+-: Arrays
+In Java, an array is a collection of values of the similar data type.
+It can manage multiple pieces of data, like a list of names, in a single 
+variable instead of declaring them separately. Each value in an array is 
+called an element.
+
+Array Data Types
+When declaring a variable for an array, you have to put [] after the 
+type of each element. For example, an array of int values would 
+be type int[], and an array of String values would be type String[].
+
+Array of integers: int[];
+
+Array of strings: String[];
+
+Creating Arrays
+You can make arrays by writing values in { } and separating them 
+with commas ,. Check the example below. Be careful not to confuse 
+[] and { }.
+
+
+int[] numbers = {5, 13, 29};
+
+String[] names = {"John", "Kate", "Bob"};
+
+The Index Number
+Each element of an array is given a position number like 0, 1, 2, .... 
+These are called index numbers. Keep in mind that index numbers 
+start from 0. You can access individual elements by writing 
+arrayName[index].
+
+class Main {
+  public static void main(String[] args) {
+    // Assign a list of names to the names variable
+    String[] names = {"Ken", "Master Wooly", "Ben"};
+    
+    // Print the element at index 0
+    System.out.println(names[0]);
+    
+    // Print the element at index 2 
+    System.out.println(names[2]);
+    
+  }
+}
+
+
+
+
 
 */ 
+
+
+
+
 
 
 
