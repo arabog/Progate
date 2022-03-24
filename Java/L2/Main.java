@@ -249,6 +249,37 @@ switch (value of condition) {
 }
 
 
+-: Loops
+Loops r also known as iteration.
+
+while Loops
+One of the most common types of iteration is the while loop.
+while loops are written like the example below. The code inside 
+he { } gets repeated while the condition is true.
+
+while(condition) {
+          repeat ds code
+}
+
+How while Loops Work
+Let's learn the flow of while loops as shown below. First, a 
+variable is initialized before the while loop. After each 
+iteration of the while loop, the variable is updated and the 
+condition is checked again. This same process is continued 
+until the condition evaluates false.
+
+int i = 1;          //1
+
+while (i <= 5) {    //2
+          System.out.println(i);        //3
+
+          i++;      //4
+}
+
+
+
+
+
 */ 
 
 
