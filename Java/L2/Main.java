@@ -276,6 +276,33 @@ while (i <= 5) {    //2
           i++;      //4
 }
 
+Infinite Loops
+If you forget to add 1 to the i variable in the loop, i will not 
+change, and the condition will always evaluate true. This 
+will cause an infinite loop, and put a huge load on the 
+computer resources. You have to ensure that the loop 
+evaluates false at some point.
+
+
+-: for Loops
+The for loop is another type of iteration. In the (), we initialize the 
+variable, add a condition, and update the variable. Each step is 
+separated by semicolons ; 
+
+               1          2        4
+for(int i = 0; i <= 5; i++) {
+          ystem.out.println(i);         //3
+}
+
+class Main {
+  public static void main(String[] args) {
+    // Create a for loop that runs 10 times
+    for(int i = 1; i <= 10; i++) {
+      System.out.println("Loop count: " + i);
+    }
+    
+  }
+}
 
 
 
