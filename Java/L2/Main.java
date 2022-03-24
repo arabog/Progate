@@ -165,7 +165,73 @@ You can add as many else if statements as you want. However, keep
 in mind that only the code that returns true first will be executed.
 
 
+-: switch Statements
+The switch statement is another type of control flow. It uses cases, 
+and the case that matches the value of the condition gets executed. 
+Don't forget to put colons :
 
+switch (value of condition) {
+          case value1:
+                    run this code;
+                    break;
+
+          case value2:
+                    run this code;
+                    break;
+
+          case value3:
+                    run this code;
+                    break;
+
+          default:
+                    run this code;
+}
+
+if Statements and switch Statements
+Let's compare switch statements to if statements. The if 
+statement adds flow based on conditions, whereas the 
+switch statement adds flow based on values. switch 
+statements are better for when there are a lot of 
+conditions based on values.
+
+
+if (condition) {
+          // Run this code
+}
+
+switch (value of condition) {
+          case value:
+                    run this code;
+                    break;
+}
+
+break Statements
+With switch statements, every case needs a break statement 
+at the end. This is crucial because without it, the switch 
+statement would not end. Make sure to use it when you do 
+not want to run code in the next case!
+
+class Main {
+  public static void main(String[] args) {
+    int number = 12;
+    
+    // Create a control flow according to the result of number % 3
+    switch (number % 3) {
+      case 0:
+        System.out.println("Divisible by 3");
+        break;
+        
+      case 1:
+        System.out.println("Remainder is 1 when divided by 3");
+        break;
+        
+      case 2:
+        System.out.println("Remainder is 2 when divided by 3");
+        break;
+    }
+    
+  }
+}
 
 
 
