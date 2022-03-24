@@ -37,12 +37,64 @@ System.out.println(8 < 5);
 System.out.println(3 >= 2);
 
 
+-: && (AND)
+Logical operators are used to express relations like AND, OR, and NOT.
+&& is used to express AND, and it can be used to combine conditions.
+For example, condition1 && condition2 will return true only when both 
+condition1 and condition2 are true. It will return false if either condition1 
+or condition2 is false.
+
+x = 5;
+x > 10 && x < 30;             //false
+
+x = 20;
+x > 10 && x < 30;             //true
+
+x = 35;
+x > 10 && x < 30;             //fale
+
+| | (OR)
+|| is used for OR, and it can also be used to combine conditions. For 
+instance, condition1 || condition2 will return true if either condition1 
+or condition2 returns true. 
+
+x = 5;
+x < 10  ||  x > 30;             //true
+
+x = 20;
+x < 10  ||  x > 30;             //fale
+
+x = 35;
+x < 10  ||  x > 30;             //true
 
 
+
+
+! (NOT)
+! is used for NOT, and it can be used to negate a condition. For example, 
+the condition !(x >= 30) returns true when x is less than 30 and false 
+when x is greater than or equal to 30
+
+x = 20;
+x >= 30;            // false
+!(x >= 30);         // true
+
+Logical Operators Review
+Let's review logical operators using the two simple examples below.
+&& results in true only when both values are true while || returns true 
+if either one of them is true. 
+
+System.out.println(true && false);      // false
+System.out.println(true || false);      // true
 
 
 
 */ 
+
+
+
+
+
 class Main {
           public static void main(String[] args) {
                     // string
