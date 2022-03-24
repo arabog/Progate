@@ -88,6 +88,44 @@ System.out.println(true && false);      // false
 System.out.println(true || false);      // true
 
 
+-: Control Flow
+In daily life, we make decisions based on conditions. A simple example 
+would be, "If it's raining, bring an umbrella". In programming, there 
+are also times when we want to do different things based on certain 
+conditions. This is known as control flow. 
+
+if Statements
+The if statement is the most common type of control flow. By putting a 
+condition in the () after if, the code inside the { } is only executed when 
+the condition is true.
+
+if (condition) {
+          // Run this code
+}
+
+Booleans, comparison operators (==, <, etc) and logical operators 
+(&&, ||, !) are often used in if statement conditions.
+
+int x = 10;
+
+if(x == 10) {
+          System.out.println("x is equal to 10");
+}
+
+Blocks
+{ } in an if statement is called block. Block helps put 
+multiple lines of code together. All the lines within a block 
+get executed when the condition is true. Note that 
+semicolons ; are unnecessary after braces { }.
+
+int x = 20;
+
+if(x < 30) {
+          System.out.println("The condition is true");
+          System.out.println("x is equal to 10");
+}
+
+
 
 */ 
 
