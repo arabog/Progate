@@ -378,14 +378,28 @@ class Main {
 }
 
 
+-: Updating an Element of
+an Array
+Let's also try updating an element of an array! Each element in 
+an array is a value, so you can update it by assigning a different 
+value to it.
 
+String[] names = {"Ken", "Master Wooly", "Ben"};
+
+System.out.println(names[0]);           //Ken
+names[0] = "William";
+
+System.out.println(names[0]);           //William
+
+When the Element Doesn't Exist
+You can't assign a value to an index that doesn't exist. It will result 
+in an error, like in the example below!
+
+String[] names = {"Ken", "Master Wooly", "Ben"};
+names[3] = "Julia";           //Error
 
 
 */ 
-
-
-
-
 
 
 
