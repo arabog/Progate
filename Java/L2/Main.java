@@ -305,11 +305,35 @@ class Main {
 }
 
 
+-: break Statements
+When you want to exit the loop immediately, you use the break 
+statements. break statements are usually combined with if 
+statements. They can be used in the same way with while loops too.
+
+for (int i = 0; i <= 10; i++) {
+          if(i > 5) {         // exit d loop as soon as i bcom 6
+                    break;
+          }
+
+          System.out.println(i);
+}
+
+continue Statements
+Unlike break statements that end a loop, continue statements skip 
+the loop for that specific iteration. Continue statements can be 
+used in the same way with both for loops and while loops.
+
+for (int i = 0; i <= 10; i++) {
+          if(i % 3 == 0) {         // skip d code if d num is divisible by 3
+                    continue;
+          }
+
+          System.out.println(i);
+}
+
 
 
 */ 
-
-
 
 
 
