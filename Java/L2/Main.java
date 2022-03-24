@@ -29,6 +29,19 @@ System.out.println(6 + 2 == 5);         // false
 System.out.println(6 + 2 != 5);         //true
 
 
+Just like math, you can use < and > to compare numbers. 
+You can also use greater than and equal to >= and less 
+than and equal to <=
+
+System.out.println(8 < 5);
+System.out.println(3 >= 2);
+
+
+
+
+
+
+
 */ 
 class Main {
           public static void main(String[] args) {
