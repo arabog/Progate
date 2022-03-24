@@ -234,7 +234,19 @@ class Main {
 }
 
 
+-: The default Case
+In switch statements, you can set a default case for when none of 
+the cases match. It functions similarly to an else in if statements.
 
+switch (value of condition) {
+          case value:
+                    run this code;
+                    break;
+
+          default:
+                    System.out.println("Remainder is 2 when divided by 3");
+                    break;
+}
 
 
 */ 
