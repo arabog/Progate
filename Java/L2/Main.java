@@ -125,6 +125,50 @@ if(x < 30) {
           System.out.println("x is equal to 10");
 }
 
+// Put true as the condition for the if statement
+if (true) {
+          System.out.println("The condition is true. Printing...");
+}
+
+// Put false as the condition for the if statement
+if (false) {
+          System.out.println("The condition is false. Not printing...");
+}
+
+-: else
+Using the else statement, you can add some code you want to run 
+when the condition of the if statement is false
+
+int x = 20;
+
+if(x < 30) {
+          System.out.println("x is less than 30");
+} else {
+          System.out.println("x is greater than or equal to 30");
+}
+
+else if
+You can use the else if statement to add alternative conditions to the control flow
+
+int x = 25;
+
+if(x >= 30) {
+          System.out.println("x is greater than or equal to 30");
+} else if (x > 20) {
+          System.out.println("x is greater than  20 but less than 30");
+} else {
+          System.out.println("x is less than  or equal to 20");
+}
+
+When Multiple Conditions Match
+You can add as many else if statements as you want. However, keep 
+in mind that only the code that returns true first will be executed.
+
+
+
+
+
+
 
 
 */ 
