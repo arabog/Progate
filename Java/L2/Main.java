@@ -399,8 +399,64 @@ String[] names = {"Ken", "Master Wooly", "Ben"};
 names[3] = "Julia";           //Error
 
 
-*/ 
+-: Arrays and Loops
+When dealing with arrays, we often want to apply the same 
+code to process each element. You can easily do this with the 
+loops we learned earlier. So, let's learn how to use loops with 
+arrays!
 
+String[] names = {"Ken", "Master Wooly", "Ben"};
+
+for (int i = 0; i < 3; i++) {
+          System.out.println("Hello " + names[i]);
+}
+
+Length of an Array
+Array has a feature known as length, which counts the number of 
+elements in an array. By using length, you can replace i < 3 (for 
+loop condition) with i < names.length. This way you don't need 
+to count the number of elements yourself.
+
+String[] names = {"Ken", "Master Wooly", "Ben"};
+
+for (int i = 0; i < names.length; i++) {
+          System.out.println("Hello " + names[i]);
+}
+
+
+-: Enhanced for Loops
+The enhanced for loop is a special type of for loop used with arrays. 
+It's just a simpler way of writing for loops
+
+for(datatype variableName: arrayName) {
+          run ds code
+}
+
+String[] names = {"Ken", "Master Wooly", "Ben"};
+
+        data  variable   array
+        type    name       name
+
+for (String name: names) {
+          System.out.println(name);
+}
+
+Comparison of for Loops
+Let's practice changing a standard for loop to an enhanced for loop. 
+We used index numbers to get the elements in a standard for loop, 
+but with enhanced for loops we can get the elements directly.
+
+String[] names = {"Ken", "Master Wooly", "Ben"};
+
+for (int i = 0; i < names.length; i++) {
+          System.out.println("Hello " + names[i]);
+}
+
+for (String name: names) {
+          System.out.println(name);
+}
+
+*/ 
 
 
 class Main {
