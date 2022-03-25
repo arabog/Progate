@@ -37,6 +37,44 @@ class Main {
 inside d hello method
 
 
+-: Method Definitions
+First, let's take a look at method definitions. For now, remember 
+public static void as a fixed phrase. Later we'll learn about the () 
+t the end of each method name. We write the code for each method 
+inside the block, the part between { and }. We should give each 
+method a name that makes it easy to tell what it does.
+
+We define methods inside a class. As shown below, the 
+hello method is defined in the block { } of the Main class. 
+If you define a method outside of a class, there will be an 
+error, so be careful.
+
+class Main {                  //Main class blk
+          public static void main(String[] args) {                    
+                    hello();                                                              
+          }
+
+          public static void hello() {            //def a method in d class
+                    System.out.println("Hello World");               
+          }
+
+}                             //Main class blk
+
+Calling Methods
+To call a method, just write methodName(). Don't forget to put 
+the () when you call the method.
+
+class Main {
+          public static void main(String[] args) {    
+                    call a method with methodName()
+                    hello();      
+                    hello();                                                            
+          }
+
+          public static void hello() {
+                    System.out.println("Hello World");               
+          }
+}
 
 
 */
