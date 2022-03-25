@@ -349,6 +349,36 @@ class Main {
           }
 }
 
+
+-: Classes
+Next, we'll learn how to split these methods into different classes.
+Using Multiple Classes
+A class is like a component that groups smaller components 
+(methods) together. We've worked with methods that share the 
+same class (Main class) with the main method. Now we will 
+learn how to use methods in other classes.
+
+Calling Methods of Other Classes
+Below, there are 2 classes, Main and Person, and Person.hello() 
+is called in the main method of the Main class. Using the syntax 
+ClassName.methodName(), you can call methods of other classes
+
+
+class Main {
+          public static void main(String[] args) {   
+                    Person.hello();
+          }
+}
+
+class Person {
+          public static void hello () {
+                    System.out.println("Hello World");
+          }
+}
+
+
+
+
 */
 
 
@@ -356,17 +386,7 @@ class Main {
 
 class Main {
           public static void main(String[] args) {   
-                    int num = 9;
-
-                    if(isEven(num)) {
-                              System.out.println(num + " is even");  
-                    }else {
-                              System.out.println(num + " is odd"); 
-                    }
-          }
-
-          public static boolean isEven (int a) {
-                    return a % 2 == 0;
+                    Person.hello();
           }
 }
 
