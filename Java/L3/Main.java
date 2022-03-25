@@ -154,6 +154,53 @@ class Main {
 }
 
 
+-: Return Values
+A return value allows us to use the result of a method where it was called. 
+Think of a method like a factory. The factory gets materials (arguments) 
+from the client (main method), does the predetermined manufacturing 
+(operations), and returns the finished product to the client. It's the return 
+value that corresponds to the finished product.
+
+Method Return Values
+Methods can send a return value back to the caller with return.
+When there is a return value, you need to set its return type
+(the data type of the return value). To do this, change the void part of 
+public static void. As shown below, the return value of the add method 
+is an integer, so we set the data type like public static int.
+
+public static returnType methodName(parameter) {
+          return value;
+}
+
+public static int add(int a, int b) {
+          return a + b;
+}
+
+class Main {
+          public static void main(String[] args) {                    
+                    int total = add(7, 5);   
+                    
+                    System.out.println(total);
+          }
+
+          public static int add(int a, int b) {
+                    return a + b;               
+          }
+}
+
+void
+So what is void from the fixed phrase of public static void?
+The void means no return value. As shown in the example below, 
+the hello method doesn't have a return value. We use void to specify 
+that a method has no return value.
+
+public static void hello(int a, int b) {
+          System.out.println("Hello");      
+}
+
+
+
+
 */
 
 
@@ -161,12 +208,13 @@ class Main {
 
 class Main {
           public static void main(String[] args) {                    
-                    printPrice("Pizza", 30);    
-                    printPrice("Coke", 2);                                                                                                                        
+                    int total = add(7, 5);   
+                    
+                    System.out.println(total);
           }
 
-          public static void printPrice(String item, int price) {
-                    System.out.println(item + " is " + price + " dollars");               
+          public static int add(int a, int b) {
+                    return a + b;               
           }
 }
 
