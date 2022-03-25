@@ -475,6 +475,44 @@ class Person {
 }
 
 
+-: External Libraries
+We can use classes made by other programmers in Java. Such 
+classes are called external libraries and they are available after 
+you import them into your program. You don't have to create 
+everything by yourself from scratch! We can expand the range 
+of development by using convenient methods created by 
+engineers all over the world.
+
+Importing Libraries
+Use import to load external libraries into your program. For 
+example, there's a class (library) called Math that contains 
+mathematical methods. Above the class definition, you can 
+import the Math class as follows: import java.lang.Math. 
+Note that java.lang refers to the package that contains the 
+Math class.
+
+import java.lang.Math;
+
+class Main {
+          public static void main(String[] args) {}
+}
+
+Math Class Methods
+External libraries make it easy for us to implement programs. 
+For example, the max method of the Math class returns the 
+maximum value from the two given arguments.
+
+import java.lang.Math;
+
+class Main {
+          public static void main(String[] args) {
+                    int max = Math.max(3, 8);
+
+                    System.out.println("The max is " + max + ".");
+          }
+}
+
+
 
 
 */
