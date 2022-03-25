@@ -77,6 +77,43 @@ class Main {
 }
 
 
+-: Arguments
+An argument is like an additional information that you give to the 
+method. If you pass the arguments when you call a method, the 
+value of the arguments can be used inside the method.
+
+Receiving Arguments
+To pass arguments to a method, you must first define a method 
+that can accept arguments. To do so, we need to specify a 
+variable or rather, what is more commonly known as a parameter 
+inside the () of public static void methodName(). Remember to 
+include the data type for each parameter just like when declaring 
+a variable.
+
+public static void methodName(datatype variableName) {}
+
+public static void hello(Sttring name) {}
+
+Passing Arguments
+To pass an argument to a method, call the method like this: 
+methodName(argument). An argument passed to a method 
+will be received by the method as its parameter specified in 
+the method definition, and the parameter can be used as a 
+variable within the method.
+
+class Main {
+          public static void main(String[] args) {                    
+                    hello("Bobs");                                                              
+          }
+
+          public static void hello(String name) {
+                    System.out.println("Hello " + name);               
+          }
+}
+
+
+
+
 */
 
 
@@ -84,11 +121,11 @@ class Main {
 
 class Main {
           public static void main(String[] args) {                    
-                    hello();                                                              
+                    hello("Bobs");                                                              
           }
 
-          public static void hello() {
-                    System.out.println("Hello World");               
+          public static void hello(String name) {
+                    System.out.println("Hello " + name);               
           }
 }
 
