@@ -377,6 +377,104 @@ class Person {
 }
 
 
+-: Defining Classes
+Define a class in the following way: class ClassName. 
+As shown in the below, class names should be capitalized 
+and the file name should be the same as the class name 
+(e.g. ClassName.java). Be sure to remember these 
+naming conventions for Java classes.
+
+Person.java
+class Person {}
+
+Creating a Person Class
+By creating the Person class and moving all the code except 
+for the main method from the Main class, we can give the 
+execution role to the Main class and the logic role to the 
+Person class.
+
+class Person {
+          public static void printData()
+
+          public static boolean isHealthy()
+}
+
+Calling Person Class Methods
+Let's look at how to call a method of the Person class 
+from the main method of the Main class in the example below!
+
+class Main {
+          public static void main(String[] args) {   
+                    String name = Person.fullName("Kate", "Jones");
+
+                    System.out.println(name);
+          }
+}
+
+
+class Person {
+          public static String fullName(String firstName, String lastName) {   
+                    return firstName + " " + lastName;
+          }
+}
+
+Supplement for Classes
+When you execute a Java class, the runtime environment 
+will always look for the main method in the class. If the 
+executed class does not have a main method, it cannot be 
+executed by itself and needs to be called from another class.
+In our example, the Main class has a main method but the 
+Person class doesn't, hence only the Main class can be 
+executed by itself. Take note that the name of the class has 
+nothing to do with this form of execution.
+
+Main.jav
+public class Main {
+  public static void main(String[] args) {
+    // Rewrite the calls to the printData and fullName methods
+    Person.printData(Person.fullName("Kate", "Jones"), 27, 1.6, 50.0);
+    Person.printData(Person.fullName("John", "Christopher", "Smith"), 65, 1.75, 80.0);
+  }
+  
+}
+
+Person.java
+// Define the Person class
+class Person {
+  public static void printData(String name, int age, double height, double weight) {
+    System.out.println("My name is " + name + ".");
+    System.out.println("I am " + age + " years old.");
+    System.out.println("My height is " + height + " meters.");
+    System.out.println("My weight is " + weight + " kilograms.");
+
+    double bmi = bmi(height, weight);
+    System.out.println("My BMI is " + bmi + ".");
+
+    if (isHealthy(bmi)) {
+      System.out.println("Your BMI is in the standard range.");
+    } else {
+      System.out.println("Your BMI is outside of the standard range.");
+    }
+  }
+  
+  public static String fullName(String firstName, String lastName) {
+    return firstName + " " + lastName;
+  }
+
+  public static String fullName(String firstName, String middleName, String lastName) {
+    return firstName + " " + middleName + " " + lastName;
+  }
+  
+  public static double bmi(double height, double weight) {
+    return weight / height / height;
+  }
+
+  public static boolean isHealthy(double bmi) {
+    return bmi >= 18.5 && bmi < 25.0;
+  }
+}
+
+
 
 
 */
@@ -389,4 +487,5 @@ class Main {
                     Person.hello();
           }
 }
+
 
