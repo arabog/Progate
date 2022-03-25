@@ -256,6 +256,68 @@ class Main {
 }
 
 
+-: Calling a Method from Another Method
+We can call a method not only from the main method but from 
+other methods as well. As components of a larger program, 
+methods help each other to make up one whole program
+
+Combining Methods
+Let's call a method from another method. To calculate (a + b) / 2, 
+we can first use the add method inside the average method. Using 
+the add method in this way returns the sums of two numbers. 
+
+class Main {
+          public static void main(String[] args) {                    
+                    System.out.println(average(3, 8));  
+          }
+
+          public static double average(int a, int b) {
+                    int total = add(a, b);
+
+                    return (double)total / 2;
+          }
+
+          public static int add(int a, int b) {
+                    return a + b;
+          }
+}
+
+class Main {
+  public static void main(String[] args) {
+    printData(fullName("Kate", "Jones"), 27, 1.6, 50.0);
+    printData(fullName("John", "Christopher", "Smith"), 65, 1.75, 80.0);
+  }
+
+  public static void printData(String name, int age, double height, double weight) {
+    System.out.println("My name is " + name + ".");
+    System.out.println("I am " + age + " years old.");
+    System.out.println("My height is " + height + " meters.");
+    System.out.println("My weight is " + weight + " kilograms.");
+    
+    // Assign BMI to the bmi variable using the bmi method
+    double bmi = bmi(height, weight);
+    
+    // Using the bmi variable, print out "My BMI is ____."
+    System.out.println("My BMI is " + bmi + ".");
+    
+  }
+
+  public static String fullName(String firstName, String lastName) {
+    return firstName + " " + lastName;
+  }
+  
+  public static String fullName(String firstName, String middleName, String lastName) {
+    return firstName + " " + middleName + " " + lastName;
+  }
+  
+  // Define the bmi method
+  public static double bmi(double height, double weight) {
+      return weight / height / height;
+  }
+  
+}
+
+
 
 
 
@@ -266,17 +328,17 @@ class Main {
 
 class Main {
           public static void main(String[] args) {                    
-                    hello();
-                    
-                    hello("Bob");
+                    System.out.println(average(3, 8));  
           }
 
-          public static void hello() {
-                    System.out.println("Hello World");                 
+          public static double average(int a, int b) {
+                    int total = add(a, b);
+
+                    return (double)total / 2;
           }
 
-          public static void hello(String name) {
-                    System.out.println("Hello " + name);               
+          public static int add(int a, int b) {
+                    return a + b;
           }
 }
 
