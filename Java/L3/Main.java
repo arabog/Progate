@@ -198,6 +198,64 @@ public static void hello(int a, int b) {
           System.out.println("Hello");      
 }
 
+-: Method Overloading
+Identically Named Methods
+Defining more than one method with the same name in the same 
+class is not allowed in programming. This is because if the 
+computer recognizes multiple methods with the same name in 
+the same class, it cannot determine which method to call.
+
+Overloading
+However, if the parameters of two identically named methods 
+differ in number of parameters or data type, they can have the 
+same name. Even if there are multiple methods with the same 
+name, the computer can tell which one to call when argument 
+lists are unique. Defining multiple methods with the same name 
+is called overloading.
+
+class Main {
+          public static void main(String[] args) {                    
+                    hello();
+                    
+                    hello("Bob");
+          }
+
+          same method name but diff parameters
+          public static void hello() {
+                    System.out.println("Hello World");                 
+          }
+
+          public static void hello(String name) {
+                    System.out.println("Hello " + name);               
+          }
+}
+
+class Main {
+          public static void main(String[] args) {
+                    printData(fullName("Kate", "Jones"), 27);
+                    
+                    // Replace the printData arguments to match with the new fullName method parameters
+                    printData(fullName("John", "Christopher", "Smith"), 65);
+          }
+
+          public static void printData(String name, int age) {
+                    System.out.println("My name is " + name + ".");
+
+                    System.out.println("I am " + age + " years old.");
+          }
+
+          public static String fullName(String firstName, String lastName) {
+                    return firstName + " " + lastName;
+          }
+          
+          // Define the fullName method
+          public static String fullName(String firstName, String middleName, String lastName) {
+                    return firstName + " " + middleName + " " + lastName;
+          }
+  
+}
+
+
 
 
 
@@ -208,13 +266,17 @@ public static void hello(int a, int b) {
 
 class Main {
           public static void main(String[] args) {                    
-                    int total = add(7, 5);   
+                    hello();
                     
-                    System.out.println(total);
+                    hello("Bob");
           }
 
-          public static int add(int a, int b) {
-                    return a + b;               
+          public static void hello() {
+                    System.out.println("Hello World");                 
+          }
+
+          public static void hello(String name) {
+                    System.out.println("Hello " + name);               
           }
 }
 
