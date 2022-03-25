@@ -513,16 +513,93 @@ class Main {
 }
 
 
+-: Receiving Input
+Automatically Imported Libraries
+Some classes, like java.lang.Math are so fundamental to the 
+Java programming language that they actually get imported 
+automatically. Only libraries that are used very commonly in 
+java.lang are being imported by default.
+
+class Main {
+          public static void main(String[] args) {
+                    int max = Math.max(3, 8);
+
+                    System.out.println("The max is " + max + ".");
+          }
+}
+
+Console Input and Scanner
+So far, we have been printing values to the console, but you can 
+actually input value to the console and use it as a value in your 
+program as shown on the left image. We will be using a library 
+called Scanner to receive the input. To import Scanner, write: 
+import java.util.Scanner.
+
+import java.util.Scanner.
+
+class Main {
+          public static void main(String[] args) {}
+}
+
+Receiving Strings Using Scanner
+Let's look at how to use Scanner. First, we must initialize a new 
+Scanner instance and assign it to a variable. Here, we are using 
+a variable called scanner. Then, we can use scanner.next() to get 
+String inputs from the console. Note that you'll be using the variable 
+name scanner instead of the package name Scanner.
+
+import java.util.Scanner.
+
+class Main {
+          public static void main(String[] args) {
+                    // make a new Scanner instance
+                    Scanner scanner = new Scanner(System.in);
+
+                    String name = scanner.next(); //read a string
+          }
+}
+
+Flow of Scanner
+When scanner.next() is called, the program is interrupted and waits 
+for some value to be entered from the console. As shown below, 
+scanner.next() gets some input from the console and assigns it to 
+the variable name.
+(System.out.print is used to print a value without starting a new line.)
+
+import java.util.Scanner;
+
+class Main {
+          public static void main(String[] args) {
+                    // make a new Scanner instance
+                    Scanner scanner = new Scanner(System.in);
+                    System.out.println("Your name: ");
+
+                    String name = scanner.next(); //read a string
+
+                    System.out.println("Your name is " + name + ".");
+
+          }
+}
+
+
 
 
 */
 
 
 
+import java.util.Scanner;
 
 class Main {
-          public static void main(String[] args) {   
-                    Person.hello();
+          public static void main(String[] args) {
+                    // make a new Scanner instance
+                    Scanner scanner = new Scanner(System.in);
+                    System.out.println("Your name: ");
+
+                    String name = scanner.next(); //read a string
+
+                    System.out.println("Your name is " + name + ".");
+
           }
 }
 
