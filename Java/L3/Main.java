@@ -318,8 +318,36 @@ class Main {
 }
 
 
+-: Returning boolean Value
+Finally, let's create a method that returns a boolean value. As 
+shown in the example below, we first define the method as a 
+boolean data type. The isEven method checks if the value of 
+the argument is an even number and returns true if it is, and 
+false otherwise.
 
+public static boolean isEven (int a) {
+          return a % 2 == 0;
+}
 
+Example: Method Returns boolean Value
+Let's try using the isEven method, which returns a boolean value.
+Take a look at the example below. Pay attention to the output!
+
+class Main {
+          public static void main(String[] args) {   
+                    int num = 9;
+
+                    if(isEven(num)) {
+                              System.out.println(num + " is even");  
+                    }else {
+                              System.out.println(num + " is odd"); 
+                    }
+          }
+
+          public static boolean isEven (int a) {
+                    return a % 2 == 0;
+          }
+}
 
 */
 
@@ -327,18 +355,18 @@ class Main {
 
 
 class Main {
-          public static void main(String[] args) {                    
-                    System.out.println(average(3, 8));  
+          public static void main(String[] args) {   
+                    int num = 9;
+
+                    if(isEven(num)) {
+                              System.out.println(num + " is even");  
+                    }else {
+                              System.out.println(num + " is odd"); 
+                    }
           }
 
-          public static double average(int a, int b) {
-                    int total = add(a, b);
-
-                    return (double)total / 2;
-          }
-
-          public static int add(int a, int b) {
-                    return a + b;
+          public static boolean isEven (int a) {
+                    return a % 2 == 0;
           }
 }
 
