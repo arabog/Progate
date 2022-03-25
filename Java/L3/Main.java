@@ -112,6 +112,46 @@ class Main {
 }
 
 
+-: Methods with Multiple Arguments
+Multiple arguments can be passed to a method. In order for a 
+method to take more than one argument, we can separate them 
+using commas , in method definition. When calling a method, 
+arguments should be in order from left to right like: 
+firstArgument, secondArgument, …
+
+public static void methodName(datatype variableName1, datatype variableName2) {}
+
+public static void hello(Sttring item, int price) {}
+
+class Main {
+          public static void main(String[] args) {                    
+                    printPrice("Pizza", 30);    
+                    printPrice("Coke", 2);                                                                                                                        
+          }
+
+          public static void printPrice(String item, int price) {
+                    System.out.println(item + " is " + price + " dollars");               
+          }
+}
+
+The Order of Passing Arguments
+Though the order of the parameters can be arbitrary, when calling 
+a method, you have to pass the arguments in the same order and 
+same data type as the parameters. If you try to use an int argument 
+where a String type parameter is defined, it causes an error; the 
+data types of the arguments passed do not match the data types of 
+the parameters received.
+
+class Main {
+          public static void main(String[] args) {                    
+                    printPrice("Pizza", 30);    
+                    printPrice("Coke", 2);                                                                                                                        
+          }
+
+          public static void printPrice(String item, int price) {
+                    System.out.println(item + " is " + price + " dollars");               
+          }
+}
 
 
 */
@@ -121,11 +161,12 @@ class Main {
 
 class Main {
           public static void main(String[] args) {                    
-                    hello("Bobs");                                                              
+                    printPrice("Pizza", 30);    
+                    printPrice("Coke", 2);                                                                                                                        
           }
 
-          public static void hello(String name) {
-                    System.out.println("Hello " + name);               
+          public static void printPrice(String item, int price) {
+                    System.out.println(item + " is " + price + " dollars");               
           }
 }
 
