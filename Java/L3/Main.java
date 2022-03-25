@@ -582,11 +582,10 @@ class Main {
 }
 
 
-
-
-*/
-
-
+-: Receiving Numerical Inputs
+There are two methods used to get numerical input using 
+Scanner: the nextInt method for integers and the nextDouble 
+method for numbers with a decimal point.
 
 import java.util.Scanner;
 
@@ -594,13 +593,56 @@ class Main {
           public static void main(String[] args) {
                     // make a new Scanner instance
                     Scanner scanner = new Scanner(System.in);
-                    System.out.println("Your name: ");
+                    System.out.println("Age: ");
 
-                    String name = scanner.next(); //read a string
+                    int age = scanner.nextInt(); 
 
-                    System.out.println("Your name is " + name + ".");
+                    System.out.println("Weight: ");
+
+                    double weight = scanner.nextDouble(); 
+
+                    System.out.println("Your are " + age + " years old");
+                    System.out.println("Your weight is " + weight + " kilogram");
+
 
           }
 }
+
+
+*/
+
+import java.util.Scanner;
+
+class Main {
+          public static void main(String[] args) {
+                    Scanner scanner = new Scanner(System.in);
+                    
+                    System.out.print("First Name: ");
+                    // Input a string value
+                    String firstName = scanner.next();
+                    
+                    System.out.print("Last Name: ");
+                    // Input a string value
+                    String lastName = scanner.next();
+                    
+                    System.out.print("Age: ");
+                    // Input an integer value
+                    int age = scanner.nextInt();
+                    
+                    System.out.print("Height (m): ");
+                    // Input a decimal value
+                    double height = scanner.nextDouble();
+                    
+                    System.out.print("Weight (kg): ");
+                    // Input a decimal value
+                    double weight = scanner.nextDouble();
+                    
+                    Person.printData(Person.fullName(firstName, lastName), age, height, weight);
+          }
+}
+
+
+
+
 
 
