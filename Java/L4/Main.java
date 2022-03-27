@@ -158,6 +158,29 @@ person1.name = "Chris";
 System.out.println(person1.name);
 
 
+-: Using Instances inside Classes
+Let's print, "Hey, I am ____", using the name instance field. To do 
+this, we need to access the value of the name instance field in the 
+hello instance method.
+
+this
+To access an instance field inside a method, we use a special 
+variable called this. You can only use this inside the method 
+of your class. When an instance calls the method, this is 
+replaced by the instance.
+
+class Person {
+          public String name;
+
+          public void hello() {
+                    System.out.println("Hey, I'm " + this.name + ".");
+          }
+}
+
+Person person1 = new Person();
+person1.name = "Chris";
+
+person1.hello();
 
 
 
