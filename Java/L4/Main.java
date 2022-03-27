@@ -323,6 +323,35 @@ class Person {
           }
 }
 
+Calling Other Instance Methods
+Let's define an instance method called printData that will allow 
+the instance to print its own data to the console. The printData 
+instance method will then call other instance methods including 
+the fullName and bmi instance methods. We can call the other 
+instance methods using this because it points to the specific 
+nstance directly.
+
+class Person {
+          public String firstName;
+
+          public double bmi() {
+                    return this.weight / this.height / this.height;
+          }
+
+          public String fullName() {
+                    return this.firstName + ...
+          }
+
+            public void printData() {
+                    double bmi = this.bmi();
+                    System.out.println("My BMI is " + Math.round(bmi) + ".");
+
+                    String fullName = this.fullName();
+                    System.out.println("My name is " + fullName + ".");
+          }
+
+
+}
 
 
 */ 
