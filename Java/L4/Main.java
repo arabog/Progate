@@ -603,8 +603,37 @@ prevent access.
           private double height, weight;
 
 
--: 
+-: Access from Outside the Class
+If you set the permission of a field to private, the field cannot be 
+accessed from outside the class. On the other hand, it is possible 
+to access it from within the class even if it's private.
 
+class Person {
+          private String middleName;
+
+          public String fullName() {
+                    if (this.middleName == null) {}
+          }
+}
+
+
+-: Getter
+Once we make a field private, in order to get the field value 
+safely from outside the class, we have to define an instance 
+method that only returns the value of the field. This instance 
+method is called a getter. It's common to name a getter as 
+follows: getFieldName().
+
+Person.java
+public String getMiddleName() {
+          return this.middleName;
+}
+
+Main.java
+Person person = new Person();
+person.getMiddleName();
+
+System.out.println("The middle name of person2 is " + person2.getMiddleName() + ".");
 
 */ 
 
