@@ -183,6 +183,51 @@ person1.name = "Chris";
 person1.hello();
 
 
+-: Setting Instance Field Values
+Previously, we first created an instance and then set a value to the 
+name instance field. However, this process becomes troublesome 
+as the number of instance fields increases. There is an easy way 
+to set a value to each instance field.
+
+
+-: Constructors
+A class has a constructor. A constructor is a special method that is 
+called automatically when we create an instance using new.
+
+Defining the Constructor
+Constructor is a special method, therefore it has its own definition: 
+(1) the constructor name must be the same as the class name; and 
+(2) do not write return or void. If we follow these rules, we can 
+successfully define the constructor.
+
+class ClassName {
+          ClassName() {}
+}
+
+Constructor Example
+For example, we can write a program to call the constructor when 
+we create an instance using new (see below). 
+
+class Person {
+          public String name;
+
+          Person () {
+                    System.out.println("Created a new instance");
+          }
+}
+
+Person person = new Person();           // Created a new instance
+
+class Main {
+          public static void main(String[] args) {
+                    Person person1 = new Person();
+                    Person person2 = new Person();
+          }
+}
+
+
+-: 
+
 
 */ 
 
