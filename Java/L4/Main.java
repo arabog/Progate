@@ -668,6 +668,15 @@ Until we get to more complex programs, let's stick with
 these conventions.
 
 
+-: Let's Add a Job!
+Finally, let's add an instance field called job to store a job title 
+for each Person instance. Let's try to complete the following 
+steps all in one exercise: 
+(1) declare an instance field; 
+(2) change the constructors; 
+(3) define getter and setter; and 
+(4) modify a method.
+
 
 */ 
 
@@ -676,10 +685,3 @@ these conventions.
 
 
 
-class Main {
-          public static void main(String[] args) {
-                    Person person = new Person();
-
-                    person.hello();
-          }
-}
