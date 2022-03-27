@@ -294,11 +294,34 @@ class Person {
 
           Person(String (firstName, lastName) {
                     this.firstName = firstName;
-                    
+
                     this.lastName = lastName;
           }
 }
 
+
+-: Defining Instance Methods
+
+Changing Other Methods to Instance Methods
+Compare the fullName method from Java III with the new method 
+we'll make here. In Java III, we passed a value ​​as an argument. 
+Now, we enable the instance method to get a value of its own 
+instance field using this, so we don't have to use an argument. 
+The same is true for the bmi method.
+
+Class Person {
+          public static String fullName(String firstName, ...) {
+                    return firstName + ...;
+          }
+}
+
+class Person {
+          public String firstName;
+
+          public String fullName() {
+                    return this.firstName + ...
+          }
+}
 
 
 
