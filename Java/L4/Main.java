@@ -342,7 +342,7 @@ class Person {
                     return this.firstName + ...
           }
 
-            public void printData() {
+          public void printData() {
                     double bmi = this.bmi();
                     System.out.println("My BMI is " + Math.round(bmi) + ".");
 
@@ -350,8 +350,98 @@ class Person {
                     System.out.println("My name is " + fullName + ".");
           }
 
-
 }
+
+
+-: Declaring Class Fields
+We've learned about instance fields that belong to particular instances. 
+Now we'll learn about class fields which belong to a class. We declare 
+a class field as follows: public static dataType variableName (note 
+that we use static here).
+
+class Person {
+          public static dataType variableName;
+}
+
+Class Field Example
+In order to count how many instances we've created so far, we can 
+use a field called count, which keeps track of the number of 
+instances being created. It's sufficient for just the Person class 
+itself to have the count field, but it's not needed for each instance 
+separately. So we'll make the count field a class field.
+
+class Person {
+          public static int count;
+
+          public String firstName;
+          public String lastName;
+}
+
+Accessing Class Fields
+We can access a class field as follows: ClassName.classFieldName. 
+
+class Person {
+          public static int count = 0;
+
+          public String firstName;
+          public String lastName;
+
+          Person(String firstName, ...) {
+                    Person.count++;
+          }
+}
+
+=========================
+class Person {
+          // Declare the count class field as an int type and assign it the value 0
+          public static int count = 0;
+          
+          public String firstName;
+          public String lastName;
+          public int age;
+          public double height, weight;
+
+          Person(String firstName, String lastName, int age, double height, double weight) {
+                    // Increment the count variable by 1
+                    Person.count++;
+                    
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                    this.age = age;
+                    this.height = height;
+                    this.weight = weight;
+          }
+
+          public String fullName() {
+                    return this.firstName + " " + this.lastName;
+          }
+
+          public double bmi() {
+                    return this.weight / this.height / this.height;
+          }
+          
+          public void printData() {
+                    System.out.println("My name is " + this.fullName() + ".");
+                    System.out.println("I am " + this.age + " years old.");
+                    System.out.println("My BMI is " + Math.round(this.bmi()) + ".");
+          }
+}
+
+
+class Main {
+          public static void main(String[] args) {
+                    Person person1 = new Person("Kate", "Jones", 27, 1.6, 50.0);
+                    person1.printData();
+                    
+                    Person person2 = new Person("John", "Smith", 65, 1.75, 80.0);
+                    person2.printData();
+                    
+                    // Print "Total: ____ people."
+                    System.out.println("Total: " + Person.count + " people.");
+          
+          }
+}
+
 
 
 */ 
