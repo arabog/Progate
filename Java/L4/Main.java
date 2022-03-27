@@ -443,6 +443,38 @@ class Main {
 }
 
 
+-: Methods that Belong to a Class
+Just as a class field is a field that belongs to a class, there are also methods 
+that belong to a class. That kind of method is called a class method. We 
+define class methods like so: public static returnType methodName().
+
+class Person {
+          public static returnType methodName() {}
+}
+
+Calling Class Methods
+All the methods we learned in Java III began with static. Those were 
+all class methods. To call a class method write: ClassName.methodName(). 
+We use this syntax because class methods belong to a class. So, we can call 
+class methods without creating an instance.
+
+class Person {
+          // Declare the count class field as an int type and assign it the value 0
+          public static int count = 0;
+
+          public static void printCount() {
+                    System.out.println("Total: " + Person.count + "people.");
+          }
+}
+
+class Main {
+          public static void main(String[] args) {
+                    Person.printCount();          
+          }
+}
+
+
+
 
 */ 
 
