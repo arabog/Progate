@@ -102,6 +102,37 @@ class Main {
 }
 
 
+-: Instance Fields and Instance Methods
+In the programming world, we call the properties of the instance 
+as instance fields and actions of the instance as instance methods. 
+
+Defining Methods
+The behavior of an instance is expressed programmatically in 
+terms of method. The method of this instance is called an instance 
+method, which we define as follows: public returnType methodName(). 
+The instance method has no static. 
+
+class Person {
+          public void hello() {
+                    System.out.println("Hello");
+          }
+}
+
+Calling Instance Methods
+An instance method belongs to each instance although we define it i
+nside a class. Hence, instance method is invoked on the instance (the 
+variable to which they are assigned). Like what we learned in Java III, 
+we use . to call an instance method. The syntax to call an instance 
+method is as follows: instanceName.methodName().
+
+Person person1 = new Person();
+Person person2 = new Person();
+
+person1.hello();
+person2.hello();
+
+
+
 
 
 */ 
