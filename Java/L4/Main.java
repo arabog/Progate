@@ -226,7 +226,67 @@ class Main {
 }
 
 
+-: Setting Field Values
+Let's use the constructor to ease the hassle of setting a value to 
+each instance field. We will set values to the instance fields inside 
+the constructor that will be executed automatically using new. 
+Then, we will set values to the instance fields inside the constructor.
+
+Passing Information to the Constructor
+When we create an instance using new, we can pass arguments to 
+the () of new ClassName(). Then, the arguments are passed to the 
+constructor to be called immediately after. Using this, we can pass 
+information to the constructor.
+
+class Person {
+          public String name;
+
+          Person (String name) {
+                    this.name = name;
+
+                    System.out.println("Created a new instance");
+          }
+}
+
+class Main {
+          public static void main(String[] args) {
+                    Person person1 = new Person("Chris");
+
+                    System.out.println(person1.name);
+          }
+}
+
+class Person {
+          public String name;
+
+          Person(String name) {
+                    System.out.println("Created an instance of the Person class.");
+
+                    this.name = name;          
+          }
+
+          public void hello() {
+                    System.out.println("Hello, my name is " + this.name + ".");
+          }
+}
+
+class Main {
+          public static void main(String[] args) {
+                    // Create a new Person instance with "Kate Jones" as an argument
+                    Person person1 = new Person("Kate Jones");
+                    person1.hello();
+
+                    // Create a new Person instance with "John Christopher Smith" as an argument
+                    Person person2 = new Person("John Christopher Smith");
+                    person2.hello();
+          }
+}
+
+
 -: 
+
+
+
 
 
 */ 
