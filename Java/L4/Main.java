@@ -635,6 +635,40 @@ person.getMiddleName();
 
 System.out.println("The middle name of person2 is " + person2.getMiddleName() + ".");
 
+
+-: Updating Field Values
+If you set the permission of a field to private, you can no longer 
+update the value of the field from outside the class.
+
+Setter
+So, we need to define an instance method to change the value 
+of the field. Such an instance method is called a setter. It's 
+common to give a setter a name that includes the name of 
+the field it provides access to, like so: setFieldName().
+
+Person.java
+private String middleName;
+
+public void setMiddleName(String middleName) {
+          this.middleName = middleName;
+}
+
+Main.java
+Person person = new Person();
+person.setMiddleName("John");
+
+System.out.println("The middle name of person2 is " + person2.getMiddleName() + ".");
+
+Encapsulation Standard
+It may seem hard to tell which parts to make private or public, 
+but there is a standard. Basically, we will be fine if we make 
+(1) fields private and 
+(2) methods public. 
+Until we get to more complex programs, let's stick with 
+these conventions.
+
+
+
 */ 
 
 
