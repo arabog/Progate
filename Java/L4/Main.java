@@ -284,7 +284,20 @@ class Main {
 
 
 -: Declaring Instance Fields
+Making the Constructor
+Let's make a constructor so that the program can set values to instance 
+fields when we create a new instance.
 
+class Person {
+          public String firstName;
+          public String lastName;
+
+          Person(String (firstName, lastName) {
+                    this.firstName = firstName;
+                    
+                    this.lastName = lastName;
+          }
+}
 
 
 
