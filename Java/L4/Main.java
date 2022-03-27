@@ -474,6 +474,41 @@ class Main {
 }
 
 
+-: Adding a Middle Name
+Let's take another look at instance fields. Now we want the instance to 
+have a field called middleName. Though it's easy to declare the 
+middleName instance field, we need to be careful. If we just add 
+middleName to the constructor arguments, there will be an error when 
+an instance (person) is created without a value for middleName.
+
+Overloading Constructors
+To solve this issue, we can overload the constructors. Overloading 
+allows you to define methods with the same name if they have a 
+unique list of arguments (Java III). If we make two constructors—
+one accepts the middleName as an argument and the other doesn't—
+Java will be able to call the appropriate constructor for the arguments 
+passed.
+
+class Person {
+          public String middleName;
+
+          Person(String firstName, String lastName, ...) {
+                    his.firstName = firstName;
+                    this.middleName = middleName;
+          }
+
+          Person(String firstName, String middleName, String lastName, ...) {
+                    this.firstName = firstName;
+                    this.middleName = middleName;
+                    this.lastName = lastName;
+          }
+}
+
+
+
+
+
+
 
 
 */ 
