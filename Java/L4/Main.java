@@ -533,6 +533,52 @@ class Person {
 }
 
 
+-: Updating the fullName Method
+Now we know how to add the middleName instance field. As seen 
+in the example below however, middleName is currently not 
+displayed in the fullName method. Since some people don't 
+have a middle name, we can't just combine the middleName 
+value with the others. What should we do?
+
+null
+What is in the middleName instance field when the value is not 
+set in the first place? Actually, the middleName instance field 
+has a default value called null. null is a special value that means 
+"nothing" (note that null is not a string). Although it's an unfamiliar 
+term, keep in mind that null is an important concept in programming.
+
+Initial Values of Variables
+If we don't assign an initial value to a variable or a field when 
+declaring it, Java assigns it a fixed default value. The default 
+value depends on the data type of the variable. The middleName 
+field has null because it is a String.
+
+initial values of variable
+Data Type                     Default Value
+String                                  null
+int                                        0
+double                                  0.0
+boolean                                 false
+
+Rewriting the fullName Method
+Let's make our program return different values in the fullName 
+instance method depending on whether the middleName is null 
+or not. Using if statements, we can allow the program to return 
+a full name with a middle name only if the middleName instance 
+field has a value.
+
+class Person {
+           public String fullName() {
+                    if (this.middleName == null) {
+                              return this.firstName + " " + this.lastName;
+                    } else {
+                              return this.firstName + this.middleName + this.lastName;
+                    }
+
+          }
+}
+
+
 
 
 
