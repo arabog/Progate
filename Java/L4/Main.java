@@ -578,14 +578,35 @@ class Person {
           }
 }
 
+Encapsulation
+Encapsulation, one of the most important concepts in object-oriented 
+programming. Here, encapsulation means hiding information of the 
+class that is unneeded by the user.
+
+Class Encapsulation
+When creating a class, in order to let others feel safe when using it, 
+we make public the features we want others to use and hide the 
+features we don't want them to use outside of a class. Limiting the 
+features available makes it easier and safer for others to know which 
+features to use in a class.
+
+Access Restriction to Fields and Methods
+To be more precise, encapsulation restricts access to fields and methods. 
+We use public to allow access from outside the class, and private to 
+prevent access. 
+
+          private static int count = 0;
+          
+          private String firstName;
+          private String lastName;
+          private int age;
+          private double height, weight;
 
 
+-: 
 
 
 */ 
-
-
-
 
 
 
