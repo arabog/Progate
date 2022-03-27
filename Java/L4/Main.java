@@ -132,6 +132,32 @@ person1.hello();
 person2.hello();
 
 
+-: Instance Fields
+We first think of properties that we want an instance to have, and 
+then declare them inside the class. Since the instance is a person, 
+let's give it a property named name.
+
+Declaring Instance Fields
+An instance field is simply a variable that stores information. 
+We declare these variables at the very top of the class body.
+Let's make sure to add public in front of the variable type as 
+follows: public dataType variableName
+
+class Person {
+          public String name;
+}
+
+Accessing Instance Fields
+We use . to access the instance field as follows: instanceName.fieldName(). 
+Outside the usage of ., instance fields can be treated just like variables. 
+As shown below, we can assign and access the value of an instance field.
+
+Person person1 = new Person();
+person1.name = "Chris";
+
+System.out.println(person1.name);
+
+
 
 
 
