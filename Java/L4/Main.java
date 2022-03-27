@@ -49,9 +49,70 @@ class Person {
 }
 
 
+-: Class Definitions
+class ClassName {
+
+}
+
+Creating Instances
+We create an instance from a class as follows: new ClassName(). 
+As shown below, the instance is created based on an empty class, 
+so it doesn't have any properties or actions yet.
+
+class Main {
+          public static void main(String[] args) {
+                    new Person();
+          }
+}
+
+class Person {
+
+}
+
+Assigning Instances to Variables
+To use an instance, we assign it to a variable as follows: 
+ClassType variableName = new ClassName(). Previously, we 
+specified the data type in front of the variable name. Now we 
+specify the class type in front of the instance instead.
+
+class Main {
+          public static void main(String[] args) {
+                    class     variable
+                    type      name
+                    Person person = new Person();
+          }
+}
+
+class Person {
+
+}
+
+Creating Multiple Instances
+We can create as many instances as we want from one class. In 
+other words, we can easily mass-produce similar objects based 
+on a design. Instances based on the same class all have the same 
+type of properties (with varying values) and actions. 
+
+class Main {
+          public static void main(String[] args) {
+                    Person person1 = new Person();
+                    Person person2 = new Person();
+                    Person person3 = new Person();
+          }
+}
+
+
 
 
 */ 
+
+
+
+
+
+
+
+
 
 class Main {
           public static void main(String[] args) {
