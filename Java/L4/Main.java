@@ -505,7 +505,32 @@ class Person {
 }
 
 
+-: Duplicate Code in Constructors
+In the previous section, we successfully overloaded the constructor. 
+It's perfectly fine to overload, however the contents of two constructors 
+are mostly duplicated. Duplicate code is bad because it makes it difficult 
+for us to correct and modify. 
 
+Calling Other Constructors
+To tackle this issue, we can use this() to call one constructor from 
+another. this() is a special method for calling constructors. You 
+can pass arguments between the () of this(). Note that we can 
+only call this() at the beginning of the constructor.
+
+class Person {
+          public String middleName;
+
+          Person(String firstName, String lastName, ...) {
+                    his.firstName = firstName;
+                    this.middleName = middleName;
+          }
+
+          Person(String firstName, String middleName, String lastName, ...) {
+                    this(firstName, lastName, ...);
+
+                    this.middleName = middleName;
+          }
+}
 
 
 
