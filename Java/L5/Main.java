@@ -291,10 +291,40 @@ the owner instance field. In other words; an instance of the
 Person class.
 
 
+-: Defining the buy Method
+Let's define the buy instance method so that a Person class 
+instance can purchase a vehicle. The vehicle to buy is either 
+an instance of the Car class or an instance of the Bicycle class. 
+The argument of the buy instance method should accept an 
+instance of either type, so we need to overload the method 
+as seen below.
+
+class Person {
+          public void buy(Car car) {}
+
+          public void buy(Bicycle bicycle) {}
+}
+
+buy Method
+Inside the buy instance method, we use the setter of the Car 
+instance received as an argument to change its owner.
+
+class Person {
+          public void buy(Car car) {
+                    car.setOwner(this);
+          }
+
+          public void buy(Bicycle bicycle) {
+                    bicycle.setOwner(this);
+          }
+}
 
 
-
-
+abstract class Vehicle {
+          public void setOwner(Person person) {
+                    this.owner = person;
+          }
+}
 
 
 
