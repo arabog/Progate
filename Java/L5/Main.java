@@ -202,10 +202,45 @@ it's created and subclasses (child classes)
 it's created
 
 
+-: Method Content "To Be Decided"
+Not limited to cars and bicycles, all vehicles have the "run" feature.
+As a result, all classes that inherit from the Vehicle class should have 
+the run instance method. However, since each vehicle runs differently, 
+we can't decide the content of the run instance method in the Vehicle 
+class and simply have other classes inherit that from the parent class.
 
+Abstract Methods
+There is a way to declare a method with content that has not yet been 
+decided. By prefixing the method declaration with abstract as shown 
+below, we can declare what is called an abstract method. We don't 
+mplement anything inside abstract method.
 
+class Vehicle {
+          abstract public void run(int distance);
+} 
 
+Merits and Points
+An abstract method will cause an error if the subclass doesn't override 
+it. So you can force subclasses to override the abstract method and 
+define what it does. If we want to make sure that a certain method is 
+added in all subclasses, it's important to declare an abstract method 
+in the subclass.
 
+class Car {
+          public void run(int distance) {
+                    this.distance += distance;
+          }
+} 
+
+Abstract Classes
+A class with at least one abstract method is called an abstract class.
+It's required to put abstract before the class name of abstract classes.
+The abstract class is incomplete since it has an unimplemented method
+(abstract method) and therefore can't generate any instances.
+
+abstract class Vehicle {
+          abstract public void run(int distance);
+} 
 
 
 
