@@ -94,4 +94,27 @@ css
 }
 
 
+-: Review of :hover
+Before learning about the & symbol, let's review :hover and 
+:active. The state in which the cursor is hovering over an 
+element is known as hover. In CSS, with selector:hover, you 
+can apply specific CSS when the cursor is over an element.
+
+Review of :active
+By using active with a selector, CSS can be applied only while 
+an element is being clicked. This can be done with the 
+syntax: selector:active.
+
+The & Symbol
+With nesting, you can rewrite selector:hover as &:hover, 
+as shown below. Remember that & can be used in this way 
+with any selector - hover, active, etc.
+
+li {
+          font-size: 15px;
+
+          &:hover {
+                    background-color: red;
+          }
+}
 
