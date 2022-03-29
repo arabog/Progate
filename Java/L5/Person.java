@@ -44,4 +44,13 @@ class Person {
                     vehicle.setOwner(this);
           }
           
+          // d data types r Vehicle, Car and Bicycle
+          // public void buy(Car car) {
+          //           car.setOwner(this);
+          // }
+
+          // public void buy(Bicycle bicycle) {
+          //           bicycle.setOwner(this);
+          // }
+
 }
