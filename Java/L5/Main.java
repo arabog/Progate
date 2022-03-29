@@ -243,11 +243,52 @@ abstract class Vehicle {
 } 
 
 
+-: Defining Vehicle Owners
+Now let's learn a bit about associations. Using the Person class from 
+Java IV, let's make a program in which a person can own a vehicle.
 
+Class Type Fields
+We can create a class instance as an instance field by declaring a 
+variable of class type. Let's create an instance field named owner 
+of type Person like in the example below.
 
+class Person {
+          public static int count - 0;
+          public String firstName;
+          public String middleName;
+          public String lastName;
+}
 
+abstract class Vehicle {
+          public String name;
+          public String color;
+          private int distance = 0;
 
+          private Person owner;
+}
 
+Getter and Setter
+Next let's define getter and setter methods. We'll define them in the 
+same way that we learned previously, but note that the getter's 
+return value and the setter's parameter are class types.
+
+abstract class Vehicle {
+          private Person owner;
+
+          public Person getOwner() {
+                    return this.owner;
+          }
+
+          public void setOwner(Person person) {
+                    this.owner = person;
+          }
+}
+
+Return Value of Instance
+When we call the getOwner instance method with an instance 
+of the Car/ Bicycle class, the return value will be the value of 
+the owner instance field. In other words; an instance of the 
+Person class.
 
 
 
