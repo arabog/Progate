@@ -1,0 +1,97 @@
+<!-- 
+Let's Learn Sass
+In this lesson, we'll learn Sass which will allow you to write CSS 
+(Cascading Style Sheets) more easily and efficiently.
+Using Sass makes it easier to build any website, from a personal 
+site to a large scale project. We'll start by gaining a firm grasp 
+of the fundamentals of Sass!
+
+Let's Learn Sass
+In this lesson, we'll learn Sass which will allow you to write CSS 
+(Cascading Style Sheets) more easily and efficiently.
+Using Sass makes it easier to build any website, from a personal site 
+to a large scale project.
+We'll start by gaining a firm grasp of the fundamentals of Sass!
+
+What Is Sass?
+Sass is a scripting language that allows you to write CSS in a more 
+convenient and efficient way. There are two ways to write Sass, 
+SASS syntax and SCSS syntax. At Progate, we use the SCSS syntax, 
+which is the more common syntax. Note that the file extension 
+is .scss rather than .css.
+
+Why Sass?
+Some of the benefits of using Sass are shown below.
+-Less writing than CSS
+- Allows you to re-use code
+
+Nested Structures
+First, let's look at the nesting structure that's used very often in Sass. 
+With nesting, you can rewrite your CSS as shown in the example below. 
+In this way, Sass allows you to nest selectors in other selectors. So, 
+with Sass, you don't have to write the same selector many times.
+
+
+
+-->
+<div class="header">
+          <ul>
+
+          </ul>
+</div>
+
+css: have to write .header 2 times
+.header {
+          width: 100%;
+}
+
+.header ul {
+          padding: 10px;
+}
+
+
+scss: only need to write header once
+.header {
+          width: 100%;
+
+          ul {
+                    padding: 10px;
+          }
+}
+
+Benefits of Nesting
+The larger a site becomes, the more useful nesting becomes. 
+It's especially useful when making changes to class names. 
+If you wanted to change the class name of the header in the 
+example below, you would need to make changes in 3 places 
+ith normal CSS, but with Sass you only need to make one change.
+
+css
+.header {
+          width: 100%;
+}
+
+.header ul {
+          padding: 10px;
+}
+
+
+.header li {
+          font-size: 15px;
+}
+
+.scss
+.header {
+          width: 100%;
+
+          ul {
+                    padding: 10px;
+
+                    li {
+                              font-size: 15px;
+                    }
+          }
+}
+
+
+
