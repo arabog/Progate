@@ -299,3 +299,77 @@ Wn u want to set d font color red, u av to set it after @include
           width: 90px;
           height: 90px;
 }
+
+
+-: Functions
+Functions are more or less universal in programming. You can 
+use them in Sass to do things like "make a color 50% lighter" 
+for example.
+
+Common Useful Functions
+Various functions are available in Sass. As a start, it's useful 
+to remember some very common functions. Functions are 
+commonly used to manipulate colors as shown below. There 
+are many functions for the purpose of modifying colors.
+
+color: darken(color, 50%);
+color: lighten(color, 50%);
+color: rgba(color, 0.5);
+
+<div class="main">
+          <ul>
+                    <li class="blue1"></li>
+                    <li class="blue2"></li>
+                    <li class="blue3"></li>
+          </ul>
+          
+          <ul>
+                    <li class="pink1"></li>
+                    <li class="pink2"></li>
+                    <li class="pink3"></li>
+          </ul>
+</div>
+
+$blue: #0ac4ff;
+$pink: #fd6eb6;
+
+.main {
+          margin: 10px;
+          
+          li {
+                    list-style: none;
+                    float: left;
+                    height: 100px;
+                    width: 33%;
+                    margin-bottom: 10px;
+          }
+          
+          .blue1 {
+                    background-color: $blue;
+          }
+          
+          .blue2 {
+                    // Use the darken function with the color $blue and the value 10%
+                    background-color: darken($blue, 10%);
+          
+          }
+          
+          .blue3 {
+                    // Use the darken function with the color $blue and the value 20%
+                    background-color: darken($blue, 20%);
+          }
+          
+          .pink1 {
+                    background-color: $pink;
+          }
+          
+          .pink2 {
+                    // Use the lighten function with the color $pink and the value 10%
+                    background-color: lighten($pink, 10%);
+          }
+          
+          .pink3 {
+                    // Use the lighten function with the color $pink and the value 20%
+                    background-color: lighten($pink, 20%);
+          }
+}
