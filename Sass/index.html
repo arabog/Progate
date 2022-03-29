@@ -146,11 +146,11 @@ code to specific elements.
 li {
           font-size: 14px;
 
-          &.second {
+          & .second {
                     color: red;
           }
 
-          &.third {
+          & .third {
                     color: blue;
           }
 }
@@ -259,6 +259,11 @@ in and assigned to $color in the mixin, making your code more flexible.
 
 .card {
           @include font-data(#ff0000);
+}
+
+$html: #1bd7cf;
+.card2 {
+          @include font-data($html);
 }
 
 Wn u want to set d font color red, u av to set it after @include
