@@ -155,6 +155,60 @@ li {
           }
 }
 
+
+-: Variables
+A variable is like a box that holds a value. They are 
+especially useful in cases when the same value needs 
+to be used many times.
+
+Defining Variables
+To use variables, you first need to define them. Variables 
+are defined with the syntax: $variable-name: value; as 
+shown below. You can think of it like saying put the value 
+on the right into the variable on the left, this is called assignment.
+
+$progate-color: #26546a;
+
+How to Use Variables
+Using variables is easy. Just write the variable name, i.e. 
+$progate-color, as shown below. By writing the variable 
+name in the place you want to use it, the value #26546a 
+stored in the variable will be automatically be inserted. 
+This makes it possible to reference the same value from 
+different places, making it easy to change.
+
+$progate-color: #26546a;
+
+h1 {
+          color: $progate-color;
+}
+
+p {
+          color: $progate-color;
+}
+
+Placement of Variable Definitions
+Note that a variable must be defined before the line where 
+it is used. Since the style sheet (CSS) is read from the top 
+down, if you define a variable after the line where you want 
+to use it, an error will occur because it will be interpreted as 
+an undefined variable.
+
+Variable Scope
+You can also specify the range in which variables can be used. 
+This range is called scope. Even if you want to use a variable 
+after defining it, you can't if it's outside of its scope. Therefore, 
+for variables you want to use across the code, they should be 
+defined in the outermost part of the nested structure.
+
+h1 {
+          $text: #26546a;
+          color: $text; 
+}
+
+p {
+          color: $text;       //error
+}
+
 -->
 
--: 
