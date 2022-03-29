@@ -210,5 +210,33 @@ p {
           color: $text;       //error
 }
 
+
+-: What Are Mixins?
+Now we'll look at mixins, which is a very powerful feature of Sass. 
+A mixin is a function that allows you to combine multiple lines of 
+code and easily re-use it. This removes the need to write the same 
+code over and over and reduces duplicate code.
+
+Defining mixins
+To use a mixin you need to define it first. The syntax for defining 
+a mixin is @mixin mixin-name {code} as shown in the example 
+below.
+
+@mixin lesson-card {
+          width: 300px;
+          padding: 40px;
+}
+
+Calling Mixins
+Next, let's see how to use a mixin after it has been defined. You 
+can use mixins in a Sass file with the syntax @include mixin-name;. 
+When you use @include, the code from the mixin will be loaded into 
+that area.
+
+
+.lesson-1 {
+          @include lesson-card;
+}
+
 -->
 
