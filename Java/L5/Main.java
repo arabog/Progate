@@ -150,9 +150,31 @@ public void printData() {
 }
 
 
+-: Subclass Constructors
+Let's learn to set the name and color values ​​in the constructor.
+There is one rule to follow when defining a constructor in a 
+subclass: We must call the superclass constructor at the 
+beginning of the constructor. 
 
+Calling Superclass Constructors
+To call the constructor of a superclass use: super()
 
+Setting Value in Field
+Let's use the constructor to set a value for the instance fields 
+declared in a superclass. First of all, we have to define the 
+constructor in both superclass and subclass, as shown below. 
+We then pass an argument to super() in the constructor of 
+the subclass, and finally call the constructor of the superclass.
 
+Vehicle(String name, String color) {
+          this.name = name;
+          this.color = color;
+}
+
+Car.java
+Car(String name, String color) {
+          super(name, color)
+}
 
 
 
