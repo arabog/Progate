@@ -245,7 +245,6 @@ commonly used in programming. By passing color values and other
 data as arguments to a mixin, they can be used within the mixin
 
 
--->
 Passing Data to Mixins
 After adding arguments to a mixin definition, you can then pass 
 in values to the mixin when calling it. The value #ff0000 is passed 
@@ -373,3 +372,94 @@ $pink: #fd6eb6;
                     background-color: lighten($pink, 20%);
           }
 }
+
+
+-: import
+Let's learn how to load external files with import. In order 
+to allow a file to be imported, we should add an _ to the 
+beginning of the file name. Also, the general syntax for 
+loading a file is @import filename.
+
+colors.scss
+$progate-color: #26546a;
+
+stylesheet.scss
+@import "_colors.scss";
+
+p {
+          color: $progate-color;
+          font-size: 14px;
+}
+
+Abbreviating Filenames
+Note that when importing a file, you can leave out the _ and 
+the file extension (.scss)
+
+@import "colors";
+
+p {
+          color: $progate-color;
+          font-size: 14px;
+}
+
+Common Ways of Using import
+A popular method adopted in the development of many 
+professional websites is to create a file with many variable 
+definitions and load it with @import. This makes variables 
+easier to refer to and keep track of.
+
+<div class="main">
+          <h3 class="title">Tell friends about Progate</h3>
+
+          <div class="twitter button">
+                    <i class="fa fa-twitter"></i>
+          </div>
+
+          <div class="facebook button">
+                    <i class="fa fa-facebook"></i>
+          </div>
+</div>
+
+_variables.scss
+$twitter: #1dcaff;
+
+$facebook: #405f9e;
+
+style.scss
+@import "variables";
+
+.main {
+          margin: 20px;
+          text-align: center;
+          
+          .title {
+                    color: #455b6d;
+                    margin-bottom: 10px;
+          }
+          
+          .button {
+                    display: inline-block;
+                    border-radius: 50%;
+                    margin: 10px;
+                    text-align: center;
+                    height: 64px;
+                    width: 64px;
+                    color: #ffffff;
+                    font-size: 32px;
+                    box-shadow: 1px 2px 6px rgba(106, 137, 152, 0.3)
+          }
+          
+          .twitter {
+                    background-color: $twitter;
+          }
+          
+          .facebook {
+                    background-color: $facebook;
+          }
+          
+          .fa {
+                    line-height: 64px;
+          }
+}
+
+-->
