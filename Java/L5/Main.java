@@ -327,13 +327,36 @@ abstract class Vehicle {
 }
 
 
+-: Duplicate Code in the buy Method
+Let's take another look at the buy instance method. Here we find 
+a problem: each time we make a subclass of the Vehicle superclass, 
+we need to define another method with the same name that takes 
+a different argument type in each subclass.
 
+Improving the buy Method
+There is a way to solve this problem. As shown in the examples 
+below, by accepting an instance of the Vehicle type as a parameter, 
+the buy instance method is able to take an instance of the Car class 
+as well as the Bicycle class.
 
+class Person {
+          public void buy(Vehicle vehicle) {
+                    vehicle.setOwner(this);
+          }
+}
 
+Assigning Subclass Instances
+to Superclass Variables
+Since the Car class inherits the Vehicle class, an instance of 
+the Car class is also type Vehicle. When this relationship is 
+found, we can assign an instance of a subclass to the class 
+type variable of a superclass. This is why we can change the 
+class type of the buy instance method's argument to Vehicle. 
+This is called polymorphism.
 
+Main.java
+Vehicle vehicle1 = new Car("Ferrari", "Red");
 
-
-
-
+Vehicle vehicle2 = new Bicycle("Bianchi", "Green");
 */ 
 
