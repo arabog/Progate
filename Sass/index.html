@@ -31,9 +31,6 @@ With nesting, you can rewrite your CSS as shown in the example below.
 In this way, Sass allows you to nest selectors in other selectors. So, 
 with Sass, you don't have to write the same selector many times.
 
-
-
--->
 <div class="header">
           <ul>
 
@@ -118,3 +115,46 @@ li {
           }
 }
 
+
+-: Applying CSS to Specific Elements
+When you want to apply CSS to specific <li> tags like in the 
+example below, you can use the syntax element.class-name. 
+This syntax is often used for applying CSS to specific elements 
+among many others.
+
+<ul>
+          <li>1</li>
+          <li class="second">2</li>
+          <li class="third">3</li>
+</ul>
+
+li {
+          font-size: 14px;
+}
+
+li.second {
+          color: red;
+}
+
+Referencing Specific Elements
+In the previous page, you learned to reference specific elements 
+easily with the & symbol in Sass. With normal CSS, you have 
+to write the same element name repeatedly, but in Sass you can 
+just write it once, so it's simple and easy to apply different CSS 
+code to specific elements.
+
+li {
+          font-size: 14px;
+
+          &.second {
+                    color: red;
+          }
+
+          &.third {
+                    color: blue;
+          }
+}
+
+-->
+
+-: 
