@@ -84,6 +84,23 @@ class Main {
 }
 
 
+-: Subclass Fields and Methods
+We can customize a subclass by incorporating original fields 
+and methods that aren't in the superclass. The fuel instance 
+field is a unique instance field for the Car class. Let's declare 
+the fuel instance field and define its getter method in the Car 
+class. Here, we will also define the charge instance method
+
+Note about Calling Methods
+An instance of a subclass can call not only its own methods 
+but those of its superclass as well. On the other hand, an 
+instance of a superclass can't call methods of a subclass. 
+Since class inheritance is unilateral, if we call a method 
+of a subclass from a superclass, we get an error
+
+Structure of Calling Methods
+The method will be called from the subclass if it's defined in the 
+subclass, or from the superclass if it's not defined in the subclass.
 
 
 
