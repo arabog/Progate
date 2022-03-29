@@ -103,6 +103,29 @@ The method will be called from the subclass if it's defined in the
 subclass, or from the superclass if it's not defined in the subclass.
 
 
+-: Customizing Methods
+Let's consider a situation where we want to customize a superclass 
+method inside the subclass that inherited it. For example, when 
+calling the printData instance method for an instance of the Car 
+class, we also want to display the amount of fuel.
+
+Overriding
+We can override the content of a method inherited from a superclass 
+by defining another method of the same name in the subclass. This is 
+called overriding. If we define the printData method in the Car class 
+(subclass), it overrides the printData inherited from the Vehicle class.
+
+
+Although the superclass and the subclass have methods with the same 
+name, the program first looks at the subclass, and as a result, the 
+content of the method is overwritten inside the subclass. Here, the 
+program calls the printData instance method defined in the Car class.
+
+Access to private Field
+Fields other than fuel such as name, color, and distance are declared 
+as private instance fields in the Vehicle class, and external classes 
+like Car can't directly access them (encapsulation). When you want 
+to allow external access to private instance fields, use a getter method.
 
 
 
