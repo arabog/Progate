@@ -69,8 +69,19 @@ extends means "to expand"—inheritance is used to create a
 subclass with expanded features based on its superclass.
 
 
+-: Calling Superclass Methods
+The Car class (subclass) inherits the fields and methods of the 
+Vehicle class (superclass). Therefore, although nothing is 
+defined in the Car class, we can call an instance method of 
+the Vehicle class for an instance of the Car class.
 
-
+class Main {
+          public static void main(String[] args) {
+                    Car car = new Car();
+                    car.setName("Ferrari");
+                    car.setColor("Red");
+          }
+}
 
 
 
