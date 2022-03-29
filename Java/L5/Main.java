@@ -177,7 +177,29 @@ Car(String name, String color) {
 }
 
 
+-: run Method
+We made a run instance method in the Bicycle and Car classes 
+respectively in Dojo II. Let's implement these methods in this 
+section. The run instance method is implemented differently 
+for each class. So, we'll implement it in each subclass instead 
+of defining it in the Vehicle class and having each subclass to 
+inherit it.
 
+Access to private Fields (Review)
+If we use the run instance method in the program as it is, we'll 
+get an error. This is because the run instance method tries to 
+access the distance instance field of the Vehicle class. Like 
+what we learned in a previous section, the Car subclass can't 
+directly access the distance instance field that we set as 
+private in the Vehicle superclass.
+
+Summary of Access Rights
+Let's review the following three access rights:
+· public: content is accessible from anywhere
+· protected: content is accessible only from the class in which 
+it's created and subclasses (child classes)
+· private: content is only accessible from the class in which 
+it's created
 
 
 
