@@ -128,6 +128,62 @@ like Car can't directly access them (encapsulation). When you want
 to allow external access to private instance fields, use a getter method.
 
 
+-: Duplicate Code in Methods
+The printData instance method we overrode previously contains 
+duplicate code. Except for displaying the fuel amount, the code i
+n the printData instance method in the Car class is the same as 
+in the Vehicle class. Let's reduce redundancy by removing the 
+duplicate code.
+
+Calling Superclass Methods
+We can call an instance method of a superclass from an instance 
+of a subclass as follows: super.methodName(). By calling the 
+printData instance method of the Vehicle class from the Car 
+class, we can remove all the code except for the part that 
+displays the amount of fuel.
+
+Car.java
+public void printData() {
+          // Rewrite the duplicate code below using super
+          super.printData();
+          System.out.println("Fuel: " + this.fuel + " L");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 */ 
 
