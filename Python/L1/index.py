@@ -110,6 +110,16 @@ x = x + 3;          # x += 3
 y = y % 10          # y %= 10
 
 
+-: String Concatenation
+The + operator that we used for calculations also lets us combine strings. 
+Combining strings is known as string concatenation. String concatenation 
+can be used with strings and variables that have string values.
+
+print('Hello ' + 'Python');
+
+name = "Joshua";
+print('My name is ' + name);
+
 
 
 
