@@ -310,3 +310,10 @@ z = 55
 if not z == 77: 
           print('z is not 77')
 
+
+# -: Calculating Shopping Prices
+# Combining what we've learned so far, we'll create a simple program 
+# that calculates shopping prices. 
+
+Printing the Payment Amount
+First, let's print the money required to buy some apples!
