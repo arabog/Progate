@@ -315,5 +315,34 @@ if not z == 77:
 # Combining what we've learned so far, we'll create a simple program 
 # that calculates shopping prices. 
 
-Printing the Payment Amount
-First, let's print the money required to buy some apples!
+# Printing the Payment Amount
+# First, let's print the money required to buy some apples!
+
+apple_price = 2
+
+count = 10
+
+total_price = apple_price * count
+
+print('You will buy ' + str(count) + ' apples')
+print('The total price is ' + str(total_price) + ' dollars')
+
+
+# -: Changing the Number of Apples
+# In the last lesson, the number of apples had already been decided.
+# Let's change it so that you can input the amount of apples you'll buy.
+
+# Getting Input
+# input() allows you to enter letters in the console when running the 
+# code, and receive the value entered. By writing 
+# variable = input('the string you want to show in console'), the 
+# entered value will be assigned to the variable.
+
+input_count = input('How many apples do you want?: ')
+print('You will buy ' + input_count + 'apples')
+
+# Type Conversion of Input Values
+# The value you receive from input() will be a string, even if you enter 
+# a number. If you want to use it as an integer to do some calculation, 
+# you have to convert it to an integer,
+
