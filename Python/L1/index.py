@@ -37,3 +37,11 @@ print(3 - 7);
 
 print(3 + 5);
 print("3 + 5");
+
+
+# -: More Calculations
+# In Python, you can do other calculations like multiplication and 
+# division, but with different symbols from what you would use in 
+# math. * is for multiplication and / is for division. You can also 
+# calculate the remainder of a division using %.
+
