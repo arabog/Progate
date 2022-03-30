@@ -216,3 +216,17 @@ There are other operators you can use to compare values. Just
 like math, you can use < and > to compare numbers. You can 
 also use >= and <= if you want to make the comparisons inclusive.
 
+
+-: What Happens When the Condition is False
+By using if statements, you can now choose to run selected code only 
+when the condition is True. Next, let's learn how to create control flow 
+statements that can run different code when the condition is False.
+
+score = 50;
+
+if score == 100:
+          print('Great job!');
+else:
+          print('You can do better!');
+
+          
