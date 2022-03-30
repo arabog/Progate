@@ -211,16 +211,16 @@ if score ==100:     #False
           print('Great job!');
 
 
--: Comparison Operators (<, <=, >, >=)
-There are other operators you can use to compare values. Just 
-like math, you can use < and > to compare numbers. You can 
-also use >= and <= if you want to make the comparisons inclusive.
+# -: Comparison Operators (<, <=, >, >=)
+# There are other operators you can use to compare values. Just 
+# like math, you can use < and > to compare numbers. You can 
+# also use >= and <= if you want to make the comparisons inclusive.
 
 
--: What Happens When the Condition is False
-By using if statements, you can now choose to run selected code only 
-when the condition is True. Next, let's learn how to create control flow 
-statements that can run different code when the condition is False.
+# -: What Happens When the Condition is False
+# By using if statements, you can now choose to run selected code only 
+# when the condition is True. Next, let's learn how to create control flow 
+# statements that can run different code when the condition is False.
 
 score = 50;
 
@@ -229,4 +229,21 @@ if score == 100:
 else:
           print('You can do better!');
 
-          
+
+-: elif
+# You can use elif to add alternative conditions to the control flow.
+# Check the example of elif below!
+
+score = 70;
+
+if score == 100:
+          print('Great job!');
+elif score == 70:
+          print('Not bad...');
+else:
+          print('You can do better!');
+
+# You can add elif as many times as you want. However, keep in 
+# mind that only the code in the first condition that's satisfied will 
+# be executed.
+
