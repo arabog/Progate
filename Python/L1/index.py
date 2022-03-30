@@ -153,3 +153,29 @@ price = 100;
 
 total_pricee = price * int(count);
 print(total_pricee);
+
+
+# -: Control Flow
+# We'll learn about control flow from here. In programming, we often 
+# want to control what code is run based on the conditions that are 
+# satisfied. 
+
+# The if Statement
+# By using the if statement, you can write code that gets executed only 
+# under a satisfied condition. You can create if statements by writing if, 
+# followed by a conditional expression and a colon :. The code on the 
+# next line will only run when the condition is true.
+
+score = 100;
+
+if score ==100:
+          print('Great job!');
+
+# Conditional Expressions
+# There are many operators to create conditional expressions. Let's first 
+# take a look at equality operators. We can use == to see if two values
+# are equal, and != to see if two values are not equal.
+
+# x == y;
+# x != y;
+
