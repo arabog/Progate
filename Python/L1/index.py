@@ -45,3 +45,40 @@ print("3 + 5");
 # math. * is for multiplication and / is for division. You can also 
 # calculate the remainder of a division using %.
 
+
+-: What is a Variable?
+Next, we'll learn about variables. A variable is like a box with a 
+name in which you can store a value.
+
+Defining a Variable
+To store a value in a variable, you need to define a variable. 
+You can do this in the following format: variable_name = value. 
+The = operator in Python doesn't mean "equal". This assignment 
+operator means assign the value on the right to the variable on the 
+left. Note that variable names don't need to be enclosed in quotes.
+
+name = 'John';
+number = 24;
+
+Printing a Variable
+Now let's learn how to print the value in the name variable. You 
+can do this by writing print(name). Note that if you enclose the 
+variable in quotes, like print('name'), the name becomes a string 
+instead of a variable. Therefore, the output will be name, not the 
+value of the variable.
+
+print(name);                  #John
+print("name");                #name
+
+
+
+
+
+
+
+
+
+
+
+
+
