@@ -179,3 +179,40 @@ if score ==100:
 # x == y;
 # x != y;
 
+
+# -: True and False
+# Let's try to understand how conditional expressions work. 
+# When you print a condition like score == 100, True  will 
+# be printed. What is this value True ?
+
+# Booleans
+# True is a value of the boolean data type. The boolean data type 
+# has only two values, True or False. The value True is returned 
+# if a condition is satisfied, and False if not. Keep in mind that 
+# you must capitalize the first letter of True and False.
+
+print(3 == 3);
+print(3 == 5);
+
+# if Statements and Boolean Values
+# Let's jump back to the if statement to see how it interacts with 
+# boolean values. The code below the if statement is executed 
+# when the condition returns True, and not executed when it 
+# returns False
+
+score = 100;
+
+if score ==100:     #True
+          print('Great job!');
+
+score = 50;
+
+if score ==100:     #False
+          print('Great job!');
+
+
+-: Comparison Operators (<, <=, >, >=)
+There are other operators you can use to compare values. Just 
+like math, you can use < and > to compare numbers. You can 
+also use >= and <= if you want to make the comparisons inclusive.
+
