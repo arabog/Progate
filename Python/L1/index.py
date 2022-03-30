@@ -103,17 +103,17 @@ print(x);
 x = x + 3;
 print(x);
 
-You can use shorthand operators like in the image below when updating 
-a variable that has an integer value. 
+# You can use shorthand operators like in the image below when updating 
+# a variable that has an integer value. 
 
 x = x + 3;          # x += 3
-y = y % 10          # y %= 10
+#y = y % 10          # y %= 10
 
 
--: String Concatenation
-The + operator that we used for calculations also lets us combine strings. 
-Combining strings is known as string concatenation. String concatenation 
-can be used with strings and variables that have string values.
+# -: String Concatenation
+# The + operator that we used for calculations also lets us combine strings. 
+# Combining strings is known as string concatenation. String concatenation 
+# can be used with strings and variables that have string values.
 
 print('Hello ' + 'Python');
 
@@ -121,9 +121,35 @@ name = "Joshua";
 print('My name is ' + name);
 
 
+# -: Data Types
+# So far, we have worked with two kinds of values, strings and 
+# integers. These are called data types. There are other data types 
+# in Python, but let's cover these two first.
 
+# Differences in Data Types
+# Different types have different behaviors. For example, print(5 + 7) 
+# calculates the sum while print('5' + '7') concatenates strings.
 
+print(5 + 7)        #12
+print('5' + '7')    #57
 
+# Type Conversion: str()
+# You can't concatenate strings and integers because they have different 
+# data types. In order to concatenate different types of data, you have to 
+# perform type conversion. In the example below, you first have to 
+# convert the integer to a string, using str().
 
+price = 3;
+#print("The apple costs " + price + " dollars"); #error
 
+print("The apple costs " + str(price) + " dollars"); 
 
+# Type Conversion: int()
+# You also can't perform calculations with a string and an integer.
+# You have to convert the string to an integer using int().
+
+count = '3';
+price = 100;
+
+total_pricee = price * int(count);
+print(total_pricee);
