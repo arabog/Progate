@@ -230,7 +230,7 @@ else:
           print('You can do better!');
 
 
--: elif
+# -: elif
 # You can use elif to add alternative conditions to the control flow.
 # Check the example of elif below!
 
@@ -246,4 +246,67 @@ else:
 # You can add elif as many times as you want. However, keep in 
 # mind that only the code in the first condition that's satisfied will 
 # be executed.
+
+
+# -: and
+# You can use the and operator to combine conditions. For example, 
+# Condition1 and Condition2 will return True only when both 
+# Condition1 and Condition2 are true.
+
+hour = 7;
+
+if hour > 6 and hour < 8:
+          print('Good morning!');
+
+# or
+# You can use the or operator in a similar way. Condition1 or Condition2 
+# will return True if either Condition1 or Condition2 is true. This means 
+# that the combined condition will be True if at least one of the conditional 
+# expressions is True
+
+hour = 7;
+
+if hour == 11 and hour == 12:
+          print('Lunchtime!');
+
+# not
+# By using not, you can negate a condition. This means that it'll be False 
+# if the conditional expression is true and it'll be True if it is false.
+
+hour = 9;
+
+if not hour == 12:
+          print('Not noon');
+
+#-: Chaining comparison operators
+# It's possible for you to rewrite and conditions that use the same variable 
+# in the way shown below! This is called chaining comparison operators.
+
+hour = 7;
+
+if hour > 6 and hour < 8:
+          print('Good morning!');
+
+hour = 7;
+
+if 6 < hour < 8:
+          print('Good morning!');
+
+# ---------------------------------------------
+x = 20
+# if x ranges from 10 to 30 inclusive, print 'x ranges from 10 to 30'
+if 10 <= x <= 30:
+          print('x ranges from 10 to 30')
+
+
+y = 60
+# if y is less than 10 or greater than 30, print 'y is less than 10 or greater than 30'
+if y < 10 or y > 30:
+          print('y is less than 10 or greater than 30')
+
+
+z = 55
+# if z is not equal to 77, print 'z is not 77'
+if not z == 77: 
+          print('z is not 77')
 
