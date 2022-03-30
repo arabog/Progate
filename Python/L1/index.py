@@ -71,6 +71,16 @@ print(name);                  #John
 print("name");                #name
 
 
+How to Name a Variable
+You can pick any name for variables, but there are some rules. 
+For example, you cannot start a variable name with a number. 
+Also, when a variable name contains more than two words, 
+like user_name, you should separate them with _.
+
+There are other advantages of variables:
+・They allow you to use the same data repeatedly.
+・When you want to change the value of a variable, you only 
+need to change it once.
 
 
 
