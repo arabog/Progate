@@ -218,3 +218,26 @@ for number in numbers:
                     continue
 
           print(number)
+
+
+# Preparing the Items: The Shopping App
+# By using what we've learned so far, let's improve the shopping app 
+# that we made in Python I. We'll be printing the results according to 
+# the number of fruits entered in the console.
+
+# Preparing the Fruits
+# Let's start by preparing a dictionary to represent fruits! This dictionary 
+# will have the names of fruit as keys, and their prices as values. We'll 
+# also print the price of each fruit using loops.
+
+# Create a dictionary with keys and values, and assign it to the items variable
+items = {'apple': 2, 'banana': 4, 'orange': 6}
+
+# Create a for loop that gets the keys of items
+for item_name in items:
+          # Print '--------------------------------------------------'
+          print('--------------------------------------------------')
+
+          # Print 'Each ____ costs ____ dollars'
+          print('Each ' + item_name + ' costs ' + str(items[item_name]) + ' dollars')
+
