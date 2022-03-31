@@ -49,3 +49,24 @@ print(foods)
 
 foods.append('curry')
 print(foods)
+
+
+# -: Printing All the Elements
+# When you want to print all the elements of a list, it isn't efficient 
+# to repeat the same code like the example below. You can use 
+# a for loop to make it easier.
+
+# print('I love ' + foods[0])
+# print('I love ' + foods[1])
+# print('I love ' + foods[2])
+# print('I love ' + foods[3])
+
+
+# for Loops
+# The for loop allows you to process each element of a list with 
+# a temporary variable, and apply the same code to it. In the 
+# example below, each element of the foods variable is stored 
+# in a temporary variable called food, and printed.
+
+for food in foods:
+          print('I love ' + food)
