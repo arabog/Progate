@@ -70,3 +70,41 @@ print(foods)
 
 for food in foods:
           print('I love ' + food)
+
+
+# The Flow of for Loops
+# Elements of the list will be assigned to the temporary variable 
+# one by one, and the code within the for loop gets executed with 
+# each assignment. This is called iteration. It's common to use the 
+# list name's singular form for the temporary variable, but it can 
+# be anything.
+
+
+# -: Dictionaries
+# Like lists, dictionaries are used to manage groups of data. The 
+# difference is that dictionaries use keys instead of index numbers 
+# (index). In dictionaries, a key is paired with a value, also known 
+# as a key-value pair, to form one element.
+
+# How to Create Dictionaries
+# You can create a dictionary as follows: 
+# {key1: value1, key2: value2, ..}. In most cases, we use strings 
+# as keys. Dictionaries are enclosed with { } while lists are 
+# enclosed with [ ]. Be sure to put : between the key value pair, 
+# and , between elements.
+
+fruits = { 'apple': 'red', 'banana': 'yellow', 'grape': 'purple' }
+
+# The Order of Elements in Dictionaries
+# When you print a dictionary like in the example below, the 
+# printed order of the elements can be different from the order 
+# you defined them. This is because unlike lists, dictionaries 
+# don't have a fixed order prior to Python 3.7.
+
+print(fruits)
+
+# Getting an Element of a Dictionary
+# You can get a value from a dictionary using the key, by 
+# writing dictionary_name[key].
+
+print('The apple is ' + fruits['apple'])
