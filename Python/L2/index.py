@@ -135,3 +135,48 @@ print(fruits)
 
 for fruit_key in fruits:
           print('The ' + fruit_key + ' is ' + fruits[fruit_key])
+
+
+# -: while Loops
+# You can also use while loops to repeat blocks of code. With while 
+# loops, the code gets repeated until a given condition, like when 
+# x <= 100 evaluates False.
+
+x = 1
+
+while x <= 100:
+          print(x)
+          x += 1
+
+# How to Write While Loops
+# The syntax for while loop is as follows:
+# while <conditional expression>:         while x <= 100:
+# The code in the while loop is repeated while the condition is True.
+#           print(x)
+#           x += 1
+
+# Flow of While Loops
+# Let's learn the flow of while loops. First, a variable is defined 
+# before the while loop(x = 1). At each iteration of the while loop, 
+# the condition is checked(while x <= 100:) and the variable is 
+# updated(x += 1). This same cycle continues until the condition
+# evaluates False.
+
+# Infinite Loops
+# If you forget to update ( x += 1) the value of the variable(x) used 
+# for the condition at the end of a while loop, an infinite loop can 
+# happen as the condition will always evaluate True. Infinite loops 
+# put a huge load on the computer, so make sure the condition 
+# evaluates False at some point in execution.
+
+# Another possible cause of an infinite loop is forgetting to indent 
+# the code to update the variable. Since the code won't be included 
+# in the while loop, the condition will always evaluate True and the 
+# loop would never stop.
+
+# x = 1
+
+# while x <= 100:
+#           print(x)
+# x += 1
+
