@@ -203,3 +203,18 @@ for number in numbers:
           if number == 777:
                     print('777 found, stopping loop')
                     break
+
+
+# -: continue
+# Unlike break statements that will terminate a loop, continue statements 
+# skip the loop for just that specific iteration. Continue statements can be 
+# used in the same way in both for loops and while loops.
+
+numbers = [1, 2, 3, 4, 5, 6]
+
+for number in numbers:
+
+          if number % 2 == 0:
+                    continue
+
+          print(number)
