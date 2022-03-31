@@ -34,3 +34,18 @@ print(foods)
 # writing list[index].
 
 print('I love ' + foods[2])
+
+
+# -: Updating an Element of a List
+# Let's also try updating an element of a list! This can be done 
+# by writing list[index] = value.
+foods[1] = 'pizza'
+
+print(foods)
+
+# Adding Elements to a List
+# You can also add new elements to a list. Writing list.append(value) 
+# allows you to add a new element to the end of a defined list.
+
+foods.append('curry')
+print(foods)
