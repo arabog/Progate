@@ -108,3 +108,22 @@ print(fruits)
 # writing dictionary_name[key].
 
 print('The apple is ' + fruits['apple'])
+
+
+# -: Adding and Updating Dictionary Elements
+# Like lists, you can add or update an element of a dictionary.
+# Updating the value of an existing key can be done by writing 
+# dictionary_name[key] = value.
+
+fruits['apple'] = 'green'
+print('The apple is ' + fruits['apple'])
+
+# Adding an Element to a Dictionary
+# Adding an element can be done using the same syntax as updating 
+# an element. When the specified key doesn't exist in the dictionary, 
+# a new element with the key will be added.
+
+fruits['peach'] = 'pink'
+print(fruits)
+
+
