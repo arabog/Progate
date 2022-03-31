@@ -127,3 +127,11 @@ fruits['peach'] = 'pink'
 print(fruits)
 
 
+# -: Getting All the Elements of a Dictionary
+# Like lists, you can use a for loop to iterate through a dictionary by 
+# writing for variable_name in dictionary_name:. The key of each 
+# element is assigned to a temporary variable. Because of that, you 
+# can get the corresponding value using the variable, as shown below.
+
+for fruit_key in fruits:
+          print('The ' + fruit_key + ' is ' + fruits[fruit_key])
