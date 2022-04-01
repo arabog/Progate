@@ -368,3 +368,29 @@ if utils.validate(player_hand):
           utils.print_hand(player_hand, player_name)
 
 # Let's move the functions to utils.py, and import them as modules.
+
+# -: Completing the Rock Paper Scissors App
+# Finally, let's make the game more exciting by making the 
+# computer's hand random.
+
+# Python Standard Library
+# Earlier, we learned how to create a custom utils module. 
+# Python also has a list of built-in modules that you can use 
+# in the Python Standard Library. Let's try using one of these 
+# very useful modules.
+
+# Python Standard Library: math, random, datetime
+
+The random Module
+We'll be randomizing the hand chosen by the computer using 
+the randint function from the random module. By writing 
+random.randint(x, y), you can get a random integer between 
+x and y inclusive.
+
+import utils
+import random
+
+if utils.validate(player_hand):
+          computer_hand = random.randint(0, 2)
+
+          
