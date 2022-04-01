@@ -87,3 +87,14 @@ def greet(name, message):
           print(name + ', ' + message)
 
 greet('John', 'nice to meet you')
+
+
+# -: Default Parameter Values
+# You can set the default value of a parameter. The default 
+# will be used when no argument for the parameter is provided.
+
+def greet(name, message = 'nice to meet you'):
+          print(name + ', ' + message)
+
+greet('John', 'see you again')
+greet('Kate')
