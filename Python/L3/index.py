@@ -214,3 +214,54 @@ if validate(player_hand):
           print_hand(player_hand, player_name)
 else:
           print('Please enter a valid number')
+
+
+# -: How Return Works
+# Not only does return send back the return value to the caller, 
+# it also stops the function immediately. This means that anything 
+# that comes after return in the function won't be executed.
+
+def add(a, b):
+          return a + b
+          print("Hello World")
+
+sum = add(1, 3)
+print(sum)
+# Hello World will not be printed
+
+# Multiple Returns
+# By adding control flow, you can use return multiple times. 
+# In the example below, if the value of the name parameter 
+# is equal to 'Guest', the function exits after returning 'What 
+# is your name?'. The code after that won't be executed.
+
+def greet(name = "Guest"):
+          if name == "Guest":
+                    return 'What is your name?'
+
+          return name + ', welcome'
+
+print(greet())
+# only What is your name will be printed
+
+def validate(hand):
+          if hand < 0 or hand > 2:
+                    return False
+          # Remove else and fix indentation
+          return True
+
+def print_hand(hand, name='Guest'):
+          hands = ['Rock', 'Paper', 'Scissors']
+          print(name + ' picked: ' + hands[hand])
+
+print('Starting the Rock Paper Scissors game!')
+player_name = input('Please enter your name: ')
+
+print('Pick a hand: (0: Rock, 1: Paper, 2: Scissors)')
+player_hand = int(input('Please enter a number (0-2): '))
+
+if validate(player_hand):
+          print_hand(player_hand, player_name)
+else:
+          print('Please enter a valid number')
+
