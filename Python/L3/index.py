@@ -107,7 +107,7 @@ greet('Kate')
 # Receiving the User Name
 # Let's first get the user's name, then print it.
 
-def print_hand(hand, name='Guest'):
+          def print_hand(hand, name='Guest'):
           print(name + ' picked: ' + hand)
 
 player_name = input('Please enter your name: ')
@@ -147,3 +147,70 @@ player_hand = int(input('Please enter a number (0-2): '))
 print_hand(player_hand, player_name)
 
 
+# -: Validating the Input Value
+# Our current program throws an error if the user enters a value 
+# other than 0, 1, or 2, so we need to validate it. In order to do 
+# this, we'll cover our next topic, the return value.
+
+# What is a Return Value?
+# When we want to use the output of a function, we can use 
+# return. In the example below, if 1 is passed to the validate 
+# function, True is returned.
+
+def validate(hand):
+          if hand < 0 or hand > 2:
+                    return False
+          else:
+                    return True
+
+# Receiving a Return Value
+# To send a value to the origin of the function call, we use 
+# the return statement. By writing return value, the value 
+# can be returned to be used outside of the function.
+
+is_valid = validate(1)
+print(is_valid)               #True
+
+# Using a Return Value in an if Statement
+# When a function with a return value is used as the condition 
+# in an if statement, the returned value will be used to evaluate 
+# the if statement.
+
+if validate(player_hand):
+          # process wn return value is True
+else:
+          # process wn return value is False
+
+# Simplifying Conditional Statements
+# For this case, we can skip writing == True in the conditional statements.
+
+if validate(player_hand) == True:
+if validate(player_hand):
+
+# Since the validate function returns a Boolean value, we can 
+# use it as the condition for our if/else statement.
+
+# Define the validate function
+def validate(hand):
+          # Add control flow based on the value hand
+          if hand < 0 or hand > 2:
+                    return False
+          else:
+                    return True
+
+
+def print_hand(hand, name='Guest'):
+          hands = ['Rock', 'Paper', 'Scissors']
+          print(name + ' picked: ' + hands[hand])
+
+print('Starting the Rock Paper Scissors game!')
+player_name = input('Please enter your name: ')
+
+print('Pick a hand: (0: Rock, 1: Paper, 2: Scissors)')
+player_hand = int(input('Please enter a number (0-2): '))
+
+# Add control flow based on the return value of the validate function
+if validate(player_hand):
+          print_hand(player_hand, player_name)
+else:
+          print('Please enter a valid number')
