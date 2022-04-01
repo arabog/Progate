@@ -98,3 +98,29 @@ def greet(name, message = 'nice to meet you'):
 
 greet('John', 'see you again')
 greet('Kate')
+
+
+# -: Rock Paper Scissors
+# So far, we've learned the basics of functions. Now, let's use 
+# them to enhance the Rock Paper Scissors game.
+
+Receiving the User Name
+Let's first get the user's name, then print it.
+
+def print_hand(hand, name='Guest'):
+          print(name + ' picked: ' + hand)
+
+player_name = input('Please enter your name: ')
+print_hand('Rock', player_name)
+
+-: Picking a Hand
+Let's let the user pick a hand with numbers 0, 1, or 2. We'll 
+prepare a list that contains 'Rock', 'Paper', and 'Scissors', 
+and when a user picks a number, we'll print the element that
+has the corresponding index number.
+
+def print_hand(hand):
+          hands = ['Rock', 'Paper', 'Scissors']
+
+          print(name + ' picked: ' + hands[hand])
+
