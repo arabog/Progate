@@ -330,4 +330,41 @@ else:
           print('Please enter a valid number')
 
 
--: 
+# -: Dividing Files
+# The code in our script.py file has become very long. As 
+# your code gets longer, it becomes harder to read and 
+# comprehend, and could lead you to unwanted bugs. 
+# To prevent this, let's learn how to divide code into 
+# separate files.
+
+# Modules
+# We can move parts of our code to a separate file, and import it as a module. A module is a file that can be imported into another file.
+# By importing a module, you can use the functions in that module.
+
+# import
+# You can import a module using the following syntax: 
+# import module_name. The extension of the file, .py, can 
+# be trimmed when you import it.
+
+# utils.py
+def validate(hand):
+
+def print_hand(hand, name = 'Guest')
+
+def judge(player, computer)
+
+# import utils
+
+# Using Modules
+# You can call a function of a module by putting the name of the 
+# module before the function name, like 
+# module_name.function_name().
+
+import utils
+
+if utils.validate(player_hand):
+          computer = 1
+          
+          utils.print_hand(player_hand, player_name)
+
+# Let's move the functions to utils.py, and import them as modules.
