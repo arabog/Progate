@@ -104,8 +104,8 @@ greet('Kate')
 # So far, we've learned the basics of functions. Now, let's use 
 # them to enhance the Rock Paper Scissors game.
 
-Receiving the User Name
-Let's first get the user's name, then print it.
+# Receiving the User Name
+# Let's first get the user's name, then print it.
 
 def print_hand(hand, name='Guest'):
           print(name + ' picked: ' + hand)
@@ -113,14 +113,37 @@ def print_hand(hand, name='Guest'):
 player_name = input('Please enter your name: ')
 print_hand('Rock', player_name)
 
--: Picking a Hand
-Let's let the user pick a hand with numbers 0, 1, or 2. We'll 
-prepare a list that contains 'Rock', 'Paper', and 'Scissors', 
-and when a user picks a number, we'll print the element that
-has the corresponding index number.
+# -: Picking a Hand
+# Let's let the user pick a hand with numbers 0, 1, or 2. We'll 
+# prepare a list that contains 'Rock', 'Paper', and 'Scissors', 
+# and when a user picks a number, we'll print the element that
+# has the corresponding index number.
 
 def print_hand(hand):
           hands = ['Rock', 'Paper', 'Scissors']
 
           print(name + ' picked: ' + hands[hand])
+
+# -------------------------
+def print_hand(hand, name='Guest'):
+          # Assign a list of hands to the hands variable
+          hands = ['Rock', 'Paper', 'Scissors']
+          
+          # Update using an element of the hands variable
+          print(name + ' picked: ' + hands[hand])
+
+print('Starting the Rock Paper Scissors game!')
+player_name = input('Please enter your name: ')
+
+# Print 'Pick a hand: (0: Rock, 1: Paper, 2: Scissors)'
+print('Pick a hand: (0: Rock, 1: Paper, 2: Scissors)')
+
+
+# Get input, convert it, and assign it to the player_hand variable
+player_hand = int(input('Please enter a number (0-2): '))
+# player_hand = int(player_hand)
+
+# Change the first argument to player_hand
+print_hand(player_hand, player_name)
+
 
