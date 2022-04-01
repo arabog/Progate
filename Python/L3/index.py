@@ -31,3 +31,42 @@ def greet():
           print('Hello')
 
 greet()
+
+
+# -: What is an Argument?
+# You can pass values to a function when you call it. These values 
+# are called arguments and they can be used inside the function. 
+# By using arguments, you can make a function return different 
+# values depending on the argument passed.
+
+# To pass an argument to a function, the function has to have 
+# a variable, called a parameter, to receive it. In the example below, 
+# the greet function has the name parameter to receive an argument.
+
+def greet(name):
+          print('Hello ' + name)
+
+# Passing an Argument to a Function
+# We can pass an argument by calling a function like so: 
+# function_name(argument). When the function is called, the 
+# passed argument is assigned to the parameter to be used inside 
+# the function.
+
+def greet(name):
+          print('Hello ' + name)
+
+greet('John')
+greet('Kate')
+
+# Scope
+# Variables have a scope, which refers to the specific range in 
+# which a variable can be accessed. The scope of parameters 
+# and variables defined inside a function is limited to the 
+# function. Therefore, they cannot be used outside the function.
+
+def greet(name):
+          print(name)
+
+# print(name)         #NameError: name 'name' is nt defined
+
+
