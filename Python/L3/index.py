@@ -70,3 +70,20 @@ def greet(name):
 # print(name)         #NameError: name 'name' is nt defined
 
 
+# -: Functions with Multiple Parameters
+# You can add multiple parameters to a function by separating 
+# them with a comma ,. In the example below, name is the 1st 
+# parameter, and message is the 2nd.
+
+def greet(name, message):
+          print(name + ', ' + message)
+
+# Passing Multiple Arguments to a Function
+# The example below shows how to pass multiple arguments to 
+# a function. When passing in arguments like in the example 
+# below, they must be in the same order as the parameters.
+
+def greet(name, message):
+          print(name + ', ' + message)
+
+greet('John', 'nice to meet you')
