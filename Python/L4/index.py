@@ -109,3 +109,33 @@ menu_item1 = MenuItem()
 
 menu_item1.hello()
 
+
+# -: Instance Methods
+# Displaying Menu Item Information
+# The self parameter in an instance method refers to the actual 
+# instance that we call on. 
+
+# How to Use self
+# The first parameter, self, references the instance being called 
+# on. Because of this, you can use self to access the instance 
+# and its contents. In the example below, self.name is used to 
+# get the value of the name instance variable of menu_item1.
+
+class MenuItem:
+          def hello(self):
+                    print(self.name)
+
+menu_item1 = MenuItem()
+menu_item1.name = 'Sandwich'
+menu_item1.info()
+
+# Type Conversion Review
+# Now let's use the values of name and price to output 
+# "Sandwich: $5". Since the value of price is an integer, before 
+# we can combine it with a string we have to convert price to 
+# a string itself. Let's review how to convert an integer to a 
+# string in the example below.
+
+age = 21
+print('Age: ' + str(age))
+
