@@ -335,3 +335,22 @@ class MenuItem:
           def __init__(self, name, price):
                     self.name = name
                     self.price = price
+
+
+# -: Displaying the Menu
+# List of Instances
+# We can also display each instance we've created from the MenuItem 
+# class. As shown below, we can add every instance to a list called
+# menu_items and use a for loop to output the information of each instance.
+
+from menu_item import MenuItem
+
+menu_item1 = MenuItem('Sandwich', 500)
+menu_item2 = MenuItem('Chocolate Cake', 400)
+
+menu_items =[menu_item1, menu_item2]
+
+for menu_item in menu_items:
+          print(menu_item.info())
+
+
