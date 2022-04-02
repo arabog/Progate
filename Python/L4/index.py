@@ -263,3 +263,42 @@ class MenuItem:
 menu_item1 = MenuItem()
 
 
+# -: Passing Arguments to __init__
+# The __init__ method can also take arguments just like regular 
+# instance methods. To pass arguments to __init__, we put the 
+# arguments in ClassName() when we call it.
+
+class MenuItem:
+          def __init__(self, name:
+                    # Set self.name to 'Sandwich'
+                    self.name = name
+
+menu_item1 = MenuItem('Chocolate Cake')
+print(menu_item1.name)
+
+class MenuItem:
+          # Add the parameters name and price
+          def __init__(self, name, price):
+                    # Set this to the name argument instead of 'Sandwich'
+                    self.name = name
+
+                    # Set this to the price argument instead of 5
+                    self.price = price
+
+          def info(self):
+                    eturn self.name + ': $' + str(self.price)
+
+          def get_total_price(self, count):
+                    total_price = self.price * count
+                    return total_price
+
+
+# Add 'Sandwich' and 5 as arguments
+menu_item1 = MenuItem('Sandwich', 5)
+
+print(menu_item1.info())
+
+result = menu_item1.get_total_price(4)
+print('Your total is $' + str(result))
+
+
