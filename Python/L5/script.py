@@ -145,4 +145,12 @@ class Food(MenuItem):
 #  Now, in the same way, let us try to override the __init__ method in the Drink class.
 
 
+# -: Completing the Food Ordering Service
+# Displaying the Total Price
+# Lastly, let's use values from the console input to display the total price.
+# You can use the get_total_price method that we defined in the MenuItem 
+# lass (from Python Study IV) in the instances of the Food and Drink classes, 
+# which are the children classes of MenuItem.
+
+
 
