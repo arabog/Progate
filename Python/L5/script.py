@@ -20,3 +20,19 @@ from menu_item import MenuItem
 class Food(MenuItem):
           pass
 
+
+# -: What is Inheritance?
+#  Now the child class inherits the instance methods of the parent class.
+
+# Instances of the Child Class
+# The child class inherits the instance methods of the parent class.
+# As shown below, the Food class instance can use the __init__ and 
+# info methods that were defined within the MenuItem class.
+
+script.py
+from food import Food
+
+food1 = Food('Sandwich', 5)
+
+print(food1.info()) # Sandwich: $5
+
