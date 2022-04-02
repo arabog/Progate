@@ -380,3 +380,34 @@ order = int(input('Pls enter a menu item number'))
 
 selected_menu = menu_items[order]
 
+
+# -: Outputting the Total Price
+# Adding a 10% Discount
+# In the get_total_price method that we defined in the MenuItem class, 
+# let's take off 10% (charge 90% of the price) if count is greater than 3. 
+# Decimals can also be used in arithmetic with numeric types. Let's 
+# multiply the value of the total_price variable by 0.9
+
+result = selected_menu.get_total_price(4)
+
+print(result)
+
+# menu_item.py
+class MenuItem:
+          def get_total_price(self, count):
+                    total_price = self.price * count
+
+                    if count is more than 3:
+                              total_price *= 0.9
+
+                    return total_price
+
+# Rounding
+# When multiplying an integer and a decimal together, the output 
+# will be decima. We actually only want our app to charge in whole 
+# numbers since dealing with change is annoying. We can use 
+# ound(decimal) so that we don't have to worry about change!
+
+number = 7 * 0.9
+print(round(number))                    #6
+
