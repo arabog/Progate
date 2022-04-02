@@ -302,3 +302,30 @@ result = menu_item1.get_total_price(4)
 print('Your total is $' + str(result))
 
 
+# -: Moving Towards the End Product
+# Reviewing import
+# In Python Study III we learned how to separate Python code 
+# into different files and import outside files as modules. 
+# Remember that in order to import a module from module_name.py 
+# we use import module_name.
+
+# script.py
+import menu_item
+
+menu_item1 = menu_item.MenuItem(.....)
+
+# menu_item.py
+class MenuItem:
+          def __init__(self, name, price):
+                    self.name = name
+                    self.price = price
+
+# Directly Importing Classes
+# There's actually a more convenient way to use import. As shown 
+# below, you can directly import a class from a module by writing 
+# from module_name import ClassName. By doing this, you can 
+# use the MenuItem class just as before even within script.py.
+
+from menu_item import MenuItem
+
+menu_item1 = MenuItem('Sandwich', 5)
