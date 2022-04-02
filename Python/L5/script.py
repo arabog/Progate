@@ -122,3 +122,25 @@ from food import Food
 
 food1 = Food('Sandwich', 5, 330)
 
+
+# -: Overlap Inside Methods
+# In the Food class, we overrode the __init__ method, but now there 
+# is duplicate code with name and price of the __init__ method in 
+# the MenuItem class.
+
+super()
+Using super() in the method that you overrode allows you to call 
+methods of the parent class. Also, as shown below, by writing 
+super().methodName(), you can use instance methods defined in 
+the parent class.
+
+# food.py
+class Food(MenuItem):
+          def __init__(self, name, price, calorie_count):
+                    super().__init__(name, price)
+                    self.calorie_count = calorie_count
+
+
+
+                    
+          def 
