@@ -101,3 +101,24 @@ drink1 = Drink('Coffee', 3)
 drink1.volume = 180
 print(drink1.info())
 
+
+# -: Let's Override the __init__ Method
+# Let us apply the technique of overriding to the __init__ method as well.
+# By doing this, in the Food class, we will be able to insert the value of the 
+# calorie_count instance variable when we create the instance.
+
+# Here, we'll override the __init__ method in the MenuItem class 
+# within the Food class. As you can see below, you can change the 
+# umber of parameters when overriding.
+
+class Food(MenuItem):
+          def __init__(self, name, price, calorie_count):
+                    self.name = name
+          self.price = price
+          self.calorie_count = calorie_count
+
+# script.py
+from food import Food
+
+food1 = Food('Sandwich', 5, 330)
+
