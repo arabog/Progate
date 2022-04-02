@@ -367,3 +367,16 @@ index = 0
 for lesson in lessons:
           print(str(index) + '. ' + lesson)
           index += 1
+
+
+# -: Getting Input
+# Getting Input as Integers
+# Since the input we receive is treated as a string, we need to use int() 
+# to convert it to an integer.
+
+menu_items =[menu_item1, menu_item2]
+
+order = int(input('Pls enter a menu item number'))
+
+selected_menu = menu_items[order]
+
