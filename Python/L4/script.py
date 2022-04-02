@@ -354,3 +354,16 @@ for menu_item in menu_items:
           print(menu_item.info())
 
 
+# -: Displaying the Menu Item Numbers
+# Numbering Items
+# In our final product, we number each menu item starting from 0. 
+# To add the numbers, we can make a variable (ie, index) and 
+# increment it by 1 using a for loop.
+
+lessons = ['Python', 'Ruby', 'Java']
+
+index = 0
+
+for lesson in lessons:
+          print(str(index) + '. ' + lesson)
+          index += 1
