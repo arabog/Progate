@@ -26,3 +26,16 @@
 
 class MenuItem:
           pass
+
+
+# -: Making Instances from Classes
+# Instantiation
+# As shown below, if we call ClassName() we can create an instance 
+# of that class (blueprint). Also, using variable_name = ClassName(), 
+# we can assign the new instance to a variable.
+
+class MenuItem:
+          pass
+
+menu_item1 = MenuItem()
+
