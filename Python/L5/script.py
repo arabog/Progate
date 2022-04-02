@@ -36,3 +36,28 @@ food1 = Food('Sandwich', 5)
 
 print(food1.info()) # Sandwich: $5
 
+
+# -: Adding Instance Methods
+# The Instance Method of the Child Class
+# Now, let's add a calorie_info method inside the Food class. 
+# Keep in mind that the child class can use both the methods 
+# defined in the parent class and the methods that are defined 
+# within itself. However, parent classes cannot use methods 
+# defined in the child class.
+
+# food.py
+class Food(MenuItem):
+          def calorie_info(self):
+                    print('kcal: ' + str(self.calorie_count))
+
+# script.py
+from food import Food
+from drink import Drink
+
+food1 = Food('Sandwich', 5)
+
+# Set the calorie_count variable of food1 to 330
+food1.calorie_count = 330
+# Call the calorie_info method from food1
+food1.calorie_info()
+
