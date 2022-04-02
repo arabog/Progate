@@ -84,4 +84,20 @@ class Food(MenuItem):
                     return self.name + ': $' + str(self.price) + ' (' + str(self.calorie_count) + 'kcal)'
 
 # script.py
+food1 = Food('Sandwich', 5)
+food1.calorie_count = 330
 print(food1.info())
+
+
+# -: Defining the info Method in the Drink Class
+class Drink(MenuItem):
+          # Define the info method
+          def info(self):
+                    return self.name + ': $' + str(self.price) + ' (' + str(self.volume) + 'mL)'
+    
+
+# script.py
+drink1 = Drink('Coffee', 3)
+drink1.volume = 180
+print(drink1.info())
+
