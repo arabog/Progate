@@ -329,3 +329,9 @@ class MenuItem:
 from menu_item import MenuItem
 
 menu_item1 = MenuItem('Sandwich', 5)
+
+# menu_item.py
+class MenuItem:
+          def __init__(self, name, price):
+                    self.name = name
+                    self.price = price
