@@ -61,3 +61,27 @@ food1.calorie_count = 330
 # Call the calorie_info method from food1
 food1.calorie_info()
 
+
+# -: Overriding Methods
+# Now, since we have added the calorie information, let us improve 
+# the info method to enable us to display the calories as well.
+
+# Overriding
+# When you define a method in the child class with the same name 
+# as the parent class, you can override the existing methods. When 
+# you override, the instances of the child class will call the method 
+# defined in the child class instead of the method from the parent class.
+
+# How Overriding Works
+# The child class instance will call the method defined in the child class 
+# if it exists. Therefore, in the case that there's a method with the same 
+# name in both the child and parent classes, the parent's method is 
+# overridden.
+
+class Food(MenuItem):
+          # Define the info method
+          def info(self):
+                    return self.name + ': $' + str(self.price) + ' (' + str(self.calorie_count) + 'kcal)'
+
+# script.py
+print(food1.info())
