@@ -88,3 +88,24 @@ menu_item2.price = 4
 # Output the price of menu_item2
 print(menu_item2.price)
 
+
+# -: Making the Food Ordering App
+# Adding Methods to Classes
+# We can define functions within a class. Functions that are defined 
+# within a class are known as methods. Defining methods is just like 
+# defining normal functions, but by convention, the first parameter 
+# is to be named self!
+
+class MenuItem:
+          def hello(self):
+                    print('Hello')
+
+
+# Calling Methods
+# You can call methods that you defined in a class using an instance 
+# of that class. The syntax for this is instance.method_name().
+
+menu_item1 = MenuItem()
+
+menu_item1.hello()
+
