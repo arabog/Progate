@@ -225,3 +225,41 @@ class MenuItem:
 
 menu_item1 = MenuItem()
 
+
+# -: Setting Instance Variables
+# So what exactly do we use the __init__ method for?  
+# With this method we can set the instance variables right when 
+# we create an instance. So, we can basically combine steps 2 and 3.
+
+Instance Variables in __init__
+Let's set the instance variables within the __init__ method.
+Within an instance method, since we can access instance variables 
+using self.variable_name, we can set an instance variable with 
+self.variable_name = value.
+
+class MenuItem:
+          def __init__(self):
+                    self.name = 'Sandwich'
+
+menu_item1 = MenuItem()
+print(menu_item1.name)
+
+class MenuItem:
+          def __init__(self):
+                    # Set self.name to 'Sandwich'
+                    self.name = 'Sandwich'
+          
+                    # Set self.price to 5
+                    self.price = 5
+
+          def info(self):
+                    return self.name + ': $' + str(self.price)
+
+          def get_total_price(self, count):
+                    total_price = self.price * count
+                    return total_price
+
+
+menu_item1 = MenuItem()
+
+
