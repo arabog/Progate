@@ -203,3 +203,25 @@ result = menu_item1.get_total_price(4)
 print('Your total is $' + str(result))
 
 
+# -: Special Methods
+# We will learn about the special method __init__, which is 
+# called every time an instance is created.
+
+# The __init__ Method
+# Let's learn about the __init__ method (also known as a class 
+# constructor in Python), which is executed right after an instance 
+# is created. When ClassName() is called and an instance is created, 
+# the __init__ method will be called immediately after. 
+
+# Using __init__
+# The __init__ method can be defined like any other instance method.
+# In the example below, executing menu_item1 = MenuItem() will 
+# create a MenuItem instance and automatically call 
+# the __init__ method and run the code within it.
+
+class MenuItem:
+          def __init__(self):
+                    print('A menu item was created')
+
+menu_item1 = MenuItem()
+
