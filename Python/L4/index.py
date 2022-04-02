@@ -39,3 +39,24 @@ class MenuItem:
 
 menu_item1 = MenuItem()
 
+
+# -: Adding Data to Instances
+# Instance Variables
+# As shown below, we can use menu_item1.name = "Sandwich" to 
+# set the name of menu_item1 to "Sandwich". Here, name is referred 
+# to as an instance variable.
+
+class MenuItem:
+          pass
+
+menu_item1 = MenuItem()
+
+menu_item1.name = 'Sandwich'
+
+# Using Instance Variables
+# You can access and use the value of an instance variable by calling 
+# instance.instance_variable_name.
+
+print(menu_item1.name)
+
+
