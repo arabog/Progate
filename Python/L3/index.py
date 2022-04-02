@@ -107,7 +107,7 @@ greet('Kate')
 # Receiving the User Name
 # Let's first get the user's name, then print it.
 
-          def print_hand(hand, name='Guest'):
+def print_hand(hand, name='Guest'):
           print(name + ' picked: ' + hand)
 
 player_name = input('Please enter your name: ')
@@ -176,16 +176,16 @@ print(is_valid)               #True
 # in an if statement, the returned value will be used to evaluate 
 # the if statement.
 
-if validate(player_hand):
+# if validate(player_hand):
           # process wn return value is True
-else:
+# else:
           # process wn return value is False
 
 # Simplifying Conditional Statements
 # For this case, we can skip writing == True in the conditional statements.
 
-if validate(player_hand) == True:
-if validate(player_hand):
+# if validate(player_hand) == True:
+# if validate(player_hand):
 
 # Since the validate function returns a Boolean value, we can 
 # use it as the condition for our if/else statement.
@@ -266,7 +266,7 @@ else:
           print('Please enter a valid number')
 
 
--: The Rock Paper Scissors App
+# -: The Rock Paper Scissors App
 # We'll be adding functions to let the user compete against 
 # the computer, and we'll learn about modules as well.
 
@@ -347,11 +347,11 @@ else:
 # be trimmed when you import it.
 
 # utils.py
-def validate(hand):
+# def validate(hand):
 
-def print_hand(hand, name = 'Guest')
+# def print_hand(hand, name = 'Guest')
 
-def judge(player, computer)
+# def judge(player, computer)
 
 # import utils
 
@@ -381,11 +381,11 @@ if utils.validate(player_hand):
 
 # Python Standard Library: math, random, datetime
 
-The random Module
-We'll be randomizing the hand chosen by the computer using 
-the randint function from the random module. By writing 
-random.randint(x, y), you can get a random integer between 
-x and y inclusive.
+# The random Module
+# We'll be randomizing the hand chosen by the computer using 
+# the randint function from the random module. By writing 
+# random.randint(x, y), you can get a random integer between 
+# x and y inclusive.
 
 import utils
 import random
@@ -393,4 +393,3 @@ import random
 if utils.validate(player_hand):
           computer_hand = random.randint(0, 2)
 
-          
