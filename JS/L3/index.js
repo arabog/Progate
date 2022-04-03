@@ -29,9 +29,30 @@ const hello = function() {
           console.log('Hello!');
           console.log(' I am babs');
 }
+
 hello();
 
 
--: 
+-: Arrow Functions
+As shown below, it's also possible to define a function with () => 
+instead of function(). This is an easier way of defining a function, 
+which is a new feature of ES6. Functions defined this way are known 
+as arrow functions.
+
+const hello = () => {
+          console.log('Hello!');
+          console.log(' I am babs');
+}
+
+Arrow functions don't require any other changes to the definition 
+besides replacing function with () =>. There's also no difference 
+when you call functions defined this way. 
+
+
+
+
+
+
+
 */
 
