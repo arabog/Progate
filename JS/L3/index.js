@@ -49,6 +49,26 @@ besides replacing function with () =>. There's also no difference
 when you call functions defined this way. 
 
 
+-: What are Arguments?
+Data values passed to functions are known as arguments. You can use 
+these values inside the function by passing the value when you call the 
+function.
+
+Defining Function with Arguments
+Let's define a function that can receive parameters. The values passed 
+when you call a function are known as arguments, but the variables 
+written in the definition are known as parameters. 
+
+const fxnName = (parameters) => {}
+fxnName(argumts);
+
+To call a function and pass arguments, write functionName(arguments). 
+Functions accept the designated value and the value will be assigned to 
+arguments
+
+You can use arguments within functions just like constants and variables.
+
+
 
 
 
