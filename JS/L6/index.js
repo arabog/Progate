@@ -167,6 +167,42 @@ const evenNumbers = numbers.filter((number) =>   { return number % 2 === 0 });
 console.log(evenNumbers);
 
 
+-: The map Method
+How map Works
+The map method applies the same code to every value in an array 
+and returns a new array with the resulting values. As you can see 
+below, the code creates a new array containing all values in the 
+numbers array multipled by 2.
+
+const numbers = [1, 2, 3];
+const doubleNumbers = numbers.map((number) => {
+          return number * 2;
+});
+
+console.log(doubleNumbers);
+
+Below, each value in the numbers array is assigned to number 
+in turn. After that, the code in the map method, "number times 2", 
+is applied to each value and put in a new array, which is returned 
+and assigned to the doubleNumber constant (array). Inside the 
+callback function, write something like { return value }.
+
+Just like with other methods, you can use map with an array 
+of objects too. In the example below, the code in the map 
+combines the firstName and lastName properties (string values) 
+sing the map method.
+
+const names = [
+          {firstName: 'Kate', lastName: 'Jones'},
+          {firstName: 'Brian', lastName: 'Smith'},
+]
+
+const fullNames = names.map((name) => {
+          return name.firstName + name.lastName;
+})
+
+console.log(fullNames);
+
 
 
 
