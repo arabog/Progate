@@ -234,4 +234,30 @@ $('.list-item').click(function() {
           $(this).css('color', 'red');
 })
 
+
+-: Using Variables
+When using the same jQuery object more than once, you should 
+use a variable for faster processing. Like JavaScript, jQuery 
+uses var for variable declaration. When storing jQuery objects, 
+we usually add a $ to the beginning of the variable name as 
+a convention.
+
+$('div).css('color', 'red');
+$('div).html(''JQuery');
+$('div).fadeOut();
+
+var $div = $('div');
+
+$div.css('color', 'red');
+$div.html(''JQuery');
+$div.fadeOut();
+
+Using Method Chaining
+When using the same jQuery object more than once, you can also 
+use method chaining to speed up processing. Method chaining refers 
+to successively applying multiple methods to the same jQuery object.
+The syntax for it is as follows: $('selector').method1().method2()
+
+$('div).css('color', 'red').html(''JQuery');
+
 */ 
