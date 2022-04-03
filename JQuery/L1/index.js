@@ -312,5 +312,23 @@ $(function() {
 });
 
 
+-: Creating a hover Event
+The hover event binds handlers for both mouse-enter and mouse-leave 
+events. Let's display a message only when the mouse is on the text 
+"What is jQuery? using the hover event!
+
+Implementing hover Event
+The syntax for hover is like: $('selector').hover(function1, function2);.
+The first argument is for mouse-enter, and the second is for mouse-leave. 
+Make sure to separate the arguments with ,.
+
+$('div').hover(
+          function(){},
+
+          function(){}
+);
+
+
+
 
 */ 

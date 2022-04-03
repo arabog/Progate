@@ -281,6 +281,6 @@ HAVING (COUNT(*) * items.price) > (
 );
 
 
-#Progate @progateEN @dev_careers #dev_careers
+#Progate @progateEN @dev_careers #dev_careers #needalaptop
 
 */

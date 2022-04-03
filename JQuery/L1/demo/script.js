@@ -11,5 +11,18 @@ $(function() {
 
           $('wrapper').find('a').css('color', 'blue');
 
+          // Add the hover() method for #language-wrapper
+          $('.language-text').hide();
+          
+          $('#language-wrapper').hover(
+                    function() {
+                              $('.language-text').fadeIn();
+                    },
+                    
+                    function() {
+                              $('.language-text').fadeOut();
+                    }
+          );
+
 })
 
