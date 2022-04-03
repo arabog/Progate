@@ -99,11 +99,29 @@ Flow When Declaring Functions Within Arguments
 The flow is the same as when the function is pre-declared.
 
 
+-: Arguments of Callback Functions
+Passing Arguments
+Just like ordinary functions, callback functions can take arguments.
 
+const call = (callback) => {                      (2)
+          callback('Ken the Ninja');                   (3)
+}
 
+call((name) => {
+          console.log(name);
+})
 
+Passing Multiple Arguments
+More than two arguments can be passed.
 
+const call = (callback) => {                      (2)
+          callback('Ken the Ninja', 14);                   (3)
+}
 
+call((name, age) => {
+          console.log(`${name} is ${age} years old.` );
+})
 
 
 */ 
+
