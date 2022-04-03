@@ -167,5 +167,42 @@ $(function() {
 });
 
 
--: 
+-: Changing HTML 
+ text Method
+With jQuery, you can also change the text inside an HTML element 
+using the text() method. You use the text() method as follows: 
+$('selector').text('new text');.
+
+<p>Hello</p>
+
+$('p').text('Goodbye');
+
+html Method
+The html() method can change the content inside an HTML element 
+with another HTML element. Unlike the text() method, the html() 
+method recognizes its argument as HTML. Therefore, you can add 
+arguments like: <span>Goodbye</span>,
+
+$('p').html('<span>Goodbye</span>');
+
+$(function() {
+          // Add a click() method for #change-text
+          $('#change-text').click(() => {
+                    $('#text').text('Hello, Progate!');
+          })
+          
+          // Add a click() method for #change-html
+          $('#change-html').click(() => {
+                    $('#text').html('<a href="https://progate.com/">Hello, Progate!</a>')
+          })
+});
+
+*Make sure to enclose the <a> tag in single quotes. If you 
+enclose it in double quotes, the URL wont be recognized.
+
+
+
+
+
+
 */ 
