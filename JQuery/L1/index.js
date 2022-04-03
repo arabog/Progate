@@ -59,8 +59,33 @@ $(function() {
 });
 
 
--: 
+-: class and id
+Let's learn about the id attribute. It's very similar to classes 
+that we learned in HTML, but unlike classes, the same id 
+cannot be used more than once.
 
+Making class and id Selectors
+You can add . in front of the class name, and # in front of 
+the id name to turn attributes into selectors.
+Since ids can't be duplicated, jQuery can process them faster 
+than classes. So, let's use them when we only want to change one element.
+
+<ul id='list'>
+          <li class='list-item'>List 1</li>
+          <li class='list-item'>List 2</li>
+</ul>
+
+$('#list').css('margin', '20px');
+
+$('.list-item').css('color', 'red')
+
+$(function() {
+          // Use the slideUp() method to hide the element with the id "title"
+          $('#title').slideUp();
+          
+          // Use the fadeOut() method to hide the element with the class "lesson-item"
+          $(".lesson-item").fadeOut();
+});
 
 
 
