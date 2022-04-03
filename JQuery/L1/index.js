@@ -260,4 +260,57 @@ The syntax for it is as follows: $('selector').method1().method2()
 
 $('div).css('color', 'red').html(''JQuery');
 
+
+: Retrieving Child Elements (1) - find() Method
+The find() method finds the specified element from all the elements 
+inside that element. The example below shows how you can extract 
+all <a> elements inside #wrapper.
+
+<div id="wrapper" >
+          <a href='#'>Link 1</a>
+          <a href='#'>Link 2</a>
+</div>
+
+$('wrapper').find('a').css('color', 'red');
+
+- children() Method
+The children() method returns only elements that are direct 
+child elements of the selector. As you can see in the example 
+below, only the first <a> tag is returned.
+
+<div id="wrapper" >
+          <a href='#'>Link 1</a>
+          <a href='#'>Link 2</a>
+</div>
+
+$('wrapper').children('a').css('color', 'red');
+
+-------------------
+<div class="btn" id='children-method' >children</div>
+
+<div id="wrapper">
+          <a href="#">Link 1</a>
+
+          <div>
+                    <a href="#">Link 2</a>
+          </div>
+</div>
+
+
+$(function() {
+          $('#find-method').click(function() {
+                    // Use the find() method to get all the <a> elements inside #wrapper,
+                    // then change the color to red using the css() method
+                    $('#wrapper').find('a').css('color', 'red');
+          });
+  
+          $('#children-method').click(function() {
+                    // Use the children() method to get the <a> elements directly inside #wrapper,
+                    // then hide them using the fadeOut() method
+                    $('#wrapper').children('a').fadeOut();
+          });
+});
+
+
+
 */ 

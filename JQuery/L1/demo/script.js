@@ -7,7 +7,9 @@ $(function() {
 
           $('li').click(function() {
                     $(this).css('color', 'red');
-          })
+          });
+
+          $('wrapper').find('a').css('color', 'blue');
 
 })
 
