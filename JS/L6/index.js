@@ -114,5 +114,62 @@ const foundCharacter = characters.find((character) => {
 console.log(foundCharacter);
 
 
-*/ 
+-: The filter Method
+The find method allows you to get the first value that matches 
+a certain condition. So, to get all values that match,  you will 
+need the filter method. It allows you to get all values that match 
+a condition.
 
+The filter Method
+To get all values that match a certain condition, use the filter method. 
+It creates and returns a new array with all of the matching values. 
+The example below shows how to get all values from the numbers array 
+that are "greater than 3".
+
+const numbers = [1, 3, 5, 7, 9];
+
+// Find the multiples of 3 from the numbers array by using the find method, and assign them to the foundNumber constant
+const filteredNumber = numbers.filter((number) => {
+          return number > 3;
+});
+
+// Print filteredNumber
+console.log(filteredNumber);
+
+In the example, a value from the numbers array is assigned to 
+the number argument. Next, the value is checked with the condition 
+"number greater than 3" inside the filter method. Then, the values 
+that matched are assigned to the filteredNumber constant as an array.
+
+You can also use the filter method for arrays containing objects, 
+just like find method. In the example below, an object property 
+is used in the condition. In this case, the objects themselves are 
+collected whenever the condition is true.
+
+const characters = [
+          {id: 1, name: "Ken the Ninja", age: 6},
+          {id: 2, name: "Ben the Baby Ninja", age: 2},
+          {id: 3, name: "Master Wooly", age: 100},
+          {id: 4, name: "Birdie", age: 21}
+];
+
+const filteredCharacter = characters.filter((character) => {
+          return character.age > 10;
+})
+
+console.log(filteredCharacter);
+
+const numbers = [1, 2, 3, 4];
+
+// Get all even numbers from numbers with the filter method, and assign them to the evenNumbers constant
+const evenNumbers = numbers.filter((number) =>   { return number % 2 === 0 });
+// // Print the value of evenNumbers
+console.log(evenNumbers);
+
+
+
+
+
+
+
+*/ 
