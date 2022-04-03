@@ -134,9 +134,38 @@ $('#hide-text').click(function() {
 });
 
 
+-: css() Method
+The css() method allows you to modify CSS using jQuery.
+To use this method, set the CSS property to the first argument, 
+and the value of the property to the second argument.
+
+$('selector').css('property', 'value');
+
+Changing Color with css() Method
+Let's take a look at an example. You can change the color of 
+text to red using the css() method, like $('p').css('color', 'red');.
+You can also change any other css properties like width or font-size.
+
+$('p').css('color', 'red');
+
+Hiding Elements with the css() Method
+You can change the value of the display property using the css() 
+method. $('selector').css('display', 'none'); works exactly the same 
+as the hide() method. Remember that both the hide() method and 
+show() method only change the value of the display property.
+
+$('h1').css('display', 'none');
+
+$('img').css('display', 'block');
+
+$(function() {
+          // Add click() method for #change-css
+          $("#change-css").click(function() {
+                    $('#text').css('color', 'red');
+                    $('#text').css('font-size', '50px');
+          })
+});
 
 
-
-
-
+-: 
 */ 
