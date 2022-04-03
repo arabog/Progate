@@ -81,9 +81,26 @@ multiple arguments when you call a function. The arguments must be in
 the same order as the parameters because the function definition is used 
 for the function call.
 
+What are Return Values?
+Next, we'll learn about using the results of a function at the place where 
+it was called. The resulting value after a function is known as a return 
+value. Most functions are used to send a return value back to where it 
+was called.
 
+Functions with Return Values
+You can return a value by putting a return statement in a function by writing 
+return value;. This will allow the function to return the output as a return value.
 
+const add = (a, b) => {
+          return a + b;
+}
 
+If a function has a return value, the function call will be replaced by the 
+return value after the function finishes running. You can also assign a 
+function call to a constant
+
+const sum = add(1, 3);
+console.log(sum);
 
 
 
