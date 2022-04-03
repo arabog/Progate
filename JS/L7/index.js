@@ -80,5 +80,30 @@ const call = (callback) => {                      (2)
 call(printKen);     (1)
 
 
+-: Directly Declaring the Callback Function
+Declaring the Function Within the Argument
+Earlier, we passed a callback function that was already defined, 
+but functions can also be defined directly within arguments.
+
+const call = (callback) => {                      (2)
+          console.log('Calling the callback function');
+
+          callback();                   (3)
+}
+
+call(() => {
+          console.log('Ken the Ninja');
+})
+
+Flow When Declaring Functions Within Arguments
+The flow is the same as when the function is pre-declared.
+
+
+
+
+
+
+
+
 
 */ 
