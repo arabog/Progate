@@ -11,5 +11,26 @@ animation effects that HTML and CSS cannot accomplish alone.
 For example, jQuery can respond to events like clicks by hiding 
 and showing HTML elements.
 
+jQuery Structure
+It's very simple and intuitive to work with jQuery: (1) creating a 
+jQuery object and (2) calling a method (function) on that jQuery 
+object.
+Since jQuery is written in JavaScript, you need ; at the end of 
+the sentence and use // for comments.
+
+$('selector').method(argument);
+
+create a jquery obj:        $('selector')                         //What
+call a method:                method(argument)              //How
+
+jQuery hide() Method
+Methods are convenient functions that are available to jQuery 
+objects. They allow you to change the HTML elements contained 
+in jQuery objects. You can call a method like: $('selector').method().
+Let's first try hiding an element using the hide() method.
+
+$('h1').hide();
+
+
 
 */ 
