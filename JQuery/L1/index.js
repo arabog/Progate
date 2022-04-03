@@ -88,6 +88,31 @@ $(function() {
 });
 
 
+-: The display Property
+CSS has what is called the display property. You can use this property 
+to hide elements by default, like: display: none;.
+
+Displaying Hidden Elements
+The show() method allows you to display hidden elements, like 
+$('selector').show();. It's a good idea to remember the show() 
+and hide() methods as a pair since they are often used in 
+combination.
+
+img {
+          display: none;
+}
+
+$('img').show();
+
+Showing Elements with Animations
+As the counterpart of the fadeOut() method, there is the fadeIn() 
+method. And as the counterpart of the slideUp() method, there 
+is the slideDown() method. Both methods can display hidden 
+elements with animations.
+
+$('selector').fadeIn();
+
+$('selector').fadeIn('slow');
 
 
 
