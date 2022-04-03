@@ -69,6 +69,19 @@ arguments
 You can use arguments within functions just like constants and variables.
 
 
+-: Functions with Multiple Arguments
+Functions can receive multiple parameters. You can pass multiple 
+arguments by writing them together in the parentheses and separating 
+them with commas ,
+
+const fxnName = (parameter1, parameter2, ...) => {}
+
+Just like when you define multiple parameters, use a comma , to separate 
+multiple arguments when you call a function. The arguments must be in 
+the same order as the parameters because the function definition is used 
+for the function call.
+
+
 
 
 
