@@ -32,5 +32,49 @@ Let's first try hiding an element using the hide() method.
 $('h1').hide();
 
 
+-: Hiding Elements with Animation (1)
+The fadeOut() method is similar to the hide() method. The fadeOut() 
+method allows you to animate elements to be hidden and specify the 
+animation's speed as an argument inside (). You can specify the speed 
+in milliseconds or with a character string (for example, "slow").
+
+$('selector').fadeOut();
+
+$('selector').fadeOut(1500);
+
+You can also use the slideUp() method to hide elements with different 
+effects. Like the fadeOut() method, you can specify the speed of the 
+animation as an argument inside ().
+
+$('selector').slideUp();
+
+$('selector').slideUp(1500);
+
+$(function() {
+          // Use the fadeOut() method to hide <img> elements
+          $('img').fadeOut();
+          
+          // Use the slideUp() method to hide <p> elements
+          $('p').slideUp();
+});
+
+
+-: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 */ 
