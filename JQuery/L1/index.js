@@ -115,11 +115,23 @@ $('selector').fadeIn();
 $('selector').fadeIn('slow');
 
 
+-: Events
+With events, you can set the specific timing to perform a certain action. 
+For example, you can specify an event to be executed whenever someone 
+clicks a button on the web page.
+The syntax for events is as follows: $('selector').event(function(){ });
 
+click Event
+Using the click event, you can specify an event to occur when 
+the selector is clicked. For example, you can add an event to 
+hide some text when a button is clicked.
 
+<div id='hide-text'> Hide text </div>
+<p id='text'> Click the button to hide the text. </p>
 
-
-
+$('#hide-text').click(function() {
+          $('#text').hide();
+});
 
 
 
