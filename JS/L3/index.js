@@ -165,9 +165,39 @@ Each constant has a part of a program where it can be accessed, and
 we call this the scope of a constant.
 
 
+-: Final Exercise
+Let's create a function named getMax which finds the maximum value 
+from three numbers. As shown in the example, the getMax function takes 
+three numbers as parameters and returns the maximum value as the return value.
 
+const getMax = (params) => {}
+const max = getMax(3, 7, 5);
 
+console.log('`he maximum value is ${max)`);
 
+const number1 = 103;
+const number2 = 72;
+const number3 = 189;
+
+// Write a function named getMax to get the maximum value
+let max = number1;
+
+const getMax = (a, b, c) => {
+          if (a > max) {
+                    max = a;
+          }else if (b > max) {
+                    max = b;
+          }else {
+                    max = c;
+          }
+
+          return max;
+}
+
+const maxVal = getMax(number1, number2, number3);
+
+// Print "The maximum value is ____"
+console.log(`The maximum value is ${maxVal}`)
 
 */
 
