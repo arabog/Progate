@@ -201,8 +201,37 @@ $(function() {
 enclose it in double quotes, the URL wont be recognized.
 
 
+-: Syntax of "this"
+The this keyword can extract an element where an event occurs. Keep in 
+mind that we do not enclose this in " or ' marks. Y
 
+<ul>
+          <li>List 1</li>
+          <li>List 2</li>
+          <li>List 3</li>
+          <li>List 4</li>
+</ul>
 
+$('li').click(function() {
+          $(this).css('color', 'red');
+})
 
+Using the Keyword this
+It's difficult to understand the this keyword without an example, 
+so let's take a look. When a click event is specified for multiple 
+li elements, you may want to do something only with the clicked 
+li element. In this case, use this to get just the element where 
+the event actually occurred.
+
+// a click event is triggered regardless of wc <li> is clicked
+$('li').click(function() {
+          $(this) contains d <li> dt was actually clicked
+          $(this).css('color', 'red');
+})
+
+$('.list-item').click(function() {
+          $(this) contains d <li> dt was actually clicked
+          $(this).css('color', 'red');
+})
 
 */ 
