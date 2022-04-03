@@ -13,13 +13,25 @@ Function definitions are necessary, but you have to call a function
 to actually use it. To call the function in the example below, just 
 write introduce();.
 
-
-
-*/
-
 const introduce = function() {
           console.log('Hello');
           console.log('I am Ken the Ninja');
 }
 
-introduce();
+introduce(
+          
+
+-: Assigning Functions
+Let's take a closer look at functions. In the function definition above, 
+we define functions by assigning them to a constant. 
+
+const hello = function() {
+          console.log('Hello!');
+          console.log(' I am babs');
+}
+hello();
+
+
+-: 
+*/
+
