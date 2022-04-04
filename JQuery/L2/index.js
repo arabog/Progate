@@ -40,4 +40,40 @@ Basic setup:
 </html>
 
 
+-; Creating Modals
+Let's create a modal that you can display or hide by clicking a 
+button. A modal is an element that is displayed/hidden based 
+on actions like click events.
+
+Displaying Modals
+The steps will be: 
+(1) hide the modal by default using CSS 
+(2) set a click event on the login button, and 
+(3) display the modal in the click event.
+
+.login-modal-wrapper {
+          display: none;
+}
+
+script.js
+$('#login-show').click(function() {
+          $('#login-modal').fadeIn();
+})
+
+<div class="modal">
+          <div id="login-form">
+                    <h2>Log in with email</h2>
+
+                    <form action="#">
+                              <input class="form-control" type="text" placeholder="Email">
+                              <input class="form-control" type="password" placeholder="password">
+                              
+                              <div id="submit-btn">Log in</div>
+                    </form>
+          </div>
+</div>
+
+
 */ 
+$('#login-show').click(function() {});
+
