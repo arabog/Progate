@@ -295,6 +295,15 @@ $('.faq-list-item').click(function() {
 })
 
 
+-: Accordion on Slider
+When the if statement returns true, let's use the slideUp() 
+method to hide the answer, and replace the - symbol with +. 
+Inversely, when the if statement returns false, use the 
+slideDown() method to display the answer and change 
+the + symbol to -.
+
+ $(this).find('span').text('+');
+  $(this).find('span').text('-');
 
 
 
