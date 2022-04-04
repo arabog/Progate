@@ -87,11 +87,42 @@ The following three steps are required to display the signup modal:
 (3) use the fadeIn() method to display the signup modal.
 
 
+-; Closing the Modals
+We should also to add a button to close the modals. We'll 
+set the click event on the close button and hide the modal 
+using the fadeOut method.
+
+$('.close-modal').click(function() {
+          $('#login-modal').fadeOut();
+});
+
+Hiding Two Modals
+Although there are two modals, login, and signup, you can use 
+the same "close-modal" class to close them. We will:
+(1) add the same class to the close buttons in login and signup modals.
+(2) use the fadeOut() method to hide both modals.
+
+$('.close-modal').click(function() {
+          $('#login-modal').fadeOut();
+
+          $('#signup-modal').fadeOut();
+});
+
+<!-- Add a class called "close-modal" -->
+<div>
+          <i class="fa fa-2x fa-times"></i>
+</div>
+
+
+
+
+
+
 
 
 
 
 
 */ 
-$('#login-show').click(function() {});
+
 
