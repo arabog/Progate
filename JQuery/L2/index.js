@@ -214,4 +214,55 @@ $('.lesson-hover').hover(
           }
 );
 
+
+-: Making Accordions
+Finally, we'll add an accordion for the FAQ list. Our FAQ interface 
+will have a smooth sliding animation that shows/hides the answer 
+to a question. We will use if statements for the accordion,
+
+Overview of Accordion
+The steps to create an accordion are:
+(1) Hide the answers by default with CSS.
+(2) Add click events to all the questions using the same class.
+(3) Add/remove the open class to the answer to show/hide them.
+
+<div class="answer open"></div>
+
+<ul id="faq-list">
+          <li class="faq-list-item">
+                    <h3 class="question">Does Progate have a mascot?</h3>
+                    <span>+</span>
+
+                    <div class="answer">
+                              <p>Yes. His name is Ken, and he is a ninja! He is a dog, not a cat.</p>
+                    </div>
+          </li>
+
+          <li class="faq-list-item">
+                    <h3 class="question">Is Ken a boy or a girl?</h3>
+                    <span>+</span>
+
+                    <div class="answer">
+                              <p>He's a boy!</p>
+                    </div>
+          </li>
+
+          <li class="faq-list-item">
+                    <h3 class="question">How old is Ken?</h3>
+                    <span>+</span>
+
+                    <div class="answer">
+                              <p>He's 14 years old.</p>
+                    </div>
+          </li>
+</ul>
+
+
+
+
+
+
+
+
 */ 
+
