@@ -132,47 +132,86 @@ $('.lesson-hover').hover(
 )
 
 <!-- Add a class called "lesson-hover" -->
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/html.png">
-            <p>HTML & CSS</p>
+          <div class="lesson">
+                    <div class="lesson-icon">
+                              <img src="https://prog-8.com/images/html/advanced/html.png">
+                              <p>HTML & CSS</p>
+                    </div>
+
+                    <p class="text-contents">Languages used to build and design the appearances of your websites. HTML adds the structure, and CSS styles it.</p>
           </div>
-          <p class="text-contents">Languages used to build and design the appearances of your websites. HTML adds the structure, and CSS styles it.</p>
-        </div>
 
-        <!-- Add a class called "lesson-hover" -->
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/jQuery.png">
-            <p>jQuery</p>
+          <!-- Add a class called "lesson-hover" -->
+          <div class="lesson">
+                    <div class="lesson-icon">
+                              <img src="https://prog-8.com/images/html/advanced/jQuery.png">
+                              <p>jQuery</p>
+                    </div>
+
+                    <p class="text-contents">A fast, feature-rich and easy-to-use JavaScript library that handles animations and Ajax requests.</p>
           </div>
-          <p class="text-contents">A fast, feature-rich and easy-to-use JavaScript library that handles animations and Ajax requests.</p>
-        </div>
 
-        <!-- Add a class called "lesson-hover" -->
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/ruby.png">
-            <p>Ruby</p>
+          <!-- Add a class called "lesson-hover" -->
+          <div class="lesson">
+                    <div class="lesson-icon">
+                              <img src="https://prog-8.com/images/html/advanced/ruby.png">
+                              <p>Ruby</p>
+                    </div>
+
+                    <p class="text-contents">A dynamic, general-purpose language that is simple and productive. It is commonly used to build web applications.</p>
           </div>
-          <p class="text-contents">A dynamic, general-purpose language that is simple and productive. It is commonly used to build web applications.</p>
-        </div>
-        
-        <!-- Add a class called "lesson-hover" -->
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/php.png">
-            <p>PHP</p>
+
+          <!-- Add a class called "lesson-hover" -->
+          <div class="lesson">
+                    <div class="lesson-icon">
+                              <img src="https://prog-8.com/images/html/advanced/php.png">
+                              <p>PHP</p>
+                    </div>
+
+                    <p class="text-contents">An open source scripting language that can be embedded into HTML, and well suited for web development.</p>
           </div>
-          <p class="text-contents">An open source scripting language that can be embedded into HTML, and well suited for web development.</p>
-        </div>
 
 
+-: Overview of hover Events
+We will use the text-active class shown below to display/hide 
+the text when the mouse hovers over a lesson icon. To do this, we will:
+(1) add .text-active{display: block;} in the CSS.
+(2) add the text-active class on mouse-enter.
+(3) remove text-active class on mouse-leave.
 
+.text-contents {
+          display: none;
+}
 
+.text-active {
+          display: block;
+}
 
+addClass Method
+The addClass() method allows you to add a class to an element. 
+Using the addClass() method, you can add the class text-active 
+to an element with the text-contents class.
 
+$('.text-contents').addClass('text-active');
 
+removeClass() Method
+On the other hand, using the removeClass() method, you can 
+remove a class from an element. The example below shows 
+how to remove the text-active class from the element with 
+the text-contents class.
+
+$('.text-contents').removeClass('text-active');
+
+$('.lesson-hover').hover(
+          function() {
+                    // Find the "text-contents" elements, then add the "text-active" class
+                    $(this).find('.text-contents').addClass('text-active');
+          },
+
+          function() {
+                    // Find the "text-contents" elements, then remove the "text-active" class
+                    $(this).find('.text-contents').removeClass('text-active', '1000');
+          }
+);
 
 */ 
-
