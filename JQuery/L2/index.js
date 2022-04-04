@@ -210,7 +210,7 @@ $('.lesson-hover').hover(
 
           function() {
                     // Find the "text-contents" elements, then remove the "text-active" class
-                    $(this).find('.text-contents').removeClass('text-active', '1000');
+                    $(this).find('.text-contents').removeClass('text-active';
           }
 );
 
@@ -258,11 +258,44 @@ The steps to create an accordion are:
 </ul>
 
 
+-: hasClass() Method
+We use the hasClass() method to determine whether or not an 
+element has a certain class. It will return true or false. We'll 
+use this to determine if the answer is currently open or not.
 
+<div class="answer"></div>
+<div class="answer open"></div>
+
+$('.answer').hasClass('open');
+$('.answer open').hasClass('open');
+
+Opening and Closing with an if Statement
+When a question is clicked, we'll check if the corresponding 
+answer is open using an if statement and the hasClass() method. 
+If it is open, we'll remove the open class to hide it. If it isn't, 
+we'll add the open class to show it.
+
+if($('.answer').hasClass('open')) {
+          // remove d 'open' class
+          // hide d answer
+}else {
+          // Add d 'open' class
+          // display d answer
+}
+
+  // Add the click() method for .faq-list-item
+$('.faq-list-item').click(function() {
+          var $answer = $(this).find('.answer');
+          
+          if($answer.hasClass('open')) {
+                    $answer.removeClass('open');
+          } else {
+                    $answer.addClass('open');
+          }
+})
 
 
 
 
 
 */ 
-
