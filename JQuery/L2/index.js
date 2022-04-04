@@ -114,7 +114,58 @@ $('.close-modal').click(function() {
 </div>
 
 
+-: Making hover Events
+You can use the hover event to display the text description 
+bout each lesson when the mouse hovers over the lesson icon.
 
+Preparing hover Events
+Let's prepare the hover event as follows:
+(1) add a class called lesson-hover to each lesson icon
+(2) set the hover event for .lesson-hover in script.js.
+
+<div class='lesson lesson-hover'></div>
+
+$('.lesson-hover').hover(
+          function() {},
+
+          function() {}
+)
+
+<!-- Add a class called "lesson-hover" -->
+        <div class="lesson">
+          <div class="lesson-icon">
+            <img src="https://prog-8.com/images/html/advanced/html.png">
+            <p>HTML & CSS</p>
+          </div>
+          <p class="text-contents">Languages used to build and design the appearances of your websites. HTML adds the structure, and CSS styles it.</p>
+        </div>
+
+        <!-- Add a class called "lesson-hover" -->
+        <div class="lesson">
+          <div class="lesson-icon">
+            <img src="https://prog-8.com/images/html/advanced/jQuery.png">
+            <p>jQuery</p>
+          </div>
+          <p class="text-contents">A fast, feature-rich and easy-to-use JavaScript library that handles animations and Ajax requests.</p>
+        </div>
+
+        <!-- Add a class called "lesson-hover" -->
+        <div class="lesson">
+          <div class="lesson-icon">
+            <img src="https://prog-8.com/images/html/advanced/ruby.png">
+            <p>Ruby</p>
+          </div>
+          <p class="text-contents">A dynamic, general-purpose language that is simple and productive. It is commonly used to build web applications.</p>
+        </div>
+        
+        <!-- Add a class called "lesson-hover" -->
+        <div class="lesson">
+          <div class="lesson-icon">
+            <img src="https://prog-8.com/images/html/advanced/php.png">
+            <p>PHP</p>
+          </div>
+          <p class="text-contents">An open source scripting language that can be embedded into HTML, and well suited for web development.</p>
+        </div>
 
 
 
@@ -124,5 +175,4 @@ $('.close-modal').click(function() {
 
 
 */ 
-
 
