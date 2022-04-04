@@ -74,6 +74,24 @@ $('#login-show').click(function() {
 </div>
 
 
+-: Modal Signup Form
+Let's also create a modal for the signup form. Unlike the login modal, 
+we have two buttons to open the signup modal. Since we want to set 
+the same click event in two places, we will use a class instead of an 
+id for these buttons.
+
+Displaying Modal Signup Form
+The following three steps are required to display the signup modal:
+(1) add the same class to each signup button.
+(2) add a click event for the class.
+(3) use the fadeIn() method to display the signup modal.
+
+
+
+
+
+
+
 */ 
 $('#login-show').click(function() {});
 
