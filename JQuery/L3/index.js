@@ -141,7 +141,40 @@ $(function() {
 });
 
 
+-: Displaying Slides One by One
+Let's implement the Previous button and Next button on the slide page 
+so that we will be able to display slides one by one.
 
+prev and next
+We will implement the buttons using the prev method and the next 
+method. The prev and next methods can retrieve the element one 
+before or after the sibling element (element of same hierarchy) of 
+the jQuery object, respectively.
+
+<ul>
+          <li>prev</li>
+          <li id='center'>center</li>
+          <li>next</li>
+</ul>
+
+$('#center').prev().css('color', 'red');
+$('#center').next().css('color', 'blue');
+
+  $('.change-btn').click(function() {
+          // Declare the $displaySlide variable
+          var $displaySlide = $('.active');
+          
+          // Remove the active class from the $displaySlide variable
+          $displaySlide.removeClass('active');
+          
+          // Use an if-else statement to add the active class to either
+          // the element before or after the $displaySlide
+          if($(this).hasClass('next-btn')) {
+                    $displaySlide.next().addClass('active');
+          } else {
+                    $displaySlide.prev().addClass('active');
+          }
+});
 
 
 */ 
