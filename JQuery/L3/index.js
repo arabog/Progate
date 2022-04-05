@@ -95,6 +95,53 @@ $(function() {
 });
 
 
+-: index Method (1)
+How should we get the index number of the element with active 
+class in the figure below? This can be done easily using the index method.
+By using the index method as shown on the right, you can get the index number 1 of the li element that has the class active.
+
+<ul>
+          <li>HTML</li>
+          <li class='active'>CSS</li>
+          <li>jQuery</li>
+</ul>
+
+$('li').index($('.active'));
+
+Let's get the index number of the clicked element in the click event. 
+$(this) contains the element you clicked on. By specifying $(this) 
+as an argument of the index method, you can get the index number 
+of the clicked element.
+
+$('li').click(function() {
+          var index = $('li').index($(this));
+})
+
+We'll implement the following: 
+① Get the index of the button that was clicked.
+②Display the slide that corresponds with the index.
+
+<ul class="slides">
+          <li class="slide active"><img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/jquery/advanced/spring.jpg"></li>
+          <li class="slide"><img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/jquery/advanced/rainy.jpg"></li>
+          <li class="slide"><img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/jquery/advanced/autumn.jpg"></li>
+          <li class="slide"><img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/jquery/advanced/winter.jpg"></li>
+</ul>
+
+$(function() {
+          $('.index-btn').click(function() {
+                    $('.active').removeClass('active');
+                    
+                    // Declare the clickedIndex variable and assign it the value of the button that is clicked
+                    var clickedIndex = $('.index-btn').index($(this));
+                    
+                    // Replace the eq method's argument with the clickedIndex variable
+                    $('.slide').eq(clickedIndex).addClass('active');
+          });
+});
+
+
+
 
 
 */ 
