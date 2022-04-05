@@ -630,7 +630,110 @@ $('.option-btn').click(function() {
           $('#select-form').val(clickedOption);
 });
 
+
+-: animate Method
+Let's create an animation which enlarges the icon when you hover 
+over it. Animation can be implemented using CSS, but here we'll 
+try implementing it using jQuery.
+
+Using animate Method
+To animate an image, we'll use the animate method. This can be 
+done by writing $('selector').animate ({'property': 'value'}). You 
+can specify the duration of the animation in the second argument. 
+The duration can be specified in milliseconds or as a string such 
+as slow or fast.
+
+$('h1').animate({
+          'font-size': '50px'
+}, 1000);
+
+Review: hover Event
+Unlike the click event, the hover event requires two arguments, 
+separated by commas.
+
+$('h1').hover(
+          function() {
+                    // mouse hovers on
+          },
+
+          function() {
+                    // mouse hovers off
+          }
+)
+
+<footer>
+          <div class="container">
+                    <div class="follow-us">
+                              <a href="https://www.facebook.com/Progate-742679992421539" class="social-icon" target='_blank'>
+                                        <span class="fa fa-facebook"></span>
+                              </a>
+                              <a href="https://twitter.com/progateEN" class="social-icon" target='_blank'>
+                                        <span class="fa fa-twitter"></span>
+                              </a>
+                    </div>
+
+                    <div class="copyright">©2016-
+                              Progate
+                    </div>
+          </div>
+</footer>
+
+$(function(){
+          
+          // When the cursor is hovering over the .social-icon element, make the font-size 30px
+          // And change the font-size to 24px when cursor stops hovering over the element
+          $('.social-icon').hover(
+                    function() {
+                              $(this).animate({
+                                        'font-size': '30px'
+                              }, 300);
+                    },
+                    
+                    function() {
+                              $(this).animate({
+                                        'font-size': '24px'
+                              }, 300);
+                    }
+          )
+});
+
+
+-: Internal Links
+A vertically long page such as a blog often has a "return to top" button 
+which can move the user back to the top of the page.
+Here, we'll be adding internal links to accomplish this.
+
+Internal Links with <a> Tag
+We can use <a> tags to create not only links to other pages, but also links 
+within the page itself. We specify an id for the destination of the link and 
+set the href attribute to #idName (ie, "#contact"). Clicking the <a> tag 
+will move the user to the element of that id.
+
+<a href='#contact'>Contact</a>
+<div id='contact'></div>
+
+scrollTop Method
+You can implement internal links and animate the page transition 
+using jQuery. The scrollTop method returns the vertical scrollbar 
+position for the selected element by writing: 
+$('element').scrollTop(pxValue);. Note that the scrollTop method 
+is typically used on $('html, body').
+
+<div class="header-title">
+          <div id="top-btn" class="header-logo">Ken the Ninja's Room</div>
+</div>
+
+$('#top-btn').click(function() {
+          $('html, body').scrollTop(0);
+          
+          // same as writing
+          // $('html').scrollTop(0);
+          // $('body').scrollTop(0);
+})
+
+
 */ 
+
 
 // Making Navigation Bar
 // Lastly, let's improve the previous page we made by implementing 
