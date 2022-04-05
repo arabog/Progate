@@ -410,6 +410,67 @@ $(function() {
           $('#link-href').text(href);
 });
 
+
+-: Getting Input Values
+Let's get and display the contents of the form when a user enters in 
+values and presses the submit button.
+
+Input Values of Input Tag
+Using the input tag, you can create a single line input field. The 
+value entered in the input tag can be retrieved using the val method. 
+
+<form>
+          <div>Name:</div>
+          <input id='name' type='text' >
+</form>
+
+var name = $('#name').val();
+
+submit Event
+A submit event is an event for the moment someone submits the 
+form. Using the submit event, we enable the event to occur not 
+only when the submit button is clicked but also when the "Enter" 
+key is pressed.
+
+$('form').submit(function() {
+
+});
+
+<form id="form" class="form">
+          <div class="form-group">
+                    <div>Characters: </div>
+
+                    <select id="select-form" class="select-form">
+                              <option value="0">- Select -</option>
+                              <option value="1">1. Ken the Ninja</option>
+                              <option value="2">2. Master Wooly</option>
+                              <option value="3">3. Ben the Baby Ninja</option>
+                    </select>  
+          </div>
+
+          <div class="form-group">
+                    <div>Reason: </div>
+                    <textarea id="text-form" class="text-form"></textarea>  
+          </div>
+
+          <button type="submit" class="btn btn-submit">Submit</button>
+</form>
+
+$(function() {
+          // Create a submit event for the #form element
+          $('#form').submit(function() {
+                    var textValue = $('#text-form').val();
+                    $('#output-text').text(textValue);
+
+                    Now, since we aren't actually sending the values put into the form, add 
+                    return false;  to the end of the submit event. 
+                    return false;
+          });
+});
+
+
+
+
 */ 
 
 // Making Navigation Bar
