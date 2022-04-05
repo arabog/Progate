@@ -35,6 +35,64 @@ $(function() {
 });
 
 
+-:  Creating Slides
+Here, we will start making slides. Let's first make parts of the buttons. 
+When you click a button, the slide corresponding to its number should 
+be displayed.
+
+Structure of Slides
+Let's see how to implement the slide function.
+We will first hide the .slide element using display: none;, and only display 
+a .slide element with the active class. We will use jQuery to move around 
+this active class and determine which to display.
+
+<li class='slide'><img src='...'></li>
+<li class='slide active'><img src='...'></li>
+<li class='slide'><img src='...'></li>
+<li class='slide'><img src='...'></li>
+
+style.css
+.slide {
+          display: none;
+}
+
+.active {
+          display: block;
+}
+
+We'll implement the following actions:
+①Show the first slide on the initial state. On clicking the button 2,
+  <ul class="slides">
+          <!-- Add the active class to only the first .slide element -->
+          <li class="slide active"><img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/jquery/advanced/spring.jpg"></li>
+          <li class="slide"><img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/jquery/advanced/rainy.jpg"></li>
+          <li class="slide"><img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/jquery/advanced/autumn.jpg"></li>
+          <li class="slide"><img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/jquery/advanced/winter.jpg"></li>
+</ul>
+
+.slides {
+          padding: 0;
+}
+
+.slide {
+          display: none;
+}
+
+.active {
+          display: block; 
+}
+
+②Hide the slide that's currently displayed (remove the active class from it).
+③Show the second slide (add the active class to it).
+$(function() {
+          $('#second-btn').click(function() {
+                    // Remove the active class from the .active element
+                    $('.active').removeClass('active');
+                    
+                    // Add the active class to the 2nd .slide element
+                    $('.slide').eq(1).addClass('active');
+          });
+});
 
 
 
