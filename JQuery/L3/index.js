@@ -468,7 +468,35 @@ $(function() {
           });
 });
 
+-: Input Values of Select Box
+<select id="select-form" class="select-form">
+          <option value="0">- Select -</option>
+          <option value="1">1. Ken the Ninja</option>
+          <option value="2">2. Master Wooly</option>
+          <option value="3">3. Ben the Baby Ninja</option>
+</select>  
 
+var names = $('select-form').val();
+
+<select id="select-form" class="select-form">
+          <!-- Set the value attributes for each option from 0 to 3 in order (from the top) -->
+          <option value='0'>- Select -</option>
+          <option value='1'>1. Ken the Ninja</option>
+          <option value='2'>2. Master Wooly</option>
+          <option value='3'>3. Ben the Baby Ninja</option>
+</select>  
+
+$(function() {
+          $('#form').submit(function() {
+                    var selectValue = $('#select-form').val();
+                    var textValue = $('#text-form').val();
+                    
+                    $('#output-select').text(selectValue);
+                    $('#output-text').text(textValue);
+                    
+                    return false;
+          });
+});
 
 
 */ 
