@@ -493,10 +493,44 @@ $(function() {
                     
                     $('#output-select').text(selectValue);
                     $('#output-text').text(textValue);
-                    
+
                     return false;
           });
 });
+
+
+-: Check Form Inputs
+Now we will implement the feature to check whether or not a form 
+is completed when it's submitted. The val method gets the value 
+entered into the form and shows an error if the form is empty
+
+Structure of Error Message
+In order to display an error message, we will use conditional branching
+
+if (d input value is blank) {
+          // show d error msg
+} else {
+          // hide d error msg
+}
+
+Empty String
+A string with no content is called an empty string. It can be expressed 
+as ' ' (two single quotes). If the val method gets an empty string, you 
+know that no value was entered in the form. It's also possible set an 
+element's text to an empty string using the text method.
+
+if($('#text-form').val() == '') {
+          // show d error msg
+}
+
+var textValue = $('#text-form').val();
+
+// Display an error when textValue is empty
+if (textValue === '') {
+          $('#error-message').text('Please enter a reason!');
+} else {
+          $('#error-message').text('');
+}
 
 
 */ 
