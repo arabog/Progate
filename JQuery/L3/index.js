@@ -568,9 +568,67 @@ $('.option-btn').click(function() {
 });
 
 
+-: Auto-filling Select Box
+Next, let's automate the select box to select an option using the val method. 
+Unlike the input tag, the select tag has limited options. We'll specify a value 
+that matches the value attribute of an option tag for the argument of the 
+val method.
 
+<select id="select-form" class="select-form">
+          <!-- Set the value attributes for each option from 0 to 3 in order (from the top) -->
+          <option value='0'>- Select -</option>
+          <option value='1'>1. Ken the Ninja</option>
+          <option value='female'>2. Master Wooly</option>
+          <option value='3'>3. Ben the Baby Ninja</option>
+</select>  
 
+$('#select-form).val('female')
 
+Custom Data Attributes
+You can also create your own attribute. This is called a custom data 
+attribute, which you can name starting with data-. This data attribute 
+is often used in jQuery because it's convenient for specifying 
+information in the HTML.
+
+<img src="image.jpg" >
+<div data-option='puppy'>....</div>
+
+get d 'src' attribute value of 'img'
+$('img').attr('src');
+
+get d 'data-option' attribute value of 'div'
+$('div').attr('data-option');
+
+Using Custom Data Attributes
+Here, we'll set the attribute called data-option in the select button. 
+Let's specify the values for it based on value attributes of the select 
+box option tags. This allows us to specify the value for the select box 
+by simply clicking a button.
+
+<div class="option-wrapper">
+          <div class="option-group">
+                    <img class="option-image" src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/jquery/advanced/progate_baby_wanko.png">
+                    <div class="option-btn" data-option="1">1. Ben the Baby</div>
+          </div>
+
+          <div class="option-group">
+                    <img class="option-image" src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/jquery/advanced/progate_wanko.png">
+                    <div class="option-btn" data-option="2">2. Ken the Ninja</div>
+          </div>
+
+          <div class="option-group">
+                    <img class="option-image" src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/jquery/advanced/progate_hitsuji.png">
+                    <div class="option-btn" data-option="3">3. Master Wooly</div>
+          </div>
+</div>
+
+$('.option-btn').click(function() {
+          var optionText = $(this).text();
+          var clickedOption = $(this).attr('data-option');
+          
+          $('#text-form').val(optionText + ' is my favorite because ...');
+          $('#select-form').val(clickedOption);
+});
 
 */ 
 
