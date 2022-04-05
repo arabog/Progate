@@ -283,13 +283,39 @@ $(function() {
           $('.change-btn').click(function() {
                     var $displaySlide = $('.active');
                     $displaySlide.removeClass('active');
-                    
+
                     // Move the following code inside the toggleChangeBtn method and call it here
                     toggleChangeBtn();
           });
 });
 
 
+-: Modifying Slide Features
+We have created the basic features of the slides, but there is still 
+room for improvement. For instance, if the number of slides changes, 
+the function to hide the "Next" button will be broken. Let's modify our 
+code to enable the "Next" button regardless of the number of slides.
+
+if (slideIndex == 0) {
+
+}else if (slideIndex == 3) {
+          $('.next-btn').hide();
+}
+
+length
+Using length, you can get the number of elements of a jQuery object.
+
+ function toggleChangeBtn() {
+          var slideIndex = $('.slide').index($('.active'));
+          $('.change-btn').show();
+
+          if (slideIndex == 0) {
+                    $('.prev-btn').hide();
+                    // Replace the "3" in the code below using the length method
+          } else if (slideIndex == ($('.slide').length - 1)) {
+                    $('.next-btn').hide();
+          }
+}
 
 */ 
 
