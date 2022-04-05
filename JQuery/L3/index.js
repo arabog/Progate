@@ -725,28 +725,96 @@ is typically used on $('html, body').
 
 $('#top-btn').click(function() {
           $('html, body').scrollTop(0);
-          
+
           // same as writing
           // $('html').scrollTop(0);
           // $('body').scrollTop(0);
 })
 
 
+-: Adding Animation
+Let's add animation to the scroll. Using the animate method, you can 
+change not only a CSS value but also the value for scrollTop.
+Animation is implemented as follows: 
+$('html, body').animate ({'scrollTop': 0}, duration);.
+
+$('html, body').animate ({
+          'scrollTop': 0
+}, 'slow');.
+
+$('#top-btn').click(function(){
+          // Use the animate method to add a scroll animation
+          $('html, body').animate({
+                    'scrollTop': 0
+          }, 500);
+
+          $('html, body').scrollTop(0);
+});
+
+
+-: Making Navigation Bar
+Lastly, let's improve the previous page we made by implementing 
+the internal navigation bar.
+
+offset Method
+You can get the position of an element using the offset method. 
+This returns the distance from the top of the page and the distance 
+from the left edge of the page in the form of an associative array. 
+You can get the distance from the top of the page with offset().top.
+
+
+$('h1').offset();                       // {top: 180, left: 100}
+
+$('h1').offset().top;
+
+Getting Destination Using attr Method
+Let's make each button an <a> tag and specify the destination's 
+id in the href attribute. We can implement the internal links by 
+getting the value of the href attribute using the attr method and 
+getting the position of that element using the offset method.
+
+<a class = 'scroll-btn' href='#html'>HTML</a>
+<div id='html'></div>
+
+$('.scroll-btn').click(function() {
+          var id = $(this).attr('href');
+          var position = $(id).offset().top;
+})
+
+<header>
+          <div class="container">
+                    <div class="header-title">
+                              <div id="top-btn" class="header-logo">Ken the Ninja's Room</div>
+                    </div>
+
+                    <div class="header-menu">
+                              <ul class="header-menu-right">
+                                        <li>
+                                                  <a href="#stamps">LINE Stamp</a>
+                                        </li>
+
+                                        <li>
+                                                  <a href="#interview">Interview</a>
+                                        </li>
+                                        
+                                        <li>
+                                                  <a href="#contact">Contact Form</a>
+                                        </li>
+                              </ul>
+                    </div>
+          </div>
+</header>
+
+
+ $('header a').click(function() {
+          var id = $(this).attr('href');
+          
+          var position = $(id).offset().top;
+          
+          $('html, body').animate({
+                    'scrollTop': position
+          }, 500);
+})
+
 */ 
-
-
-// Making Navigation Bar
-// Lastly, let's improve the previous page we made by implementing 
-// the internal navigation bar.
-
-// offset Method
-// You can get the position of an element using the offset method. 
-// This returns the distance from the top of the page and the distance 
-// from the left edge of the page in the form of an associative array. 
-// You can get the distance from the top of the page with offset().top.
-
-
-// $('h1').offset();                       // {top: 180, left: 100}
-
-// $('h1').offset().top;
 
