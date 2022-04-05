@@ -242,9 +242,52 @@ $(function() {
 });
 
 
+-: Functions for Duplicate Code
+In the previous exercise, we wrote the same code twice (the click events). 
+Let's create a function to summarize these events. We will put the 
+duplicate code into a function called toggleChangeBtn().
 
+function toggleChangeBtn() {
+          var slideIndex = 
+}
 
+Calling Functions
+The function is called in each click event where the overlapping code 
+was used. In order to call a function, you just need to write its name.
 
+toggleChangeBtn()
+
+$(function() {
+          // Define the toggleChangeBtn method
+          function toggleChangeBtn() {
+                    var slideIndex = $('.slide').index($('.active'));
+                    $('.change-btn').show();
+
+                    if (slideIndex == 0) {
+                              $('.prev-btn').hide();
+                    } else if (slideIndex == 3) {
+                              $('.next-btn').hide();
+                    }
+          }
+          
+          $('.index-btn').click(function() {
+                    $('.active').removeClass('active');
+
+                    var clickedIndex = $('.index-btn').index($(this));
+                    $('.slide').eq(clickedIndex).addClass('active');
+                    
+                    // Move the following code inside the toggleChangeBtn method and call it here
+                    toggleChangeBtn();
+          });
+          
+          $('.change-btn').click(function() {
+                    var $displaySlide = $('.active');
+                    $displaySlide.removeClass('active');
+                    
+                    // Move the following code inside the toggleChangeBtn method and call it here
+                    toggleChangeBtn();
+          });
+});
 
 
 
