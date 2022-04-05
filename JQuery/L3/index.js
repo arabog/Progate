@@ -366,6 +366,50 @@ $(function() {
 });
 
 
+-: Attributes of HTML
+HTML tags can be specified with class, id, src, etc. These are called attributes.
+
+
+-: attr Method
+You can get and set an attribute of HTML by using the attr method. 
+For example, you can set an attribute by specifying the attribute 
+name for the first argument and its attribute value for the second 
+argument like attr('id', 'title'). If you don't specify the second argument, 
+you can get the value of that attribute.
+
+<h1> Hello </h1>
+<a href='https://progate.com'>Link</a>
+
+setting an attribute
+$('h1').attr('id', 'title');
+
+getting an attribute
+var url=$('a').attr('href');  //get d href value (https://progate.com)
+
+<div class="section-content">
+          <p id="content"></p>
+</div>
+
+<div class="output-inner">
+          <p class="output-item">Title: <span id="title-text"></span></p>
+          <p class="output-item">Content ID: <span id="content-id"></span></p>
+          <p class="output-item">Link:<span id="link-href"></span></p>
+</div>
+
+$(function() {
+          var title = $('#title').text();
+
+          // Declare 2 variables
+          var id = $('.section-content p').attr('id');
+          var href = $('#link').attr('href');
+          
+          $('#title-text').text(title);
+
+          // Use the text method to display each of the variables
+          $('#content-id').text(id);
+          $('#link-href').text(href);
+});
+
 */ 
 
 // Making Navigation Bar
