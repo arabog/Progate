@@ -317,6 +317,55 @@ Using length, you can get the number of elements of a jQuery object.
           }
 }
 
+
+-: Manipulating the Form
+In this exercise you will learn how to retrieve information from HTML 
+using jQuery.
+
+text Method
+In jQuery I, we learned about the text method, which sets the text of 
+an element to the argument you specify. You can also get the text in 
+the element with the text method by not inputting any arguments.
+
+setting d text of an element
+$('h1').text('Hello');
+
+getting d text of an elemt
+var text =$('p').text();
+
+html Method & css Method
+In jQuery, methods which set values are usually also available for 
+getting values. You can also use the html and css methods 
+to get values.
+
+<div id='main'>
+          <h1> Ken the Ninja </h1>
+</div>
+h1 {
+          font-size: 28px;
+}
+
+getting d HTML of an element
+var html = $('#main').html();
+
+getting d css ppty of an elemt
+var html = $('h1').css('font-size');
+
+<div class="section-title">
+          <h3 id="title">About Ken the Ninja</h3>
+</div>
+
+<div class="output-inner">
+          <p class="output-item">Title: <span id="title-text"></span></p>
+</div>
+
+$(function() {
+          var $title = $('#title').text();
+          
+          $('#title-text').text($title);
+});
+
+
 */ 
 
 // Making Navigation Bar
