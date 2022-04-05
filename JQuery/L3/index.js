@@ -533,6 +533,45 @@ if (textValue === '') {
 }
 
 
+-: Auto-filling Form
+Next, let's try to automatically set the value of the form. We will 
+insert different text in the form based on the clicked button
+
+<form>
+          <div>Name:</div>
+          <input id='name' type='text' >
+</form>
+
+$('#name').val('Ken the Ninja');
+
+<div class="option-wrapper">
+          <div class="option-group">
+                    <img class="option-image" src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/jquery/advanced/progate_baby_wanko.png">
+                    <div class="option-btn" data-option="1">1. Ben the Baby</div>
+          </div>
+
+          <div class="option-group">
+                    <img class="option-image" src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/jquery/advanced/progate_wanko.png">
+                    <div class="option-btn" data-option="2">2. Ken the Ninja</div>
+          </div>
+
+          <div class="option-group">
+                    <img class="option-image" src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/jquery/advanced/progate_hitsuji.png">
+                    <div class="option-btn" data-option="3">3. Master Wooly</div>
+          </div>
+</div>
+
+ // Create a click event for the .option-btn element
+$('.option-btn').click(function() {
+          var optionText = $(this).text();
+          $('#text-form').val(optionText + ' is my favorite because ...')
+});
+
+
+
+
+
+
 */ 
 
 // Making Navigation Bar
