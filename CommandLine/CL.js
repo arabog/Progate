@@ -159,6 +159,10 @@ like rm -r directory_to_remove. Just like the cp command, you'll get an error
 if you forget to add -r.
 
 
+-: The Commands History
+On the command line, you can go through the command history using the 
+up arrow key ↑. This is very convenient when you want to use a command 
+that was executed before.
 
 
 
