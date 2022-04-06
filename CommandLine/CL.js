@@ -43,7 +43,6 @@ as follows: mkdir directory_name.
 mkdir directory_name
 
 
-*/ 
 -: Current Directory
 On the command line, the directory that you're currently in 
 is known as the current directory.
@@ -72,4 +71,6 @@ all directories from the root directory to the current
 directory are displayed.
 
 pwd
+
+*/ 
 
