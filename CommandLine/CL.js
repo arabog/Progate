@@ -89,5 +89,11 @@ files that are direct children of the current directory.
 
 */ 
 
+-: The Parent Directory
+We've learned how to use the cd command, but we don't know 
+how to move to the parent directory yet. If you want to move 
+to the parent directory, you can use a special symbol .., like cd ...
+
+cd ..
 
 
