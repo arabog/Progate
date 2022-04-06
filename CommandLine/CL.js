@@ -43,7 +43,33 @@ as follows: mkdir directory_name.
 mkdir directory_name
 
 
-
 */ 
+-: Current Directory
+On the command line, the directory that you're currently in 
+is known as the current directory.
 
+cd
+You can use the cd command to move to other directories. 
+By entering cd directory_name, you can move to the 
+specified directory.
+
+The Current Directory
+The current directory is displayed to the left of $. Note that 
+you can only specify a directory name, not a file name.
+
+
+-: Root Directory
+In the file structure of a computer, there's a root directory 
+at the very top. The root directory is represented by /. 
+Note that the root directory is omitted in the file 
+structure of the exercise screen.
+
+Checking the Current Directory
+On the command line, it's important to know the directory 
+you are currently working in. There's a command called 
+pwd to check that. When you execute the pwd command, 
+all directories from the root directory to the current 
+directory are displayed.
+
+pwd
 
