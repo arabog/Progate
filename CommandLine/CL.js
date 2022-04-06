@@ -72,5 +72,22 @@ directory are displayed.
 
 pwd
 
+
+-; Displaying the Content of the Directory
+When moving between directories, it would be convenient if 
+we could see the list of files and directories in the current 
+directory. To do this, you can use the ls command (short for list)
+
+What's displayed by "ls"
+Note that the ls command will only display the directories and 
+files that are direct children of the current directory.
+
+
+
+
+
+
 */ 
+
+
 
