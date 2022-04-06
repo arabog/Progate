@@ -147,6 +147,22 @@ If you try to copy a directory without adding the -r option, you'll get an
 error and the command won't be executed.
 
 
+-: Removing a File
+Next, we'll look at how to remove a file. To do this, you can use the rm 
+command, like rm file_to_remove.
+
+rm stands for remove
+
+Removing a Directory
+You can also remove a directory by adding the -r option to the rm command, 
+like rm -r directory_to_remove. Just like the cp command, you'll get an error 
+if you forget to add -r.
+
+
+
+
+
+
 */ 
 
 
