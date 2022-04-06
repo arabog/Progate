@@ -16,9 +16,34 @@ and executing it.
 
 touch beginner.js
 
+-: Displaying the Content of a File
+You can also display the content of a file with the cat command.
+To use the cat command, type cat file_name.
+
+cat Calculator.jsx
+
+Error of a Command
+If you specify a file that doesn't exist using the cat command, you'll 
+get an error, as the command is invalid.
+
+Tab Completion
+The command line also has a useful completion feature. If 
+you press the Tab key while entering a file name or folder 
+name, the rest of the name gets auto-completed. Using tab 
+completion not only improves efficiency but prevents 
+typing mistakes too.
 
 
+-: Creating a Directory
+You can create a new directory using a command as well. 
+A directory is commonly used interchangeably with the 
+term folder. To create a directory, use the mkdir command 
+as follows: mkdir directory_name.
+
+mkdir directory_name
 
 
 
 */ 
+
+
