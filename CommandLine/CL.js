@@ -121,6 +121,14 @@ move all the files and directories under that directory.
 mv html projectFile
 
 
+-: Renaming a File
+The mv command, which we used to move files and directories earlier, 
+can also be used to rename a file. You can rename a file by typing 
+mv old_file_name new_file_name.
+
+mv beginner.txt dojo.txt
+
+
 
 
 */ 
