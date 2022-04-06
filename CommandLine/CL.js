@@ -129,6 +129,22 @@ mv old_file_name new_file_name.
 mv beginner.txt dojo.txt
 
 
+-: Copying a File
+Next, let's look at how to copy files. To do this, we use the cp command. 
+You can copy a file by entering cp file_to_copy new_file_name.
+
+cp dojo.txt project.txt
+
+
+-:  Copying a Directory
+With the cp command, you can also copy a directory by adding the 
+-r (Recursive copy) option, like cp -r directory_to_copy new_directory_name.
+
+cp -r HTML Ruby
+
+Error with the cp Command
+If you try to copy a directory without adding the -r option, you'll get an 
+error and the command won't be executed.
 
 
 */ 
