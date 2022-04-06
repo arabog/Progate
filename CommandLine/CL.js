@@ -83,17 +83,47 @@ Note that the ls command will only display the directories and
 files that are direct children of the current directory.
 
 
-
-
-
-
-*/ 
-
 -: The Parent Directory
 We've learned how to use the cd command, but we don't know 
 how to move to the parent directory yet. If you want to move 
 to the parent directory, you can use a special symbol .., like cd ...
 
 cd ..
+
+
+-: cd without Specifying a Directory
+If you execute cd without specifying a directory, you can move 
+to what is known as a home directory. The home directory is 
+represented by ~
+
+The Home Directory
+The Home directory refers to the base directory for the user.
+
+
+-: Working with Files and Directories
+From this point on, we're going to learn how to perform a variety of 
+operations like moving, copying, and deleting files with commands.
+
+Moving a File
+Let's start with the command to move a file. To do this, we use the mv 
+command. By typing mv file_to_move destination_directory, you can 
+move a file to the specified directory.
+
+mv beginner.txt html
+
+mv short for move
+
+Moving a Directory
+With the mv command, you can also move directories, not just files. 
+By entering mv directory_to_move destination_directory, you can 
+move all the files and directories under that directory.
+
+mv html projectFile
+
+
+
+
+*/ 
+
 
 
