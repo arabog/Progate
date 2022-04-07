@@ -40,6 +40,6 @@ With git add and git commit, the 2 commands we've
 already learned, you are ready to share files.
 
 
-
+-: The Sharing Process
 
 */ 
