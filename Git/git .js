@@ -65,6 +65,8 @@ to the remote we made earlier by running:
 git push origin master
 
 
+-: Downloading Files from a Remote
+I can download the file by running git pull origin master
 
 
 
