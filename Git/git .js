@@ -59,6 +59,10 @@ origin = remote name
 prog-8 = remote URL
 
 
+-: Uploading Files to a Remote
+Let's try uploading a file to the remote! We can upload 
+to the remote we made earlier by running:
+git push origin master
 
 
 
