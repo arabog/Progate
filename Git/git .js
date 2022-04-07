@@ -1,4 +1,6 @@
 /*
+Use Ctrl+Shift+V to paste into the terminal. Ctrl+V will not work.
+
 Let's Learn Git
 When making a website, you may have to collaborate with others.
 Git is a tool that'll help you to do team development smoothly.
@@ -41,5 +43,27 @@ already learned, you are ready to share files.
 
 
 -: The Sharing Process
+Git uses something called a remote (or remote repository) 
+to store shared files. Developers share files by uploading 
+to and downloading from remotes.
+
+Adding a Remote
+You need the remote's URL in order to upload. 
+More specifically, to register a remote, type 
+git remote add remote_name URL. 
+Add a remote and name it origin
+
+git remote add origin https://prog-8.com/mysite.git
+
+origin = remote name 
+prog-8 = remote URL
+
+
+
+
+
+
+
+
 
 */ 
