@@ -84,4 +84,21 @@ git push origin master
 git pull origin master
 
 
+-; Mastering Git
+Important Points About Git
+In team development, it is important to clearly recognize 
+the changes you have made and select which changes 
+should be shared with your partners.   
+So let us learn how to recognize and select the code we share. 
+
+Recognizing Modified Files
+Using git status, you can display a list of modified files.
+
+
+
+
+
+
+
+
 */ 
