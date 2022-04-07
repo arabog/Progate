@@ -95,6 +95,18 @@ Recognizing Modified Files
 Using git status, you can display a list of modified files.
 
 
+-: Recognizing Content Changes
+Here is a command to see the content changes: git diff.
+
+Viewing git diff
+Modified code will be displayed, with the code after in 
+green and the code before in red. With this you can 
+confirm the changes and execute git add with confidence.
+
+Let's select only the file index.html to share.
+git add index.html
+
+
 
 
 
