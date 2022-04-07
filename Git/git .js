@@ -69,7 +69,19 @@ git push origin master
 I can download the file by running git pull origin master
 
 
+-: Practicing the Team Development Workflow
+The flow:
+                    add
+          pull                commit
+                    push
 
+With the 4 commands/flows, we can already share 
+files with each other.
+
+git add stylesheet.css
+git commit -m 'added stylesheet.css'
+git push origin master
+git pull origin master
 
 
 */ 
