@@ -115,7 +115,13 @@ When you run git status, added files will appear green
 and files that have not yet been added will be red. 
 
 
+-: Writing Good Commit Messages
+You should write good commit messages so that when 
+someone sees them they can understand easily what 
+kind of changes were made.
 
+
+-:
 
 
 
