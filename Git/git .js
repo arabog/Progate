@@ -107,6 +107,14 @@ Let's select only the file index.html to share.
 git add index.html
 
 
+-: Checking Added Files
+You can use the git status again. You can check which 
+files have or have not been added.
+
+When you run git status, added files will appear green 
+and files that have not yet been added will be red. 
+
+
 
 
 
