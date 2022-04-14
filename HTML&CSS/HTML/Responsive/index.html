@@ -223,8 +223,26 @@ inside will always be contained within this limit.
 }
 
 
+-: Making the Header Responsive
+To finish off, let's apply a different header for smartphones.
+Since the whole menu won't fit, we'll display a menu icon instead.
+(This way, you can display the menu when the icon is tapped.)
 
+Hiding and Showing Elements
+We'll hide the menu icon by default and only display it when 
+the device width is 670px or less.
+To hide an element, we can use display: none;.
+To display a hidden element, we can use display: block;
 
+@media (max-width: 670px) {
+          .header-right {
+                    display: none;
+          }
+
+          .menu-icon {
+                    display: block;
+          }
+}
 
 
 
