@@ -59,6 +59,55 @@ Let's fix this by changing the width of each item for smaller devices.
           }
 }
 
+i.e d width increases as d sizes decreases
+
+
+-: box-sizing
+Having four items with 25% width along with the 15px padding will 
+cause the width to be greater than 100%, and so the last item will not fit.
+We can fix this using box-sizing: border-box;.
+
+How box-sizing Works
+By setting the box-sizing property to border-box, an element's width 
+will include the padding and the border.
+Therefore, the layout will not break when you add padding or border 
+(this is not the case with margin).
+
+d total width = width + padding + border
+                              25%       15px      2px
+
+Applying CSS to All Elements
+You can use the * selector when you want to apply CSS to all the elements.
+It's a good practice to apply box-sizing: border-box; to all the elements 
+because it will make it easier to adjust the layout of the web page.
+
+* {
+          box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
