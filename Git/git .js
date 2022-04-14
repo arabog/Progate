@@ -121,10 +121,17 @@ someone sees them they can understand easily what
 kind of changes were made.
 
 
--:
+-: git log
+Using the command git log, you or anyone else can 
+view the commits.
 
+git log -p
 
+With git log, can I see both the commit messages and the 
+changes that were made?
 
-
+To see the changes, you can use git log -p.
+With the up and down arrow keys, you can scroll through t
+he changes. And to quit just press the Q key.
 
 */ 
