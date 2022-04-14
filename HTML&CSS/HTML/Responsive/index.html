@@ -86,6 +86,31 @@ because it will make it easier to adjust the layout of the web page.
 }
 
 
+-:  Making Your Page Responsive
+viewport
+In preparation for applying Responsive Web Design to the page, let's 
+set the viewport inside the <head> tag.
+Without the viewport, the media queries will not function properly on 
+tablets and smartphones.
+
+<head>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+width: 100%
+In the previous lesson, we had the width fixed to 1170px, so it won't fit 
+into devices with smaller screens.
+Let's change the width to 100% so that it fills whatever the width for 
+any device.
+
+.container {
+          /* Change the width to 100% */
+          width: 100%;
+          padding: 0 15px;
+          margin: 0 auto;
+}
+
+
 
 
 
