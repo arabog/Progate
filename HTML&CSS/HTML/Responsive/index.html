@@ -4,4 +4,41 @@ Responsive Web Design makes your web page look good on all devices,
 like desktops, tablets, and smartphones.
 
 
+-: Media Queries
+They allow you to specify different CSS depending on the size of the device.
+
+                    condition
+@media (max-width: 1000px) {
+          css is applied wn condition matches
+}
+
+Using Media Queries
+The syntax is as follows: @media (condition) { .... }.
+The CSS inside { } will be applied only when the condition is met.
+
+max-width and min-width
+We can specify the max-width or the min-width as a condition.
+
+When max-width: 1000px is specified, the CSS will be applied 
+only when the width of the screen is 1000px or less.
+On the other hand, with min-width the CSS will be applied when 
+the width of the screen is the specified size or more.
+
+h1 {
+          color: red;
+}
+
+@media (max-width: 1000px) {
+          h1 {
+                    color: blue;
+          }
+}
+
+Breakpoints
+The value you specify for the max-width or the min-width is called 
+a breakpoint. We'll be using 670px as the breakpoint for smartphones, 
+and 1000px for tablets.
+
+
+
 -->
