@@ -123,6 +123,32 @@ Let's fix this by placing only two lessons in one row.
 We can do this by changing the width of lesson to 50%.
 
 
+-: Fixing the Background
+Since we've changed the lessons to be shown in two rows, they no longer 
+fit inside the section with the background color.
+This is because the height of lesson-wrapper is fixed to 580px.
+Let's remove this so that the height of lesson-wrapper will be determined 
+by its children.
+
+float and the Parent Element
+By default, an element's height is determined by that of its children.
+But this is not the case when all the child elements have float applied, 
+in which case the height of the parent will be 0.
+This is because the floating elements will not affect the parent.
+
+Clearing the float
+Let's learn how to add height to an element with floating children.
+We can do this by adding an empty <div> tag with clear: left; applied.
+clear: left; cancels the children's float state, so their height will affect 
+the parent element's height.
+
+<div class="lessons">
+          <div class="clear"></div>
+</div>
+
+.clear {
+          clear: left;
+}
 
 
 
