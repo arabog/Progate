@@ -40,5 +40,30 @@ a breakpoint. We'll be using 670px as the breakpoint for smartphones,
 and 1000px for tablets.
 
 
+-: Layout with Media Queries
+In the previous lesson, we learned how to change the color of the text 
+based on the width of the device. Now let's learn how to change the layout.
+
+Changing the Width Using Media Queries
+When you have several items in a row, they will look too small when 
+displayed on smaller devices.
+Let's fix this by changing the width of each item for smaller devices.
+
+.item {
+          width: 25%;
+}
+
+@media (max-width: 1000px) {
+          .item {
+                    width: 50%;
+          }
+}
+
+
+
+
+
+
+
 
 -->
