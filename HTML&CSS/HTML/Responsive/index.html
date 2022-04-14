@@ -204,6 +204,27 @@ So, let's adjust the font for each device.
 }
 
 
+-: Handling Large Screens
+We've learned how to adjust the layout for smaller devices.
+What about devices with larger screens?
+For example, if we viewed our web page on a 2000px screen, the 
+lessons will be too far apart from each other.
+
+max-width
+Since we've set the width of container to 100%, it will become too
+big on a larger screen. We can fix this by setting the max-width.
+In the example, we've set the max-width to 1170px, so the content 
+inside will always be contained within this limit.
+
+.container {
+          max-width: 1170px;
+
+          width: 100%;
+}
+
+
+
+
 
 
 
