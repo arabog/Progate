@@ -154,7 +154,8 @@ the parent element's height.
 -: The Smartphone Layout
 Now let's work on the layout for smartphones.
 We'll set the breakpoint to 670px.
-Let's first change the width of lesson to 100% to make a single column layout.
+Let's first change the width of lesson to 100% to make a single 
+column layout.
 
 @media (max-width: 670px) {
           .lesson {
@@ -163,7 +164,8 @@ Let's first change the width of lesson to 100% to make a single column layout.
 }
 
 Aligning the footer
-Also, let's set the footer to align in the center when viewed from smartphone devices.
+Also, let's set the footer to align in the center when viewed from 
+smartphone devices.
 
 @media (max-width: 670px) {
           .lesson {
@@ -176,8 +178,19 @@ Also, let's set the footer to align in the center when viewed from smartphone de
 }
 
 
+-: Adjusting the Buttons
+Next, let's make the buttons spread to the full-width so that they are 
+easier to tap. We'll also adjust the margin between the buttons.
 
+@media (max-width: 670px) {
+          .btn {
+                    width: 100%;
+          }
 
+          .facebook {
+                    margin-bottom: 10px;
+          }
+}
 
 
 
