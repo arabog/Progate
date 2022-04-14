@@ -123,6 +123,7 @@
           float: right;
           font-size: 25px;
           padding: 21px 0;
+          
           /* Change the display property to none */
           display: none;
         }
