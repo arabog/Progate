@@ -49,6 +49,52 @@ within the parent element, set flex: auto on it.
 }
 
 
+-: Wrapping the Elements Into Two Rows
+What is flex-wrap: wrap?
+By setting flex-wrap: wrap, a single row of elements will be able to 
+wrap into multiple rows based on the element size.
+
+How to use flex-wrap: wrap
+Set flex-wrap: wrap on the parent of the elements that should be wrapped. 
+The elements themselves will need to have the width set. This time, since 
+we want to break the list into two rows, we'll set width: 50%.
+
+<ul class="'flex-list">
+          <li class="='li1"></li>
+          <li class="='li2"></li>
+          <li class="='li3"></li>
+          <li class="='li4"></li>
+</ul>
+
+.flex-list {
+          display: flex;
+          flex-wrap: wrap;
+}
+
+.flex-list li {
+          flex: auto;
+          width: 50%;
+}
+
+Review of Percentage Size
+Let's review using a percentage for the size of an element. When using 
+a percentage % for the height or width of an element, the size of the 
+element will become relative to the size of its parent.
+
+.flex-list li {
+          flex: auto;
+          width: 50%;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
