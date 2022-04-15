@@ -1,4 +1,5 @@
 <!-- 
+-: Flexbox
 Flexbox, is a CSS layout module
 While this module has many properties, you'll focus 
 on the most commonly used ones.
@@ -24,8 +25,7 @@ display: flex; on the parent element.
 }
 
 
--: Making the Elements Full Width
-What is flex: auto?
+-: Making the Elements(children) Full Width
 When you set flex: auto on an element, it will expand to fill as much 
 space as it can within the parent.
 
@@ -50,9 +50,8 @@ within the parent element, set flex: auto on it.
 
 
 -: Wrapping the Elements Into Two Rows
-What is flex-wrap: wrap?
-By setting flex-wrap: wrap, a single row of elements will be able to 
-wrap into multiple rows based on the element size.
+By setting flex-wrap: wrap on d parent, a single row of elements will 
+be able to wrap into multiple rows based on the element size.
 
 How to use flex-wrap: wrap
 Set flex-wrap: wrap on the parent of the elements that should be wrapped. 
@@ -104,7 +103,6 @@ it so that the list only wraps when the screen width is small.
 
 
 -: Using One Column for the Smallest Screens
-What is flex-direction: column?
 Setting flex-direction: column makes all elements stack vertically instead 
 of horizontally.
 
@@ -136,7 +134,7 @@ set the margin here.
           flex: auto;
           width: 50%;         and width: 50px has also been set for widths <=1000px
 
-          margin: 0 auto;
+          margin: 0 auto;     ds is set on d elemt(child) and not parent
 }
 
 Using Media Queries
