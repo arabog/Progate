@@ -103,6 +103,60 @@ it so that the list only wraps when the screen width is small.
 }
 
 
+-: Using One Column for the Smallest Screens
+What is flex-direction: column?
+Setting flex-direction: column makes all elements stack vertically instead 
+of horizontally.
+
+<ul class="'flex-list">
+          <li class="='li1"></li>
+          <li class="='li2"></li>
+          <li class="='li3"></li>
+          <li class="='li4"></li>
+</ul>
+
+.flex-list {
+          flex-direction: column;
+}
+
+Centering Block Elements
+Let's review how to center block elements. By setting margin: 0 auto and 
+the width of an element, you can center it. Since we've already set the 
+width of the elements for screens 1000px and under, we only need to 
+set the margin here.
+
+<ul class="'flex-list">
+          <li class="='li1"></li>
+          <li class="='li2"></li>
+          <li class="='li3"></li>
+          <li class="='li4"></li>
+</ul>
+
+.flex-list li {
+          flex: auto;
+          width: 50%;         and width: 50px has also been set for widths <=1000px
+
+          margin: 0 auto;
+}
+
+Using Media Queries
+By using media queries, we can make it so that the list becomes a single 
+column on the smallest of screen sizes.
+
+@media (max-width: 670px) {
+          .flex-list {
+                    flex-direction: column;
+          }
+
+          .flex-list li {
+                    margin: 0 auto;     //applies to d individual li's
+          }
+}
+
+
+
+
+
 
 
 
